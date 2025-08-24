@@ -340,11 +340,11 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("PlayToConnectionErrorEventArgs may be altered or unavailable for releases after Windows 10. Instead, use CastingConnectionErrorOccurredEventArgs.")
-	final HSTRING Message()
+	final wstring Message()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.PlayTo.IPlayToConnectionErrorEventArgs)this.asInterface(uuid("bf5eada6-88e6-445f-9d40-d9b9f8939896"))).get_Message(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -587,15 +587,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).abi_NotifyStopped());
 	}
-	final HSTRING FriendlyName()
+	final wstring FriendlyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).get_FriendlyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void FriendlyName(HSTRING value)
+	final void FriendlyName(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).set_FriendlyName(value));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).set_FriendlyName(hstring(value).handle));
 	}
 	final void SupportsImage(bool value)
 	{
@@ -715,9 +715,9 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")
-	final void DisplayErrorString(HSTRING errorString)
+	final void DisplayErrorString(wstring errorString)
 	{
-		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceRequest)this.asInterface(uuid("f8584665-64f4-44a0-ac0d-468d2b8fda83"))).abi_DisplayErrorString(errorString));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceRequest)this.asInterface(uuid("f8584665-64f4-44a0-ac0d-468d2b8fda83"))).abi_DisplayErrorString(hstring(errorString).handle));
 	}
 	deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")
 	final Windows.Media.PlayTo.PlayToSourceDeferral GetDeferral()
@@ -749,11 +749,11 @@ interface PlayToSourceSelectedEventArgs : Windows.Media.PlayTo.IPlayToSourceSele
 {
 extern(Windows):
 	deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")
-	final HSTRING FriendlyName()
+	final wstring FriendlyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs)this.asInterface(uuid("0c9d8511-5202-4dcb-8c67-abda12bb3c12"))).get_FriendlyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")
 	final Windows.Storage.Streams.IRandomAccessStreamWithContentType Icon()
@@ -805,35 +805,35 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Stream(&_ret));
 		return _ret;
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Author()
+	final wstring Author()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Author(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Album()
+	final wstring Album()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Album(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Genre()
+	final wstring Genre()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Genre(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Date()
 	{

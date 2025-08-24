@@ -167,11 +167,11 @@ extern(Windows):
 interface KeyCredential : Windows.Security.Credentials.IKeyCredential
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Credentials.IKeyCredential)this.asInterface(uuid("9585ef8d-457b-4847-b11a-fa960bbdb138"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Storage.Streams.IBuffer RetrievePublicKeyWithDefaultBlobType()
 	{
@@ -244,22 +244,22 @@ interface KeyCredentialManager
 		Debug.OK(staticInstance.abi_RenewAttestationAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialRetrievalResult) RequestCreateAsync(HSTRING name, Windows.Security.Credentials.KeyCredentialCreationOption option)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialRetrievalResult) RequestCreateAsync(wstring name, Windows.Security.Credentials.KeyCredentialCreationOption option)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialRetrievalResult) _ret;
-		Debug.OK(staticInstance.abi_RequestCreateAsync(name, option, &_ret));
+		Debug.OK(staticInstance.abi_RequestCreateAsync(hstring(name).handle, option, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialRetrievalResult) OpenAsync(HSTRING name)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialRetrievalResult) OpenAsync(wstring name)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialRetrievalResult) _ret;
-		Debug.OK(staticInstance.abi_OpenAsync(name, &_ret));
+		Debug.OK(staticInstance.abi_OpenAsync(hstring(name).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncAction DeleteAsync(HSTRING name)
+	static Windows.Foundation.IAsyncAction DeleteAsync(wstring name)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.abi_DeleteAsync(name, &_ret));
+		Debug.OK(staticInstance.abi_DeleteAsync(hstring(name).handle, &_ret));
 		return _ret;
 	}
 }
@@ -301,35 +301,35 @@ extern(Windows):
 interface PasswordCredential : Windows.Security.Credentials.IPasswordCredential
 {
 extern(Windows):
-	final HSTRING Resource()
+	final wstring Resource()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Credentials.IPasswordCredential)this.asInterface(uuid("6ab18989-c720-41a7-a6c1-feadb36329a0"))).get_Resource(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Resource(HSTRING resource)
+	final void Resource(wstring resource)
 	{
-		Debug.OK((cast(Windows.Security.Credentials.IPasswordCredential)this.asInterface(uuid("6ab18989-c720-41a7-a6c1-feadb36329a0"))).set_Resource(resource));
+		Debug.OK((cast(Windows.Security.Credentials.IPasswordCredential)this.asInterface(uuid("6ab18989-c720-41a7-a6c1-feadb36329a0"))).set_Resource(hstring(resource).handle));
 	}
-	final HSTRING UserName()
+	final wstring UserName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Credentials.IPasswordCredential)this.asInterface(uuid("6ab18989-c720-41a7-a6c1-feadb36329a0"))).get_UserName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void UserName(HSTRING userName)
+	final void UserName(wstring userName)
 	{
-		Debug.OK((cast(Windows.Security.Credentials.IPasswordCredential)this.asInterface(uuid("6ab18989-c720-41a7-a6c1-feadb36329a0"))).set_UserName(userName));
+		Debug.OK((cast(Windows.Security.Credentials.IPasswordCredential)this.asInterface(uuid("6ab18989-c720-41a7-a6c1-feadb36329a0"))).set_UserName(hstring(userName).handle));
 	}
-	final HSTRING Password()
+	final wstring Password()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Credentials.IPasswordCredential)this.asInterface(uuid("6ab18989-c720-41a7-a6c1-feadb36329a0"))).get_Password(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Password(HSTRING password)
+	final void Password(wstring password)
 	{
-		Debug.OK((cast(Windows.Security.Credentials.IPasswordCredential)this.asInterface(uuid("6ab18989-c720-41a7-a6c1-feadb36329a0"))).set_Password(password));
+		Debug.OK((cast(Windows.Security.Credentials.IPasswordCredential)this.asInterface(uuid("6ab18989-c720-41a7-a6c1-feadb36329a0"))).set_Password(hstring(password).handle));
 	}
 	final void RetrievePassword()
 	{
@@ -347,11 +347,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(PasswordCredential).abi_ActivateInstance(&ret));
 		return cast(PasswordCredential) ret;
 	}
-	static Windows.Security.Credentials.PasswordCredential New(HSTRING resource, HSTRING userName, HSTRING password)
+	static Windows.Security.Credentials.PasswordCredential New(wstring resource, wstring userName, wstring password)
 	{
 		auto factory = factory!(Windows.Security.Credentials.ICredentialFactory);
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK((cast(Windows.Security.Credentials.ICredentialFactory)factory.asInterface(uuid("54ef13a1-bf26-47b5-97dd-de779b7cad58"))).abi_CreatePasswordCredential(resource, userName, password, &_ret));
+		Debug.OK((cast(Windows.Security.Credentials.ICredentialFactory)factory.asInterface(uuid("54ef13a1-bf26-47b5-97dd-de779b7cad58"))).abi_CreatePasswordCredential(hstring(resource).handle, hstring(userName).handle, hstring(password).handle, &_ret));
 		return _ret;
 	}
 }
@@ -363,10 +363,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable))this).remove_MapChanged(token));
 	}
-	final  IInspectable Lookup(HSTRING key)
+	final  IInspectable Lookup(wstring key)
 	{
 		 IInspectable _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Lookup(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final uint Size()
@@ -375,10 +375,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).get_Size(&_ret));
 		return _ret;
 	}
-	final bool HasKey(HSTRING key)
+	final bool HasKey(wstring key)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_HasKey(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
@@ -387,15 +387,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_GetView(&_ret));
 		return _ret;
 	}
-	final bool Insert(HSTRING key,	IInspectable value)
+	final bool Insert(wstring key,	IInspectable value)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Insert(key, value, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Insert(hstring(key).handle, value, &_ret));
 		return _ret;
 	}
-	final void Remove(HSTRING key)
+	final void Remove(wstring key)
 	{
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Remove(key));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Remove(hstring(key).handle));
 	}
 	final void Clear()
 	{
@@ -424,22 +424,22 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Security.Credentials.IPasswordVault)this.asInterface(uuid("61fd2c0b-c8d4-48c1-a54f-bc5a64205af2"))).abi_Remove(credential));
 	}
-	final Windows.Security.Credentials.PasswordCredential Retrieve(HSTRING resource, HSTRING userName)
+	final Windows.Security.Credentials.PasswordCredential Retrieve(wstring resource, wstring userName)
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK((cast(Windows.Security.Credentials.IPasswordVault)this.asInterface(uuid("61fd2c0b-c8d4-48c1-a54f-bc5a64205af2"))).abi_Retrieve(resource, userName, &_ret));
+		Debug.OK((cast(Windows.Security.Credentials.IPasswordVault)this.asInterface(uuid("61fd2c0b-c8d4-48c1-a54f-bc5a64205af2"))).abi_Retrieve(hstring(resource).handle, hstring(userName).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.PasswordCredential) FindAllByResource(HSTRING resource)
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.PasswordCredential) FindAllByResource(wstring resource)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.PasswordCredential) _ret;
-		Debug.OK((cast(Windows.Security.Credentials.IPasswordVault)this.asInterface(uuid("61fd2c0b-c8d4-48c1-a54f-bc5a64205af2"))).abi_FindAllByResource(resource, &_ret));
+		Debug.OK((cast(Windows.Security.Credentials.IPasswordVault)this.asInterface(uuid("61fd2c0b-c8d4-48c1-a54f-bc5a64205af2"))).abi_FindAllByResource(hstring(resource).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.PasswordCredential) FindAllByUserName(HSTRING userName)
+	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.PasswordCredential) FindAllByUserName(wstring userName)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.PasswordCredential) _ret;
-		Debug.OK((cast(Windows.Security.Credentials.IPasswordVault)this.asInterface(uuid("61fd2c0b-c8d4-48c1-a54f-bc5a64205af2"))).abi_FindAllByUserName(userName, &_ret));
+		Debug.OK((cast(Windows.Security.Credentials.IPasswordVault)this.asInterface(uuid("61fd2c0b-c8d4-48c1-a54f-bc5a64205af2"))).abi_FindAllByUserName(hstring(userName).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.PasswordCredential) RetrieveAll()
@@ -465,11 +465,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Credentials.IWebAccount)this.asInterface(uuid("69473eb2-8031-49be-80bb-96cb46d99aba"))).get_WebAccountProvider(&_ret));
 		return _ret;
 	}
-	final HSTRING UserName()
+	final wstring UserName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Credentials.IWebAccount)this.asInterface(uuid("69473eb2-8031-49be-80bb-96cb46d99aba"))).get_UserName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Security.Credentials.WebAccountState State()
 	{
@@ -477,11 +477,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Credentials.IWebAccount)this.asInterface(uuid("69473eb2-8031-49be-80bb-96cb46d99aba"))).get_State(&_ret));
 		return _ret;
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Credentials.IWebAccount2)this.asInterface(uuid("7b56d6f8-990b-4eb5-94a7-5621f3a8b824"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) Properties()
 	{
@@ -501,18 +501,18 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Credentials.IWebAccount2)this.asInterface(uuid("7b56d6f8-990b-4eb5-94a7-5621f3a8b824"))).abi_SignOutAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction SignOutWithClientIdAsync(HSTRING clientId)
+	final Windows.Foundation.IAsyncAction SignOutWithClientIdAsync(wstring clientId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Security.Credentials.IWebAccount2)this.asInterface(uuid("7b56d6f8-990b-4eb5-94a7-5621f3a8b824"))).abi_SignOutWithClientIdAsync(clientId, &_ret));
+		Debug.OK((cast(Windows.Security.Credentials.IWebAccount2)this.asInterface(uuid("7b56d6f8-990b-4eb5-94a7-5621f3a8b824"))).abi_SignOutWithClientIdAsync(hstring(clientId).handle, &_ret));
 		return _ret;
 	}
 	alias SignOutAsync = SignOutWithClientIdAsync;
-	static Windows.Security.Credentials.WebAccount New(Windows.Security.Credentials.WebAccountProvider webAccountProvider, HSTRING userName, Windows.Security.Credentials.WebAccountState state)
+	static Windows.Security.Credentials.WebAccount New(Windows.Security.Credentials.WebAccountProvider webAccountProvider, wstring userName, Windows.Security.Credentials.WebAccountState state)
 	{
 		auto factory = factory!(Windows.Security.Credentials.IWebAccountFactory);
 		Windows.Security.Credentials.WebAccount _ret;
-		Debug.OK((cast(Windows.Security.Credentials.IWebAccountFactory)factory.asInterface(uuid("ac9afb39-1de9-4e92-b78f-0581a87f6e5c"))).abi_CreateWebAccount(webAccountProvider, userName, state, &_ret));
+		Debug.OK((cast(Windows.Security.Credentials.IWebAccountFactory)factory.asInterface(uuid("ac9afb39-1de9-4e92-b78f-0581a87f6e5c"))).abi_CreateWebAccount(webAccountProvider, hstring(userName).handle, state, &_ret));
 		return _ret;
 	}
 }
@@ -520,17 +520,17 @@ extern(Windows):
 interface WebAccountProvider : Windows.Security.Credentials.IWebAccountProvider, Windows.Security.Credentials.IWebAccountProvider2, Windows.Security.Credentials.IWebAccountProvider3
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Credentials.IWebAccountProvider)this.asInterface(uuid("29dcc8c3-7ab9-4a7c-a336-b942f9dbf7c7"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Credentials.IWebAccountProvider)this.asInterface(uuid("29dcc8c3-7ab9-4a7c-a336-b942f9dbf7c7"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("IconUri may be altered or unavailable for releases after Windows 8.2. Instead, use Icon.")
 	final Windows.Foundation.Uri IconUri()
@@ -539,17 +539,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Credentials.IWebAccountProvider)this.asInterface(uuid("29dcc8c3-7ab9-4a7c-a336-b942f9dbf7c7"))).get_IconUri(&_ret));
 		return _ret;
 	}
-	final HSTRING DisplayPurpose()
+	final wstring DisplayPurpose()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Credentials.IWebAccountProvider2)this.asInterface(uuid("4a01eb05-4e42-41d4-b518-e008a5163614"))).get_DisplayPurpose(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Authority()
+	final wstring Authority()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Credentials.IWebAccountProvider2)this.asInterface(uuid("4a01eb05-4e42-41d4-b518-e008a5163614"))).get_Authority(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.System.User User()
 	{
@@ -557,11 +557,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Credentials.IWebAccountProvider3)this.asInterface(uuid("da1c518b-970d-4d49-825c-f2706f8ca7fe"))).get_User(&_ret));
 		return _ret;
 	}
-	static Windows.Security.Credentials.WebAccountProvider New(HSTRING id, HSTRING displayName, Windows.Foundation.Uri iconUri)
+	static Windows.Security.Credentials.WebAccountProvider New(wstring id, wstring displayName, Windows.Foundation.Uri iconUri)
 	{
 		auto factory = factory!(Windows.Security.Credentials.IWebAccountProviderFactory);
 		Windows.Security.Credentials.WebAccountProvider _ret;
-		Debug.OK((cast(Windows.Security.Credentials.IWebAccountProviderFactory)factory.asInterface(uuid("1d767df1-e1e1-4b9a-a774-5c7c7e3bf371"))).abi_CreateWebAccountProvider(id, displayName, iconUri, &_ret));
+		Debug.OK((cast(Windows.Security.Credentials.IWebAccountProviderFactory)factory.asInterface(uuid("1d767df1-e1e1-4b9a-a774-5c7c7e3bf371"))).abi_CreateWebAccountProvider(hstring(id).handle, hstring(displayName).handle, iconUri, &_ret));
 		return _ret;
 	}
 }

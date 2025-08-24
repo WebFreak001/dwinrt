@@ -397,15 +397,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Perception.Spatial.ISpatialAnchorStore)this.asInterface(uuid("b0bc3636-486a-3cb0-9e6f-1245165c4db6"))).abi_GetAllSavedAnchors(&_ret));
 		return _ret;
 	}
-	final bool TrySave(HSTRING id, Windows.Perception.Spatial.SpatialAnchor anchor)
+	final bool TrySave(wstring id, Windows.Perception.Spatial.SpatialAnchor anchor)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Perception.Spatial.ISpatialAnchorStore)this.asInterface(uuid("b0bc3636-486a-3cb0-9e6f-1245165c4db6"))).abi_TrySave(id, anchor, &_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.ISpatialAnchorStore)this.asInterface(uuid("b0bc3636-486a-3cb0-9e6f-1245165c4db6"))).abi_TrySave(hstring(id).handle, anchor, &_ret));
 		return _ret;
 	}
-	final void Remove(HSTRING id)
+	final void Remove(wstring id)
 	{
-		Debug.OK((cast(Windows.Perception.Spatial.ISpatialAnchorStore)this.asInterface(uuid("b0bc3636-486a-3cb0-9e6f-1245165c4db6"))).abi_Remove(id));
+		Debug.OK((cast(Windows.Perception.Spatial.ISpatialAnchorStore)this.asInterface(uuid("b0bc3636-486a-3cb0-9e6f-1245165c4db6"))).abi_Remove(hstring(id).handle));
 	}
 	final void Clear()
 	{
@@ -492,11 +492,11 @@ extern(Windows):
 interface SpatialEntity : Windows.Perception.Spatial.ISpatialEntity
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Perception.Spatial.ISpatialEntity)this.asInterface(uuid("166de955-e1eb-454c-ba08-e6c0668ddc65"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Perception.Spatial.SpatialAnchor Anchor()
 	{

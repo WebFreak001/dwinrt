@@ -27,10 +27,10 @@ interface ClassicAppManager
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Management.Deployment.Preview.IClassicAppManagerStatics);
 		return _staticInstance;
 	}
-	static Windows.Management.Deployment.Preview.InstalledClassicAppInfo FindInstalledApp(HSTRING appUninstallKey)
+	static Windows.Management.Deployment.Preview.InstalledClassicAppInfo FindInstalledApp(wstring appUninstallKey)
 	{
 		Windows.Management.Deployment.Preview.InstalledClassicAppInfo _ret;
-		Debug.OK(staticInstance.abi_FindInstalledApp(appUninstallKey, &_ret));
+		Debug.OK(staticInstance.abi_FindInstalledApp(hstring(appUninstallKey).handle, &_ret));
 		return _ret;
 	}
 }
@@ -38,16 +38,16 @@ interface ClassicAppManager
 interface InstalledClassicAppInfo : Windows.Management.Deployment.Preview.IInstalledClassicAppInfo
 {
 extern(Windows):
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Management.Deployment.Preview.IInstalledClassicAppInfo)this.asInterface(uuid("0a7d3da3-65d0-4086-80d6-0610d760207d"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayVersion()
+	final wstring DisplayVersion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Management.Deployment.Preview.IInstalledClassicAppInfo)this.asInterface(uuid("0a7d3da3-65d0-4086-80d6-0610d760207d"))).get_DisplayVersion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }

@@ -176,11 +176,11 @@ extern(Windows):
 interface GattServiceProviderConnection : Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection
 {
 extern(Windows):
-	final HSTRING TriggerId()
+	final wstring TriggerId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection)this.asInterface(uuid("7fa1b9b9-2f13-40b5-9582-8eb78e98ef13"))).get_TriggerId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalService Service()
 	{

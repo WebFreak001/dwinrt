@@ -41,15 +41,15 @@ extern(Windows):
 interface ExtendedExecutionForegroundSession : Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession, Windows.Foundation.IClosable
 {
 extern(Windows):
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession)this.asInterface(uuid("fbf440e1-9d10-4201-b01e-c83275296f2e"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Description(HSTRING value)
+	final void Description(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession)this.asInterface(uuid("fbf440e1-9d10-4201-b01e-c83275296f2e"))).set_Description(value));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession)this.asInterface(uuid("fbf440e1-9d10-4201-b01e-c83275296f2e"))).set_Description(hstring(value).handle));
 	}
 	final EventRegistrationToken OnRevoked(void delegate(IInspectable, Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundRevokedEventArgs) fn)
 	{

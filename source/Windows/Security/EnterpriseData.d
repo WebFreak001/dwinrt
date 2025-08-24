@@ -304,11 +304,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.EnterpriseData.IDataProtectionInfo)this.asInterface(uuid("8420b0c1-5e31-4405-9540-3f943af0cb26"))).get_Status(&_ret));
 		return _ret;
 	}
-	final HSTRING Identity()
+	final wstring Identity()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.EnterpriseData.IDataProtectionInfo)this.asInterface(uuid("8420b0c1-5e31-4405-9540-3f943af0cb26"))).get_Identity(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -320,10 +320,10 @@ interface DataProtectionManager
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.EnterpriseData.IDataProtectionManagerStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.BufferProtectUnprotectResult) ProtectAsync(Windows.Storage.Streams.IBuffer data, HSTRING identity)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.BufferProtectUnprotectResult) ProtectAsync(Windows.Storage.Streams.IBuffer data, wstring identity)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.BufferProtectUnprotectResult) _ret;
-		Debug.OK(staticInstance.abi_ProtectAsync(data, identity, &_ret));
+		Debug.OK(staticInstance.abi_ProtectAsync(data, hstring(identity).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.BufferProtectUnprotectResult) UnprotectAsync(Windows.Storage.Streams.IBuffer data)
@@ -332,10 +332,10 @@ interface DataProtectionManager
 		Debug.OK(staticInstance.abi_UnprotectAsync(data, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.DataProtectionInfo) ProtectStreamAsync(Windows.Storage.Streams.IInputStream unprotectedStream, HSTRING identity, Windows.Storage.Streams.IOutputStream protectedStream)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.DataProtectionInfo) ProtectStreamAsync(Windows.Storage.Streams.IInputStream unprotectedStream, wstring identity, Windows.Storage.Streams.IOutputStream protectedStream)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.DataProtectionInfo) _ret;
-		Debug.OK(staticInstance.abi_ProtectStreamAsync(unprotectedStream, identity, protectedStream, &_ret));
+		Debug.OK(staticInstance.abi_ProtectStreamAsync(unprotectedStream, hstring(identity).handle, protectedStream, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.DataProtectionInfo) UnprotectStreamAsync(Windows.Storage.Streams.IInputStream protectedStream, Windows.Storage.Streams.IOutputStream unprotectedStream)
@@ -373,11 +373,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.EnterpriseData.IFileProtectionInfo)this.asInterface(uuid("4ee96486-147e-4dd0-8faf-5253ed91ad0c"))).get_IsRoamable(&_ret));
 		return _ret;
 	}
-	final HSTRING Identity()
+	final wstring Identity()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.EnterpriseData.IFileProtectionInfo)this.asInterface(uuid("4ee96486-147e-4dd0-8faf-5253ed91ad0c"))).get_Identity(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -389,10 +389,10 @@ interface FileProtectionManager
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.EnterpriseData.IFileProtectionManagerStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionInfo) ProtectAsync(Windows.Storage.IStorageItem target, HSTRING identity)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionInfo) ProtectAsync(Windows.Storage.IStorageItem target, wstring identity)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionInfo) _ret;
-		Debug.OK(staticInstance.abi_ProtectAsync(target, identity, &_ret));
+		Debug.OK(staticInstance.abi_ProtectAsync(target, hstring(identity).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) CopyProtectionAsync(Windows.Storage.IStorageItem source, Windows.Storage.IStorageItem target)
@@ -426,10 +426,10 @@ interface FileProtectionManager
 		return _ret;
 	}
 	alias LoadFileFromContainerAsync = LoadFileFromContainerWithTargetAsync;
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedFileCreateResult) CreateProtectedAndOpenAsync(Windows.Storage.IStorageFolder parentFolder, HSTRING desiredName, HSTRING identity, Windows.Storage.CreationCollisionOption collisionOption)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedFileCreateResult) CreateProtectedAndOpenAsync(Windows.Storage.IStorageFolder parentFolder, wstring desiredName, wstring identity, Windows.Storage.CreationCollisionOption collisionOption)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedFileCreateResult) _ret;
-		Debug.OK(staticInstance.abi_CreateProtectedAndOpenAsync(parentFolder, desiredName, identity, collisionOption, &_ret));
+		Debug.OK(staticInstance.abi_CreateProtectedAndOpenAsync(parentFolder, hstring(desiredName).handle, hstring(identity).handle, collisionOption, &_ret));
 		return _ret;
 	}
 }
@@ -443,10 +443,10 @@ interface FileRevocationManager
 		return _staticInstance;
 	}
 	deprecated("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionStatus) ProtectAsync(Windows.Storage.IStorageItem storageItem, HSTRING enterpriseIdentity)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionStatus) ProtectAsync(Windows.Storage.IStorageItem storageItem, wstring enterpriseIdentity)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionStatus) _ret;
-		Debug.OK(staticInstance.abi_ProtectAsync(storageItem, enterpriseIdentity, &_ret));
+		Debug.OK(staticInstance.abi_ProtectAsync(storageItem, hstring(enterpriseIdentity).handle, &_ret));
 		return _ret;
 	}
 	deprecated("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")
@@ -457,9 +457,9 @@ interface FileRevocationManager
 		return _ret;
 	}
 	deprecated("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")
-	static void Revoke(HSTRING enterpriseIdentity)
+	static void Revoke(wstring enterpriseIdentity)
 	{
-		Debug.OK(staticInstance.abi_Revoke(enterpriseIdentity));
+		Debug.OK(staticInstance.abi_Revoke(hstring(enterpriseIdentity).handle));
 	}
 	deprecated("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionStatus) GetStatusAsync(Windows.Storage.IStorageItem storageItem)
@@ -607,48 +607,48 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo)this.asInterface(uuid("425ab7e4-feb7-44fc-b3bb-c3c4d7ecbebb"))).get_Action(&_ret));
 		return _ret;
 	}
-	final void DataDescription(HSTRING value)
+	final void DataDescription(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo)this.asInterface(uuid("425ab7e4-feb7-44fc-b3bb-c3c4d7ecbebb"))).set_DataDescription(value));
+		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo)this.asInterface(uuid("425ab7e4-feb7-44fc-b3bb-c3c4d7ecbebb"))).set_DataDescription(hstring(value).handle));
 	}
-	final HSTRING DataDescription()
+	final wstring DataDescription()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo)this.asInterface(uuid("425ab7e4-feb7-44fc-b3bb-c3c4d7ecbebb"))).get_DataDescription(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SourceDescription(HSTRING value)
+	final void SourceDescription(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo)this.asInterface(uuid("425ab7e4-feb7-44fc-b3bb-c3c4d7ecbebb"))).set_SourceDescription(value));
+		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo)this.asInterface(uuid("425ab7e4-feb7-44fc-b3bb-c3c4d7ecbebb"))).set_SourceDescription(hstring(value).handle));
 	}
-	final HSTRING SourceDescription()
+	final wstring SourceDescription()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo)this.asInterface(uuid("425ab7e4-feb7-44fc-b3bb-c3c4d7ecbebb"))).get_SourceDescription(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TargetDescription(HSTRING value)
+	final void TargetDescription(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo)this.asInterface(uuid("425ab7e4-feb7-44fc-b3bb-c3c4d7ecbebb"))).set_TargetDescription(value));
+		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo)this.asInterface(uuid("425ab7e4-feb7-44fc-b3bb-c3c4d7ecbebb"))).set_TargetDescription(hstring(value).handle));
 	}
-	final HSTRING TargetDescription()
+	final wstring TargetDescription()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo)this.asInterface(uuid("425ab7e4-feb7-44fc-b3bb-c3c4d7ecbebb"))).get_TargetDescription(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo New(Windows.Security.EnterpriseData.ProtectionPolicyAuditAction action, HSTRING dataDescription, HSTRING sourceDescription, HSTRING targetDescription)
+	static Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo New(Windows.Security.EnterpriseData.ProtectionPolicyAuditAction action, wstring dataDescription, wstring sourceDescription, wstring targetDescription)
 	{
 		auto factory = factory!(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfoFactory);
 		Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo _ret;
-		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfoFactory)factory.asInterface(uuid("7ed4180b-92e8-42d5-83d4-25440b423549"))).abi_Create(action, dataDescription, sourceDescription, targetDescription, &_ret));
+		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfoFactory)factory.asInterface(uuid("7ed4180b-92e8-42d5-83d4-25440b423549"))).abi_Create(action, hstring(dataDescription).handle, hstring(sourceDescription).handle, hstring(targetDescription).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo New(Windows.Security.EnterpriseData.ProtectionPolicyAuditAction action, HSTRING dataDescription)
+	static Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo New(Windows.Security.EnterpriseData.ProtectionPolicyAuditAction action, wstring dataDescription)
 	{
 		auto factory = factory!(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfoFactory);
 		Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo _ret;
-		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfoFactory)factory.asInterface(uuid("7ed4180b-92e8-42d5-83d4-25440b423549"))).abi_CreateWithActionAndDataDescription(action, dataDescription, &_ret));
+		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfoFactory)factory.asInterface(uuid("7ed4180b-92e8-42d5-83d4-25440b423549"))).abi_CreateWithActionAndDataDescription(action, hstring(dataDescription).handle, &_ret));
 		return _ret;
 	}
 }
@@ -656,15 +656,15 @@ extern(Windows):
 interface ProtectionPolicyManager : Windows.Security.EnterpriseData.IProtectionPolicyManager, Windows.Security.EnterpriseData.IProtectionPolicyManager2
 {
 extern(Windows):
-	final void Identity(HSTRING value)
+	final void Identity(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyManager)this.asInterface(uuid("d5703e18-a08d-47e6-a240-9934d7165eb5"))).set_Identity(value));
+		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyManager)this.asInterface(uuid("d5703e18-a08d-47e6-a240-9934d7165eb5"))).set_Identity(hstring(value).handle));
 	}
-	final HSTRING Identity()
+	final wstring Identity()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.EnterpriseData.IProtectionPolicyManager)this.asInterface(uuid("d5703e18-a08d-47e6-a240-9934d7165eb5"))).get_Identity(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void ShowEnterpriseIndicator(bool value)
 	{
@@ -683,26 +683,26 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics);
 		return _staticInstance;
 	}
-	static bool IsIdentityManaged(HSTRING identity)
+	static bool IsIdentityManaged(wstring identity)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsIdentityManaged(identity, &_ret));
+		Debug.OK(staticInstance.abi_IsIdentityManaged(hstring(identity).handle, &_ret));
 		return _ret;
 	}
-	static bool TryApplyProcessUIPolicy(HSTRING identity)
+	static bool TryApplyProcessUIPolicy(wstring identity)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_TryApplyProcessUIPolicy(identity, &_ret));
+		Debug.OK(staticInstance.abi_TryApplyProcessUIPolicy(hstring(identity).handle, &_ret));
 		return _ret;
 	}
 	static void ClearProcessUIPolicy()
 	{
 		Debug.OK(staticInstance.abi_ClearProcessUIPolicy());
 	}
-	static Windows.Security.EnterpriseData.ThreadNetworkContext CreateCurrentThreadNetworkContext(HSTRING identity)
+	static Windows.Security.EnterpriseData.ThreadNetworkContext CreateCurrentThreadNetworkContext(wstring identity)
 	{
 		Windows.Security.EnterpriseData.ThreadNetworkContext _ret;
-		Debug.OK(staticInstance.abi_CreateCurrentThreadNetworkContext(identity, &_ret));
+		Debug.OK(staticInstance.abi_CreateCurrentThreadNetworkContext(hstring(identity).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(HSTRING) GetPrimaryManagedIdentityForNetworkEndpointAsync(Windows.Networking.HostName endpointHost)
@@ -711,9 +711,9 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetPrimaryManagedIdentityForNetworkEndpointAsync(endpointHost, &_ret));
 		return _ret;
 	}
-	static void RevokeContent(HSTRING identity)
+	static void RevokeContent(wstring identity)
 	{
-		Debug.OK(staticInstance.abi_RevokeContent(identity));
+		Debug.OK(staticInstance.abi_RevokeContent(hstring(identity).handle));
 	}
 	static Windows.Security.EnterpriseData.ProtectionPolicyManager GetForCurrentView()
 	{
@@ -751,16 +751,16 @@ extern(Windows):
 	{
 		Debug.OK(staticInstance.remove_ProtectedContentRevoked(token));
 	}
-	static Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult CheckAccess(HSTRING sourceIdentity, HSTRING targetIdentity)
+	static Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult CheckAccess(wstring sourceIdentity, wstring targetIdentity)
 	{
 		Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult _ret;
-		Debug.OK(staticInstance.abi_CheckAccess(sourceIdentity, targetIdentity, &_ret));
+		Debug.OK(staticInstance.abi_CheckAccess(hstring(sourceIdentity).handle, hstring(targetIdentity).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult) RequestAccessAsync(HSTRING sourceIdentity, HSTRING targetIdentity)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult) RequestAccessAsync(wstring sourceIdentity, wstring targetIdentity)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult) _ret;
-		Debug.OK(staticInstance.abi_RequestAccessAsync(sourceIdentity, targetIdentity, &_ret));
+		Debug.OK(staticInstance.abi_RequestAccessAsync(hstring(sourceIdentity).handle, hstring(targetIdentity).handle, &_ret));
 		return _ret;
 	}
 }

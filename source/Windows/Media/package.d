@@ -528,11 +528,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.IAudioFrame)this.asInterface(uuid("e36ac304-aab2-4277-9ed0-43cedf8e29c6"))).abi_LockBuffer(mode, &_ret));
 		return _ret;
 	}
-	final HSTRING Type()
+	final wstring Type()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.IMediaFrame)this.asInterface(uuid("bfb52f8c-5943-47d8-8e10-05308aa5fbd0"))).get_Type(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsReadOnly()
 	{
@@ -613,25 +613,25 @@ extern(Windows):
 interface ImageDisplayProperties : Windows.Media.IImageDisplayProperties
 {
 extern(Windows):
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.IImageDisplayProperties)this.asInterface(uuid("cd0bc7ef-54e7-411f-9933-f0e98b0a96d2"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.IImageDisplayProperties)this.asInterface(uuid("cd0bc7ef-54e7-411f-9933-f0e98b0a96d2"))).set_Title(value));
+		Debug.OK((cast(Windows.Media.IImageDisplayProperties)this.asInterface(uuid("cd0bc7ef-54e7-411f-9933-f0e98b0a96d2"))).set_Title(hstring(value).handle));
 	}
-	final HSTRING Subtitle()
+	final wstring Subtitle()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.IImageDisplayProperties)this.asInterface(uuid("cd0bc7ef-54e7-411f-9933-f0e98b0a96d2"))).get_Subtitle(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Subtitle(HSTRING value)
+	final void Subtitle(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.IImageDisplayProperties)this.asInterface(uuid("cd0bc7ef-54e7-411f-9933-f0e98b0a96d2"))).set_Subtitle(value));
+		Debug.OK((cast(Windows.Media.IImageDisplayProperties)this.asInterface(uuid("cd0bc7ef-54e7-411f-9933-f0e98b0a96d2"))).set_Subtitle(hstring(value).handle));
 	}
 }
 
@@ -795,28 +795,28 @@ interface MediaControl
 		return _ret;
 	}
 	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
-	static void TrackName(HSTRING value)
+	static void TrackName(wstring value)
 	{
-		Debug.OK(staticInstance.set_TrackName(value));
+		Debug.OK(staticInstance.set_TrackName(hstring(value).handle));
 	}
 	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
-	static HSTRING TrackName()
+	static wstring TrackName()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TrackName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
-	static void ArtistName(HSTRING value)
+	static void ArtistName(wstring value)
 	{
-		Debug.OK(staticInstance.set_ArtistName(value));
+		Debug.OK(staticInstance.set_ArtistName(hstring(value).handle));
 	}
 	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
-	static HSTRING ArtistName()
+	static wstring ArtistName()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ArtistName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
 	static void IsPlaying(bool value)
@@ -847,58 +847,58 @@ interface MediaControl
 interface MediaExtensionManager : Windows.Media.IMediaExtensionManager, Windows.Media.IMediaExtensionManager2
 {
 extern(Windows):
-	final void RegisterSchemeHandler(HSTRING activatableClassId, HSTRING scheme)
+	final void RegisterSchemeHandler(wstring activatableClassId, wstring scheme)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterSchemeHandler(activatableClassId, scheme));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterSchemeHandler(hstring(activatableClassId).handle, hstring(scheme).handle));
 	}
-	final void RegisterSchemeHandlerWithSettings(HSTRING activatableClassId, HSTRING scheme, Windows.Foundation.Collections.IPropertySet configuration)
+	final void RegisterSchemeHandlerWithSettings(wstring activatableClassId, wstring scheme, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterSchemeHandlerWithSettings(activatableClassId, scheme, configuration));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterSchemeHandlerWithSettings(hstring(activatableClassId).handle, hstring(scheme).handle, configuration));
 	}
 	alias RegisterSchemeHandler = RegisterSchemeHandlerWithSettings;
-	final void RegisterByteStreamHandler(HSTRING activatableClassId, HSTRING fileExtension, HSTRING mimeType)
+	final void RegisterByteStreamHandler(wstring activatableClassId, wstring fileExtension, wstring mimeType)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterByteStreamHandler(activatableClassId, fileExtension, mimeType));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterByteStreamHandler(hstring(activatableClassId).handle, hstring(fileExtension).handle, hstring(mimeType).handle));
 	}
-	final void RegisterByteStreamHandlerWithSettings(HSTRING activatableClassId, HSTRING fileExtension, HSTRING mimeType, Windows.Foundation.Collections.IPropertySet configuration)
+	final void RegisterByteStreamHandlerWithSettings(wstring activatableClassId, wstring fileExtension, wstring mimeType, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterByteStreamHandlerWithSettings(activatableClassId, fileExtension, mimeType, configuration));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterByteStreamHandlerWithSettings(hstring(activatableClassId).handle, hstring(fileExtension).handle, hstring(mimeType).handle, configuration));
 	}
 	alias RegisterByteStreamHandler = RegisterByteStreamHandlerWithSettings;
-	final void RegisterAudioDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
+	final void RegisterAudioDecoder(wstring activatableClassId, GUID inputSubtype, GUID outputSubtype)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioDecoder(activatableClassId, inputSubtype, outputSubtype));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioDecoder(hstring(activatableClassId).handle, inputSubtype, outputSubtype));
 	}
-	final void RegisterAudioDecoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
+	final void RegisterAudioDecoderWithSettings(wstring activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioDecoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioDecoderWithSettings(hstring(activatableClassId).handle, inputSubtype, outputSubtype, configuration));
 	}
 	alias RegisterAudioDecoder = RegisterAudioDecoderWithSettings;
-	final void RegisterAudioEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
+	final void RegisterAudioEncoder(wstring activatableClassId, GUID inputSubtype, GUID outputSubtype)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioEncoder(activatableClassId, inputSubtype, outputSubtype));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioEncoder(hstring(activatableClassId).handle, inputSubtype, outputSubtype));
 	}
-	final void RegisterAudioEncoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
+	final void RegisterAudioEncoderWithSettings(wstring activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioEncoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioEncoderWithSettings(hstring(activatableClassId).handle, inputSubtype, outputSubtype, configuration));
 	}
 	alias RegisterAudioEncoder = RegisterAudioEncoderWithSettings;
-	final void RegisterVideoDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
+	final void RegisterVideoDecoder(wstring activatableClassId, GUID inputSubtype, GUID outputSubtype)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoDecoder(activatableClassId, inputSubtype, outputSubtype));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoDecoder(hstring(activatableClassId).handle, inputSubtype, outputSubtype));
 	}
-	final void RegisterVideoDecoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
+	final void RegisterVideoDecoderWithSettings(wstring activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoDecoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoDecoderWithSettings(hstring(activatableClassId).handle, inputSubtype, outputSubtype, configuration));
 	}
 	alias RegisterVideoDecoder = RegisterVideoDecoderWithSettings;
-	final void RegisterVideoEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
+	final void RegisterVideoEncoder(wstring activatableClassId, GUID inputSubtype, GUID outputSubtype)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoEncoder(activatableClassId, inputSubtype, outputSubtype));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoEncoder(hstring(activatableClassId).handle, inputSubtype, outputSubtype));
 	}
-	final void RegisterVideoEncoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
+	final void RegisterVideoEncoderWithSettings(wstring activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoEncoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoEncoderWithSettings(hstring(activatableClassId).handle, inputSubtype, outputSubtype, configuration));
 	}
 	alias RegisterVideoEncoder = RegisterVideoEncoderWithSettings;
 	final void RegisterMediaExtensionForAppService(Windows.Media.IMediaExtension extension, Windows.ApplicationModel.AppService.AppServiceConnection connection)
@@ -921,11 +921,11 @@ interface MediaMarkerTypes
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.IMediaMarkerTypesStatics);
 		return _staticInstance;
 	}
-	static HSTRING Bookmark()
+	static wstring Bookmark()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Bookmark(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1063,45 +1063,45 @@ extern(Windows):
 interface MusicDisplayProperties : Windows.Media.IMusicDisplayProperties, Windows.Media.IMusicDisplayProperties2, Windows.Media.IMusicDisplayProperties3
 {
 extern(Windows):
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.IMusicDisplayProperties)this.asInterface(uuid("6bbf0c59-d0a0-4d26-92a0-f978e1d18e7b"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.IMusicDisplayProperties)this.asInterface(uuid("6bbf0c59-d0a0-4d26-92a0-f978e1d18e7b"))).set_Title(value));
+		Debug.OK((cast(Windows.Media.IMusicDisplayProperties)this.asInterface(uuid("6bbf0c59-d0a0-4d26-92a0-f978e1d18e7b"))).set_Title(hstring(value).handle));
 	}
-	final HSTRING AlbumArtist()
+	final wstring AlbumArtist()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.IMusicDisplayProperties)this.asInterface(uuid("6bbf0c59-d0a0-4d26-92a0-f978e1d18e7b"))).get_AlbumArtist(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AlbumArtist(HSTRING value)
+	final void AlbumArtist(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.IMusicDisplayProperties)this.asInterface(uuid("6bbf0c59-d0a0-4d26-92a0-f978e1d18e7b"))).set_AlbumArtist(value));
+		Debug.OK((cast(Windows.Media.IMusicDisplayProperties)this.asInterface(uuid("6bbf0c59-d0a0-4d26-92a0-f978e1d18e7b"))).set_AlbumArtist(hstring(value).handle));
 	}
-	final HSTRING Artist()
+	final wstring Artist()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.IMusicDisplayProperties)this.asInterface(uuid("6bbf0c59-d0a0-4d26-92a0-f978e1d18e7b"))).get_Artist(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Artist(HSTRING value)
+	final void Artist(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.IMusicDisplayProperties)this.asInterface(uuid("6bbf0c59-d0a0-4d26-92a0-f978e1d18e7b"))).set_Artist(value));
+		Debug.OK((cast(Windows.Media.IMusicDisplayProperties)this.asInterface(uuid("6bbf0c59-d0a0-4d26-92a0-f978e1d18e7b"))).set_Artist(hstring(value).handle));
 	}
-	final HSTRING AlbumTitle()
+	final wstring AlbumTitle()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.IMusicDisplayProperties2)this.asInterface(uuid("00368462-97d3-44b9-b00f-008afcefaf18"))).get_AlbumTitle(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AlbumTitle(HSTRING value)
+	final void AlbumTitle(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.IMusicDisplayProperties2)this.asInterface(uuid("00368462-97d3-44b9-b00f-008afcefaf18"))).set_AlbumTitle(value));
+		Debug.OK((cast(Windows.Media.IMusicDisplayProperties2)this.asInterface(uuid("00368462-97d3-44b9-b00f-008afcefaf18"))).set_AlbumTitle(hstring(value).handle));
 	}
 	final UINT32 TrackNumber()
 	{
@@ -1432,15 +1432,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.ISystemMediaTransportControlsDisplayUpdater)this.asInterface(uuid("8abbc53e-fa55-4ecf-ad8e-c984e5dd1550"))).set_Type(value));
 	}
-	final HSTRING AppMediaId()
+	final wstring AppMediaId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.ISystemMediaTransportControlsDisplayUpdater)this.asInterface(uuid("8abbc53e-fa55-4ecf-ad8e-c984e5dd1550"))).get_AppMediaId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AppMediaId(HSTRING value)
+	final void AppMediaId(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.ISystemMediaTransportControlsDisplayUpdater)this.asInterface(uuid("8abbc53e-fa55-4ecf-ad8e-c984e5dd1550"))).set_AppMediaId(value));
+		Debug.OK((cast(Windows.Media.ISystemMediaTransportControlsDisplayUpdater)this.asInterface(uuid("8abbc53e-fa55-4ecf-ad8e-c984e5dd1550"))).set_AppMediaId(hstring(value).handle));
 	}
 	final Windows.Storage.Streams.RandomAccessStreamReference Thumbnail()
 	{
@@ -1561,25 +1561,25 @@ extern(Windows):
 interface VideoDisplayProperties : Windows.Media.IVideoDisplayProperties, Windows.Media.IVideoDisplayProperties2
 {
 extern(Windows):
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.IVideoDisplayProperties)this.asInterface(uuid("5609fdb1-5d2d-4872-8170-45dee5bc2f5c"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.IVideoDisplayProperties)this.asInterface(uuid("5609fdb1-5d2d-4872-8170-45dee5bc2f5c"))).set_Title(value));
+		Debug.OK((cast(Windows.Media.IVideoDisplayProperties)this.asInterface(uuid("5609fdb1-5d2d-4872-8170-45dee5bc2f5c"))).set_Title(hstring(value).handle));
 	}
-	final HSTRING Subtitle()
+	final wstring Subtitle()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.IVideoDisplayProperties)this.asInterface(uuid("5609fdb1-5d2d-4872-8170-45dee5bc2f5c"))).get_Subtitle(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Subtitle(HSTRING value)
+	final void Subtitle(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.IVideoDisplayProperties)this.asInterface(uuid("5609fdb1-5d2d-4872-8170-45dee5bc2f5c"))).set_Subtitle(value));
+		Debug.OK((cast(Windows.Media.IVideoDisplayProperties)this.asInterface(uuid("5609fdb1-5d2d-4872-8170-45dee5bc2f5c"))).set_Subtitle(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) Genres()
 	{
@@ -1597,11 +1597,11 @@ interface VideoEffects
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.IVideoEffectsStatics);
 		return _staticInstance;
 	}
-	static HSTRING VideoStabilization()
+	static wstring VideoStabilization()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_VideoStabilization(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1626,11 +1626,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.IVideoFrame)this.asInterface(uuid("0cc06625-90fc-4c92-bd95-7ded21819d1c"))).get_Direct3DSurface(&_ret));
 		return _ret;
 	}
-	final HSTRING Type()
+	final wstring Type()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.IMediaFrame)this.asInterface(uuid("bfb52f8c-5943-47d8-8e10-05308aa5fbd0"))).get_Type(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsReadOnly()
 	{

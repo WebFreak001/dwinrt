@@ -376,17 +376,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.Connectivity.IAttributedNetworkUsage)this.asInterface(uuid("f769b039-eca2-45eb-ade1-b0368b756c49"))).get_BytesReceived(&_ret));
 		return _ret;
 	}
-	final HSTRING AttributionId()
+	final wstring AttributionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Connectivity.IAttributedNetworkUsage)this.asInterface(uuid("f769b039-eca2-45eb-ade1-b0368b756c49"))).get_AttributionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING AttributionName()
+	final wstring AttributionName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Connectivity.IAttributedNetworkUsage)this.asInterface(uuid("f769b039-eca2-45eb-ade1-b0368b756c49"))).get_AttributionName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamReference AttributionThumbnail()
 	{
@@ -399,45 +399,45 @@ extern(Windows):
 interface CellularApnContext : Windows.Networking.Connectivity.ICellularApnContext
 {
 extern(Windows):
-	final HSTRING ProviderId()
+	final wstring ProviderId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).get_ProviderId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ProviderId(HSTRING value)
+	final void ProviderId(wstring value)
 	{
-		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).set_ProviderId(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).set_ProviderId(hstring(value).handle));
 	}
-	final HSTRING AccessPointName()
+	final wstring AccessPointName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).get_AccessPointName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AccessPointName(HSTRING value)
+	final void AccessPointName(wstring value)
 	{
-		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).set_AccessPointName(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).set_AccessPointName(hstring(value).handle));
 	}
-	final HSTRING UserName()
+	final wstring UserName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).get_UserName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void UserName(HSTRING value)
+	final void UserName(wstring value)
 	{
-		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).set_UserName(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).set_UserName(hstring(value).handle));
 	}
-	final HSTRING Password()
+	final wstring Password()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).get_Password(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Password(HSTRING value)
+	final void Password(wstring value)
 	{
-		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).set_Password(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).set_Password(hstring(value).handle));
 	}
 	final bool IsCompressionEnabled()
 	{
@@ -505,11 +505,11 @@ extern(Windows):
 interface ConnectionProfile : Windows.Networking.Connectivity.IConnectionProfile, Windows.Networking.Connectivity.IConnectionProfile2, Windows.Networking.Connectivity.IConnectionProfile3
 {
 extern(Windows):
-	final HSTRING ProfileName()
+	final wstring ProfileName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile)this.asInterface(uuid("71ba143c-598e-49d0-84eb-8febaedcc195"))).get_ProfileName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Networking.Connectivity.NetworkConnectivityLevel GetNetworkConnectivityLevel()
 	{
@@ -1168,28 +1168,28 @@ extern(Windows):
 interface WlanConnectionProfileDetails : Windows.Networking.Connectivity.IWlanConnectionProfileDetails
 {
 extern(Windows):
-	final HSTRING GetConnectedSsid()
+	final wstring GetConnectedSsid()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Connectivity.IWlanConnectionProfileDetails)this.asInterface(uuid("562098cb-b35a-4bf1-a884-b7557e88ff86"))).abi_GetConnectedSsid(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface WwanConnectionProfileDetails : Windows.Networking.Connectivity.IWwanConnectionProfileDetails
 {
 extern(Windows):
-	final HSTRING HomeProviderId()
+	final wstring HomeProviderId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Connectivity.IWwanConnectionProfileDetails)this.asInterface(uuid("0e4da8fe-835f-4df3-82fd-df556ebc09ef"))).get_HomeProviderId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING AccessPointName()
+	final wstring AccessPointName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Connectivity.IWwanConnectionProfileDetails)this.asInterface(uuid("0e4da8fe-835f-4df3-82fd-df556ebc09ef"))).get_AccessPointName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Networking.Connectivity.WwanNetworkRegistrationState GetNetworkRegistrationState()
 	{

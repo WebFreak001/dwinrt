@@ -363,11 +363,11 @@ extern(Windows):
 interface HolographicDisplay : Windows.Graphics.Holographic.IHolographicDisplay
 {
 extern(Windows):
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Holographic.IHolographicDisplay)this.asInterface(uuid("9acea414-1d9f-4090-a388-90c06f6eae9c"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Size MaxViewportSize()
 	{

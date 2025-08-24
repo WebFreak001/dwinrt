@@ -88,47 +88,47 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation)this.asInterface(uuid("54dfd981-1968-4ca3-b958-e595d16505eb"))).get_Id(&_ret));
 		return _ret;
 	}
-	final HSTRING OperatingSystem()
+	final wstring OperatingSystem()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation)this.asInterface(uuid("54dfd981-1968-4ca3-b958-e595d16505eb"))).get_OperatingSystem(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING FriendlyName()
+	final wstring FriendlyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation)this.asInterface(uuid("54dfd981-1968-4ca3-b958-e595d16505eb"))).get_FriendlyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SystemManufacturer()
+	final wstring SystemManufacturer()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation)this.asInterface(uuid("54dfd981-1968-4ca3-b958-e595d16505eb"))).get_SystemManufacturer(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SystemProductName()
+	final wstring SystemProductName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation)this.asInterface(uuid("54dfd981-1968-4ca3-b958-e595d16505eb"))).get_SystemProductName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SystemSku()
+	final wstring SystemSku()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation)this.asInterface(uuid("54dfd981-1968-4ca3-b958-e595d16505eb"))).get_SystemSku(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SystemHardwareVersion()
+	final wstring SystemHardwareVersion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation2)this.asInterface(uuid("ffb35923-bb26-4d6a-81bc-165aee0ad754"))).get_SystemHardwareVersion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SystemFirmwareVersion()
+	final wstring SystemFirmwareVersion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation2)this.asInterface(uuid("ffb35923-bb26-4d6a-81bc-165aee0ad754"))).get_SystemFirmwareVersion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static EasClientDeviceInformation New()
 	{

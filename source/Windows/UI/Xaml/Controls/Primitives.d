@@ -1847,53 +1847,53 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings)this.asInterface(uuid("56c71483-64e1-477c-8a0b-cb2f3334b9b0"))).get_MinViewWidth(&_ret));
 		return _ret;
 	}
-	final HSTRING HeaderText()
+	final wstring HeaderText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings)this.asInterface(uuid("56c71483-64e1-477c-8a0b-cb2f3334b9b0"))).get_HeaderText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING WeekDay1()
+	final wstring WeekDay1()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings)this.asInterface(uuid("56c71483-64e1-477c-8a0b-cb2f3334b9b0"))).get_WeekDay1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING WeekDay2()
+	final wstring WeekDay2()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings)this.asInterface(uuid("56c71483-64e1-477c-8a0b-cb2f3334b9b0"))).get_WeekDay2(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING WeekDay3()
+	final wstring WeekDay3()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings)this.asInterface(uuid("56c71483-64e1-477c-8a0b-cb2f3334b9b0"))).get_WeekDay3(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING WeekDay4()
+	final wstring WeekDay4()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings)this.asInterface(uuid("56c71483-64e1-477c-8a0b-cb2f3334b9b0"))).get_WeekDay4(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING WeekDay5()
+	final wstring WeekDay5()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings)this.asInterface(uuid("56c71483-64e1-477c-8a0b-cb2f3334b9b0"))).get_WeekDay5(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING WeekDay6()
+	final wstring WeekDay6()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings)this.asInterface(uuid("56c71483-64e1-477c-8a0b-cb2f3334b9b0"))).get_WeekDay6(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING WeekDay7()
+	final wstring WeekDay7()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings)this.asInterface(uuid("56c71483-64e1-477c-8a0b-cb2f3334b9b0"))).get_WeekDay7(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool HasMoreContentAfter()
 	{
@@ -3723,16 +3723,16 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Primitives.IJumpListItemBackgroundConverter)this.asInterface(uuid("81177858-d224-410c-b16c-c5b6bb6188b2"))).set_Disabled(value));
 	}
-	final IInspectable Convert(IInspectable value, Windows.UI.Xaml.Interop.TypeName targetType, IInspectable parameter, HSTRING language)
+	final IInspectable Convert(IInspectable value, Windows.UI.Xaml.Interop.TypeName targetType, IInspectable parameter, wstring language)
 	{
 		IInspectable _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Data.IValueConverter)this.asInterface(uuid("e6f2fef0-0712-487f-b313-f300b8d79aa1"))).abi_Convert(value, targetType, parameter, language, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Data.IValueConverter)this.asInterface(uuid("e6f2fef0-0712-487f-b313-f300b8d79aa1"))).abi_Convert(value, targetType, parameter, hstring(language).handle, &_ret));
 		return _ret;
 	}
-	final IInspectable ConvertBack(IInspectable value, Windows.UI.Xaml.Interop.TypeName targetType, IInspectable parameter, HSTRING language)
+	final IInspectable ConvertBack(IInspectable value, Windows.UI.Xaml.Interop.TypeName targetType, IInspectable parameter, wstring language)
 	{
 		IInspectable _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Data.IValueConverter)this.asInterface(uuid("e6f2fef0-0712-487f-b313-f300b8d79aa1"))).abi_ConvertBack(value, targetType, parameter, language, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Data.IValueConverter)this.asInterface(uuid("e6f2fef0-0712-487f-b313-f300b8d79aa1"))).abi_ConvertBack(value, targetType, parameter, hstring(language).handle, &_ret));
 		return _ret;
 	}
 
@@ -3785,16 +3785,16 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Primitives.IJumpListItemForegroundConverter)this.asInterface(uuid("1590ed38-c504-4796-a63a-5bfc9eefaae8"))).set_Disabled(value));
 	}
-	final IInspectable Convert(IInspectable value, Windows.UI.Xaml.Interop.TypeName targetType, IInspectable parameter, HSTRING language)
+	final IInspectable Convert(IInspectable value, Windows.UI.Xaml.Interop.TypeName targetType, IInspectable parameter, wstring language)
 	{
 		IInspectable _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Data.IValueConverter)this.asInterface(uuid("e6f2fef0-0712-487f-b313-f300b8d79aa1"))).abi_Convert(value, targetType, parameter, language, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Data.IValueConverter)this.asInterface(uuid("e6f2fef0-0712-487f-b313-f300b8d79aa1"))).abi_Convert(value, targetType, parameter, hstring(language).handle, &_ret));
 		return _ret;
 	}
-	final IInspectable ConvertBack(IInspectable value, Windows.UI.Xaml.Interop.TypeName targetType, IInspectable parameter, HSTRING language)
+	final IInspectable ConvertBack(IInspectable value, Windows.UI.Xaml.Interop.TypeName targetType, IInspectable parameter, wstring language)
 	{
 		IInspectable _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Data.IValueConverter)this.asInterface(uuid("e6f2fef0-0712-487f-b313-f300b8d79aa1"))).abi_ConvertBack(value, targetType, parameter, language, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Data.IValueConverter)this.asInterface(uuid("e6f2fef0-0712-487f-b313-f300b8d79aa1"))).abi_ConvertBack(value, targetType, parameter, hstring(language).handle, &_ret));
 		return _ret;
 	}
 
@@ -5414,15 +5414,15 @@ interface PickerFlyoutBase : Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Win
 		Debug.OK(staticInstance.get_TitleProperty(&_ret));
 		return _ret;
 	}
-	static HSTRING GetTitle(Windows.UI.Xaml.DependencyObject element)
+	static wstring GetTitle(Windows.UI.Xaml.DependencyObject element)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetTitle(element, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static void SetTitle(Windows.UI.Xaml.DependencyObject element, HSTRING value)
+	static void SetTitle(Windows.UI.Xaml.DependencyObject element, wstring value)
 	{
-		Debug.OK(staticInstance.abi_SetTitle(element, value));
+		Debug.OK(staticInstance.abi_SetTitle(element, hstring(value).handle));
 	}
 	static PickerFlyoutBase New()
 	{
@@ -6930,15 +6930,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Primitives.ISelector)this.asInterface(uuid("e30eb3a5-b36b-42dc-8527-cd25136c083c"))).set_SelectedValue(value));
 	}
-	final HSTRING SelectedValuePath()
+	final wstring SelectedValuePath()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Primitives.ISelector)this.asInterface(uuid("e30eb3a5-b36b-42dc-8527-cd25136c083c"))).get_SelectedValuePath(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SelectedValuePath(HSTRING value)
+	final void SelectedValuePath(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.Primitives.ISelector)this.asInterface(uuid("e30eb3a5-b36b-42dc-8527-cd25136c083c"))).set_SelectedValuePath(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.Primitives.ISelector)this.asInterface(uuid("e30eb3a5-b36b-42dc-8527-cd25136c083c"))).set_SelectedValuePath(hstring(value).handle));
 	}
 	final Windows.Foundation.IReference!(bool) IsSynchronizedWithCurrentItem()
 	{

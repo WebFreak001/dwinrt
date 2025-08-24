@@ -108,10 +108,10 @@ extern(Windows):
 		return _ret;
 	}
 	alias ConnectAsync = ConnectWithPasswordCredentialAsync;
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) ConnectWithPasswordCredentialAndSsidAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential, HSTRING ssid)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) ConnectWithPasswordCredentialAndSsidAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential, wstring ssid)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) _ret;
-		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).abi_ConnectWithPasswordCredentialAndSsidAsync(availableNetwork, reconnectionKind, passwordCredential, ssid, &_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).abi_ConnectWithPasswordCredentialAndSsidAsync(availableNetwork, reconnectionKind, passwordCredential, hstring(ssid).handle, &_ret));
 		return _ret;
 	}
 	alias ConnectAsync = ConnectWithPasswordCredentialAndSsidAsync;
@@ -132,16 +132,16 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_FindAllAdaptersAsync(&_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiAdapter) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiAdapter) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiAdapter) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiAccessStatus) RequestAccessAsync()
@@ -161,17 +161,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAvailableNetwork)this.asInterface(uuid("26e96246-183e-4704-9826-71b4a2f0f668"))).get_Uptime(&_ret));
 		return _ret;
 	}
-	final HSTRING Ssid()
+	final wstring Ssid()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAvailableNetwork)this.asInterface(uuid("26e96246-183e-4704-9826-71b4a2f0f668"))).get_Ssid(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Bssid()
+	final wstring Bssid()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAvailableNetwork)this.asInterface(uuid("26e96246-183e-4704-9826-71b4a2f0f668"))).get_Bssid(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 ChannelCenterFrequencyInKilohertz()
 	{

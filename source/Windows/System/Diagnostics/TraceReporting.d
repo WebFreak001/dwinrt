@@ -53,16 +53,16 @@ interface PlatformDiagnosticActions
 		Debug.OK(staticInstance.abi_IsScenarioEnabled(scenarioId, &_ret));
 		return _ret;
 	}
-	static bool TryEscalateScenario(GUID scenarioId, Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticEscalationType escalationType, HSTRING outputDirectory, bool timestampOutputDirectory, bool forceEscalationUpload, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) triggers)
+	static bool TryEscalateScenario(GUID scenarioId, Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticEscalationType escalationType, wstring outputDirectory, bool timestampOutputDirectory, bool forceEscalationUpload, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) triggers)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_TryEscalateScenario(scenarioId, escalationType, outputDirectory, timestampOutputDirectory, forceEscalationUpload, triggers, &_ret));
+		Debug.OK(staticInstance.abi_TryEscalateScenario(scenarioId, escalationType, hstring(outputDirectory).handle, timestampOutputDirectory, forceEscalationUpload, triggers, &_ret));
 		return _ret;
 	}
-	static Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActionState DownloadLatestSettingsForNamespace(HSTRING partner, HSTRING feature, bool isScenarioNamespace, bool downloadOverCostedNetwork, bool downloadOverBattery)
+	static Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActionState DownloadLatestSettingsForNamespace(wstring partner, wstring feature, bool isScenarioNamespace, bool downloadOverCostedNetwork, bool downloadOverBattery)
 	{
 		Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActionState _ret;
-		Debug.OK(staticInstance.abi_DownloadLatestSettingsForNamespace(partner, feature, isScenarioNamespace, downloadOverCostedNetwork, downloadOverBattery, &_ret));
+		Debug.OK(staticInstance.abi_DownloadLatestSettingsForNamespace(hstring(partner).handle, hstring(feature).handle, isScenarioNamespace, downloadOverCostedNetwork, downloadOverBattery, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(GUID) GetActiveScenarioList()

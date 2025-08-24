@@ -186,52 +186,52 @@ extern(Windows):
 interface CurrencyFormatter : Windows.Globalization.NumberFormatting.ICurrencyFormatter, Windows.Globalization.NumberFormatting.INumberParser, Windows.Globalization.NumberFormatting.INumberFormatter2, Windows.Globalization.NumberFormatting.INumberFormatter, Windows.Globalization.NumberFormatting.INumberFormatterOptions, Windows.Globalization.NumberFormatting.ICurrencyFormatter2, Windows.Globalization.NumberFormatting.ISignificantDigitsOption, Windows.Globalization.NumberFormatting.INumberRounderOption, Windows.Globalization.NumberFormatting.ISignedZeroOption
 {
 extern(Windows):
-	final HSTRING Currency()
+	final wstring Currency()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.ICurrencyFormatter)this.asInterface(uuid("11730ca5-4b00-41b2-b332-73b12a497d54"))).get_Currency(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("Currency may be read-only for releases after Windows 8.1. Instead, use a new CurrencyFormatter.")
-	final void Currency(HSTRING value)
+	final void Currency(wstring value)
 	{
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.ICurrencyFormatter)this.asInterface(uuid("11730ca5-4b00-41b2-b332-73b12a497d54"))).set_Currency(value));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.ICurrencyFormatter)this.asInterface(uuid("11730ca5-4b00-41b2-b332-73b12a497d54"))).set_Currency(hstring(value).handle));
 	}
-	final Windows.Foundation.IReference!(INT64) ParseInt(HSTRING text)
+	final Windows.Foundation.IReference!(INT64) ParseInt(wstring text)
 	{
 		Windows.Foundation.IReference!(INT64) _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseInt(text, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseInt(hstring(text).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(ulong) ParseUInt(HSTRING text)
+	final Windows.Foundation.IReference!(ulong) ParseUInt(wstring text)
 	{
 		Windows.Foundation.IReference!(ulong) _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseUInt(text, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseUInt(hstring(text).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(double) ParseDouble(HSTRING text)
+	final Windows.Foundation.IReference!(double) ParseDouble(wstring text)
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseDouble(text, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseDouble(hstring(text).handle, &_ret));
 		return _ret;
 	}
-	final HSTRING FormatInt(INT64 value)
+	final wstring FormatInt(INT64 value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter2)this.asInterface(uuid("d4a8c1f0-80d0-4b0d-a89e-882c1e8f8310"))).abi_FormatInt(value, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING FormatUInt(ulong value)
+	final wstring FormatUInt(ulong value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter2)this.asInterface(uuid("d4a8c1f0-80d0-4b0d-a89e-882c1e8f8310"))).abi_FormatUInt(value, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING FormatDouble(double value)
+	final wstring FormatDouble(double value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter2)this.asInterface(uuid("d4a8c1f0-80d0-4b0d-a89e-882c1e8f8310"))).abi_FormatDouble(value, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) Languages()
 	{
@@ -239,11 +239,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_Languages(&_ret));
 		return _ret;
 	}
-	final HSTRING GeographicRegion()
+	final wstring GeographicRegion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_GeographicRegion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 IntegerDigits()
 	{
@@ -285,27 +285,27 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).set_IsDecimalPointAlwaysDisplayed(value));
 	}
-	final HSTRING NumeralSystem()
+	final wstring NumeralSystem()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_NumeralSystem(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NumeralSystem(HSTRING value)
+	final void NumeralSystem(wstring value)
 	{
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).set_NumeralSystem(value));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).set_NumeralSystem(hstring(value).handle));
 	}
-	final HSTRING ResolvedLanguage()
+	final wstring ResolvedLanguage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_ResolvedLanguage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ResolvedGeographicRegion()
+	final wstring ResolvedGeographicRegion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_ResolvedGeographicRegion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Globalization.NumberFormatting.CurrencyFormatterMode Mode()
 	{
@@ -351,18 +351,18 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.ISignedZeroOption)this.asInterface(uuid("fd1cdd31-0a3c-49c4-a642-96a1564f4f30"))).set_IsZeroSigned(value));
 	}
-	static Windows.Globalization.NumberFormatting.CurrencyFormatter New(HSTRING currencyCode)
+	static Windows.Globalization.NumberFormatting.CurrencyFormatter New(wstring currencyCode)
 	{
 		auto factory = factory!(Windows.Globalization.NumberFormatting.ICurrencyFormatterFactory);
 		Windows.Globalization.NumberFormatting.CurrencyFormatter _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.ICurrencyFormatterFactory)factory.asInterface(uuid("86c7537e-b938-4aa2-84b0-2c33dc5b1450"))).abi_CreateCurrencyFormatterCode(currencyCode, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.ICurrencyFormatterFactory)factory.asInterface(uuid("86c7537e-b938-4aa2-84b0-2c33dc5b1450"))).abi_CreateCurrencyFormatterCode(hstring(currencyCode).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Globalization.NumberFormatting.CurrencyFormatter New(HSTRING currencyCode, Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion)
+	static Windows.Globalization.NumberFormatting.CurrencyFormatter New(wstring currencyCode, Windows.Foundation.Collections.IIterable!(HSTRING) languages, wstring geographicRegion)
 	{
 		auto factory = factory!(Windows.Globalization.NumberFormatting.ICurrencyFormatterFactory);
 		Windows.Globalization.NumberFormatting.CurrencyFormatter _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.ICurrencyFormatterFactory)factory.asInterface(uuid("86c7537e-b938-4aa2-84b0-2c33dc5b1450"))).abi_CreateCurrencyFormatterCodeContext(currencyCode, languages, geographicRegion, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.ICurrencyFormatterFactory)factory.asInterface(uuid("86c7537e-b938-4aa2-84b0-2c33dc5b1450"))).abi_CreateCurrencyFormatterCodeContext(hstring(currencyCode).handle, languages, hstring(geographicRegion).handle, &_ret));
 		return _ret;
 	}
 }
@@ -376,11 +376,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_Languages(&_ret));
 		return _ret;
 	}
-	final HSTRING GeographicRegion()
+	final wstring GeographicRegion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_GeographicRegion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 IntegerDigits()
 	{
@@ -422,65 +422,65 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).set_IsDecimalPointAlwaysDisplayed(value));
 	}
-	final HSTRING NumeralSystem()
+	final wstring NumeralSystem()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_NumeralSystem(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NumeralSystem(HSTRING value)
+	final void NumeralSystem(wstring value)
 	{
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).set_NumeralSystem(value));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).set_NumeralSystem(hstring(value).handle));
 	}
-	final HSTRING ResolvedLanguage()
+	final wstring ResolvedLanguage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_ResolvedLanguage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ResolvedGeographicRegion()
+	final wstring ResolvedGeographicRegion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_ResolvedGeographicRegion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING FormatInt(INT64 value)
+	final wstring FormatInt(INT64 value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatInt(value, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias Format = FormatInt;
-	final HSTRING FormatUInt(ulong value)
+	final wstring FormatUInt(ulong value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatUInt(value, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias Format = FormatUInt;
-	final HSTRING FormatDouble(double value)
+	final wstring FormatDouble(double value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatDouble(value, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias Format = FormatDouble;
-	final Windows.Foundation.IReference!(INT64) ParseInt(HSTRING text)
+	final Windows.Foundation.IReference!(INT64) ParseInt(wstring text)
 	{
 		Windows.Foundation.IReference!(INT64) _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseInt(text, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseInt(hstring(text).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(ulong) ParseUInt(HSTRING text)
+	final Windows.Foundation.IReference!(ulong) ParseUInt(wstring text)
 	{
 		Windows.Foundation.IReference!(ulong) _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseUInt(text, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseUInt(hstring(text).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(double) ParseDouble(HSTRING text)
+	final Windows.Foundation.IReference!(double) ParseDouble(wstring text)
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseDouble(text, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseDouble(hstring(text).handle, &_ret));
 		return _ret;
 	}
 	final INT32 SignificantDigits()
@@ -519,11 +519,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(DecimalFormatter).abi_ActivateInstance(&ret));
 		return cast(DecimalFormatter) ret;
 	}
-	static Windows.Globalization.NumberFormatting.DecimalFormatter New(Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion)
+	static Windows.Globalization.NumberFormatting.DecimalFormatter New(Windows.Foundation.Collections.IIterable!(HSTRING) languages, wstring geographicRegion)
 	{
 		auto factory = factory!(Windows.Globalization.NumberFormatting.IDecimalFormatterFactory);
 		Windows.Globalization.NumberFormatting.DecimalFormatter _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.IDecimalFormatterFactory)factory.asInterface(uuid("0d018c9a-e393-46b8-b830-7a69c8f89fbb"))).abi_CreateDecimalFormatter(languages, geographicRegion, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.IDecimalFormatterFactory)factory.asInterface(uuid("0d018c9a-e393-46b8-b830-7a69c8f89fbb"))).abi_CreateDecimalFormatter(languages, hstring(geographicRegion).handle, &_ret));
 		return _ret;
 	}
 }
@@ -604,27 +604,27 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumeralSystemTranslator)this.asInterface(uuid("28f5bc2c-8c23-4234-ad2e-fa5a3a426e9b"))).get_Languages(&_ret));
 		return _ret;
 	}
-	final HSTRING ResolvedLanguage()
+	final wstring ResolvedLanguage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumeralSystemTranslator)this.asInterface(uuid("28f5bc2c-8c23-4234-ad2e-fa5a3a426e9b"))).get_ResolvedLanguage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING NumeralSystem()
+	final wstring NumeralSystem()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumeralSystemTranslator)this.asInterface(uuid("28f5bc2c-8c23-4234-ad2e-fa5a3a426e9b"))).get_NumeralSystem(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NumeralSystem(HSTRING value)
+	final void NumeralSystem(wstring value)
 	{
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumeralSystemTranslator)this.asInterface(uuid("28f5bc2c-8c23-4234-ad2e-fa5a3a426e9b"))).set_NumeralSystem(value));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumeralSystemTranslator)this.asInterface(uuid("28f5bc2c-8c23-4234-ad2e-fa5a3a426e9b"))).set_NumeralSystem(hstring(value).handle));
 	}
-	final HSTRING TranslateNumerals(HSTRING value)
+	final wstring TranslateNumerals(wstring value)
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumeralSystemTranslator)this.asInterface(uuid("28f5bc2c-8c23-4234-ad2e-fa5a3a426e9b"))).abi_TranslateNumerals(value, &_ret));
-		return _ret;
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumeralSystemTranslator)this.asInterface(uuid("28f5bc2c-8c23-4234-ad2e-fa5a3a426e9b"))).abi_TranslateNumerals(hstring(value).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
 	static NumeralSystemTranslator New()
 	{
@@ -650,11 +650,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_Languages(&_ret));
 		return _ret;
 	}
-	final HSTRING GeographicRegion()
+	final wstring GeographicRegion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_GeographicRegion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 IntegerDigits()
 	{
@@ -696,65 +696,65 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).set_IsDecimalPointAlwaysDisplayed(value));
 	}
-	final HSTRING NumeralSystem()
+	final wstring NumeralSystem()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_NumeralSystem(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NumeralSystem(HSTRING value)
+	final void NumeralSystem(wstring value)
 	{
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).set_NumeralSystem(value));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).set_NumeralSystem(hstring(value).handle));
 	}
-	final HSTRING ResolvedLanguage()
+	final wstring ResolvedLanguage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_ResolvedLanguage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ResolvedGeographicRegion()
+	final wstring ResolvedGeographicRegion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_ResolvedGeographicRegion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING FormatInt(INT64 value)
+	final wstring FormatInt(INT64 value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatInt(value, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias Format = FormatInt;
-	final HSTRING FormatUInt(ulong value)
+	final wstring FormatUInt(ulong value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatUInt(value, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias Format = FormatUInt;
-	final HSTRING FormatDouble(double value)
+	final wstring FormatDouble(double value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatDouble(value, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias Format = FormatDouble;
-	final Windows.Foundation.IReference!(INT64) ParseInt(HSTRING text)
+	final Windows.Foundation.IReference!(INT64) ParseInt(wstring text)
 	{
 		Windows.Foundation.IReference!(INT64) _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseInt(text, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseInt(hstring(text).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(ulong) ParseUInt(HSTRING text)
+	final Windows.Foundation.IReference!(ulong) ParseUInt(wstring text)
 	{
 		Windows.Foundation.IReference!(ulong) _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseUInt(text, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseUInt(hstring(text).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(double) ParseDouble(HSTRING text)
+	final Windows.Foundation.IReference!(double) ParseDouble(wstring text)
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseDouble(text, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseDouble(hstring(text).handle, &_ret));
 		return _ret;
 	}
 	final INT32 SignificantDigits()
@@ -793,11 +793,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(PercentFormatter).abi_ActivateInstance(&ret));
 		return cast(PercentFormatter) ret;
 	}
-	static Windows.Globalization.NumberFormatting.PercentFormatter New(Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion)
+	static Windows.Globalization.NumberFormatting.PercentFormatter New(Windows.Foundation.Collections.IIterable!(HSTRING) languages, wstring geographicRegion)
 	{
 		auto factory = factory!(Windows.Globalization.NumberFormatting.IPercentFormatterFactory);
 		Windows.Globalization.NumberFormatting.PercentFormatter _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.IPercentFormatterFactory)factory.asInterface(uuid("b7828aef-fed4-4018-a6e2-e09961e03765"))).abi_CreatePercentFormatter(languages, geographicRegion, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.IPercentFormatterFactory)factory.asInterface(uuid("b7828aef-fed4-4018-a6e2-e09961e03765"))).abi_CreatePercentFormatter(languages, hstring(geographicRegion).handle, &_ret));
 		return _ret;
 	}
 }
@@ -811,11 +811,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_Languages(&_ret));
 		return _ret;
 	}
-	final HSTRING GeographicRegion()
+	final wstring GeographicRegion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_GeographicRegion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 IntegerDigits()
 	{
@@ -857,65 +857,65 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).set_IsDecimalPointAlwaysDisplayed(value));
 	}
-	final HSTRING NumeralSystem()
+	final wstring NumeralSystem()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_NumeralSystem(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NumeralSystem(HSTRING value)
+	final void NumeralSystem(wstring value)
 	{
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).set_NumeralSystem(value));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).set_NumeralSystem(hstring(value).handle));
 	}
-	final HSTRING ResolvedLanguage()
+	final wstring ResolvedLanguage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_ResolvedLanguage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ResolvedGeographicRegion()
+	final wstring ResolvedGeographicRegion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatterOptions)this.asInterface(uuid("80332d21-aee1-4a39-baa2-07ed8c96daf6"))).get_ResolvedGeographicRegion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING FormatInt(INT64 value)
+	final wstring FormatInt(INT64 value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatInt(value, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias Format = FormatInt;
-	final HSTRING FormatUInt(ulong value)
+	final wstring FormatUInt(ulong value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatUInt(value, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias Format = FormatUInt;
-	final HSTRING FormatDouble(double value)
+	final wstring FormatDouble(double value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatDouble(value, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias Format = FormatDouble;
-	final Windows.Foundation.IReference!(INT64) ParseInt(HSTRING text)
+	final Windows.Foundation.IReference!(INT64) ParseInt(wstring text)
 	{
 		Windows.Foundation.IReference!(INT64) _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseInt(text, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseInt(hstring(text).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(ulong) ParseUInt(HSTRING text)
+	final Windows.Foundation.IReference!(ulong) ParseUInt(wstring text)
 	{
 		Windows.Foundation.IReference!(ulong) _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseUInt(text, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseUInt(hstring(text).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IReference!(double) ParseDouble(HSTRING text)
+	final Windows.Foundation.IReference!(double) ParseDouble(wstring text)
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseDouble(text, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberParser)this.asInterface(uuid("e6659412-4a13-4a53-83a1-392fbe4cff9f"))).abi_ParseDouble(hstring(text).handle, &_ret));
 		return _ret;
 	}
 	final INT32 SignificantDigits()
@@ -954,11 +954,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(PermilleFormatter).abi_ActivateInstance(&ret));
 		return cast(PermilleFormatter) ret;
 	}
-	static Windows.Globalization.NumberFormatting.PermilleFormatter New(Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion)
+	static Windows.Globalization.NumberFormatting.PermilleFormatter New(Windows.Foundation.Collections.IIterable!(HSTRING) languages, wstring geographicRegion)
 	{
 		auto factory = factory!(Windows.Globalization.NumberFormatting.IPermilleFormatterFactory);
 		Windows.Globalization.NumberFormatting.PermilleFormatter _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.IPermilleFormatterFactory)factory.asInterface(uuid("2b37b4ac-e638-4ed5-a998-62f6b06a49ae"))).abi_CreatePermilleFormatter(languages, geographicRegion, &_ret));
+		Debug.OK((cast(Windows.Globalization.NumberFormatting.IPermilleFormatterFactory)factory.asInterface(uuid("2b37b4ac-e638-4ed5-a998-62f6b06a49ae"))).abi_CreatePermilleFormatter(languages, hstring(geographicRegion).handle, &_ret));
 		return _ret;
 	}
 }

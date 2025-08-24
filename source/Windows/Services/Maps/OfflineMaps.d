@@ -52,17 +52,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage)this.asInterface(uuid("a797673b-a5b5-4144-b525-e68c8862664b"))).get_Status(&_ret));
 		return _ret;
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage)this.asInterface(uuid("a797673b-a5b5-4144-b525-e68c8862664b"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING EnclosingRegionName()
+	final wstring EnclosingRegionName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage)this.asInterface(uuid("a797673b-a5b5-4144-b525-e68c8862664b"))).get_EnclosingRegionName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final ulong EstimatedSizeInBytes()
 	{

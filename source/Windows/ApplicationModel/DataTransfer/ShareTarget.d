@@ -44,15 +44,15 @@ extern(Windows):
 interface QuickLink : Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink
 {
 extern(Windows):
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink)this.asInterface(uuid("603e4308-f0be-4adc-acc9-8b27ab9cf556"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink)this.asInterface(uuid("603e4308-f0be-4adc-acc9-8b27ab9cf556"))).set_Title(value));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink)this.asInterface(uuid("603e4308-f0be-4adc-acc9-8b27ab9cf556"))).set_Title(hstring(value).handle));
 	}
 	final Windows.Storage.Streams.RandomAccessStreamReference Thumbnail()
 	{
@@ -64,15 +64,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink)this.asInterface(uuid("603e4308-f0be-4adc-acc9-8b27ab9cf556"))).set_Thumbnail(value));
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink)this.asInterface(uuid("603e4308-f0be-4adc-acc9-8b27ab9cf556"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Id(HSTRING value)
+	final void Id(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink)this.asInterface(uuid("603e4308-f0be-4adc-acc9-8b27ab9cf556"))).set_Id(value));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink)this.asInterface(uuid("603e4308-f0be-4adc-acc9-8b27ab9cf556"))).set_Id(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) SupportedDataFormats()
 	{
@@ -103,11 +103,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation)this.asInterface(uuid("2246bab8-d0f8-41c1-a82a-4137db6504fb"))).get_Data(&_ret));
 		return _ret;
 	}
-	final HSTRING QuickLinkId()
+	final wstring QuickLinkId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation)this.asInterface(uuid("2246bab8-d0f8-41c1-a82a-4137db6504fb"))).get_QuickLinkId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void RemoveThisQuickLink()
 	{
@@ -134,9 +134,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation)this.asInterface(uuid("2246bab8-d0f8-41c1-a82a-4137db6504fb"))).abi_ReportCompleted());
 	}
-	final void ReportError(HSTRING value)
+	final void ReportError(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation)this.asInterface(uuid("2246bab8-d0f8-41c1-a82a-4137db6504fb"))).abi_ReportError(value));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation)this.asInterface(uuid("2246bab8-d0f8-41c1-a82a-4137db6504fb"))).abi_ReportError(hstring(value).handle));
 	}
 	final void DismissUI()
 	{

@@ -879,11 +879,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Sensors.IAccelerometer)this.asInterface(uuid("df184548-2711-4da7-8098-4b82205d3c7d"))).remove_Shaken(token));
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Sensors.IAccelerometerDeviceId)this.asInterface(uuid("7eac64a9-97d5-446d-ab5a-917df9b96a2c"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void ReadingTransform(Windows.Graphics.Display.DisplayOrientations value)
 	{
@@ -1004,11 +1004,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Sensors.IActivitySensor)this.asInterface(uuid("cd7a630c-fb5f-48eb-b09b-a2708d1c61ef"))).get_PowerInMilliwatts(&_ret));
 		return _ret;
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Sensors.IActivitySensor)this.asInterface(uuid("cd7a630c-fb5f-48eb-b09b-a2708d1c61ef"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivityType) SupportedActivities()
 	{
@@ -1045,16 +1045,16 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDefaultAsync(&_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.ActivitySensor) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.ActivitySensor) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.ActivitySensor) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivitySensorReading)) GetSystemHistoryAsync(Windows.Foundation.DateTime fromTime)
@@ -1137,11 +1137,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Sensors.IAltimeter)this.asInterface(uuid("72f057fd-8f04-49f1-b4a7-f4e363b701a2"))).abi_GetCurrentReading(&_ret));
 		return _ret;
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Sensors.IAltimeter)this.asInterface(uuid("72f057fd-8f04-49f1-b4a7-f4e363b701a2"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final UINT32 MinimumReportInterval()
 	{
@@ -1221,11 +1221,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Sensors.IBarometer)this.asInterface(uuid("934475a8-78bf-452f-b017-f0209ce6dab4"))).abi_GetCurrentReading(&_ret));
 		return _ret;
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Sensors.IBarometer)this.asInterface(uuid("934475a8-78bf-452f-b017-f0209ce6dab4"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final UINT32 MinimumReportInterval()
 	{
@@ -1331,11 +1331,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Sensors.ICompass)this.asInterface(uuid("292ffa94-1b45-403c-ba06-b106dba69a64"))).remove_ReadingChanged(token));
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Sensors.ICompassDeviceId)this.asInterface(uuid("d181ca29-b085-4b1d-870a-4ff57ba74fd4"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void ReadingTransform(Windows.Graphics.Display.DisplayOrientations value)
 	{
@@ -1437,11 +1437,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Sensors.IGyrometer)this.asInterface(uuid("fdb9a9c4-84b1-4ca2-9763-9b589506c70c"))).remove_ReadingChanged(token));
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Sensors.IGyrometerDeviceId)this.asInterface(uuid("1ee5e978-89a2-4275-9e95-7126f4708760"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void ReadingTransform(Windows.Graphics.Display.DisplayOrientations value)
 	{
@@ -1543,11 +1543,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Sensors.IInclinometer)this.asInterface(uuid("2648ca6f-2286-406f-9161-f0c4bd806ebf"))).remove_ReadingChanged(token));
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Sensors.IInclinometerDeviceId)this.asInterface(uuid("01e91982-41ff-4406-ae83-62210ff16fe3"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void ReadingTransform(Windows.Graphics.Display.DisplayOrientations value)
 	{
@@ -1661,11 +1661,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Sensors.ILightSensor)this.asInterface(uuid("f84c0718-0c54-47ae-922e-789f57fb03a0"))).remove_ReadingChanged(token));
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Sensors.ILightSensorDeviceId)this.asInterface(uuid("7fee49f8-0afb-4f51-87f0-6c26375ce94f"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 
 	private static Windows.Devices.Sensors.ILightSensorStatics _staticInstance;
@@ -1745,11 +1745,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Sensors.IMagnetometer)this.asInterface(uuid("484f626e-d3c9-4111-b3f6-2cf1faa418d5"))).remove_ReadingChanged(token));
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Sensors.IMagnetometerDeviceId)this.asInterface(uuid("58b498c2-7e4b-404c-9fc5-5de8b40ebae3"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void ReadingTransform(Windows.Graphics.Display.DisplayOrientations value)
 	{
@@ -1857,11 +1857,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Sensors.IOrientationSensor)this.asInterface(uuid("5e354635-cf6b-4c63-abd8-10252b0bf6ec"))).remove_ReadingChanged(token));
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Sensors.IOrientationSensorDeviceId)this.asInterface(uuid("5a69b648-4c29-49ec-b28f-ea1d117b66f0"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void ReadingTransform(Windows.Graphics.Display.DisplayOrientations value)
 	{
@@ -1937,11 +1937,11 @@ extern(Windows):
 interface Pedometer : Windows.Devices.Sensors.IPedometer, Windows.Devices.Sensors.IPedometer2
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Sensors.IPedometer)this.asInterface(uuid("9a1e013d-3d98-45f8-8920-8e4ecaca5f97"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final double PowerInMilliwatts()
 	{
@@ -1988,10 +1988,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.IPedometerStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Pedometer) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Pedometer) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Pedometer) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Pedometer) GetDefaultAsync()
@@ -2000,11 +2000,11 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDefaultAsync(&_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.PedometerReading)) GetSystemHistoryAsync(Windows.Foundation.DateTime fromTime)
 	{
@@ -2075,11 +2075,11 @@ extern(Windows):
 interface ProximitySensor : Windows.Devices.Sensors.IProximitySensor
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Sensors.IProximitySensor)this.asInterface(uuid("54c076b8-ecfb-4944-b928-74fc504d47ee"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IReference!(UINT32) MaxDistanceInMillimeters()
 	{
@@ -2122,16 +2122,16 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.IProximitySensorStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Devices.Sensors.ProximitySensor FromId(HSTRING sensorId)
+	static Windows.Devices.Sensors.ProximitySensor FromId(wstring sensorId)
 	{
 		Windows.Devices.Sensors.ProximitySensor _ret;
-		Debug.OK(staticInstance.abi_FromId(sensorId, &_ret));
+		Debug.OK(staticInstance.abi_FromId(hstring(sensorId).handle, &_ret));
 		return _ret;
 	}
 }
@@ -2193,11 +2193,11 @@ extern(Windows):
 interface SensorDataThresholdTriggerDetails : Windows.Devices.Sensors.ISensorDataThresholdTriggerDetails
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Sensors.ISensorDataThresholdTriggerDetails)this.asInterface(uuid("9106f1b7-e88d-48b1-bc90-619c7b349391"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.Sensors.SensorType SensorType()
 	{
@@ -2314,11 +2314,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Sensors.ISimpleOrientationSensor)this.asInterface(uuid("5ff53856-214a-4dee-a3f9-616f1ab06ffd"))).remove_OrientationChanged(token));
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Sensors.ISimpleOrientationSensorDeviceId)this.asInterface(uuid("fbc00acb-3b76-41f6-8091-30efe646d3cf"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void ReadingTransform(Windows.Graphics.Display.DisplayOrientations value)
 	{

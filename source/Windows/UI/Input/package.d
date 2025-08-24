@@ -1846,11 +1846,11 @@ extern(Windows):
 interface RadialControllerMenuItem : Windows.UI.Input.IRadialControllerMenuItem
 {
 extern(Windows):
-	final HSTRING DisplayText()
+	final wstring DisplayText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Input.IRadialControllerMenuItem)this.asInterface(uuid("c80fc98d-ad0b-4c9c-8f2f-136a2373a6ba"))).get_DisplayText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final IInspectable Tag()
 	{
@@ -1879,16 +1879,16 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Input.IRadialControllerMenuItemStatics);
 		return _staticInstance;
 	}
-	static Windows.UI.Input.RadialControllerMenuItem CreateFromIcon(HSTRING displayText, Windows.Storage.Streams.RandomAccessStreamReference icon)
+	static Windows.UI.Input.RadialControllerMenuItem CreateFromIcon(wstring displayText, Windows.Storage.Streams.RandomAccessStreamReference icon)
 	{
 		Windows.UI.Input.RadialControllerMenuItem _ret;
-		Debug.OK(staticInstance.abi_CreateFromIcon(displayText, icon, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromIcon(hstring(displayText).handle, icon, &_ret));
 		return _ret;
 	}
-	static Windows.UI.Input.RadialControllerMenuItem CreateFromKnownIcon(HSTRING displayText, Windows.UI.Input.RadialControllerMenuKnownIcon value)
+	static Windows.UI.Input.RadialControllerMenuItem CreateFromKnownIcon(wstring displayText, Windows.UI.Input.RadialControllerMenuKnownIcon value)
 	{
 		Windows.UI.Input.RadialControllerMenuItem _ret;
-		Debug.OK(staticInstance.abi_CreateFromKnownIcon(displayText, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromKnownIcon(hstring(displayText).handle, value, &_ret));
 		return _ret;
 	}
 }

@@ -69,33 +69,33 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter)this.asInterface(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec"))).get_Languages(&_ret));
 		return _ret;
 	}
-	final HSTRING GeographicRegion()
+	final wstring GeographicRegion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter)this.asInterface(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec"))).get_GeographicRegion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Calendar()
+	final wstring Calendar()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter)this.asInterface(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec"))).get_Calendar(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Clock()
+	final wstring Clock()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter)this.asInterface(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec"))).get_Clock(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING NumeralSystem()
+	final wstring NumeralSystem()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter)this.asInterface(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec"))).get_NumeralSystem(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NumeralSystem(HSTRING value)
+	final void NumeralSystem(wstring value)
 	{
-		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter)this.asInterface(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec"))).set_NumeralSystem(value));
+		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter)this.asInterface(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec"))).set_NumeralSystem(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) Patterns()
 	{
@@ -103,17 +103,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter)this.asInterface(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec"))).get_Patterns(&_ret));
 		return _ret;
 	}
-	final HSTRING Template()
+	final wstring Template()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter)this.asInterface(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec"))).get_Template(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Format(Windows.Foundation.DateTime value)
+	final wstring Format(Windows.Foundation.DateTime value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter)this.asInterface(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec"))).abi_Format(value, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Globalization.DateTimeFormatting.YearFormat IncludeYear()
 	{
@@ -157,23 +157,23 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter)this.asInterface(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec"))).get_IncludeSecond(&_ret));
 		return _ret;
 	}
-	final HSTRING ResolvedLanguage()
+	final wstring ResolvedLanguage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter)this.asInterface(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec"))).get_ResolvedLanguage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ResolvedGeographicRegion()
+	final wstring ResolvedGeographicRegion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter)this.asInterface(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec"))).get_ResolvedGeographicRegion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING FormatUsingTimeZone(Windows.Foundation.DateTime datetime, HSTRING timeZoneId)
+	final wstring FormatUsingTimeZone(Windows.Foundation.DateTime datetime, wstring timeZoneId)
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter2)this.asInterface(uuid("27c91a86-bdaa-4fd0-9e36-671d5aa5ee03"))).abi_FormatUsingTimeZone(datetime, timeZoneId, &_ret));
-		return _ret;
+		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter2)this.asInterface(uuid("27c91a86-bdaa-4fd0-9e36-671d5aa5ee03"))).abi_FormatUsingTimeZone(datetime, hstring(timeZoneId).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
 	alias Format = FormatUsingTimeZone;
 
@@ -207,25 +207,25 @@ extern(Windows):
 		Debug.OK(staticInstance.get_ShortTime(&_ret));
 		return _ret;
 	}
-	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(HSTRING formatTemplate)
+	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(wstring formatTemplate)
 	{
 		auto factory = factory!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory);
 		Windows.Globalization.DateTimeFormatting.DateTimeFormatter _ret;
-		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory)factory.asInterface(uuid("ec8d8a53-1a2e-412d-8815-3b745fb1a2a0"))).abi_CreateDateTimeFormatter(formatTemplate, &_ret));
+		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory)factory.asInterface(uuid("ec8d8a53-1a2e-412d-8815-3b745fb1a2a0"))).abi_CreateDateTimeFormatter(hstring(formatTemplate).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(HSTRING formatTemplate, Windows.Foundation.Collections.IIterable!(HSTRING) languages)
+	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(wstring formatTemplate, Windows.Foundation.Collections.IIterable!(HSTRING) languages)
 	{
 		auto factory = factory!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory);
 		Windows.Globalization.DateTimeFormatting.DateTimeFormatter _ret;
-		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory)factory.asInterface(uuid("ec8d8a53-1a2e-412d-8815-3b745fb1a2a0"))).abi_CreateDateTimeFormatterLanguages(formatTemplate, languages, &_ret));
+		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory)factory.asInterface(uuid("ec8d8a53-1a2e-412d-8815-3b745fb1a2a0"))).abi_CreateDateTimeFormatterLanguages(hstring(formatTemplate).handle, languages, &_ret));
 		return _ret;
 	}
-	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(HSTRING formatTemplate, Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion, HSTRING calendar, HSTRING clock)
+	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(wstring formatTemplate, Windows.Foundation.Collections.IIterable!(HSTRING) languages, wstring geographicRegion, wstring calendar, wstring clock)
 	{
 		auto factory = factory!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory);
 		Windows.Globalization.DateTimeFormatting.DateTimeFormatter _ret;
-		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory)factory.asInterface(uuid("ec8d8a53-1a2e-412d-8815-3b745fb1a2a0"))).abi_CreateDateTimeFormatterContext(formatTemplate, languages, geographicRegion, calendar, clock, &_ret));
+		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory)factory.asInterface(uuid("ec8d8a53-1a2e-412d-8815-3b745fb1a2a0"))).abi_CreateDateTimeFormatterContext(hstring(formatTemplate).handle, languages, hstring(geographicRegion).handle, hstring(calendar).handle, hstring(clock).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(Windows.Globalization.DateTimeFormatting.YearFormat yearFormat, Windows.Globalization.DateTimeFormatting.MonthFormat monthFormat, Windows.Globalization.DateTimeFormatting.DayFormat dayFormat, Windows.Globalization.DateTimeFormatting.DayOfWeekFormat dayOfWeekFormat)
@@ -249,11 +249,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory)factory.asInterface(uuid("ec8d8a53-1a2e-412d-8815-3b745fb1a2a0"))).abi_CreateDateTimeFormatterDateTimeLanguages(yearFormat, monthFormat, dayFormat, dayOfWeekFormat, hourFormat, minuteFormat, secondFormat, languages, &_ret));
 		return _ret;
 	}
-	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(Windows.Globalization.DateTimeFormatting.YearFormat yearFormat, Windows.Globalization.DateTimeFormatting.MonthFormat monthFormat, Windows.Globalization.DateTimeFormatting.DayFormat dayFormat, Windows.Globalization.DateTimeFormatting.DayOfWeekFormat dayOfWeekFormat, Windows.Globalization.DateTimeFormatting.HourFormat hourFormat, Windows.Globalization.DateTimeFormatting.MinuteFormat minuteFormat, Windows.Globalization.DateTimeFormatting.SecondFormat secondFormat, Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion, HSTRING calendar, HSTRING clock)
+	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(Windows.Globalization.DateTimeFormatting.YearFormat yearFormat, Windows.Globalization.DateTimeFormatting.MonthFormat monthFormat, Windows.Globalization.DateTimeFormatting.DayFormat dayFormat, Windows.Globalization.DateTimeFormatting.DayOfWeekFormat dayOfWeekFormat, Windows.Globalization.DateTimeFormatting.HourFormat hourFormat, Windows.Globalization.DateTimeFormatting.MinuteFormat minuteFormat, Windows.Globalization.DateTimeFormatting.SecondFormat secondFormat, Windows.Foundation.Collections.IIterable!(HSTRING) languages, wstring geographicRegion, wstring calendar, wstring clock)
 	{
 		auto factory = factory!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory);
 		Windows.Globalization.DateTimeFormatting.DateTimeFormatter _ret;
-		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory)factory.asInterface(uuid("ec8d8a53-1a2e-412d-8815-3b745fb1a2a0"))).abi_CreateDateTimeFormatterDateTimeContext(yearFormat, monthFormat, dayFormat, dayOfWeekFormat, hourFormat, minuteFormat, secondFormat, languages, geographicRegion, calendar, clock, &_ret));
+		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory)factory.asInterface(uuid("ec8d8a53-1a2e-412d-8815-3b745fb1a2a0"))).abi_CreateDateTimeFormatterDateTimeContext(yearFormat, monthFormat, dayFormat, dayOfWeekFormat, hourFormat, minuteFormat, secondFormat, languages, hstring(geographicRegion).handle, hstring(calendar).handle, hstring(clock).handle, &_ret));
 		return _ret;
 	}
 }

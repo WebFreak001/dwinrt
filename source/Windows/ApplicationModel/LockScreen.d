@@ -121,11 +121,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenBadge)this.asInterface(uuid("e95105d9-2bff-4db0-9b4f-3824778b9c9a"))).get_Number(&_ret));
 		return _ret;
 	}
-	final HSTRING AutomationName()
+	final wstring AutomationName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenBadge)this.asInterface(uuid("e95105d9-2bff-4db0-9b4f-3824778b9c9a"))).get_AutomationName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void LaunchApp()
 	{

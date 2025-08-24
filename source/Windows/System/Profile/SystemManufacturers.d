@@ -18,10 +18,10 @@ interface SmbiosInformation
 		if (_staticInstance is null) _staticInstance = factory!(Windows.System.Profile.SystemManufacturers.ISmbiosInformationStatics);
 		return _staticInstance;
 	}
-	static HSTRING SerialNumber()
+	static wstring SerialNumber()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SerialNumber(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }

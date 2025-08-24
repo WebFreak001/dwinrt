@@ -251,15 +251,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Search.ILocalContentSuggestionSettings)this.asInterface(uuid("eeaeb062-743d-456e-84a3-23f06f2d15d7"))).get_Locations(&_ret));
 		return _ret;
 	}
-	final void AqsFilter(HSTRING value)
+	final void AqsFilter(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Search.ILocalContentSuggestionSettings)this.asInterface(uuid("eeaeb062-743d-456e-84a3-23f06f2d15d7"))).set_AqsFilter(value));
+		Debug.OK((cast(Windows.ApplicationModel.Search.ILocalContentSuggestionSettings)this.asInterface(uuid("eeaeb062-743d-456e-84a3-23f06f2d15d7"))).set_AqsFilter(hstring(value).handle));
 	}
-	final HSTRING AqsFilter()
+	final wstring AqsFilter()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Search.ILocalContentSuggestionSettings)this.asInterface(uuid("eeaeb062-743d-456e-84a3-23f06f2d15d7"))).get_AqsFilter(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) PropertiesToMatch()
 	{
@@ -291,42 +291,42 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
-	final void SearchHistoryContext(HSTRING value)
+	final void SearchHistoryContext(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).set_SearchHistoryContext(value));
+		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).set_SearchHistoryContext(hstring(value).handle));
 	}
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
-	final HSTRING SearchHistoryContext()
+	final wstring SearchHistoryContext()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).get_SearchHistoryContext(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
-	final void PlaceholderText(HSTRING value)
+	final void PlaceholderText(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).set_PlaceholderText(value));
+		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).set_PlaceholderText(hstring(value).handle));
 	}
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
-	final HSTRING PlaceholderText()
+	final wstring PlaceholderText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).get_PlaceholderText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
-	final HSTRING QueryText()
+	final wstring QueryText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).get_QueryText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
 	final bool Visible()
@@ -407,9 +407,9 @@ extern(Windows):
 	}
 	alias Show = ShowOverloadDefault;
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
-	final void ShowOverloadWithQuery(HSTRING query)
+	final void ShowOverloadWithQuery(wstring query)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).abi_ShowOverloadWithQuery(query));
+		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).abi_ShowOverloadWithQuery(hstring(query).handle));
 	}
 	alias Show = ShowOverloadWithQuery;
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
@@ -425,10 +425,10 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
-	final bool TrySetQueryText(HSTRING query)
+	final bool TrySetQueryText(wstring query)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).abi_TrySetQueryText(query, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).abi_TrySetQueryText(hstring(query).handle, &_ret));
 		return _ret;
 	}
 
@@ -451,18 +451,18 @@ interface SearchPaneQueryChangedEventArgs : Windows.ApplicationModel.Search.ISea
 {
 extern(Windows):
 	deprecated("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")
-	final HSTRING QueryText()
+	final wstring QueryText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs)this.asInterface(uuid("3c064fe9-2351-4248-a529-7110f464a785"))).get_QueryText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs)this.asInterface(uuid("3c064fe9-2351-4248-a529-7110f464a785"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")
 	final Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails LinguisticDetails()
@@ -500,18 +500,18 @@ interface SearchPaneQuerySubmittedEventArgs : Windows.ApplicationModel.Search.IS
 {
 extern(Windows):
 	deprecated("ISearchPaneQuerySubmittedEventArgs may be altered or unavailable for releases after Windows 10.")
-	final HSTRING QueryText()
+	final wstring QueryText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPaneQuerySubmittedEventArgs)this.asInterface(uuid("143ba4fc-e9c5-4736-91b2-e8eb9cb88356"))).get_QueryText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISearchPaneQuerySubmittedEventArgs may be altered or unavailable for releases after Windows 10.")
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPaneQuerySubmittedEventArgs)this.asInterface(uuid("143ba4fc-e9c5-4736-91b2-e8eb9cb88356"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails may be altered or unavailable for releases after Windows 10.")
 	final Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails LinguisticDetails()
@@ -526,11 +526,11 @@ interface SearchPaneResultSuggestionChosenEventArgs : Windows.ApplicationModel.S
 {
 extern(Windows):
 	deprecated("ISearchPaneResultSuggestionChosenEventArgs may be altered or unavailable for releases after Windows 10.")
-	final HSTRING Tag()
+	final wstring Tag()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPaneResultSuggestionChosenEventArgs)this.asInterface(uuid("c8316cc0-aed2-41e0-bce0-c26ca74f85ec"))).get_Tag(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -581,18 +581,18 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")
-	final HSTRING QueryText()
+	final wstring QueryText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs)this.asInterface(uuid("3c064fe9-2351-4248-a529-7110f464a785"))).get_QueryText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPaneQueryChangedEventArgs)this.asInterface(uuid("3c064fe9-2351-4248-a529-7110f464a785"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")
 	final Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails LinguisticDetails()
@@ -654,21 +654,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchSuggestionCollection)this.asInterface(uuid("323a8a4b-fbea-4446-abbc-3da7915fdd3a"))).get_Size(&_ret));
 		return _ret;
 	}
-	final void AppendQuerySuggestion(HSTRING text)
+	final void AppendQuerySuggestion(wstring text)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchSuggestionCollection)this.asInterface(uuid("323a8a4b-fbea-4446-abbc-3da7915fdd3a"))).abi_AppendQuerySuggestion(text));
+		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchSuggestionCollection)this.asInterface(uuid("323a8a4b-fbea-4446-abbc-3da7915fdd3a"))).abi_AppendQuerySuggestion(hstring(text).handle));
 	}
 	final void AppendQuerySuggestions(Windows.Foundation.Collections.IIterable!(HSTRING) suggestions)
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchSuggestionCollection)this.asInterface(uuid("323a8a4b-fbea-4446-abbc-3da7915fdd3a"))).abi_AppendQuerySuggestions(suggestions));
 	}
-	final void AppendResultSuggestion(HSTRING text, HSTRING detailText, HSTRING tag, Windows.Storage.Streams.IRandomAccessStreamReference image, HSTRING imageAlternateText)
+	final void AppendResultSuggestion(wstring text, wstring detailText, wstring tag, Windows.Storage.Streams.IRandomAccessStreamReference image, wstring imageAlternateText)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchSuggestionCollection)this.asInterface(uuid("323a8a4b-fbea-4446-abbc-3da7915fdd3a"))).abi_AppendResultSuggestion(text, detailText, tag, image, imageAlternateText));
+		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchSuggestionCollection)this.asInterface(uuid("323a8a4b-fbea-4446-abbc-3da7915fdd3a"))).abi_AppendResultSuggestion(hstring(text).handle, hstring(detailText).handle, hstring(tag).handle, image, hstring(imageAlternateText).handle));
 	}
-	final void AppendSearchSeparator(HSTRING label)
+	final void AppendSearchSeparator(wstring label)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchSuggestionCollection)this.asInterface(uuid("323a8a4b-fbea-4446-abbc-3da7915fdd3a"))).abi_AppendSearchSeparator(label));
+		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchSuggestionCollection)this.asInterface(uuid("323a8a4b-fbea-4446-abbc-3da7915fdd3a"))).abi_AppendSearchSeparator(hstring(label).handle));
 	}
 }
 

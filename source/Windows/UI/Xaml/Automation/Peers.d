@@ -1988,17 +1988,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_RaisePropertyChangedEvent(automationProperty, oldValue, newValue));
 	}
-	final HSTRING GetAcceleratorKey()
+	final wstring GetAcceleratorKey()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetAcceleratorKey(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING GetAccessKey()
+	final wstring GetAccessKey()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetAccessKey(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.UI.Xaml.Automation.Peers.AutomationControlType GetAutomationControlType()
 	{
@@ -2006,11 +2006,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetAutomationControlType(&_ret));
 		return _ret;
 	}
-	final HSTRING GetAutomationId()
+	final wstring GetAutomationId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetAutomationId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Rect GetBoundingRectangle()
 	{
@@ -2024,11 +2024,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetChildren(&_ret));
 		return _ret;
 	}
-	final HSTRING GetClassName()
+	final wstring GetClassName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetClassName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Point GetClickablePoint()
 	{
@@ -2036,23 +2036,23 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetClickablePoint(&_ret));
 		return _ret;
 	}
-	final HSTRING GetHelpText()
+	final wstring GetHelpText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetHelpText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING GetItemStatus()
+	final wstring GetItemStatus()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetItemStatus(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING GetItemType()
+	final wstring GetItemType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetItemType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.UI.Xaml.Automation.Peers.AutomationPeer GetLabeledBy()
 	{
@@ -2060,17 +2060,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetLabeledBy(&_ret));
 		return _ret;
 	}
-	final HSTRING GetLocalizedControlType()
+	final wstring GetLocalizedControlType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetLocalizedControlType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING GetName()
+	final wstring GetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.UI.Xaml.Automation.Peers.AutomationOrientation GetOrientation()
 	{
@@ -2236,11 +2236,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer4)this.asInterface(uuid("761ce752-73c1-4f44-be75-43c49ec0d4d5"))).abi_GetLandmarkType(&_ret));
 		return _ret;
 	}
-	final HSTRING GetLocalizedLandmarkType()
+	final wstring GetLocalizedLandmarkType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer4)this.asInterface(uuid("761ce752-73c1-4f44-be75-43c49ec0d4d5"))).abi_GetLocalizedLandmarkType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsPeripheral()
 	{
@@ -2254,11 +2254,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5)this.asInterface(uuid("f632e1c6-0a3f-4574-9fef-cdc151765674"))).abi_IsDataValidForForm(&_ret));
 		return _ret;
 	}
-	final HSTRING GetFullDescription()
+	final wstring GetFullDescription()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5)this.asInterface(uuid("f632e1c6-0a3f-4574-9fef-cdc151765674"))).abi_GetFullDescription(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 GetCulture()
 	{
@@ -3299,15 +3299,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IValueProvider)this.asInterface(uuid("2086b7a7-ac0e-47d1-ab9b-2a64292afdf8"))).get_IsReadOnly(&_ret));
 		return _ret;
 	}
-	final HSTRING Value()
+	final wstring Value()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IValueProvider)this.asInterface(uuid("2086b7a7-ac0e-47d1-ab9b-2a64292afdf8"))).get_Value(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SetValue(HSTRING value)
+	final void SetValue(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IValueProvider)this.asInterface(uuid("2086b7a7-ac0e-47d1-ab9b-2a64292afdf8"))).abi_SetValue(value));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IValueProvider)this.asInterface(uuid("2086b7a7-ac0e-47d1-ab9b-2a64292afdf8"))).abi_SetValue(hstring(value).handle));
 	}
 	final bool IsModal()
 	{
@@ -8011,17 +8011,17 @@ class ListViewAutomationPeerT(Base) : AgileObject!Base, ListViewAutomationPeer
 interface ListViewBaseAutomationPeer : Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewBaseAutomationPeer, Windows.UI.Xaml.Automation.Provider.IDropTargetProvider
 {
 extern(Windows):
-	final HSTRING DropEffect()
+	final wstring DropEffect()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IDropTargetProvider)this.asInterface(uuid("7a245bdd-b458-4fe0-98c8-aac89df56d61"))).get_DropEffect(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING* DropEffects(UINT32* out___valueSize)
+	final wstring DropEffects(UINT32* out___valueSize)
 	{
 		HSTRING* _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IDropTargetProvider)this.asInterface(uuid("7a245bdd-b458-4fe0-98c8-aac89df56d61"))).get_DropEffects(out___valueSize, &_ret));
-		return _ret;
+		return hstring(*_ret).d_str;
 	}
 }
 @makable!(ListViewBaseAutomationPeer, ListViewBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewBaseAutomationPeerFactory)

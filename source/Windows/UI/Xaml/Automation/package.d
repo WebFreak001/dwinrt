@@ -851,15 +851,15 @@ interface AutomationProperties : Windows.UI.Xaml.Automation.IAutomationPropertie
 		Debug.OK(staticInstance.get_AcceleratorKeyProperty(&_ret));
 		return _ret;
 	}
-	static HSTRING GetAcceleratorKey(Windows.UI.Xaml.DependencyObject element)
+	static wstring GetAcceleratorKey(Windows.UI.Xaml.DependencyObject element)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetAcceleratorKey(element, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static void SetAcceleratorKey(Windows.UI.Xaml.DependencyObject element, HSTRING value)
+	static void SetAcceleratorKey(Windows.UI.Xaml.DependencyObject element, wstring value)
 	{
-		Debug.OK(staticInstance.abi_SetAcceleratorKey(element, value));
+		Debug.OK(staticInstance.abi_SetAcceleratorKey(element, hstring(value).handle));
 	}
 	static Windows.UI.Xaml.DependencyProperty AccessKeyProperty()
 	{
@@ -867,15 +867,15 @@ interface AutomationProperties : Windows.UI.Xaml.Automation.IAutomationPropertie
 		Debug.OK(staticInstance.get_AccessKeyProperty(&_ret));
 		return _ret;
 	}
-	static HSTRING GetAccessKey(Windows.UI.Xaml.DependencyObject element)
+	static wstring GetAccessKey(Windows.UI.Xaml.DependencyObject element)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetAccessKey(element, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static void SetAccessKey(Windows.UI.Xaml.DependencyObject element, HSTRING value)
+	static void SetAccessKey(Windows.UI.Xaml.DependencyObject element, wstring value)
 	{
-		Debug.OK(staticInstance.abi_SetAccessKey(element, value));
+		Debug.OK(staticInstance.abi_SetAccessKey(element, hstring(value).handle));
 	}
 	static Windows.UI.Xaml.DependencyProperty AutomationIdProperty()
 	{
@@ -883,15 +883,15 @@ interface AutomationProperties : Windows.UI.Xaml.Automation.IAutomationPropertie
 		Debug.OK(staticInstance.get_AutomationIdProperty(&_ret));
 		return _ret;
 	}
-	static HSTRING GetAutomationId(Windows.UI.Xaml.DependencyObject element)
+	static wstring GetAutomationId(Windows.UI.Xaml.DependencyObject element)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetAutomationId(element, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static void SetAutomationId(Windows.UI.Xaml.DependencyObject element, HSTRING value)
+	static void SetAutomationId(Windows.UI.Xaml.DependencyObject element, wstring value)
 	{
-		Debug.OK(staticInstance.abi_SetAutomationId(element, value));
+		Debug.OK(staticInstance.abi_SetAutomationId(element, hstring(value).handle));
 	}
 	static Windows.UI.Xaml.DependencyProperty HelpTextProperty()
 	{
@@ -899,15 +899,15 @@ interface AutomationProperties : Windows.UI.Xaml.Automation.IAutomationPropertie
 		Debug.OK(staticInstance.get_HelpTextProperty(&_ret));
 		return _ret;
 	}
-	static HSTRING GetHelpText(Windows.UI.Xaml.DependencyObject element)
+	static wstring GetHelpText(Windows.UI.Xaml.DependencyObject element)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetHelpText(element, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static void SetHelpText(Windows.UI.Xaml.DependencyObject element, HSTRING value)
+	static void SetHelpText(Windows.UI.Xaml.DependencyObject element, wstring value)
 	{
-		Debug.OK(staticInstance.abi_SetHelpText(element, value));
+		Debug.OK(staticInstance.abi_SetHelpText(element, hstring(value).handle));
 	}
 	static Windows.UI.Xaml.DependencyProperty IsRequiredForFormProperty()
 	{
@@ -931,15 +931,15 @@ interface AutomationProperties : Windows.UI.Xaml.Automation.IAutomationPropertie
 		Debug.OK(staticInstance.get_ItemStatusProperty(&_ret));
 		return _ret;
 	}
-	static HSTRING GetItemStatus(Windows.UI.Xaml.DependencyObject element)
+	static wstring GetItemStatus(Windows.UI.Xaml.DependencyObject element)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetItemStatus(element, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static void SetItemStatus(Windows.UI.Xaml.DependencyObject element, HSTRING value)
+	static void SetItemStatus(Windows.UI.Xaml.DependencyObject element, wstring value)
 	{
-		Debug.OK(staticInstance.abi_SetItemStatus(element, value));
+		Debug.OK(staticInstance.abi_SetItemStatus(element, hstring(value).handle));
 	}
 	static Windows.UI.Xaml.DependencyProperty ItemTypeProperty()
 	{
@@ -947,15 +947,15 @@ interface AutomationProperties : Windows.UI.Xaml.Automation.IAutomationPropertie
 		Debug.OK(staticInstance.get_ItemTypeProperty(&_ret));
 		return _ret;
 	}
-	static HSTRING GetItemType(Windows.UI.Xaml.DependencyObject element)
+	static wstring GetItemType(Windows.UI.Xaml.DependencyObject element)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetItemType(element, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static void SetItemType(Windows.UI.Xaml.DependencyObject element, HSTRING value)
+	static void SetItemType(Windows.UI.Xaml.DependencyObject element, wstring value)
 	{
-		Debug.OK(staticInstance.abi_SetItemType(element, value));
+		Debug.OK(staticInstance.abi_SetItemType(element, hstring(value).handle));
 	}
 	static Windows.UI.Xaml.DependencyProperty LabeledByProperty()
 	{
@@ -979,15 +979,15 @@ interface AutomationProperties : Windows.UI.Xaml.Automation.IAutomationPropertie
 		Debug.OK(staticInstance.get_NameProperty(&_ret));
 		return _ret;
 	}
-	static HSTRING GetName(Windows.UI.Xaml.DependencyObject element)
+	static wstring GetName(Windows.UI.Xaml.DependencyObject element)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetName(element, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static void SetName(Windows.UI.Xaml.DependencyObject element, HSTRING value)
+	static void SetName(Windows.UI.Xaml.DependencyObject element, wstring value)
 	{
-		Debug.OK(staticInstance.abi_SetName(element, value));
+		Debug.OK(staticInstance.abi_SetName(element, hstring(value).handle));
 	}
 	static Windows.UI.Xaml.DependencyProperty LiveSettingProperty()
 	{

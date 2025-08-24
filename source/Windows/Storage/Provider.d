@@ -86,24 +86,24 @@ interface CachedFileUpdater
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.Provider.ICachedFileUpdaterStatics);
 		return _staticInstance;
 	}
-	static void SetUpdateInformation(Windows.Storage.IStorageFile file, HSTRING contentId, Windows.Storage.Provider.ReadActivationMode readMode, Windows.Storage.Provider.WriteActivationMode writeMode, Windows.Storage.Provider.CachedFileOptions options)
+	static void SetUpdateInformation(Windows.Storage.IStorageFile file, wstring contentId, Windows.Storage.Provider.ReadActivationMode readMode, Windows.Storage.Provider.WriteActivationMode writeMode, Windows.Storage.Provider.CachedFileOptions options)
 	{
-		Debug.OK(staticInstance.abi_SetUpdateInformation(file, contentId, readMode, writeMode, options));
+		Debug.OK(staticInstance.abi_SetUpdateInformation(file, hstring(contentId).handle, readMode, writeMode, options));
 	}
 }
 
 interface CachedFileUpdaterUI : Windows.Storage.Provider.ICachedFileUpdaterUI, Windows.Storage.Provider.ICachedFileUpdaterUI2
 {
 extern(Windows):
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Provider.ICachedFileUpdaterUI)this.asInterface(uuid("9e6f41e6-baf2-4a97-b600-9333f5df80fd"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Provider.ICachedFileUpdaterUI)this.asInterface(uuid("9e6f41e6-baf2-4a97-b600-9333f5df80fd"))).set_Title(value));
+		Debug.OK((cast(Windows.Storage.Provider.ICachedFileUpdaterUI)this.asInterface(uuid("9e6f41e6-baf2-4a97-b600-9333f5df80fd"))).set_Title(hstring(value).handle));
 	}
 	final Windows.Storage.Provider.CachedFileTarget UpdateTarget()
 	{
@@ -154,11 +154,11 @@ extern(Windows):
 interface FileUpdateRequest : Windows.Storage.Provider.IFileUpdateRequest, Windows.Storage.Provider.IFileUpdateRequest2
 {
 extern(Windows):
-	final HSTRING ContentId()
+	final wstring ContentId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Provider.IFileUpdateRequest)this.asInterface(uuid("40c82536-c1fe-4d93-a792-1e736bc70837"))).get_ContentId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Storage.StorageFile File()
 	{
@@ -186,15 +186,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Storage.Provider.IFileUpdateRequest)this.asInterface(uuid("40c82536-c1fe-4d93-a792-1e736bc70837"))).abi_UpdateLocalFile(value));
 	}
-	final HSTRING UserInputNeededMessage()
+	final wstring UserInputNeededMessage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Provider.IFileUpdateRequest2)this.asInterface(uuid("82484648-bdbe-447b-a2ee-7afe6a032a94"))).get_UserInputNeededMessage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void UserInputNeededMessage(HSTRING value)
+	final void UserInputNeededMessage(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Provider.IFileUpdateRequest2)this.asInterface(uuid("82484648-bdbe-447b-a2ee-7afe6a032a94"))).set_UserInputNeededMessage(value));
+		Debug.OK((cast(Windows.Storage.Provider.IFileUpdateRequest2)this.asInterface(uuid("82484648-bdbe-447b-a2ee-7afe6a032a94"))).set_UserInputNeededMessage(hstring(value).handle));
 	}
 }
 

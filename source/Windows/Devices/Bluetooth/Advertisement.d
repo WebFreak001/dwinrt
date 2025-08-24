@@ -211,15 +211,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement)this.asInterface(uuid("066fb2b7-33d1-4e7d-8367-cf81d0f79653"))).set_Flags(value));
 	}
-	final HSTRING LocalName()
+	final wstring LocalName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement)this.asInterface(uuid("066fb2b7-33d1-4e7d-8367-cf81d0f79653"))).get_LocalName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void LocalName(HSTRING value)
+	final void LocalName(wstring value)
 	{
-		Debug.OK((cast(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement)this.asInterface(uuid("066fb2b7-33d1-4e7d-8367-cf81d0f79653"))).set_LocalName(value));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement)this.asInterface(uuid("066fb2b7-33d1-4e7d-8367-cf81d0f79653"))).set_LocalName(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(GUID) ServiceUuids()
 	{

@@ -1059,11 +1059,11 @@ extern(Windows):
 interface BarcodeScanner : Windows.Devices.PointOfService.IBarcodeScanner, Windows.Devices.PointOfService.IBarcodeScanner2, Windows.Foundation.IClosable
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IBarcodeScanner)this.asInterface(uuid("bea33e06-b264-4f03-a9c1-45b20f01134f"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.PointOfService.BarcodeScannerCapabilities Capabilities()
 	{
@@ -1107,10 +1107,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.PointOfService.IBarcodeScanner)this.asInterface(uuid("bea33e06-b264-4f03-a9c1-45b20f01134f"))).abi_GetSupportedProfiles(&_ret));
 		return _ret;
 	}
-	final bool IsProfileSupported(HSTRING profile)
+	final bool IsProfileSupported(wstring profile)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Devices.PointOfService.IBarcodeScanner)this.asInterface(uuid("bea33e06-b264-4f03-a9c1-45b20f01134f"))).abi_IsProfileSupported(profile, &_ret));
+		Debug.OK((cast(Windows.Devices.PointOfService.IBarcodeScanner)this.asInterface(uuid("bea33e06-b264-4f03-a9c1-45b20f01134f"))).abi_IsProfileSupported(hstring(profile).handle, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnStatusUpdated(void delegate(Windows.Devices.PointOfService.BarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerStatusUpdatedEventArgs) fn)
@@ -1123,11 +1123,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IBarcodeScanner)this.asInterface(uuid("bea33e06-b264-4f03-a9c1-45b20f01134f"))).remove_StatusUpdated(token));
 	}
-	final HSTRING VideoDeviceId()
+	final wstring VideoDeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IBarcodeScanner2)this.asInterface(uuid("89215167-8cee-436d-89ab-8dfb43bb4286"))).get_VideoDeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void Close()
 	{
@@ -1146,17 +1146,17 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDefaultAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.BarcodeScanner) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.BarcodeScanner) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.BarcodeScanner) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1846,11 +1846,11 @@ interface BarcodeSymbologies
 		Debug.OK(staticInstance.get_ExtendedBase(&_ret));
 		return _ret;
 	}
-	static HSTRING GetName(UINT32 scanDataType)
+	static wstring GetName(UINT32 scanDataType)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetName(scanDataType, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1930,11 +1930,11 @@ extern(Windows):
 interface CashDrawer : Windows.Devices.PointOfService.ICashDrawer, Windows.Foundation.IClosable
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.ICashDrawer)this.asInterface(uuid("9f88f5c8-de54-4aee-a890-920bcbfe30fc"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.PointOfService.CashDrawerCapabilities Capabilities()
 	{
@@ -2005,17 +2005,17 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDefaultAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.CashDrawer) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.CashDrawer) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.CashDrawer) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -2199,11 +2199,11 @@ extern(Windows):
 interface ClaimedBarcodeScanner : Windows.Devices.PointOfService.IClaimedBarcodeScanner, Windows.Foundation.IClosable, Windows.Devices.PointOfService.IClaimedBarcodeScanner1, Windows.Devices.PointOfService.IClaimedBarcodeScanner2
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedBarcodeScanner)this.asInterface(uuid("4a63b49c-8fa4-4332-bb26-945d11d81e0f"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsEnabled()
 	{
@@ -2265,10 +2265,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedBarcodeScanner)this.asInterface(uuid("4a63b49c-8fa4-4332-bb26-945d11d81e0f"))).abi_UpdateStatisticsAsync(statistics, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction SetActiveProfileAsync(HSTRING profile)
+	final Windows.Foundation.IAsyncAction SetActiveProfileAsync(wstring profile)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedBarcodeScanner)this.asInterface(uuid("4a63b49c-8fa4-4332-bb26-945d11d81e0f"))).abi_SetActiveProfileAsync(profile, &_ret));
+		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedBarcodeScanner)this.asInterface(uuid("4a63b49c-8fa4-4332-bb26-945d11d81e0f"))).abi_SetActiveProfileAsync(hstring(profile).handle, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnDataReceived(void delegate(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerDataReceivedEventArgs) fn)
@@ -2364,11 +2364,11 @@ extern(Windows):
 interface ClaimedCashDrawer : Windows.Devices.PointOfService.IClaimedCashDrawer, Windows.Foundation.IClosable
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedCashDrawer)this.asInterface(uuid("ca3f99af-abb8-42c1-8a84-5c66512f5a75"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsEnabled()
 	{
@@ -2547,10 +2547,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation)this.asInterface(uuid("b7eb66a8-fe8a-4cfb-8b42-e35b280cb27c"))).get_IsReadyToPrint(&_ret));
 		return _ret;
 	}
-	final bool ValidateData(HSTRING data)
+	final bool ValidateData(wstring data)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation)this.asInterface(uuid("b7eb66a8-fe8a-4cfb-8b42-e35b280cb27c"))).abi_ValidateData(data, &_ret));
+		Debug.OK((cast(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation)this.asInterface(uuid("b7eb66a8-fe8a-4cfb-8b42-e35b280cb27c"))).abi_ValidateData(hstring(data).handle, &_ret));
 		return _ret;
 	}
 }
@@ -2558,11 +2558,11 @@ extern(Windows):
 interface ClaimedLineDisplay : Windows.Devices.PointOfService.IClaimedLineDisplay, Windows.Foundation.IClosable
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedLineDisplay)this.asInterface(uuid("120ac970-9a75-4acf-aae7-09972bcf8794"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.PointOfService.LineDisplayCapabilities Capabilities()
 	{
@@ -2570,35 +2570,35 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedLineDisplay)this.asInterface(uuid("120ac970-9a75-4acf-aae7-09972bcf8794"))).get_Capabilities(&_ret));
 		return _ret;
 	}
-	final HSTRING PhysicalDeviceName()
+	final wstring PhysicalDeviceName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedLineDisplay)this.asInterface(uuid("120ac970-9a75-4acf-aae7-09972bcf8794"))).get_PhysicalDeviceName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING PhysicalDeviceDescription()
+	final wstring PhysicalDeviceDescription()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedLineDisplay)this.asInterface(uuid("120ac970-9a75-4acf-aae7-09972bcf8794"))).get_PhysicalDeviceDescription(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DeviceControlDescription()
+	final wstring DeviceControlDescription()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedLineDisplay)this.asInterface(uuid("120ac970-9a75-4acf-aae7-09972bcf8794"))).get_DeviceControlDescription(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DeviceControlVersion()
+	final wstring DeviceControlVersion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedLineDisplay)this.asInterface(uuid("120ac970-9a75-4acf-aae7-09972bcf8794"))).get_DeviceControlVersion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DeviceServiceVersion()
+	final wstring DeviceServiceVersion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedLineDisplay)this.asInterface(uuid("120ac970-9a75-4acf-aae7-09972bcf8794"))).get_DeviceServiceVersion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.PointOfService.LineDisplayWindow DefaultWindow()
 	{
@@ -2631,23 +2631,23 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.PointOfService.IClaimedLineDisplayStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedLineDisplay) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedLineDisplay) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedLineDisplay) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes)
+	static wstring GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelectorWithConnectionTypes(connectionTypes, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias GetDeviceSelector = GetDeviceSelectorWithConnectionTypes;
 }
@@ -2655,11 +2655,11 @@ extern(Windows):
 interface ClaimedMagneticStripeReader : Windows.Devices.PointOfService.IClaimedMagneticStripeReader, Windows.Foundation.IClosable
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedMagneticStripeReader)this.asInterface(uuid("475ca8f3-9417-48bc-b9d7-4163a7844c02"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsEnabled()
 	{
@@ -2761,10 +2761,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedMagneticStripeReader)this.asInterface(uuid("475ca8f3-9417-48bc-b9d7-4163a7844c02"))).abi_DeAuthenticateDeviceAsync(__responseTokenSize, responseToken, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction UpdateKeyAsync(HSTRING key, HSTRING keyName)
+	final Windows.Foundation.IAsyncAction UpdateKeyAsync(wstring key, wstring keyName)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedMagneticStripeReader)this.asInterface(uuid("475ca8f3-9417-48bc-b9d7-4163a7844c02"))).abi_UpdateKeyAsync(key, keyName, &_ret));
+		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedMagneticStripeReader)this.asInterface(uuid("475ca8f3-9417-48bc-b9d7-4163a7844c02"))).abi_UpdateKeyAsync(hstring(key).handle, hstring(keyName).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ResetStatisticsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) statisticsCategories)
@@ -2838,11 +2838,11 @@ extern(Windows):
 interface ClaimedPosPrinter : Windows.Devices.PointOfService.IClaimedPosPrinter, Windows.Foundation.IClosable
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IClaimedPosPrinter)this.asInterface(uuid("6d64ce0c-e03e-4b14-a38e-c28c34b86353"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsEnabled()
 	{
@@ -3087,10 +3087,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation)this.asInterface(uuid("b7eb66a8-fe8a-4cfb-8b42-e35b280cb27c"))).get_IsReadyToPrint(&_ret));
 		return _ret;
 	}
-	final bool ValidateData(HSTRING data)
+	final bool ValidateData(wstring data)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation)this.asInterface(uuid("b7eb66a8-fe8a-4cfb-8b42-e35b280cb27c"))).abi_ValidateData(data, &_ret));
+		Debug.OK((cast(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation)this.asInterface(uuid("b7eb66a8-fe8a-4cfb-8b42-e35b280cb27c"))).abi_ValidateData(hstring(data).handle, &_ret));
 		return _ret;
 	}
 }
@@ -3268,10 +3268,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation)this.asInterface(uuid("b7eb66a8-fe8a-4cfb-8b42-e35b280cb27c"))).get_IsReadyToPrint(&_ret));
 		return _ret;
 	}
-	final bool ValidateData(HSTRING data)
+	final bool ValidateData(wstring data)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation)this.asInterface(uuid("b7eb66a8-fe8a-4cfb-8b42-e35b280cb27c"))).abi_ValidateData(data, &_ret));
+		Debug.OK((cast(Windows.Devices.PointOfService.ICommonClaimedPosPrinterStation)this.asInterface(uuid("b7eb66a8-fe8a-4cfb-8b42-e35b280cb27c"))).abi_ValidateData(hstring(data).handle, &_ret));
 		return _ret;
 	}
 }
@@ -3279,13 +3279,13 @@ extern(Windows):
 interface JournalPrintJob : Windows.Devices.PointOfService.IPosPrinterJob
 {
 extern(Windows):
-	final void Print(HSTRING data)
+	final void Print(wstring data)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_Print(data));
+		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_Print(hstring(data).handle));
 	}
-	final void PrintLine(HSTRING data)
+	final void PrintLine(wstring data)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintLine(data));
+		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintLine(hstring(data).handle));
 	}
 	final void PrintNewline()
 	{
@@ -3386,11 +3386,11 @@ extern(Windows):
 interface LineDisplay : Windows.Devices.PointOfService.ILineDisplay, Windows.Foundation.IClosable
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplay)this.asInterface(uuid("24f5df4e-3c99-44e2-b73f-e51be3637a8c"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.PointOfService.LineDisplayCapabilities Capabilities()
 	{
@@ -3398,35 +3398,35 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplay)this.asInterface(uuid("24f5df4e-3c99-44e2-b73f-e51be3637a8c"))).get_Capabilities(&_ret));
 		return _ret;
 	}
-	final HSTRING PhysicalDeviceName()
+	final wstring PhysicalDeviceName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplay)this.asInterface(uuid("24f5df4e-3c99-44e2-b73f-e51be3637a8c"))).get_PhysicalDeviceName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING PhysicalDeviceDescription()
+	final wstring PhysicalDeviceDescription()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplay)this.asInterface(uuid("24f5df4e-3c99-44e2-b73f-e51be3637a8c"))).get_PhysicalDeviceDescription(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DeviceControlDescription()
+	final wstring DeviceControlDescription()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplay)this.asInterface(uuid("24f5df4e-3c99-44e2-b73f-e51be3637a8c"))).get_DeviceControlDescription(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DeviceControlVersion()
+	final wstring DeviceControlVersion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplay)this.asInterface(uuid("24f5df4e-3c99-44e2-b73f-e51be3637a8c"))).get_DeviceControlVersion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DeviceServiceVersion()
+	final wstring DeviceServiceVersion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplay)this.asInterface(uuid("24f5df4e-3c99-44e2-b73f-e51be3637a8c"))).get_DeviceServiceVersion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedLineDisplay) ClaimAsync()
 	{
@@ -3445,10 +3445,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.PointOfService.ILineDisplayStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.LineDisplay) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.LineDisplay) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.LineDisplay) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.LineDisplay) GetDefaultAsync()
@@ -3457,17 +3457,17 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDefaultAsync(&_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes)
+	static wstring GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelectorWithConnectionTypes(connectionTypes, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias GetDeviceSelector = GetDeviceSelectorWithConnectionTypes;
 }
@@ -3610,23 +3610,23 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplayWindow)this.asInterface(uuid("d21feef4-2364-4be5-bee1-851680af4964"))).abi_TryRefreshAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) TryDisplayTextAsync(HSTRING text, Windows.Devices.PointOfService.LineDisplayTextAttribute displayAttribute)
+	final Windows.Foundation.IAsyncOperation!(bool) TryDisplayTextAsync(wstring text, Windows.Devices.PointOfService.LineDisplayTextAttribute displayAttribute)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplayWindow)this.asInterface(uuid("d21feef4-2364-4be5-bee1-851680af4964"))).abi_TryDisplayTextAsync(text, displayAttribute, &_ret));
+		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplayWindow)this.asInterface(uuid("d21feef4-2364-4be5-bee1-851680af4964"))).abi_TryDisplayTextAsync(hstring(text).handle, displayAttribute, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) TryDisplayTextAtPositionAsync(HSTRING text, Windows.Devices.PointOfService.LineDisplayTextAttribute displayAttribute, Windows.Foundation.Point startPosition)
+	final Windows.Foundation.IAsyncOperation!(bool) TryDisplayTextAtPositionAsync(wstring text, Windows.Devices.PointOfService.LineDisplayTextAttribute displayAttribute, Windows.Foundation.Point startPosition)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplayWindow)this.asInterface(uuid("d21feef4-2364-4be5-bee1-851680af4964"))).abi_TryDisplayTextAtPositionAsync(text, displayAttribute, startPosition, &_ret));
+		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplayWindow)this.asInterface(uuid("d21feef4-2364-4be5-bee1-851680af4964"))).abi_TryDisplayTextAtPositionAsync(hstring(text).handle, displayAttribute, startPosition, &_ret));
 		return _ret;
 	}
 	alias TryDisplayTextAsync = TryDisplayTextAtPositionAsync;
-	final Windows.Foundation.IAsyncOperation!(bool) TryDisplayTextNormalAsync(HSTRING text)
+	final Windows.Foundation.IAsyncOperation!(bool) TryDisplayTextNormalAsync(wstring text)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplayWindow)this.asInterface(uuid("d21feef4-2364-4be5-bee1-851680af4964"))).abi_TryDisplayTextNormalAsync(text, &_ret));
+		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplayWindow)this.asInterface(uuid("d21feef4-2364-4be5-bee1-851680af4964"))).abi_TryDisplayTextNormalAsync(hstring(text).handle, &_ret));
 		return _ret;
 	}
 	alias TryDisplayTextAsync = TryDisplayTextNormalAsync;
@@ -3651,11 +3651,11 @@ extern(Windows):
 interface MagneticStripeReader : Windows.Devices.PointOfService.IMagneticStripeReader, Windows.Foundation.IClosable
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReader)this.asInterface(uuid("1a92b015-47c3-468a-9333-0c6517574883"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.PointOfService.MagneticStripeReaderCapabilities Capabilities()
 	{
@@ -3726,17 +3726,17 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDefaultAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.MagneticStripeReader) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.MagneticStripeReader) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.MagneticStripeReader) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -3749,113 +3749,113 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_Report(&_ret));
 		return _ret;
 	}
-	final HSTRING LicenseNumber()
+	final wstring LicenseNumber()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_LicenseNumber(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ExpirationDate()
+	final wstring ExpirationDate()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_ExpirationDate(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Restrictions()
+	final wstring Restrictions()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_Restrictions(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Class()
+	final wstring Class()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_Class(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Endorsements()
+	final wstring Endorsements()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_Endorsements(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING BirthDate()
+	final wstring BirthDate()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_BirthDate(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING FirstName()
+	final wstring FirstName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_FirstName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Surname()
+	final wstring Surname()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_Surname(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Suffix()
+	final wstring Suffix()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_Suffix(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Gender()
+	final wstring Gender()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_Gender(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING HairColor()
+	final wstring HairColor()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_HairColor(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING EyeColor()
+	final wstring EyeColor()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_EyeColor(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Height()
+	final wstring Height()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_Height(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Weight()
+	final wstring Weight()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_Weight(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Address()
+	final wstring Address()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_Address(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING City()
+	final wstring City()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_City(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING State()
+	final wstring State()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_State(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING PostalCode()
+	final wstring PostalCode()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderAamvaCardDataReceivedEventArgs)this.asInterface(uuid("0a4bbd51-c316-4910-87f3-7a62ba862d31"))).get_PostalCode(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -3868,64 +3868,64 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs)this.asInterface(uuid("2e958823-a31a-4763-882c-23725e39b08e"))).get_Report(&_ret));
 		return _ret;
 	}
-	final HSTRING AccountNumber()
+	final wstring AccountNumber()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs)this.asInterface(uuid("2e958823-a31a-4763-882c-23725e39b08e"))).get_AccountNumber(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ExpirationDate()
+	final wstring ExpirationDate()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs)this.asInterface(uuid("2e958823-a31a-4763-882c-23725e39b08e"))).get_ExpirationDate(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ServiceCode()
+	final wstring ServiceCode()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs)this.asInterface(uuid("2e958823-a31a-4763-882c-23725e39b08e"))).get_ServiceCode(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs)this.asInterface(uuid("2e958823-a31a-4763-882c-23725e39b08e"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING FirstName()
+	final wstring FirstName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs)this.asInterface(uuid("2e958823-a31a-4763-882c-23725e39b08e"))).get_FirstName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING MiddleInitial()
+	final wstring MiddleInitial()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs)this.asInterface(uuid("2e958823-a31a-4763-882c-23725e39b08e"))).get_MiddleInitial(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Surname()
+	final wstring Surname()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs)this.asInterface(uuid("2e958823-a31a-4763-882c-23725e39b08e"))).get_Surname(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Suffix()
+	final wstring Suffix()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderBankCardDataReceivedEventArgs)this.asInterface(uuid("2e958823-a31a-4763-882c-23725e39b08e"))).get_Suffix(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface MagneticStripeReaderCapabilities : Windows.Devices.PointOfService.IMagneticStripeReaderCapabilities
 {
 extern(Windows):
-	final HSTRING CardAuthentication()
+	final wstring CardAuthentication()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IMagneticStripeReaderCapabilities)this.asInterface(uuid("7128809c-c440-44a2-a467-469175d02896"))).get_CardAuthentication(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final UINT32 SupportedEncryptionAlgorithms()
 	{
@@ -4205,11 +4205,11 @@ extern(Windows):
 interface PosPrinter : Windows.Devices.PointOfService.IPosPrinter, Windows.Foundation.IClosable
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinter)this.asInterface(uuid("2a03c10e-9a19-4a01-994f-12dfad6adcbf"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.PointOfService.PosPrinterCapabilities Capabilities()
 	{
@@ -4280,17 +4280,17 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDefaultAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.PosPrinter) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.PosPrinter) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.PosPrinter) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -4469,17 +4469,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintSavedBitmap(bitmapNumber));
 	}
-	final void DrawRuledLine(HSTRING positionList, Windows.Devices.PointOfService.PosPrinterLineDirection lineDirection, UINT32 lineWidth, Windows.Devices.PointOfService.PosPrinterLineStyle lineStyle, UINT32 lineColor)
+	final void DrawRuledLine(wstring positionList, Windows.Devices.PointOfService.PosPrinterLineDirection lineDirection, UINT32 lineWidth, Windows.Devices.PointOfService.PosPrinterLineStyle lineStyle, UINT32 lineColor)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_DrawRuledLine(positionList, lineDirection, lineWidth, lineStyle, lineColor));
+		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_DrawRuledLine(hstring(positionList).handle, lineDirection, lineWidth, lineStyle, lineColor));
 	}
-	final void PrintBarcode(HSTRING data, UINT32 symbology, UINT32 height, UINT32 width, Windows.Devices.PointOfService.PosPrinterBarcodeTextPosition textPosition, Windows.Devices.PointOfService.PosPrinterAlignment alignment)
+	final void PrintBarcode(wstring data, UINT32 symbology, UINT32 height, UINT32 width, Windows.Devices.PointOfService.PosPrinterBarcodeTextPosition textPosition, Windows.Devices.PointOfService.PosPrinterAlignment alignment)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBarcode(data, symbology, height, width, textPosition, alignment));
+		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBarcode(hstring(data).handle, symbology, height, width, textPosition, alignment));
 	}
-	final void PrintBarcodeCustomAlign(HSTRING data, UINT32 symbology, UINT32 height, UINT32 width, Windows.Devices.PointOfService.PosPrinterBarcodeTextPosition textPosition, UINT32 alignmentDistance)
+	final void PrintBarcodeCustomAlign(wstring data, UINT32 symbology, UINT32 height, UINT32 width, Windows.Devices.PointOfService.PosPrinterBarcodeTextPosition textPosition, UINT32 alignmentDistance)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBarcodeCustomAlign(data, symbology, height, width, textPosition, alignmentDistance));
+		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBarcodeCustomAlign(hstring(data).handle, symbology, height, width, textPosition, alignmentDistance));
 	}
 	final void PrintBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment)
 	{
@@ -4499,13 +4499,13 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBitmapCustomWidthCustomAlign(bitmap, alignmentDistance, width));
 	}
 	alias PrintCustomAlignedBitmap = PrintBitmapCustomWidthCustomAlign;
-	final void Print(HSTRING data)
+	final void Print(wstring data)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_Print(data));
+		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_Print(hstring(data).handle));
 	}
-	final void PrintLine(HSTRING data)
+	final void PrintLine(wstring data)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintLine(data));
+		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintLine(hstring(data).handle));
 	}
 	final void PrintNewline()
 	{
@@ -4712,17 +4712,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintSavedBitmap(bitmapNumber));
 	}
-	final void DrawRuledLine(HSTRING positionList, Windows.Devices.PointOfService.PosPrinterLineDirection lineDirection, UINT32 lineWidth, Windows.Devices.PointOfService.PosPrinterLineStyle lineStyle, UINT32 lineColor)
+	final void DrawRuledLine(wstring positionList, Windows.Devices.PointOfService.PosPrinterLineDirection lineDirection, UINT32 lineWidth, Windows.Devices.PointOfService.PosPrinterLineStyle lineStyle, UINT32 lineColor)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_DrawRuledLine(positionList, lineDirection, lineWidth, lineStyle, lineColor));
+		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_DrawRuledLine(hstring(positionList).handle, lineDirection, lineWidth, lineStyle, lineColor));
 	}
-	final void PrintBarcode(HSTRING data, UINT32 symbology, UINT32 height, UINT32 width, Windows.Devices.PointOfService.PosPrinterBarcodeTextPosition textPosition, Windows.Devices.PointOfService.PosPrinterAlignment alignment)
+	final void PrintBarcode(wstring data, UINT32 symbology, UINT32 height, UINT32 width, Windows.Devices.PointOfService.PosPrinterBarcodeTextPosition textPosition, Windows.Devices.PointOfService.PosPrinterAlignment alignment)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBarcode(data, symbology, height, width, textPosition, alignment));
+		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBarcode(hstring(data).handle, symbology, height, width, textPosition, alignment));
 	}
-	final void PrintBarcodeCustomAlign(HSTRING data, UINT32 symbology, UINT32 height, UINT32 width, Windows.Devices.PointOfService.PosPrinterBarcodeTextPosition textPosition, UINT32 alignmentDistance)
+	final void PrintBarcodeCustomAlign(wstring data, UINT32 symbology, UINT32 height, UINT32 width, Windows.Devices.PointOfService.PosPrinterBarcodeTextPosition textPosition, UINT32 alignmentDistance)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBarcodeCustomAlign(data, symbology, height, width, textPosition, alignmentDistance));
+		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBarcodeCustomAlign(hstring(data).handle, symbology, height, width, textPosition, alignmentDistance));
 	}
 	final void PrintBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment)
 	{
@@ -4742,13 +4742,13 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBitmapCustomWidthCustomAlign(bitmap, alignmentDistance, width));
 	}
 	alias PrintCustomAlignedBitmap = PrintBitmapCustomWidthCustomAlign;
-	final void Print(HSTRING data)
+	final void Print(wstring data)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_Print(data));
+		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_Print(hstring(data).handle));
 	}
-	final void PrintLine(HSTRING data)
+	final void PrintLine(wstring data)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintLine(data));
+		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintLine(hstring(data).handle));
 	}
 	final void PrintNewline()
 	{
@@ -4915,11 +4915,11 @@ extern(Windows):
 interface UnifiedPosErrorData : Windows.Devices.PointOfService.IUnifiedPosErrorData
 {
 extern(Windows):
-	final HSTRING Message()
+	final wstring Message()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.IUnifiedPosErrorData)this.asInterface(uuid("2b998c3a-555c-4889-8ed8-c599bb3a712a"))).get_Message(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.PointOfService.UnifiedPosErrorSeverity Severity()
 	{

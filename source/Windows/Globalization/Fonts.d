@@ -43,11 +43,11 @@ extern(Windows):
 interface LanguageFont : Windows.Globalization.Fonts.ILanguageFont
 {
 extern(Windows):
-	final HSTRING FontFamily()
+	final wstring FontFamily()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFont)this.asInterface(uuid("b12e5c3a-b76d-459b-beeb-901151cd77d1"))).get_FontFamily(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.UI.Text.FontWeight FontWeight()
 	{
@@ -144,11 +144,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFontGroup)this.asInterface(uuid("f33a7fc3-3a5c-4aea-b9ff-b39fb242f7f6"))).get_DocumentAlternate2Font(&_ret));
 		return _ret;
 	}
-	static Windows.Globalization.Fonts.LanguageFontGroup New(HSTRING languageTag)
+	static Windows.Globalization.Fonts.LanguageFontGroup New(wstring languageTag)
 	{
 		auto factory = factory!(Windows.Globalization.Fonts.ILanguageFontGroupFactory);
 		Windows.Globalization.Fonts.LanguageFontGroup _ret;
-		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFontGroupFactory)factory.asInterface(uuid("fcaeac67-4e77-49c7-b856-dde934fc735b"))).abi_CreateLanguageFontGroup(languageTag, &_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFontGroupFactory)factory.asInterface(uuid("fcaeac67-4e77-49c7-b856-dde934fc735b"))).abi_CreateLanguageFontGroup(hstring(languageTag).handle, &_ret));
 		return _ret;
 	}
 }

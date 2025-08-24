@@ -143,11 +143,11 @@ extern(Windows):
 interface VoiceCommand : Windows.ApplicationModel.VoiceCommands.IVoiceCommand
 {
 extern(Windows):
-	final HSTRING CommandName()
+	final wstring CommandName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommand)this.asInterface(uuid("936f5273-ec82-42a6-a55c-d2d79ec6f920"))).get_CommandName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Foundation.Collections.IVectorView!(HSTRING)) Properties()
 	{
@@ -188,45 +188,45 @@ extern(Windows):
 interface VoiceCommandContentTile : Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile
 {
 extern(Windows):
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).set_Title(value));
+		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).set_Title(hstring(value).handle));
 	}
-	final HSTRING TextLine1()
+	final wstring TextLine1()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).get_TextLine1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TextLine1(HSTRING value)
+	final void TextLine1(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).set_TextLine1(value));
+		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).set_TextLine1(hstring(value).handle));
 	}
-	final HSTRING TextLine2()
+	final wstring TextLine2()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).get_TextLine2(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TextLine2(HSTRING value)
+	final void TextLine2(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).set_TextLine2(value));
+		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).set_TextLine2(hstring(value).handle));
 	}
-	final HSTRING TextLine3()
+	final wstring TextLine3()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).get_TextLine3(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TextLine3(HSTRING value)
+	final void TextLine3(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).set_TextLine3(value));
+		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).set_TextLine3(hstring(value).handle));
 	}
 	final Windows.Storage.IStorageFile Image()
 	{
@@ -248,15 +248,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).set_AppContext(value));
 	}
-	final HSTRING AppLaunchArgument()
+	final wstring AppLaunchArgument()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).get_AppLaunchArgument(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AppLaunchArgument(HSTRING value)
+	final void AppLaunchArgument(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).set_AppLaunchArgument(value));
+		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile)this.asInterface(uuid("3eefe9f0-b8c7-4c76-a0de-1607895ee327"))).set_AppLaunchArgument(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTileType ContentTileType()
 	{
@@ -279,22 +279,22 @@ extern(Windows):
 interface VoiceCommandDefinition : Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinition
 {
 extern(Windows):
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinition)this.asInterface(uuid("7972aad0-0974-4979-984b-cb8959cd61ae"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinition)this.asInterface(uuid("7972aad0-0974-4979-984b-cb8959cd61ae"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final Windows.Foundation.IAsyncAction SetPhraseListAsync(HSTRING phraseListName, Windows.Foundation.Collections.IIterable!(HSTRING) phraseList)
+	final Windows.Foundation.IAsyncAction SetPhraseListAsync(wstring phraseListName, Windows.Foundation.Collections.IIterable!(HSTRING) phraseList)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinition)this.asInterface(uuid("7972aad0-0974-4979-984b-cb8959cd61ae"))).abi_SetPhraseListAsync(phraseListName, phraseList, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinition)this.asInterface(uuid("7972aad0-0974-4979-984b-cb8959cd61ae"))).abi_SetPhraseListAsync(hstring(phraseListName).handle, phraseList, &_ret));
 		return _ret;
 	}
 }
@@ -355,15 +355,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponse)this.asInterface(uuid("0284b30e-8a3b-4cc4-a6a1-cad5be2716b5"))).set_RepeatMessage(value));
 	}
-	final HSTRING AppLaunchArgument()
+	final wstring AppLaunchArgument()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponse)this.asInterface(uuid("0284b30e-8a3b-4cc4-a6a1-cad5be2716b5"))).get_AppLaunchArgument(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AppLaunchArgument(HSTRING value)
+	final void AppLaunchArgument(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponse)this.asInterface(uuid("0284b30e-8a3b-4cc4-a6a1-cad5be2716b5"))).set_AppLaunchArgument(value));
+		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponse)this.asInterface(uuid("0284b30e-8a3b-4cc4-a6a1-cad5be2716b5"))).set_AppLaunchArgument(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) VoiceCommandContentTiles()
 	{
@@ -491,25 +491,25 @@ extern(Windows):
 interface VoiceCommandUserMessage : Windows.ApplicationModel.VoiceCommands.IVoiceCommandUserMessage
 {
 extern(Windows):
-	final HSTRING DisplayMessage()
+	final wstring DisplayMessage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandUserMessage)this.asInterface(uuid("674eb3c0-44f6-4f07-b979-4c723fc08597"))).get_DisplayMessage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DisplayMessage(HSTRING value)
+	final void DisplayMessage(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandUserMessage)this.asInterface(uuid("674eb3c0-44f6-4f07-b979-4c723fc08597"))).set_DisplayMessage(value));
+		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandUserMessage)this.asInterface(uuid("674eb3c0-44f6-4f07-b979-4c723fc08597"))).set_DisplayMessage(hstring(value).handle));
 	}
-	final HSTRING SpokenMessage()
+	final wstring SpokenMessage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandUserMessage)this.asInterface(uuid("674eb3c0-44f6-4f07-b979-4c723fc08597"))).get_SpokenMessage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SpokenMessage(HSTRING value)
+	final void SpokenMessage(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandUserMessage)this.asInterface(uuid("674eb3c0-44f6-4f07-b979-4c723fc08597"))).set_SpokenMessage(value));
+		Debug.OK((cast(Windows.ApplicationModel.VoiceCommands.IVoiceCommandUserMessage)this.asInterface(uuid("674eb3c0-44f6-4f07-b979-4c723fc08597"))).set_SpokenMessage(hstring(value).handle));
 	}
 	static VoiceCommandUserMessage New()
 	{

@@ -486,9 +486,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_SetDefaultParagraphFormat(value));
 	}
-	final void SetText(Windows.UI.Text.TextSetOptions options, HSTRING value)
+	final void SetText(Windows.UI.Text.TextSetOptions options, wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_SetText(options, value));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_SetText(options, hstring(value).handle));
 	}
 	final void Undo()
 	{

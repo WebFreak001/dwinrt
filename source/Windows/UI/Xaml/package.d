@@ -2012,11 +2012,11 @@ interface ApplicationInitializationCallbackParams : Windows.UI.Xaml.IApplication
 interface BindingFailedEventArgs : Windows.UI.Xaml.IBindingFailedEventArgs
 {
 extern(Windows):
-	final HSTRING Message()
+	final wstring Message()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.IBindingFailedEventArgs)this.asInterface(uuid("32c1d013-4dbd-446d-bbb8-0de35048a449"))).get_Message(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -2477,16 +2477,16 @@ extern(Windows):
 		Debug.OK(staticInstance.get_UnsetValue(&_ret));
 		return _ret;
 	}
-	static Windows.UI.Xaml.DependencyProperty Register(HSTRING name, Windows.UI.Xaml.Interop.TypeName propertyType, Windows.UI.Xaml.Interop.TypeName ownerType, Windows.UI.Xaml.PropertyMetadata typeMetadata)
+	static Windows.UI.Xaml.DependencyProperty Register(wstring name, Windows.UI.Xaml.Interop.TypeName propertyType, Windows.UI.Xaml.Interop.TypeName ownerType, Windows.UI.Xaml.PropertyMetadata typeMetadata)
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.abi_Register(name, propertyType, ownerType, typeMetadata, &_ret));
+		Debug.OK(staticInstance.abi_Register(hstring(name).handle, propertyType, ownerType, typeMetadata, &_ret));
 		return _ret;
 	}
-	static Windows.UI.Xaml.DependencyProperty RegisterAttached(HSTRING name, Windows.UI.Xaml.Interop.TypeName propertyType, Windows.UI.Xaml.Interop.TypeName ownerType, Windows.UI.Xaml.PropertyMetadata defaultMetadata)
+	static Windows.UI.Xaml.DependencyProperty RegisterAttached(wstring name, Windows.UI.Xaml.Interop.TypeName propertyType, Windows.UI.Xaml.Interop.TypeName ownerType, Windows.UI.Xaml.PropertyMetadata defaultMetadata)
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.abi_RegisterAttached(name, propertyType, ownerType, defaultMetadata, &_ret));
+		Debug.OK(staticInstance.abi_RegisterAttached(hstring(name).handle, propertyType, ownerType, defaultMetadata, &_ret));
 		return _ret;
 	}
 }
@@ -2740,15 +2740,15 @@ extern(Windows):
 interface DragUIOverride : Windows.UI.Xaml.IDragUIOverride
 {
 extern(Windows):
-	final HSTRING Caption()
+	final wstring Caption()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).get_Caption(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Caption(HSTRING value)
+	final void Caption(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).set_Caption(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).set_Caption(hstring(value).handle));
 	}
 	final bool IsContentVisible()
 	{
@@ -2937,11 +2937,11 @@ extern(Windows):
 interface ExceptionRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.IExceptionRoutedEventArgs
 {
 extern(Windows):
-	final HSTRING ErrorMessage()
+	final wstring ErrorMessage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.IExceptionRoutedEventArgs)this.asInterface(uuid("dd9ff16a-4b62-4a6c-a49d-0671ef6136be"))).get_ErrorMessage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 @makable!(ExceptionRoutedEventArgs, ExceptionRoutedEventArgs, Windows.UI.Xaml.IExceptionRoutedEventArgsFactory)
@@ -2991,15 +2991,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Tag(value));
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Language(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Language(hstring(value).handle));
 	}
 	final double ActualWidth()
 	{
@@ -3103,15 +3103,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Margin(value));
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Name(HSTRING value)
+	final void Name(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Name(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Name(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri BaseUri()
 	{
@@ -3195,10 +3195,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).remove_LayoutUpdated(token));
 	}
-	final IInspectable FindName(HSTRING name)
+	final IInspectable FindName(wstring name)
 	{
 		IInspectable _ret;
-		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).abi_FindName(name, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).abi_FindName(hstring(name).handle, &_ret));
 		return _ret;
 	}
 	final void SetBinding(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.Data.BindingBase binding)
@@ -3748,9 +3748,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Core.IFrameworkView)this.asInterface(uuid("faab5cd0-8924-45ac-ad0f-a08fae5d0324"))).abi_SetWindow(window));
 	}
-	final void Load(HSTRING entryPoint)
+	final void Load(wstring entryPoint)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Core.IFrameworkView)this.asInterface(uuid("faab5cd0-8924-45ac-ad0f-a08fae5d0324"))).abi_Load(entryPoint));
+		Debug.OK((cast(Windows.ApplicationModel.Core.IFrameworkView)this.asInterface(uuid("faab5cd0-8924-45ac-ad0f-a08fae5d0324"))).abi_Load(hstring(entryPoint).handle));
 	}
 	final void Run()
 	{
@@ -3840,11 +3840,11 @@ interface GridLengthHelper : Windows.UI.Xaml.IGridLengthHelper
 interface MediaFailedRoutedEventArgs : Windows.UI.Xaml.ExceptionRoutedEventArgs, Windows.UI.Xaml.IMediaFailedRoutedEventArgs
 {
 extern(Windows):
-	final HSTRING ErrorTrace()
+	final wstring ErrorTrace()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.IMediaFailedRoutedEventArgs)this.asInterface(uuid("46d1fa8d-5149-4153-ba3c-b03e64ee531e"))).get_ErrorTrace(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -3935,17 +3935,17 @@ class PropertyMetadataT(Base) : AgileObject!Base, PropertyMetadata
 interface PropertyPath : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IPropertyPath
 {
 extern(Windows):
-	final HSTRING Path()
+	final wstring Path()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.IPropertyPath)this.asInterface(uuid("300e5d8a-1ff3-4d2c-95ec-27f81debacb8"))).get_Path(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.UI.Xaml.PropertyPath New(HSTRING path)
+	static Windows.UI.Xaml.PropertyPath New(wstring path)
 	{
 		auto factory = factory!(Windows.UI.Xaml.IPropertyPathFactory);
 		Windows.UI.Xaml.PropertyPath _ret;
-		Debug.OK((cast(Windows.UI.Xaml.IPropertyPathFactory)factory.asInterface(uuid("4e4cdf99-9826-4e56-847c-ca055f162905"))).abi_CreateInstance(path, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IPropertyPathFactory)factory.asInterface(uuid("4e4cdf99-9826-4e56-847c-ca055f162905"))).abi_CreateInstance(hstring(path).handle, &_ret));
 		return _ret;
 	}
 }
@@ -5363,15 +5363,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).set_AccessKeyScopeOwner(value));
 	}
-	final HSTRING AccessKey()
+	final wstring AccessKey()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).get_AccessKey(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AccessKey(HSTRING value)
+	final void AccessKey(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).set_AccessKey(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).set_AccessKey(hstring(value).handle));
 	}
 	final EventRegistrationToken OnContextRequested(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs) fn)
 	{
@@ -6018,11 +6018,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.IUnhandledExceptionEventArgs)this.asInterface(uuid("7230269c-054e-4cf3-86c5-be90eb6863d5"))).get_Exception(&_ret));
 		return _ret;
 	}
-	final HSTRING Message()
+	final wstring Message()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.IUnhandledExceptionEventArgs)this.asInterface(uuid("7230269c-054e-4cf3-86c5-be90eb6863d5"))).get_Message(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool Handled()
 	{
@@ -6039,11 +6039,11 @@ extern(Windows):
 interface VisualState : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IVisualState, Windows.UI.Xaml.IVisualState2
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.IVisualState)this.asInterface(uuid("6320affc-c31a-4450-afde-f6ea7bd1f586"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.UI.Xaml.Media.Animation.Storyboard Storyboard()
 	{
@@ -6119,11 +6119,11 @@ extern(Windows):
 interface VisualStateGroup : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IVisualStateGroup
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.IVisualStateGroup)this.asInterface(uuid("e4f9d9a4-e028-44de-9b15-4929ae0a26c2"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.VisualTransition) Transitions()
 	{
@@ -6211,10 +6211,10 @@ extern(Windows):
 	{
 		Debug.OK(staticInstance.abi_SetCustomVisualStateManager(obj, value));
 	}
-	static bool GoToState(Windows.UI.Xaml.Controls.Control control, HSTRING stateName, bool useTransitions)
+	static bool GoToState(Windows.UI.Xaml.Controls.Control control, wstring stateName, bool useTransitions)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_GoToState(control, stateName, useTransitions, &_ret));
+		Debug.OK(staticInstance.abi_GoToState(control, hstring(stateName).handle, useTransitions, &_ret));
 		return _ret;
 	}
 	static VisualStateManager New()
@@ -6278,25 +6278,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).set_GeneratedEasingFunction(value));
 	}
-	final HSTRING To()
+	final wstring To()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).get_To(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void To(HSTRING value)
+	final void To(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).set_To(value));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).set_To(hstring(value).handle));
 	}
-	final HSTRING From()
+	final wstring From()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).get_From(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void From(HSTRING value)
+	final void From(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).set_From(value));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).set_From(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Media.Animation.Storyboard Storyboard()
 	{

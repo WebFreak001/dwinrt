@@ -180,11 +180,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiagnosticInfo)this.asInterface(uuid("e830b04b-300e-4ee6-a0ab-5b5f5231b434"))).get_ProcessId(&_ret));
 		return _ret;
 	}
-	final HSTRING ExecutableFileName()
+	final wstring ExecutableFileName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiagnosticInfo)this.asInterface(uuid("e830b04b-300e-4ee6-a0ab-5b5f5231b434"))).get_ExecutableFileName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.System.Diagnostics.ProcessDiagnosticInfo Parent()
 	{

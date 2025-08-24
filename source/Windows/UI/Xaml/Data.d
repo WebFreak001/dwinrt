@@ -366,15 +366,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Data.IBinding)this.asInterface(uuid("3f7a0c6b-d00f-4730-8c1d-48e16c46f9ca"))).set_RelativeSource(value));
 	}
-	final HSTRING ElementName()
+	final wstring ElementName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Data.IBinding)this.asInterface(uuid("3f7a0c6b-d00f-4730-8c1d-48e16c46f9ca"))).get_ElementName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ElementName(HSTRING value)
+	final void ElementName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Data.IBinding)this.asInterface(uuid("3f7a0c6b-d00f-4730-8c1d-48e16c46f9ca"))).set_ElementName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Data.IBinding)this.asInterface(uuid("3f7a0c6b-d00f-4730-8c1d-48e16c46f9ca"))).set_ElementName(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Data.IValueConverter Converter()
 	{
@@ -396,15 +396,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Data.IBinding)this.asInterface(uuid("3f7a0c6b-d00f-4730-8c1d-48e16c46f9ca"))).set_ConverterParameter(value));
 	}
-	final HSTRING ConverterLanguage()
+	final wstring ConverterLanguage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Data.IBinding)this.asInterface(uuid("3f7a0c6b-d00f-4730-8c1d-48e16c46f9ca"))).get_ConverterLanguage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ConverterLanguage(HSTRING value)
+	final void ConverterLanguage(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Data.IBinding)this.asInterface(uuid("3f7a0c6b-d00f-4730-8c1d-48e16c46f9ca"))).set_ConverterLanguage(value));
+		Debug.OK((cast(Windows.UI.Xaml.Data.IBinding)this.asInterface(uuid("3f7a0c6b-d00f-4730-8c1d-48e16c46f9ca"))).set_ConverterLanguage(hstring(value).handle));
 	}
 	final IInspectable FallbackValue()
 	{
@@ -768,11 +768,11 @@ class ItemIndexRangeT(Base) : AgileObject!Base, ItemIndexRange
 interface PropertyChangedEventArgs : Windows.UI.Xaml.Data.IPropertyChangedEventArgs
 {
 extern(Windows):
-	final HSTRING PropertyName()
+	final wstring PropertyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Data.IPropertyChangedEventArgs)this.asInterface(uuid("4f33a9a0-5cf4-47a4-b16f-d7faaf17457e"))).get_PropertyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static PropertyChangedEventArgs New(HSTRING name)
 	{

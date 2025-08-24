@@ -73,15 +73,15 @@ extern(Windows):
 interface MessageDialog : Windows.UI.Popups.IMessageDialog
 {
 extern(Windows):
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).set_Title(value));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).set_Title(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) Commands()
 	{
@@ -109,15 +109,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).set_CancelCommandIndex(value));
 	}
-	final HSTRING Content()
+	final wstring Content()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).get_Content(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Content(HSTRING value)
+	final void Content(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).set_Content(value));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).set_Content(hstring(value).handle));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsync()
 	{
@@ -135,18 +135,18 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).set_Options(value));
 	}
-	static Windows.UI.Popups.MessageDialog New(HSTRING content)
+	static Windows.UI.Popups.MessageDialog New(wstring content)
 	{
 		auto factory = factory!(Windows.UI.Popups.IMessageDialogFactory);
 		Windows.UI.Popups.MessageDialog _ret;
-		Debug.OK((cast(Windows.UI.Popups.IMessageDialogFactory)factory.asInterface(uuid("2d161777-a66f-4ea5-bb87-793ffa4941f2"))).abi_Create(content, &_ret));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialogFactory)factory.asInterface(uuid("2d161777-a66f-4ea5-bb87-793ffa4941f2"))).abi_Create(hstring(content).handle, &_ret));
 		return _ret;
 	}
-	static Windows.UI.Popups.MessageDialog New(HSTRING content, HSTRING title)
+	static Windows.UI.Popups.MessageDialog New(wstring content, wstring title)
 	{
 		auto factory = factory!(Windows.UI.Popups.IMessageDialogFactory);
 		Windows.UI.Popups.MessageDialog _ret;
-		Debug.OK((cast(Windows.UI.Popups.IMessageDialogFactory)factory.asInterface(uuid("2d161777-a66f-4ea5-bb87-793ffa4941f2"))).abi_CreateWithTitle(content, title, &_ret));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialogFactory)factory.asInterface(uuid("2d161777-a66f-4ea5-bb87-793ffa4941f2"))).abi_CreateWithTitle(hstring(content).handle, hstring(title).handle, &_ret));
 		return _ret;
 	}
 }
@@ -191,15 +191,15 @@ extern(Windows):
 interface UICommand : Windows.UI.Popups.IUICommand
 {
 extern(Windows):
-	final HSTRING Label()
+	final wstring Label()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).get_Label(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Label(HSTRING value)
+	final void Label(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).set_Label(value));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).set_Label(hstring(value).handle));
 	}
 	final Windows.UI.Popups.UICommandInvokedHandler Invoked()
 	{
@@ -227,25 +227,25 @@ extern(Windows):
 		Debug.OK(activationFactory!(UICommand).abi_ActivateInstance(&ret));
 		return cast(UICommand) ret;
 	}
-	static Windows.UI.Popups.UICommand New(HSTRING label)
+	static Windows.UI.Popups.UICommand New(wstring label)
 	{
 		auto factory = factory!(Windows.UI.Popups.IUICommandFactory);
 		Windows.UI.Popups.UICommand _ret;
-		Debug.OK((cast(Windows.UI.Popups.IUICommandFactory)factory.asInterface(uuid("a21a8189-26b0-4676-ae94-54041bc125e8"))).abi_Create(label, &_ret));
+		Debug.OK((cast(Windows.UI.Popups.IUICommandFactory)factory.asInterface(uuid("a21a8189-26b0-4676-ae94-54041bc125e8"))).abi_Create(hstring(label).handle, &_ret));
 		return _ret;
 	}
-	static Windows.UI.Popups.UICommand New(HSTRING label, Windows.UI.Popups.UICommandInvokedHandler action)
+	static Windows.UI.Popups.UICommand New(wstring label, Windows.UI.Popups.UICommandInvokedHandler action)
 	{
 		auto factory = factory!(Windows.UI.Popups.IUICommandFactory);
 		Windows.UI.Popups.UICommand _ret;
-		Debug.OK((cast(Windows.UI.Popups.IUICommandFactory)factory.asInterface(uuid("a21a8189-26b0-4676-ae94-54041bc125e8"))).abi_CreateWithHandler(label, action, &_ret));
+		Debug.OK((cast(Windows.UI.Popups.IUICommandFactory)factory.asInterface(uuid("a21a8189-26b0-4676-ae94-54041bc125e8"))).abi_CreateWithHandler(hstring(label).handle, action, &_ret));
 		return _ret;
 	}
-	static Windows.UI.Popups.UICommand New(HSTRING label, Windows.UI.Popups.UICommandInvokedHandler action, IInspectable commandId)
+	static Windows.UI.Popups.UICommand New(wstring label, Windows.UI.Popups.UICommandInvokedHandler action, IInspectable commandId)
 	{
 		auto factory = factory!(Windows.UI.Popups.IUICommandFactory);
 		Windows.UI.Popups.UICommand _ret;
-		Debug.OK((cast(Windows.UI.Popups.IUICommandFactory)factory.asInterface(uuid("a21a8189-26b0-4676-ae94-54041bc125e8"))).abi_CreateWithHandlerAndId(label, action, commandId, &_ret));
+		Debug.OK((cast(Windows.UI.Popups.IUICommandFactory)factory.asInterface(uuid("a21a8189-26b0-4676-ae94-54041bc125e8"))).abi_CreateWithHandlerAndId(hstring(label).handle, action, commandId, &_ret));
 		return _ret;
 	}
 }
@@ -253,15 +253,15 @@ extern(Windows):
 interface UICommandSeparator : Windows.UI.Popups.IUICommand
 {
 extern(Windows):
-	final HSTRING Label()
+	final wstring Label()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).get_Label(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Label(HSTRING value)
+	final void Label(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).set_Label(value));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).set_Label(hstring(value).handle));
 	}
 	final Windows.UI.Popups.UICommandInvokedHandler Invoked()
 	{

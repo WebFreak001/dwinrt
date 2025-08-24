@@ -217,9 +217,9 @@ interface XamlBindingHelper : Windows.UI.Xaml.Markup.IXamlBindingHelper
 		Debug.OK(staticInstance.abi_ConvertValue(type, value, &_ret));
 		return _ret;
 	}
-	static void SetPropertyFromString(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, HSTRING value)
+	static void SetPropertyFromString(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, wstring value)
 	{
-		Debug.OK(staticInstance.abi_SetPropertyFromString(dependencyObject, propertyToSet, value));
+		Debug.OK(staticInstance.abi_SetPropertyFromString(dependencyObject, propertyToSet, hstring(value).handle));
 	}
 	static void SetPropertyFromBoolean(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, bool value)
 	{
@@ -309,16 +309,16 @@ interface XamlReader : Windows.UI.Xaml.Markup.IXamlReader
 		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Markup.IXamlReaderStatics);
 		return _staticInstance;
 	}
-	static IInspectable Load(HSTRING xaml)
+	static IInspectable Load(wstring xaml)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.abi_Load(xaml, &_ret));
+		Debug.OK(staticInstance.abi_Load(hstring(xaml).handle, &_ret));
 		return _ret;
 	}
-	static IInspectable LoadWithInitialTemplateValidation(HSTRING xaml)
+	static IInspectable LoadWithInitialTemplateValidation(wstring xaml)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.abi_LoadWithInitialTemplateValidation(xaml, &_ret));
+		Debug.OK(staticInstance.abi_LoadWithInitialTemplateValidation(hstring(xaml).handle, &_ret));
 		return _ret;
 	}
 }

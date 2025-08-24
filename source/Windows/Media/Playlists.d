@@ -36,16 +36,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Playlists.IPlaylist)this.asInterface(uuid("803736f5-cf44-4d97-83b3-7a089e9ab663"))).abi_SaveAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) SaveAsAsync(Windows.Storage.IStorageFolder saveLocation, HSTRING desiredName, Windows.Storage.NameCollisionOption option)
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) SaveAsAsync(Windows.Storage.IStorageFolder saveLocation, wstring desiredName, Windows.Storage.NameCollisionOption option)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
-		Debug.OK((cast(Windows.Media.Playlists.IPlaylist)this.asInterface(uuid("803736f5-cf44-4d97-83b3-7a089e9ab663"))).abi_SaveAsAsync(saveLocation, desiredName, option, &_ret));
+		Debug.OK((cast(Windows.Media.Playlists.IPlaylist)this.asInterface(uuid("803736f5-cf44-4d97-83b3-7a089e9ab663"))).abi_SaveAsAsync(saveLocation, hstring(desiredName).handle, option, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) SaveAsWithFormatAsync(Windows.Storage.IStorageFolder saveLocation, HSTRING desiredName, Windows.Storage.NameCollisionOption option, Windows.Media.Playlists.PlaylistFormat playlistFormat)
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) SaveAsWithFormatAsync(Windows.Storage.IStorageFolder saveLocation, wstring desiredName, Windows.Storage.NameCollisionOption option, Windows.Media.Playlists.PlaylistFormat playlistFormat)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
-		Debug.OK((cast(Windows.Media.Playlists.IPlaylist)this.asInterface(uuid("803736f5-cf44-4d97-83b3-7a089e9ab663"))).abi_SaveAsWithFormatAsync(saveLocation, desiredName, option, playlistFormat, &_ret));
+		Debug.OK((cast(Windows.Media.Playlists.IPlaylist)this.asInterface(uuid("803736f5-cf44-4d97-83b3-7a089e9ab663"))).abi_SaveAsWithFormatAsync(saveLocation, hstring(desiredName).handle, option, playlistFormat, &_ret));
 		return _ret;
 	}
 	alias SaveAsAsync = SaveAsWithFormatAsync;

@@ -619,10 +619,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskRequest)this.asInterface(uuid("6ff61e2e-2722-4240-a67c-f364849a17f3"))).get_Deadline(&_ret));
 		return _ret;
 	}
-	final Windows.Graphics.Printing.PrintTask CreatePrintTask(HSTRING title, Windows.Graphics.Printing.PrintTaskSourceRequestedHandler handler)
+	final Windows.Graphics.Printing.PrintTask CreatePrintTask(wstring title, Windows.Graphics.Printing.PrintTaskSourceRequestedHandler handler)
 	{
 		Windows.Graphics.Printing.PrintTask _ret;
-		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskRequest)this.asInterface(uuid("6ff61e2e-2722-4240-a67c-f364849a17f3"))).abi_CreatePrintTask(title, handler, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskRequest)this.asInterface(uuid("6ff61e2e-2722-4240-a67c-f364849a17f3"))).abi_CreatePrintTask(hstring(title).handle, handler, &_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Printing.PrintTaskRequestedDeferral GetDeferral()
@@ -691,83 +691,83 @@ interface StandardPrintTaskOptions
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic);
 		return _staticInstance;
 	}
-	static HSTRING MediaSize()
+	static wstring MediaSize()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MediaSize(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MediaType()
+	static wstring MediaType()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MediaType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Orientation()
+	static wstring Orientation()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Orientation(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING PrintQuality()
+	static wstring PrintQuality()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_PrintQuality(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ColorMode()
+	static wstring ColorMode()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ColorMode(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Duplex()
+	static wstring Duplex()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Duplex(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Collation()
+	static wstring Collation()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Collation(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Staple()
+	static wstring Staple()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Staple(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HolePunch()
+	static wstring HolePunch()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HolePunch(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Binding()
+	static wstring Binding()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Binding(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Copies()
+	static wstring Copies()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Copies(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING NUp()
+	static wstring NUp()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_NUp(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING InputBin()
+	static wstring InputBin()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_InputBin(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

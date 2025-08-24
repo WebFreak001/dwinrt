@@ -234,11 +234,11 @@ extern(Windows):
 interface AudioEffectDefinition : Windows.Media.Effects.IAudioEffectDefinition
 {
 extern(Windows):
-	final HSTRING ActivatableClassId()
+	final wstring ActivatableClassId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_ActivatableClassId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
@@ -246,18 +246,18 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_Properties(&_ret));
 		return _ret;
 	}
-	static Windows.Media.Effects.AudioEffectDefinition New(HSTRING activatableClassId)
+	static Windows.Media.Effects.AudioEffectDefinition New(wstring activatableClassId)
 	{
 		auto factory = factory!(Windows.Media.Effects.IAudioEffectDefinitionFactory);
 		Windows.Media.Effects.AudioEffectDefinition _ret;
-		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinitionFactory)factory.asInterface(uuid("8e1da646-e705-45ed-8a2b-fc4e4f405a97"))).abi_Create(activatableClassId, &_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinitionFactory)factory.asInterface(uuid("8e1da646-e705-45ed-8a2b-fc4e4f405a97"))).abi_Create(hstring(activatableClassId).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Media.Effects.AudioEffectDefinition New(HSTRING activatableClassId, Windows.Foundation.Collections.IPropertySet props)
+	static Windows.Media.Effects.AudioEffectDefinition New(wstring activatableClassId, Windows.Foundation.Collections.IPropertySet props)
 	{
 		auto factory = factory!(Windows.Media.Effects.IAudioEffectDefinitionFactory);
 		Windows.Media.Effects.AudioEffectDefinition _ret;
-		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinitionFactory)factory.asInterface(uuid("8e1da646-e705-45ed-8a2b-fc4e4f405a97"))).abi_CreateWithProperties(activatableClassId, props, &_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinitionFactory)factory.asInterface(uuid("8e1da646-e705-45ed-8a2b-fc4e4f405a97"))).abi_CreateWithProperties(hstring(activatableClassId).handle, props, &_ret));
 		return _ret;
 	}
 }
@@ -270,29 +270,29 @@ interface AudioEffectsManager
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Effects.IAudioEffectsManagerStatics);
 		return _staticInstance;
 	}
-	static Windows.Media.Effects.AudioRenderEffectsManager CreateAudioRenderEffectsManager(HSTRING deviceId, Windows.Media.Render.AudioRenderCategory category)
+	static Windows.Media.Effects.AudioRenderEffectsManager CreateAudioRenderEffectsManager(wstring deviceId, Windows.Media.Render.AudioRenderCategory category)
 	{
 		Windows.Media.Effects.AudioRenderEffectsManager _ret;
-		Debug.OK(staticInstance.abi_CreateAudioRenderEffectsManager(deviceId, category, &_ret));
+		Debug.OK(staticInstance.abi_CreateAudioRenderEffectsManager(hstring(deviceId).handle, category, &_ret));
 		return _ret;
 	}
-	static Windows.Media.Effects.AudioRenderEffectsManager CreateAudioRenderEffectsManagerWithMode(HSTRING deviceId, Windows.Media.Render.AudioRenderCategory category, Windows.Media.AudioProcessing mode)
+	static Windows.Media.Effects.AudioRenderEffectsManager CreateAudioRenderEffectsManagerWithMode(wstring deviceId, Windows.Media.Render.AudioRenderCategory category, Windows.Media.AudioProcessing mode)
 	{
 		Windows.Media.Effects.AudioRenderEffectsManager _ret;
-		Debug.OK(staticInstance.abi_CreateAudioRenderEffectsManagerWithMode(deviceId, category, mode, &_ret));
+		Debug.OK(staticInstance.abi_CreateAudioRenderEffectsManagerWithMode(hstring(deviceId).handle, category, mode, &_ret));
 		return _ret;
 	}
 	alias CreateAudioRenderEffectsManager = CreateAudioRenderEffectsManagerWithMode;
-	static Windows.Media.Effects.AudioCaptureEffectsManager CreateAudioCaptureEffectsManager(HSTRING deviceId, Windows.Media.Capture.MediaCategory category)
+	static Windows.Media.Effects.AudioCaptureEffectsManager CreateAudioCaptureEffectsManager(wstring deviceId, Windows.Media.Capture.MediaCategory category)
 	{
 		Windows.Media.Effects.AudioCaptureEffectsManager _ret;
-		Debug.OK(staticInstance.abi_CreateAudioCaptureEffectsManager(deviceId, category, &_ret));
+		Debug.OK(staticInstance.abi_CreateAudioCaptureEffectsManager(hstring(deviceId).handle, category, &_ret));
 		return _ret;
 	}
-	static Windows.Media.Effects.AudioCaptureEffectsManager CreateAudioCaptureEffectsManagerWithMode(HSTRING deviceId, Windows.Media.Capture.MediaCategory category, Windows.Media.AudioProcessing mode)
+	static Windows.Media.Effects.AudioCaptureEffectsManager CreateAudioCaptureEffectsManagerWithMode(wstring deviceId, Windows.Media.Capture.MediaCategory category, Windows.Media.AudioProcessing mode)
 	{
 		Windows.Media.Effects.AudioCaptureEffectsManager _ret;
-		Debug.OK(staticInstance.abi_CreateAudioCaptureEffectsManagerWithMode(deviceId, category, mode, &_ret));
+		Debug.OK(staticInstance.abi_CreateAudioCaptureEffectsManagerWithMode(hstring(deviceId).handle, category, mode, &_ret));
 		return _ret;
 	}
 	alias CreateAudioCaptureEffectsManager = CreateAudioCaptureEffectsManagerWithMode;
@@ -325,11 +325,11 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("Not supported starting in windows 10")
-	final HSTRING EffectsProviderSettingsLabel()
+	final wstring EffectsProviderSettingsLabel()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Effects.IAudioRenderEffectsManager2)this.asInterface(uuid("a844cd09-5ecc-44b3-bb4e-1db07287139c"))).get_EffectsProviderSettingsLabel(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("Not supported starting in windows 10")
 	final void ShowSettingsUI()
@@ -404,11 +404,11 @@ extern(Windows):
 interface VideoCompositorDefinition : Windows.Media.Effects.IVideoCompositorDefinition
 {
 extern(Windows):
-	final HSTRING ActivatableClassId()
+	final wstring ActivatableClassId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Effects.IVideoCompositorDefinition)this.asInterface(uuid("7946b8d0-2010-4ae3-9ab2-2cef42edd4d2"))).get_ActivatableClassId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
@@ -416,18 +416,18 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Effects.IVideoCompositorDefinition)this.asInterface(uuid("7946b8d0-2010-4ae3-9ab2-2cef42edd4d2"))).get_Properties(&_ret));
 		return _ret;
 	}
-	static Windows.Media.Effects.VideoCompositorDefinition New(HSTRING activatableClassId)
+	static Windows.Media.Effects.VideoCompositorDefinition New(wstring activatableClassId)
 	{
 		auto factory = factory!(Windows.Media.Effects.IVideoCompositorDefinitionFactory);
 		Windows.Media.Effects.VideoCompositorDefinition _ret;
-		Debug.OK((cast(Windows.Media.Effects.IVideoCompositorDefinitionFactory)factory.asInterface(uuid("4366fd10-68b8-4d52-89b6-02a968cca899"))).abi_Create(activatableClassId, &_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoCompositorDefinitionFactory)factory.asInterface(uuid("4366fd10-68b8-4d52-89b6-02a968cca899"))).abi_Create(hstring(activatableClassId).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Media.Effects.VideoCompositorDefinition New(HSTRING activatableClassId, Windows.Foundation.Collections.IPropertySet props)
+	static Windows.Media.Effects.VideoCompositorDefinition New(wstring activatableClassId, Windows.Foundation.Collections.IPropertySet props)
 	{
 		auto factory = factory!(Windows.Media.Effects.IVideoCompositorDefinitionFactory);
 		Windows.Media.Effects.VideoCompositorDefinition _ret;
-		Debug.OK((cast(Windows.Media.Effects.IVideoCompositorDefinitionFactory)factory.asInterface(uuid("4366fd10-68b8-4d52-89b6-02a968cca899"))).abi_CreateWithProperties(activatableClassId, props, &_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoCompositorDefinitionFactory)factory.asInterface(uuid("4366fd10-68b8-4d52-89b6-02a968cca899"))).abi_CreateWithProperties(hstring(activatableClassId).handle, props, &_ret));
 		return _ret;
 	}
 }
@@ -435,11 +435,11 @@ extern(Windows):
 interface VideoEffectDefinition : Windows.Media.Effects.IVideoEffectDefinition
 {
 extern(Windows):
-	final HSTRING ActivatableClassId()
+	final wstring ActivatableClassId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Effects.IVideoEffectDefinition)this.asInterface(uuid("39f38cf0-8d0f-4f3e-84fc-2d46a5297943"))).get_ActivatableClassId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
@@ -447,18 +447,18 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Effects.IVideoEffectDefinition)this.asInterface(uuid("39f38cf0-8d0f-4f3e-84fc-2d46a5297943"))).get_Properties(&_ret));
 		return _ret;
 	}
-	static Windows.Media.Effects.VideoEffectDefinition New(HSTRING activatableClassId)
+	static Windows.Media.Effects.VideoEffectDefinition New(wstring activatableClassId)
 	{
 		auto factory = factory!(Windows.Media.Effects.IVideoEffectDefinitionFactory);
 		Windows.Media.Effects.VideoEffectDefinition _ret;
-		Debug.OK((cast(Windows.Media.Effects.IVideoEffectDefinitionFactory)factory.asInterface(uuid("81439b4e-6e33-428f-9d21-b5aafef7617c"))).abi_Create(activatableClassId, &_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoEffectDefinitionFactory)factory.asInterface(uuid("81439b4e-6e33-428f-9d21-b5aafef7617c"))).abi_Create(hstring(activatableClassId).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Media.Effects.VideoEffectDefinition New(HSTRING activatableClassId, Windows.Foundation.Collections.IPropertySet props)
+	static Windows.Media.Effects.VideoEffectDefinition New(wstring activatableClassId, Windows.Foundation.Collections.IPropertySet props)
 	{
 		auto factory = factory!(Windows.Media.Effects.IVideoEffectDefinitionFactory);
 		Windows.Media.Effects.VideoEffectDefinition _ret;
-		Debug.OK((cast(Windows.Media.Effects.IVideoEffectDefinitionFactory)factory.asInterface(uuid("81439b4e-6e33-428f-9d21-b5aafef7617c"))).abi_CreateWithProperties(activatableClassId, props, &_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoEffectDefinitionFactory)factory.asInterface(uuid("81439b4e-6e33-428f-9d21-b5aafef7617c"))).abi_CreateWithProperties(hstring(activatableClassId).handle, props, &_ret));
 		return _ret;
 	}
 }
@@ -466,11 +466,11 @@ extern(Windows):
 interface VideoTransformEffectDefinition : Windows.Media.Effects.IVideoEffectDefinition, Windows.Media.Effects.IVideoTransformEffectDefinition
 {
 extern(Windows):
-	final HSTRING ActivatableClassId()
+	final wstring ActivatableClassId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Effects.IVideoEffectDefinition)this.asInterface(uuid("39f38cf0-8d0f-4f3e-84fc-2d46a5297943"))).get_ActivatableClassId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{

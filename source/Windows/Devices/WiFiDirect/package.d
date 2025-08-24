@@ -380,11 +380,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.WiFiDirect.IWiFiDirectDevice)this.asInterface(uuid("72deaaa8-72eb-4dae-8a28-8513355d2777"))).get_ConnectionStatus(&_ret));
 		return _ret;
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.WiFiDirect.IWiFiDirectDevice)this.asInterface(uuid("72deaaa8-72eb-4dae-8a28-8513355d2777"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final EventRegistrationToken OnConnectionStatusChanged(void delegate(Windows.Devices.WiFiDirect.WiFiDirectDevice, IInspectable) fn)
 	{
@@ -413,16 +413,16 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.WiFiDirect.IWiFiDirectDeviceStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.WiFiDirectDevice) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.WiFiDirectDevice) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.WiFiDirectDevice) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 }
@@ -500,15 +500,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.WiFiDirect.IWiFiDirectLegacySettings)this.asInterface(uuid("a64fdbba-f2fd-4567-a91b-f5c2f5321057"))).set_IsEnabled(value));
 	}
-	final HSTRING Ssid()
+	final wstring Ssid()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.WiFiDirect.IWiFiDirectLegacySettings)this.asInterface(uuid("a64fdbba-f2fd-4567-a91b-f5c2f5321057"))).get_Ssid(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Ssid(HSTRING value)
+	final void Ssid(wstring value)
 	{
-		Debug.OK((cast(Windows.Devices.WiFiDirect.IWiFiDirectLegacySettings)this.asInterface(uuid("a64fdbba-f2fd-4567-a91b-f5c2f5321057"))).set_Ssid(value));
+		Debug.OK((cast(Windows.Devices.WiFiDirect.IWiFiDirectLegacySettings)this.asInterface(uuid("a64fdbba-f2fd-4567-a91b-f5c2f5321057"))).set_Ssid(hstring(value).handle));
 	}
 	final Windows.Security.Credentials.PasswordCredential Passphrase()
 	{

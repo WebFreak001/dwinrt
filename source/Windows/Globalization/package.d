@@ -526,15 +526,15 @@ interface ApplicationLanguages
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Globalization.IApplicationLanguagesStatics);
 		return _staticInstance;
 	}
-	static HSTRING PrimaryLanguageOverride()
+	static wstring PrimaryLanguageOverride()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_PrimaryLanguageOverride(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static void PrimaryLanguageOverride(HSTRING value)
+	static void PrimaryLanguageOverride(wstring value)
 	{
-		Debug.OK(staticInstance.set_PrimaryLanguageOverride(value));
+		Debug.OK(staticInstance.set_PrimaryLanguageOverride(hstring(value).handle));
 	}
 	static Windows.Foundation.Collections.IVectorView!(HSTRING) Languages()
 	{
@@ -573,35 +573,35 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_Languages(&_ret));
 		return _ret;
 	}
-	final HSTRING NumeralSystem()
+	final wstring NumeralSystem()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_NumeralSystem(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NumeralSystem(HSTRING value)
+	final void NumeralSystem(wstring value)
 	{
-		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).set_NumeralSystem(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).set_NumeralSystem(hstring(value).handle));
 	}
-	final HSTRING GetCalendarSystem()
+	final wstring GetCalendarSystem()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_GetCalendarSystem(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ChangeCalendarSystem(HSTRING value)
+	final void ChangeCalendarSystem(wstring value)
 	{
-		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_ChangeCalendarSystem(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_ChangeCalendarSystem(hstring(value).handle));
 	}
-	final HSTRING GetClock()
+	final wstring GetClock()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_GetClock(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ChangeClock(HSTRING value)
+	final void ChangeClock(wstring value)
 	{
-		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_ChangeClock(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_ChangeClock(hstring(value).handle));
 	}
 	final Windows.Foundation.DateTime GetDateTime()
 	{
@@ -649,18 +649,18 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddEras(eras));
 	}
-	final HSTRING EraAsFullString()
+	final wstring EraAsFullString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_EraAsFullString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias EraAsString = EraAsFullString;
-	final HSTRING EraAsString(INT32 idealLength)
+	final wstring EraAsString(INT32 idealLength)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_EraAsString(idealLength, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 FirstYearInThisEra()
 	{
@@ -694,23 +694,23 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddYears(years));
 	}
-	final HSTRING YearAsString()
+	final wstring YearAsString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_YearAsString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING YearAsTruncatedString(INT32 remainingDigits)
+	final wstring YearAsTruncatedString(INT32 remainingDigits)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_YearAsTruncatedString(remainingDigits, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING YearAsPaddedString(INT32 minDigits)
+	final wstring YearAsPaddedString(INT32 minDigits)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_YearAsPaddedString(minDigits, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 FirstMonthInThisYear()
 	{
@@ -744,43 +744,43 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddMonths(months));
 	}
-	final HSTRING MonthAsFullString()
+	final wstring MonthAsFullString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsFullString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias MonthAsString = MonthAsFullString;
-	final HSTRING MonthAsString(INT32 idealLength)
+	final wstring MonthAsString(INT32 idealLength)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsString(idealLength, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING MonthAsFullSoloString()
+	final wstring MonthAsFullSoloString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsFullSoloString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias MonthAsSoloString = MonthAsFullSoloString;
-	final HSTRING MonthAsSoloString(INT32 idealLength)
+	final wstring MonthAsSoloString(INT32 idealLength)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsSoloString(idealLength, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING MonthAsNumericString()
+	final wstring MonthAsNumericString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsNumericString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING MonthAsPaddedNumericString(INT32 minDigits)
+	final wstring MonthAsPaddedNumericString(INT32 minDigits)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsPaddedNumericString(minDigits, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void AddWeeks(INT32 weeks)
 	{
@@ -818,17 +818,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddDays(days));
 	}
-	final HSTRING DayAsString()
+	final wstring DayAsString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayAsString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DayAsPaddedString(INT32 minDigits)
+	final wstring DayAsPaddedString(INT32 minDigits)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayAsPaddedString(minDigits, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Globalization.DayOfWeek DayOfWeek()
 	{
@@ -836,31 +836,31 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_DayOfWeek(&_ret));
 		return _ret;
 	}
-	final HSTRING DayOfWeekAsFullString()
+	final wstring DayOfWeekAsFullString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayOfWeekAsFullString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias DayOfWeekAsString = DayOfWeekAsFullString;
-	final HSTRING DayOfWeekAsString(INT32 idealLength)
+	final wstring DayOfWeekAsString(INT32 idealLength)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayOfWeekAsString(idealLength, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DayOfWeekAsFullSoloString()
+	final wstring DayOfWeekAsFullSoloString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayOfWeekAsFullSoloString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias DayOfWeekAsSoloString = DayOfWeekAsFullSoloString;
-	final HSTRING DayOfWeekAsSoloString(INT32 idealLength)
+	final wstring DayOfWeekAsSoloString(INT32 idealLength)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayOfWeekAsSoloString(idealLength, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 FirstPeriodInThisDay()
 	{
@@ -894,18 +894,18 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddPeriods(periods));
 	}
-	final HSTRING PeriodAsFullString()
+	final wstring PeriodAsFullString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_PeriodAsFullString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias PeriodAsString = PeriodAsFullString;
-	final HSTRING PeriodAsString(INT32 idealLength)
+	final wstring PeriodAsString(INT32 idealLength)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_PeriodAsString(idealLength, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 FirstHourInThisPeriod()
 	{
@@ -939,17 +939,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddHours(hours));
 	}
-	final HSTRING HourAsString()
+	final wstring HourAsString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_HourAsString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING HourAsPaddedString(INT32 minDigits)
+	final wstring HourAsPaddedString(INT32 minDigits)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_HourAsPaddedString(minDigits, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 Minute()
 	{
@@ -965,17 +965,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddMinutes(minutes));
 	}
-	final HSTRING MinuteAsString()
+	final wstring MinuteAsString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MinuteAsString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING MinuteAsPaddedString(INT32 minDigits)
+	final wstring MinuteAsPaddedString(INT32 minDigits)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MinuteAsPaddedString(minDigits, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 Second()
 	{
@@ -991,17 +991,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddSeconds(seconds));
 	}
-	final HSTRING SecondAsString()
+	final wstring SecondAsString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_SecondAsString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SecondAsPaddedString(INT32 minDigits)
+	final wstring SecondAsPaddedString(INT32 minDigits)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_SecondAsPaddedString(minDigits, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 Nanosecond()
 	{
@@ -1017,17 +1017,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddNanoseconds(nanoseconds));
 	}
-	final HSTRING NanosecondAsString()
+	final wstring NanosecondAsString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_NanosecondAsString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING NanosecondAsPaddedString(INT32 minDigits)
+	final wstring NanosecondAsPaddedString(INT32 minDigits)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_NanosecondAsPaddedString(minDigits, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 Compare(Windows.Globalization.Calendar other)
 	{
@@ -1081,11 +1081,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_NumberOfSecondsInThisMinute(&_ret));
 		return _ret;
 	}
-	final HSTRING ResolvedLanguage()
+	final wstring ResolvedLanguage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_ResolvedLanguage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsDaylightSavingTime()
 	{
@@ -1093,28 +1093,28 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_IsDaylightSavingTime(&_ret));
 		return _ret;
 	}
-	final HSTRING GetTimeZone()
+	final wstring GetTimeZone()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ITimeZoneOnCalendar)this.asInterface(uuid("bb3c25e5-46cf-4317-a3f5-02621ad54478"))).abi_GetTimeZone(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ChangeTimeZone(HSTRING timeZoneId)
+	final void ChangeTimeZone(wstring timeZoneId)
 	{
-		Debug.OK((cast(Windows.Globalization.ITimeZoneOnCalendar)this.asInterface(uuid("bb3c25e5-46cf-4317-a3f5-02621ad54478"))).abi_ChangeTimeZone(timeZoneId));
+		Debug.OK((cast(Windows.Globalization.ITimeZoneOnCalendar)this.asInterface(uuid("bb3c25e5-46cf-4317-a3f5-02621ad54478"))).abi_ChangeTimeZone(hstring(timeZoneId).handle));
 	}
-	final HSTRING TimeZoneAsFullString()
+	final wstring TimeZoneAsFullString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ITimeZoneOnCalendar)this.asInterface(uuid("bb3c25e5-46cf-4317-a3f5-02621ad54478"))).abi_TimeZoneAsFullString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias TimeZoneAsString = TimeZoneAsFullString;
-	final HSTRING TimeZoneAsString(INT32 idealLength)
+	final wstring TimeZoneAsString(INT32 idealLength)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ITimeZoneOnCalendar)this.asInterface(uuid("bb3c25e5-46cf-4317-a3f5-02621ad54478"))).abi_TimeZoneAsString(idealLength, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static Calendar New()
 	{
@@ -1129,11 +1129,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.ICalendarFactory)factory.asInterface(uuid("83f58412-e56b-4c75-a66e-0f63d57758a6"))).abi_CreateCalendarDefaultCalendarAndClock(languages, &_ret));
 		return _ret;
 	}
-	static Windows.Globalization.Calendar New(Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING calendar, HSTRING clock)
+	static Windows.Globalization.Calendar New(Windows.Foundation.Collections.IIterable!(HSTRING) languages, wstring calendar, wstring clock)
 	{
 		auto factory = factory!(Windows.Globalization.ICalendarFactory);
 		Windows.Globalization.Calendar _ret;
-		Debug.OK((cast(Windows.Globalization.ICalendarFactory)factory.asInterface(uuid("83f58412-e56b-4c75-a66e-0f63d57758a6"))).abi_CreateCalendar(languages, calendar, clock, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendarFactory)factory.asInterface(uuid("83f58412-e56b-4c75-a66e-0f63d57758a6"))).abi_CreateCalendar(languages, hstring(calendar).handle, hstring(clock).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1146,59 +1146,59 @@ interface CalendarIdentifiers
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Globalization.ICalendarIdentifiersStatics);
 		return _staticInstance;
 	}
-	static HSTRING Gregorian()
+	static wstring Gregorian()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Gregorian(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Hebrew()
+	static wstring Hebrew()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Hebrew(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Hijri()
+	static wstring Hijri()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Hijri(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Japanese()
+	static wstring Japanese()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Japanese(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Julian()
+	static wstring Julian()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Julian(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Korean()
+	static wstring Korean()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Korean(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Taiwan()
+	static wstring Taiwan()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Taiwan(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Thai()
+	static wstring Thai()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Thai(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING UmAlQura()
+	static wstring UmAlQura()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_UmAlQura(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1210,17 +1210,17 @@ interface ClockIdentifiers
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Globalization.IClockIdentifiersStatics);
 		return _staticInstance;
 	}
-	static HSTRING TwelveHour()
+	static wstring TwelveHour()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TwelveHour(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING TwentyFourHour()
+	static wstring TwentyFourHour()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TwentyFourHour(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1232,988 +1232,988 @@ interface CurrencyIdentifiers
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Globalization.ICurrencyIdentifiersStatics);
 		return _staticInstance;
 	}
-	static HSTRING AED()
+	static wstring AED()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AED(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AFN()
+	static wstring AFN()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AFN(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ALL()
+	static wstring ALL()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ALL(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AMD()
+	static wstring AMD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AMD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ANG()
+	static wstring ANG()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ANG(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AOA()
+	static wstring AOA()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AOA(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ARS()
+	static wstring ARS()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ARS(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AUD()
+	static wstring AUD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AUD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AWG()
+	static wstring AWG()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AWG(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AZN()
+	static wstring AZN()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AZN(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BAM()
+	static wstring BAM()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BAM(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BBD()
+	static wstring BBD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BBD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BDT()
+	static wstring BDT()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BDT(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BGN()
+	static wstring BGN()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BGN(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BHD()
+	static wstring BHD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BHD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BIF()
+	static wstring BIF()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BIF(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BMD()
+	static wstring BMD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BMD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BND()
+	static wstring BND()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BND(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BOB()
+	static wstring BOB()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BOB(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BRL()
+	static wstring BRL()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BRL(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BSD()
+	static wstring BSD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BSD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BTN()
+	static wstring BTN()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BTN(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BWP()
+	static wstring BWP()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BWP(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BYR()
+	static wstring BYR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BYR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BZD()
+	static wstring BZD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BZD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING CAD()
+	static wstring CAD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_CAD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING CDF()
+	static wstring CDF()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_CDF(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING CHF()
+	static wstring CHF()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_CHF(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING CLP()
+	static wstring CLP()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_CLP(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING CNY()
+	static wstring CNY()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_CNY(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING COP()
+	static wstring COP()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_COP(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING CRC()
+	static wstring CRC()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_CRC(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING CUP()
+	static wstring CUP()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_CUP(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING CVE()
+	static wstring CVE()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_CVE(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING CZK()
+	static wstring CZK()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_CZK(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING DJF()
+	static wstring DJF()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DJF(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING DKK()
+	static wstring DKK()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DKK(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING DOP()
+	static wstring DOP()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DOP(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING DZD()
+	static wstring DZD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DZD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING EGP()
+	static wstring EGP()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_EGP(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ERN()
+	static wstring ERN()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ERN(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ETB()
+	static wstring ETB()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ETB(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING EUR()
+	static wstring EUR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_EUR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING FJD()
+	static wstring FJD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_FJD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING FKP()
+	static wstring FKP()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_FKP(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GBP()
+	static wstring GBP()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_GBP(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GEL()
+	static wstring GEL()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_GEL(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GHS()
+	static wstring GHS()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_GHS(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GIP()
+	static wstring GIP()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_GIP(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GMD()
+	static wstring GMD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_GMD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GNF()
+	static wstring GNF()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_GNF(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GTQ()
+	static wstring GTQ()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_GTQ(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GYD()
+	static wstring GYD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_GYD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HKD()
+	static wstring HKD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HKD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HNL()
+	static wstring HNL()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HNL(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HRK()
+	static wstring HRK()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HRK(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HTG()
+	static wstring HTG()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HTG(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HUF()
+	static wstring HUF()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HUF(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING IDR()
+	static wstring IDR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_IDR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ILS()
+	static wstring ILS()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ILS(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING INR()
+	static wstring INR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_INR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING IQD()
+	static wstring IQD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_IQD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING IRR()
+	static wstring IRR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_IRR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ISK()
+	static wstring ISK()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ISK(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING JMD()
+	static wstring JMD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_JMD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING JOD()
+	static wstring JOD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_JOD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING JPY()
+	static wstring JPY()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_JPY(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING KES()
+	static wstring KES()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_KES(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING KGS()
+	static wstring KGS()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_KGS(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING KHR()
+	static wstring KHR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_KHR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING KMF()
+	static wstring KMF()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_KMF(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING KPW()
+	static wstring KPW()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_KPW(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING KRW()
+	static wstring KRW()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_KRW(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING KWD()
+	static wstring KWD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_KWD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING KYD()
+	static wstring KYD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_KYD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING KZT()
+	static wstring KZT()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_KZT(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING LAK()
+	static wstring LAK()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_LAK(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING LBP()
+	static wstring LBP()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_LBP(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING LKR()
+	static wstring LKR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_LKR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING LRD()
+	static wstring LRD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_LRD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING LSL()
+	static wstring LSL()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_LSL(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING LTL()
+	static wstring LTL()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_LTL(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING LVL()
+	static wstring LVL()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_LVL(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING LYD()
+	static wstring LYD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_LYD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MAD()
+	static wstring MAD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MAD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MDL()
+	static wstring MDL()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MDL(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MGA()
+	static wstring MGA()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MGA(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MKD()
+	static wstring MKD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MKD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MMK()
+	static wstring MMK()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MMK(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MNT()
+	static wstring MNT()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MNT(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MOP()
+	static wstring MOP()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MOP(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MRO()
+	static wstring MRO()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MRO(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MUR()
+	static wstring MUR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MUR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MVR()
+	static wstring MVR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MVR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MWK()
+	static wstring MWK()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MWK(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MXN()
+	static wstring MXN()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MXN(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MYR()
+	static wstring MYR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MYR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MZN()
+	static wstring MZN()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MZN(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING NAD()
+	static wstring NAD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_NAD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING NGN()
+	static wstring NGN()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_NGN(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING NIO()
+	static wstring NIO()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_NIO(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING NOK()
+	static wstring NOK()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_NOK(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING NPR()
+	static wstring NPR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_NPR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING NZD()
+	static wstring NZD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_NZD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING OMR()
+	static wstring OMR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_OMR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING PAB()
+	static wstring PAB()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_PAB(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING PEN()
+	static wstring PEN()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_PEN(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING PGK()
+	static wstring PGK()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_PGK(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING PHP()
+	static wstring PHP()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_PHP(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING PKR()
+	static wstring PKR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_PKR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING PLN()
+	static wstring PLN()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_PLN(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING PYG()
+	static wstring PYG()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_PYG(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING QAR()
+	static wstring QAR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_QAR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RON()
+	static wstring RON()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RON(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RSD()
+	static wstring RSD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RSD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RUB()
+	static wstring RUB()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RUB(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RWF()
+	static wstring RWF()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RWF(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SAR()
+	static wstring SAR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SAR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SBD()
+	static wstring SBD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SBD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SCR()
+	static wstring SCR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SCR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SDG()
+	static wstring SDG()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SDG(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SEK()
+	static wstring SEK()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SEK(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SGD()
+	static wstring SGD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SGD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SHP()
+	static wstring SHP()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SHP(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SLL()
+	static wstring SLL()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SLL(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SOS()
+	static wstring SOS()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SOS(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SRD()
+	static wstring SRD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SRD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING STD()
+	static wstring STD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_STD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SYP()
+	static wstring SYP()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SYP(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SZL()
+	static wstring SZL()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SZL(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING THB()
+	static wstring THB()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_THB(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING TJS()
+	static wstring TJS()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TJS(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING TMT()
+	static wstring TMT()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TMT(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING TND()
+	static wstring TND()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TND(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING TOP()
+	static wstring TOP()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TOP(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING TRY()
+	static wstring TRY()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TRY(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING TTD()
+	static wstring TTD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TTD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING TWD()
+	static wstring TWD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TWD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING TZS()
+	static wstring TZS()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TZS(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING UAH()
+	static wstring UAH()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_UAH(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING UGX()
+	static wstring UGX()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_UGX(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING USD()
+	static wstring USD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_USD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING UYU()
+	static wstring UYU()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_UYU(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING UZS()
+	static wstring UZS()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_UZS(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING VEF()
+	static wstring VEF()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_VEF(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING VND()
+	static wstring VND()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_VND(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING VUV()
+	static wstring VUV()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_VUV(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING WST()
+	static wstring WST()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_WST(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING XAF()
+	static wstring XAF()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_XAF(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING XCD()
+	static wstring XCD()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_XCD(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING XOF()
+	static wstring XOF()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_XOF(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING XPF()
+	static wstring XPF()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_XPF(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING XXX()
+	static wstring XXX()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_XXX(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING YER()
+	static wstring YER()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_YER(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ZAR()
+	static wstring ZAR()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ZAR(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ZMW()
+	static wstring ZMW()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ZMW(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ZWL()
+	static wstring ZWL()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ZWL(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface GeographicRegion : Windows.Globalization.IGeographicRegion
 {
 extern(Windows):
-	final HSTRING Code()
+	final wstring Code()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.IGeographicRegion)this.asInterface(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903"))).get_Code(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING CodeTwoLetter()
+	final wstring CodeTwoLetter()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.IGeographicRegion)this.asInterface(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903"))).get_CodeTwoLetter(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING CodeThreeLetter()
+	final wstring CodeThreeLetter()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.IGeographicRegion)this.asInterface(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903"))).get_CodeThreeLetter(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING CodeThreeDigit()
+	final wstring CodeThreeDigit()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.IGeographicRegion)this.asInterface(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903"))).get_CodeThreeDigit(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.IGeographicRegion)this.asInterface(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING NativeName()
+	final wstring NativeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.IGeographicRegion)this.asInterface(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903"))).get_NativeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) CurrenciesInUse()
 	{
@@ -2228,10 +2228,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Globalization.IGeographicRegionStatics);
 		return _staticInstance;
 	}
-	static bool IsSupported(HSTRING geographicRegionCode)
+	static bool IsSupported(wstring geographicRegionCode)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsSupported(geographicRegionCode, &_ret));
+		Debug.OK(staticInstance.abi_IsSupported(hstring(geographicRegionCode).handle, &_ret));
 		return _ret;
 	}
 	static GeographicRegion New()
@@ -2240,11 +2240,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(GeographicRegion).abi_ActivateInstance(&ret));
 		return cast(GeographicRegion) ret;
 	}
-	static Windows.Globalization.GeographicRegion New(HSTRING geographicRegionCode)
+	static Windows.Globalization.GeographicRegion New(wstring geographicRegionCode)
 	{
 		auto factory = factory!(Windows.Globalization.IGeographicRegionFactory);
 		Windows.Globalization.GeographicRegion _ret;
-		Debug.OK((cast(Windows.Globalization.IGeographicRegionFactory)factory.asInterface(uuid("53425270-77b4-426b-859f-81e19d512546"))).abi_CreateGeographicRegion(geographicRegionCode, &_ret));
+		Debug.OK((cast(Windows.Globalization.IGeographicRegionFactory)factory.asInterface(uuid("53425270-77b4-426b-859f-81e19d512546"))).abi_CreateGeographicRegion(hstring(geographicRegionCode).handle, &_ret));
 		return _ret;
 	}
 }
@@ -2252,17 +2252,17 @@ extern(Windows):
 interface JapanesePhoneme : Windows.Globalization.IJapanesePhoneme
 {
 extern(Windows):
-	final HSTRING DisplayText()
+	final wstring DisplayText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.IJapanesePhoneme)this.asInterface(uuid("2f6a9300-e85b-43e6-897d-5d82f862df21"))).get_DisplayText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING YomiText()
+	final wstring YomiText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.IJapanesePhoneme)this.asInterface(uuid("2f6a9300-e85b-43e6-897d-5d82f862df21"))).get_YomiText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsPhraseStart()
 	{
@@ -2280,16 +2280,16 @@ interface JapanesePhoneticAnalyzer
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Globalization.IJapanesePhoneticAnalyzerStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme) GetWords(HSTRING input)
+	static Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme) GetWords(wstring input)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme) _ret;
-		Debug.OK(staticInstance.abi_GetWords(input, &_ret));
+		Debug.OK(staticInstance.abi_GetWords(hstring(input).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme) GetWordsWithMonoRubyOption(HSTRING input, bool monoRuby)
+	static Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme) GetWordsWithMonoRubyOption(wstring input, bool monoRuby)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme) _ret;
-		Debug.OK(staticInstance.abi_GetWordsWithMonoRubyOption(input, monoRuby, &_ret));
+		Debug.OK(staticInstance.abi_GetWordsWithMonoRubyOption(hstring(input).handle, monoRuby, &_ret));
 		return _ret;
 	}
 	alias GetWords = GetWordsWithMonoRubyOption;
@@ -2298,34 +2298,34 @@ interface JapanesePhoneticAnalyzer
 interface Language : Windows.Globalization.ILanguage, Windows.Globalization.ILanguageExtensionSubtags
 {
 extern(Windows):
-	final HSTRING LanguageTag()
+	final wstring LanguageTag()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ILanguage)this.asInterface(uuid("ea79a752-f7c2-4265-b1bd-c4dec4e4f080"))).get_LanguageTag(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ILanguage)this.asInterface(uuid("ea79a752-f7c2-4265-b1bd-c4dec4e4f080"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING NativeName()
+	final wstring NativeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ILanguage)this.asInterface(uuid("ea79a752-f7c2-4265-b1bd-c4dec4e4f080"))).get_NativeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Script()
+	final wstring Script()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.ILanguage)this.asInterface(uuid("ea79a752-f7c2-4265-b1bd-c4dec4e4f080"))).get_Script(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final Windows.Foundation.Collections.IVectorView!(HSTRING) GetExtensionSubtags(HSTRING singleton)
+	final Windows.Foundation.Collections.IVectorView!(HSTRING) GetExtensionSubtags(wstring singleton)
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK((cast(Windows.Globalization.ILanguageExtensionSubtags)this.asInterface(uuid("7d7daf45-368d-4364-852b-dec927037b85"))).abi_GetExtensionSubtags(singleton, &_ret));
+		Debug.OK((cast(Windows.Globalization.ILanguageExtensionSubtags)this.asInterface(uuid("7d7daf45-368d-4364-852b-dec927037b85"))).abi_GetExtensionSubtags(hstring(singleton).handle, &_ret));
 		return _ret;
 	}
 
@@ -2335,23 +2335,23 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Globalization.ILanguageStatics);
 		return _staticInstance;
 	}
-	static bool IsWellFormed(HSTRING languageTag)
+	static bool IsWellFormed(wstring languageTag)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsWellFormed(languageTag, &_ret));
+		Debug.OK(staticInstance.abi_IsWellFormed(hstring(languageTag).handle, &_ret));
 		return _ret;
 	}
-	static HSTRING CurrentInputMethodLanguageTag()
+	static wstring CurrentInputMethodLanguageTag()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_CurrentInputMethodLanguageTag(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Globalization.Language New(HSTRING languageTag)
+	static Windows.Globalization.Language New(wstring languageTag)
 	{
 		auto factory = factory!(Windows.Globalization.ILanguageFactory);
 		Windows.Globalization.Language _ret;
-		Debug.OK((cast(Windows.Globalization.ILanguageFactory)factory.asInterface(uuid("9b0252ac-0c27-44f8-b792-9793fb66c63e"))).abi_CreateLanguage(languageTag, &_ret));
+		Debug.OK((cast(Windows.Globalization.ILanguageFactory)factory.asInterface(uuid("9b0252ac-0c27-44f8-b792-9793fb66c63e"))).abi_CreateLanguage(hstring(languageTag).handle, &_ret));
 		return _ret;
 	}
 }
@@ -2364,221 +2364,221 @@ interface NumeralSystemIdentifiers
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Globalization.INumeralSystemIdentifiersStatics);
 		return _staticInstance;
 	}
-	static HSTRING Arab()
+	static wstring Arab()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Arab(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ArabExt()
+	static wstring ArabExt()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ArabExt(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Bali()
+	static wstring Bali()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Bali(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Beng()
+	static wstring Beng()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Beng(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Cham()
+	static wstring Cham()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Cham(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Deva()
+	static wstring Deva()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Deva(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING FullWide()
+	static wstring FullWide()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_FullWide(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Gujr()
+	static wstring Gujr()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Gujr(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Guru()
+	static wstring Guru()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Guru(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HaniDec()
+	static wstring HaniDec()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HaniDec(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Java()
+	static wstring Java()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Java(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Kali()
+	static wstring Kali()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Kali(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Khmr()
+	static wstring Khmr()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Khmr(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Knda()
+	static wstring Knda()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Knda(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Lana()
+	static wstring Lana()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Lana(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING LanaTham()
+	static wstring LanaTham()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_LanaTham(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Laoo()
+	static wstring Laoo()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Laoo(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Latn()
+	static wstring Latn()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Latn(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Lepc()
+	static wstring Lepc()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Lepc(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Limb()
+	static wstring Limb()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Limb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Mlym()
+	static wstring Mlym()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Mlym(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Mong()
+	static wstring Mong()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Mong(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Mtei()
+	static wstring Mtei()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Mtei(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Mymr()
+	static wstring Mymr()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Mymr(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING MymrShan()
+	static wstring MymrShan()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_MymrShan(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Nkoo()
+	static wstring Nkoo()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Nkoo(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Olck()
+	static wstring Olck()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Olck(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Orya()
+	static wstring Orya()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Orya(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Saur()
+	static wstring Saur()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Saur(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Sund()
+	static wstring Sund()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Sund(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Talu()
+	static wstring Talu()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Talu(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING TamlDec()
+	static wstring TamlDec()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TamlDec(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Telu()
+	static wstring Telu()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Telu(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Thai()
+	static wstring Thai()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Thai(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Tibt()
+	static wstring Tibt()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Tibt(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Vaii()
+	static wstring Vaii()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Vaii(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

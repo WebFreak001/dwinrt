@@ -191,11 +191,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.SerialCommunication.ISerialDevice)this.asInterface(uuid("e187ccc6-2210-414f-b65a-f5553a03372a"))).set_Parity(value));
 	}
-	final HSTRING PortName()
+	final wstring PortName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.SerialCommunication.ISerialDevice)this.asInterface(uuid("e187ccc6-2210-414f-b65a-f5553a03372a"))).get_PortName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.TimeSpan ReadTimeout()
 	{
@@ -282,29 +282,29 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.SerialCommunication.ISerialDeviceStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GetDeviceSelectorFromPortName(HSTRING portName)
+	static wstring GetDeviceSelectorFromPortName(wstring portName)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetDeviceSelectorFromPortName(portName, &_ret));
-		return _ret;
+		Debug.OK(staticInstance.abi_GetDeviceSelectorFromPortName(hstring(portName).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
 	alias GetDeviceSelector = GetDeviceSelectorFromPortName;
-	static HSTRING GetDeviceSelectorFromUsbVidPid(UINT16 vendorId, UINT16 productId)
+	static wstring GetDeviceSelectorFromUsbVidPid(UINT16 vendorId, UINT16 productId)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelectorFromUsbVidPid(vendorId, productId, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SerialCommunication.SerialDevice) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SerialCommunication.SerialDevice) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.SerialCommunication.SerialDevice) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 }

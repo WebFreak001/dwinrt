@@ -133,21 +133,21 @@ extern(Windows):
 interface UserDataAccount : Windows.ApplicationModel.UserDataAccounts.IUserDataAccount, Windows.ApplicationModel.UserDataAccounts.IUserDataAccount2, Windows.ApplicationModel.UserDataAccounts.IUserDataAccount3, Windows.ApplicationModel.UserDataAccounts.IUserDataAccount4
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccount)this.asInterface(uuid("b9c4367e-b348-4910-be94-4ad4bba6dea7"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING UserDisplayName()
+	final wstring UserDisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccount)this.asInterface(uuid("b9c4367e-b348-4910-be94-4ad4bba6dea7"))).get_UserDisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void UserDisplayName(HSTRING value)
+	final void UserDisplayName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccount)this.asInterface(uuid("b9c4367e-b348-4910-be94-4ad4bba6dea7"))).set_UserDisplayName(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccount)this.asInterface(uuid("b9c4367e-b348-4910-be94-4ad4bba6dea7"))).set_UserDisplayName(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.UserDataAccounts.UserDataAccountOtherAppReadAccess OtherAppReadAccess()
 	{
@@ -165,17 +165,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccount)this.asInterface(uuid("b9c4367e-b348-4910-be94-4ad4bba6dea7"))).get_Icon(&_ret));
 		return _ret;
 	}
-	final HSTRING DeviceAccountTypeId()
+	final wstring DeviceAccountTypeId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccount)this.asInterface(uuid("b9c4367e-b348-4910-be94-4ad4bba6dea7"))).get_DeviceAccountTypeId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING PackageFamilyName()
+	final wstring PackageFamilyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccount)this.asInterface(uuid("b9c4367e-b348-4910-be94-4ad4bba6dea7"))).get_PackageFamilyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction SaveAsync()
 	{
@@ -213,11 +213,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccount)this.asInterface(uuid("b9c4367e-b348-4910-be94-4ad4bba6dea7"))).abi_FindContactAnnotationListsAsync(&_ret));
 		return _ret;
 	}
-	final HSTRING EnterpriseId()
+	final wstring EnterpriseId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccount2)this.asInterface(uuid("078cd89f-de82-404b-8195-c8a3ac198f60"))).get_EnterpriseId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsProtectedUnderLock()
 	{
@@ -231,15 +231,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccount3)this.asInterface(uuid("01533845-6c43-4286-9d69-3e1709a1f266"))).get_ExplictReadAccessPackageFamilyNames(&_ret));
 		return _ret;
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccount3)this.asInterface(uuid("01533845-6c43-4286-9d69-3e1709a1f266"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DisplayName(HSTRING value)
+	final void DisplayName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccount3)this.asInterface(uuid("01533845-6c43-4286-9d69-3e1709a1f266"))).set_DisplayName(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccount3)this.asInterface(uuid("01533845-6c43-4286-9d69-3e1709a1f266"))).set_DisplayName(hstring(value).handle));
 	}
 	final bool CanShowCreateContactGroup()
 	{
@@ -305,16 +305,16 @@ interface UserDataAccountManager
 		Debug.OK(staticInstance.abi_ShowAddAccountAsync(contentKinds, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncAction ShowAccountSettingsAsync(HSTRING id)
+	static Windows.Foundation.IAsyncAction ShowAccountSettingsAsync(wstring id)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.abi_ShowAccountSettingsAsync(id, &_ret));
+		Debug.OK(staticInstance.abi_ShowAccountSettingsAsync(hstring(id).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncAction ShowAccountErrorResolverAsync(HSTRING id)
+	static Windows.Foundation.IAsyncAction ShowAccountErrorResolverAsync(wstring id)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.abi_ShowAccountErrorResolverAsync(id, &_ret));
+		Debug.OK(staticInstance.abi_ShowAccountErrorResolverAsync(hstring(id).handle, &_ret));
 		return _ret;
 	}
 }
@@ -345,22 +345,22 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore)this.asInterface(uuid("2073b0ad-7d0a-4e76-bf45-2368f978a59a"))).abi_FindAccountsAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) GetAccountAsync(HSTRING id)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) GetAccountAsync(wstring id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore)this.asInterface(uuid("2073b0ad-7d0a-4e76-bf45-2368f978a59a"))).abi_GetAccountAsync(id, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore)this.asInterface(uuid("2073b0ad-7d0a-4e76-bf45-2368f978a59a"))).abi_GetAccountAsync(hstring(id).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) CreateAccountAsync(HSTRING userDisplayName)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) CreateAccountAsync(wstring userDisplayName)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore)this.asInterface(uuid("2073b0ad-7d0a-4e76-bf45-2368f978a59a"))).abi_CreateAccountAsync(userDisplayName, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore)this.asInterface(uuid("2073b0ad-7d0a-4e76-bf45-2368f978a59a"))).abi_CreateAccountAsync(hstring(userDisplayName).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) CreateAccountWithPackageRelativeAppIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) CreateAccountWithPackageRelativeAppIdAsync(wstring userDisplayName, wstring packageRelativeAppId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore2)this.asInterface(uuid("b1e0aef7-9560-4631-8af0-061d30161469"))).abi_CreateAccountWithPackageRelativeAppIdAsync(userDisplayName, packageRelativeAppId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore2)this.asInterface(uuid("b1e0aef7-9560-4631-8af0-061d30161469"))).abi_CreateAccountWithPackageRelativeAppIdAsync(hstring(userDisplayName).handle, hstring(packageRelativeAppId).handle, &_ret));
 		return _ret;
 	}
 	alias CreateAccountAsync = CreateAccountWithPackageRelativeAppIdAsync;
@@ -374,10 +374,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore2)this.asInterface(uuid("b1e0aef7-9560-4631-8af0-061d30161469"))).remove_StoreChanged(token));
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, HSTRING enterpriseId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(wstring userDisplayName, wstring packageRelativeAppId, wstring enterpriseId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore3)this.asInterface(uuid("8142c094-f3c9-478b-b117-6585bebb6789"))).abi_CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(userDisplayName, packageRelativeAppId, enterpriseId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore3)this.asInterface(uuid("8142c094-f3c9-478b-b117-6585bebb6789"))).abi_CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(hstring(userDisplayName).handle, hstring(packageRelativeAppId).handle, hstring(enterpriseId).handle, &_ret));
 		return _ret;
 	}
 	alias CreateAccountAsync = CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync;

@@ -73,11 +73,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.SpeechSynthesis.ISpeechSynthesisStream)this.asInterface(uuid("83e46e93-244c-4622-ba0b-6229c4d0d65d"))).get_Markers(&_ret));
 		return _ret;
 	}
-	final HSTRING ContentType()
+	final wstring ContentType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Streams.IContentTypeProvider)this.asInterface(uuid("97d098a5-3b99-4de9-88a5-e11d2f50c795"))).get_ContentType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final ulong Size()
 	{
@@ -162,16 +162,16 @@ extern(Windows):
 interface SpeechSynthesizer : Windows.Media.SpeechSynthesis.ISpeechSynthesizer, Windows.Foundation.IClosable, Windows.Media.SpeechSynthesis.ISpeechSynthesizer2
 {
 extern(Windows):
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechSynthesis.SpeechSynthesisStream) SynthesizeTextToStreamAsync(HSTRING text)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechSynthesis.SpeechSynthesisStream) SynthesizeTextToStreamAsync(wstring text)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechSynthesis.SpeechSynthesisStream) _ret;
-		Debug.OK((cast(Windows.Media.SpeechSynthesis.ISpeechSynthesizer)this.asInterface(uuid("ce9f7c76-97f4-4ced-ad68-d51c458e45c6"))).abi_SynthesizeTextToStreamAsync(text, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechSynthesis.ISpeechSynthesizer)this.asInterface(uuid("ce9f7c76-97f4-4ced-ad68-d51c458e45c6"))).abi_SynthesizeTextToStreamAsync(hstring(text).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechSynthesis.SpeechSynthesisStream) SynthesizeSsmlToStreamAsync(HSTRING Ssml)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechSynthesis.SpeechSynthesisStream) SynthesizeSsmlToStreamAsync(wstring Ssml)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechSynthesis.SpeechSynthesisStream) _ret;
-		Debug.OK((cast(Windows.Media.SpeechSynthesis.ISpeechSynthesizer)this.asInterface(uuid("ce9f7c76-97f4-4ced-ad68-d51c458e45c6"))).abi_SynthesizeSsmlToStreamAsync(Ssml, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechSynthesis.ISpeechSynthesizer)this.asInterface(uuid("ce9f7c76-97f4-4ced-ad68-d51c458e45c6"))).abi_SynthesizeSsmlToStreamAsync(hstring(Ssml).handle, &_ret));
 		return _ret;
 	}
 	final void Voice(Windows.Media.SpeechSynthesis.VoiceInformation value)
@@ -249,29 +249,29 @@ extern(Windows):
 interface VoiceInformation : Windows.Media.SpeechSynthesis.IVoiceInformation
 {
 extern(Windows):
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.SpeechSynthesis.IVoiceInformation)this.asInterface(uuid("b127d6a4-1291-4604-aa9c-83134083352c"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.SpeechSynthesis.IVoiceInformation)this.asInterface(uuid("b127d6a4-1291-4604-aa9c-83134083352c"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.SpeechSynthesis.IVoiceInformation)this.asInterface(uuid("b127d6a4-1291-4604-aa9c-83134083352c"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.SpeechSynthesis.IVoiceInformation)this.asInterface(uuid("b127d6a4-1291-4604-aa9c-83134083352c"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Media.SpeechSynthesis.VoiceGender Gender()
 	{

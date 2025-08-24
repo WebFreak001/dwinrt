@@ -235,6 +235,12 @@ bool embedded_null(HSTRING value)
 	return 0 != result;
 }
 
+void delete_string(HSTRING value)
+{
+	auto hr = WindowsDeleteString(value);
+	Debug.OK(hr);
+}
+
 struct hstring
 {
 	alias string_type = immutable(wchar_t)[];
@@ -251,7 +257,7 @@ struct hstring
 
 	this(ref hstring value)
 	{
-		m_handle = value.m_handle;
+		m_handle = duplicate_string(m_handle);
 	}
 
 	this(in wstring value)
@@ -266,7 +272,23 @@ struct hstring
 
 	this(HSTRING val)
 	{
-		m_handle = val;
+		m_handle = duplicate_string(val);
+	}
+
+	this(this)
+	{
+		m_handle = duplicate_string(m_handle);
+	}
+
+	~this()
+	{
+		delete_string(m_handle);
+	}
+
+	ref hstring opAssign(ref hstring value)
+	{
+		m_handle = duplicate_string(value.m_handle);
+		return this;
 	}
 
 	void clear()

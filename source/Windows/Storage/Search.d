@@ -229,10 +229,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.Search.IContentIndexer)this.asInterface(uuid("b1767f8d-f698-4982-b05f-3a6e8cab01a2"))).abi_UpdateAsync(indexableContent, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction DeleteAsync(HSTRING contentId)
+	final Windows.Foundation.IAsyncAction DeleteAsync(wstring contentId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Storage.Search.IContentIndexer)this.asInterface(uuid("b1767f8d-f698-4982-b05f-3a6e8cab01a2"))).abi_DeleteAsync(contentId, &_ret));
+		Debug.OK((cast(Windows.Storage.Search.IContentIndexer)this.asInterface(uuid("b1767f8d-f698-4982-b05f-3a6e8cab01a2"))).abi_DeleteAsync(hstring(contentId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction DeleteMultipleAsync(Windows.Foundation.Collections.IIterable!(HSTRING) contentIds)
@@ -247,10 +247,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.Search.IContentIndexer)this.asInterface(uuid("b1767f8d-f698-4982-b05f-3a6e8cab01a2"))).abi_DeleteAllAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)) RetrievePropertiesAsync(HSTRING contentId, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)) RetrievePropertiesAsync(wstring contentId, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)) _ret;
-		Debug.OK((cast(Windows.Storage.Search.IContentIndexer)this.asInterface(uuid("b1767f8d-f698-4982-b05f-3a6e8cab01a2"))).abi_RetrievePropertiesAsync(contentId, propertiesToRetrieve, &_ret));
+		Debug.OK((cast(Windows.Storage.Search.IContentIndexer)this.asInterface(uuid("b1767f8d-f698-4982-b05f-3a6e8cab01a2"))).abi_RetrievePropertiesAsync(hstring(contentId).handle, propertiesToRetrieve, &_ret));
 		return _ret;
 	}
 	final ulong Revision()
@@ -259,24 +259,24 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.Search.IContentIndexer)this.asInterface(uuid("b1767f8d-f698-4982-b05f-3a6e8cab01a2"))).get_Revision(&_ret));
 		return _ret;
 	}
-	final Windows.Storage.Search.ContentIndexerQuery CreateQueryWithSortOrderAndLanguage(HSTRING searchFilter, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.Collections.IIterable!(Windows.Storage.Search.SortEntry) sortOrder, HSTRING searchFilterLanguage)
+	final Windows.Storage.Search.ContentIndexerQuery CreateQueryWithSortOrderAndLanguage(wstring searchFilter, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.Collections.IIterable!(Windows.Storage.Search.SortEntry) sortOrder, wstring searchFilterLanguage)
 	{
 		Windows.Storage.Search.ContentIndexerQuery _ret;
-		Debug.OK((cast(Windows.Storage.Search.IContentIndexerQueryOperations)this.asInterface(uuid("28823e10-4786-42f1-9730-792b3566b150"))).abi_CreateQueryWithSortOrderAndLanguage(searchFilter, propertiesToRetrieve, sortOrder, searchFilterLanguage, &_ret));
+		Debug.OK((cast(Windows.Storage.Search.IContentIndexerQueryOperations)this.asInterface(uuid("28823e10-4786-42f1-9730-792b3566b150"))).abi_CreateQueryWithSortOrderAndLanguage(hstring(searchFilter).handle, propertiesToRetrieve, sortOrder, hstring(searchFilterLanguage).handle, &_ret));
 		return _ret;
 	}
 	alias CreateQuery = CreateQueryWithSortOrderAndLanguage;
-	final Windows.Storage.Search.ContentIndexerQuery CreateQueryWithSortOrder(HSTRING searchFilter, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.Collections.IIterable!(Windows.Storage.Search.SortEntry) sortOrder)
+	final Windows.Storage.Search.ContentIndexerQuery CreateQueryWithSortOrder(wstring searchFilter, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.Collections.IIterable!(Windows.Storage.Search.SortEntry) sortOrder)
 	{
 		Windows.Storage.Search.ContentIndexerQuery _ret;
-		Debug.OK((cast(Windows.Storage.Search.IContentIndexerQueryOperations)this.asInterface(uuid("28823e10-4786-42f1-9730-792b3566b150"))).abi_CreateQueryWithSortOrder(searchFilter, propertiesToRetrieve, sortOrder, &_ret));
+		Debug.OK((cast(Windows.Storage.Search.IContentIndexerQueryOperations)this.asInterface(uuid("28823e10-4786-42f1-9730-792b3566b150"))).abi_CreateQueryWithSortOrder(hstring(searchFilter).handle, propertiesToRetrieve, sortOrder, &_ret));
 		return _ret;
 	}
 	alias CreateQuery = CreateQueryWithSortOrder;
-	final Windows.Storage.Search.ContentIndexerQuery CreateQuery(HSTRING searchFilter, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
+	final Windows.Storage.Search.ContentIndexerQuery CreateQuery(wstring searchFilter, Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
 	{
 		Windows.Storage.Search.ContentIndexerQuery _ret;
-		Debug.OK((cast(Windows.Storage.Search.IContentIndexerQueryOperations)this.asInterface(uuid("28823e10-4786-42f1-9730-792b3566b150"))).abi_CreateQuery(searchFilter, propertiesToRetrieve, &_ret));
+		Debug.OK((cast(Windows.Storage.Search.IContentIndexerQueryOperations)this.asInterface(uuid("28823e10-4786-42f1-9730-792b3566b150"))).abi_CreateQuery(hstring(searchFilter).handle, propertiesToRetrieve, &_ret));
 		return _ret;
 	}
 
@@ -286,10 +286,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.Search.IContentIndexerStatics);
 		return _staticInstance;
 	}
-	static Windows.Storage.Search.ContentIndexer GetIndexerWithName(HSTRING indexName)
+	static Windows.Storage.Search.ContentIndexer GetIndexerWithName(wstring indexName)
 	{
 		Windows.Storage.Search.ContentIndexer _ret;
-		Debug.OK(staticInstance.abi_GetIndexerWithName(indexName, &_ret));
+		Debug.OK(staticInstance.abi_GetIndexerWithName(hstring(indexName).handle, &_ret));
 		return _ret;
 	}
 	alias GetIndexer = GetIndexerWithName;
@@ -347,15 +347,15 @@ extern(Windows):
 interface IndexableContent : Windows.Storage.Search.IIndexableContent
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Search.IIndexableContent)this.asInterface(uuid("ccf1a05f-d4b5-483a-b06e-e0db1ec420e4"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Id(HSTRING value)
+	final void Id(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Search.IIndexableContent)this.asInterface(uuid("ccf1a05f-d4b5-483a-b06e-e0db1ec420e4"))).set_Id(value));
+		Debug.OK((cast(Windows.Storage.Search.IIndexableContent)this.asInterface(uuid("ccf1a05f-d4b5-483a-b06e-e0db1ec420e4"))).set_Id(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, IInspectable) Properties()
 	{
@@ -373,15 +373,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Storage.Search.IIndexableContent)this.asInterface(uuid("ccf1a05f-d4b5-483a-b06e-e0db1ec420e4"))).set_Stream(value));
 	}
-	final HSTRING StreamContentType()
+	final wstring StreamContentType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Search.IIndexableContent)this.asInterface(uuid("ccf1a05f-d4b5-483a-b06e-e0db1ec420e4"))).get_StreamContentType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void StreamContentType(HSTRING value)
+	final void StreamContentType(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Search.IIndexableContent)this.asInterface(uuid("ccf1a05f-d4b5-483a-b06e-e0db1ec420e4"))).set_StreamContentType(value));
+		Debug.OK((cast(Windows.Storage.Search.IIndexableContent)this.asInterface(uuid("ccf1a05f-d4b5-483a-b06e-e0db1ec420e4"))).set_StreamContentType(hstring(value).handle));
 	}
 	static IndexableContent New()
 	{
@@ -410,35 +410,35 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).set_FolderDepth(value));
 	}
-	final HSTRING ApplicationSearchFilter()
+	final wstring ApplicationSearchFilter()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).get_ApplicationSearchFilter(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ApplicationSearchFilter(HSTRING value)
+	final void ApplicationSearchFilter(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).set_ApplicationSearchFilter(value));
+		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).set_ApplicationSearchFilter(hstring(value).handle));
 	}
-	final HSTRING UserSearchFilter()
+	final wstring UserSearchFilter()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).get_UserSearchFilter(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void UserSearchFilter(HSTRING value)
+	final void UserSearchFilter(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).set_UserSearchFilter(value));
+		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).set_UserSearchFilter(hstring(value).handle));
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).set_Language(value));
+		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).set_Language(hstring(value).handle));
 	}
 	final Windows.Storage.Search.IndexerOption IndexerOption()
 	{
@@ -456,11 +456,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).get_SortOrder(&_ret));
 		return _ret;
 	}
-	final HSTRING GroupPropertyName()
+	final wstring GroupPropertyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).get_GroupPropertyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Storage.Search.DateStackOption DateStackOption()
 	{
@@ -468,15 +468,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).get_DateStackOption(&_ret));
 		return _ret;
 	}
-	final HSTRING SaveToString()
+	final wstring SaveToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).abi_SaveToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void LoadFromString(HSTRING value)
+	final void LoadFromString(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).abi_LoadFromString(value));
+		Debug.OK((cast(Windows.Storage.Search.IQueryOptions)this.asInterface(uuid("1e5e46ee-0f45-4838-a8e9-d0479d446c30"))).abi_LoadFromString(hstring(value).handle));
 	}
 	final void SetThumbnailPrefetch(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize, Windows.Storage.FileProperties.ThumbnailOptions options)
 	{
@@ -801,15 +801,15 @@ extern(Windows):
 interface ValueAndLanguage : Windows.Storage.Search.IValueAndLanguage
 {
 extern(Windows):
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Search.IValueAndLanguage)this.asInterface(uuid("b9914881-a1ee-4bc4-92a5-466968e30436"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Search.IValueAndLanguage)this.asInterface(uuid("b9914881-a1ee-4bc4-92a5-466968e30436"))).set_Language(value));
+		Debug.OK((cast(Windows.Storage.Search.IValueAndLanguage)this.asInterface(uuid("b9914881-a1ee-4bc4-92a5-466968e30436"))).set_Language(hstring(value).handle));
 	}
 	final IInspectable Value()
 	{

@@ -443,52 +443,52 @@ interface KnownRemoteSystemCapabilities
 		if (_staticInstance is null) _staticInstance = factory!(Windows.System.RemoteSystems.IKnownRemoteSystemCapabilitiesStatics);
 		return _staticInstance;
 	}
-	static HSTRING AppService()
+	static wstring AppService()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AppService(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING LaunchUri()
+	static wstring LaunchUri()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_LaunchUri(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RemoteSession()
+	static wstring RemoteSession()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RemoteSession(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SpatialEntity()
+	static wstring SpatialEntity()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SpatialEntity(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface RemoteSystem : Windows.System.RemoteSystems.IRemoteSystem, Windows.System.RemoteSystems.IRemoteSystem2
 {
 extern(Windows):
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystem)this.asInterface(uuid("ed5838cd-1e10-4a8c-b4a6-4e5fd6f97721"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystem)this.asInterface(uuid("ed5838cd-1e10-4a8c-b4a6-4e5fd6f97721"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Kind()
+	final wstring Kind()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystem)this.asInterface(uuid("ed5838cd-1e10-4a8c-b4a6-4e5fd6f97721"))).get_Kind(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.System.RemoteSystems.RemoteSystemStatus Status()
 	{
@@ -508,10 +508,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystem2)this.asInterface(uuid("09dfe4ec-fb8b-4a08-a758-6876435d769e"))).get_IsAvailableBySpatialProximity(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) GetCapabilitySupportedAsync(HSTRING capabilityName)
+	final Windows.Foundation.IAsyncOperation!(bool) GetCapabilitySupportedAsync(wstring capabilityName)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystem2)this.asInterface(uuid("09dfe4ec-fb8b-4a08-a758-6876435d769e"))).abi_GetCapabilitySupportedAsync(capabilityName, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystem2)this.asInterface(uuid("09dfe4ec-fb8b-4a08-a758-6876435d769e"))).abi_GetCapabilitySupportedAsync(hstring(capabilityName).handle, &_ret));
 		return _ret;
 	}
 
@@ -639,69 +639,69 @@ interface RemoteSystemKinds
 		if (_staticInstance is null) _staticInstance = factory!(Windows.System.RemoteSystems.IRemoteSystemKindStatics);
 		return _staticInstance;
 	}
-	static HSTRING Phone()
+	static wstring Phone()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Phone(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Hub()
+	static wstring Hub()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Hub(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Holographic()
+	static wstring Holographic()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Holographic(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Desktop()
+	static wstring Desktop()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Desktop(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Xbox()
+	static wstring Xbox()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Xbox(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface RemoteSystemRemovedEventArgs : Windows.System.RemoteSystems.IRemoteSystemRemovedEventArgs
 {
 extern(Windows):
-	final HSTRING RemoteSystemId()
+	final wstring RemoteSystemId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemRemovedEventArgs)this.asInterface(uuid("8b3d16bb-7306-49ea-b7df-67d5714cb013"))).get_RemoteSystemId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface RemoteSystemSession : Windows.System.RemoteSystems.IRemoteSystemSession, Windows.Foundation.IClosable
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSession)this.asInterface(uuid("69476a01-9ada-490f-9549-d31cb14c9e95"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSession)this.asInterface(uuid("69476a01-9ada-490f-9549-d31cb14c9e95"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ControllerDisplayName()
+	final wstring ControllerDisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSession)this.asInterface(uuid("69476a01-9ada-490f-9549-d31cb14c9e95"))).get_ControllerDisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final EventRegistrationToken OnDisconnected(void delegate(Windows.System.RemoteSystems.RemoteSystemSession, Windows.System.RemoteSystems.RemoteSystemSessionDisconnectedEventArgs) fn)
 	{
@@ -780,19 +780,19 @@ extern(Windows):
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionController)this.asInterface(uuid("e48b2dd2-6820-4867-b425-d89c0a3ef7ba"))).abi_CreateSessionAsync(&_ret));
 		return _ret;
 	}
-	static Windows.System.RemoteSystems.RemoteSystemSessionController New(HSTRING displayName)
+	static Windows.System.RemoteSystems.RemoteSystemSessionController New(wstring displayName)
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory);
 		Windows.System.RemoteSystems.RemoteSystemSessionController _ret;
-		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory)factory.asInterface(uuid("bfcc2f6b-ac3d-4199-82cd-6670a773ef2e"))).abi_CreateController(displayName, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory)factory.asInterface(uuid("bfcc2f6b-ac3d-4199-82cd-6670a773ef2e"))).abi_CreateController(hstring(displayName).handle, &_ret));
 		return _ret;
 	}
 	alias CreateController = New;
-	static Windows.System.RemoteSystems.RemoteSystemSessionController New(HSTRING displayName, Windows.System.RemoteSystems.RemoteSystemSessionOptions options)
+	static Windows.System.RemoteSystems.RemoteSystemSessionController New(wstring displayName, Windows.System.RemoteSystems.RemoteSystemSessionOptions options)
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory);
 		Windows.System.RemoteSystems.RemoteSystemSessionController _ret;
-		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory)factory.asInterface(uuid("bfcc2f6b-ac3d-4199-82cd-6670a773ef2e"))).abi_CreateControllerWithSessionOptions(displayName, options, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory)factory.asInterface(uuid("bfcc2f6b-ac3d-4199-82cd-6670a773ef2e"))).abi_CreateControllerWithSessionOptions(hstring(displayName).handle, options, &_ret));
 		return _ret;
 	}
 	alias CreateController = New;
@@ -829,17 +829,17 @@ extern(Windows):
 interface RemoteSystemSessionInfo : Windows.System.RemoteSystems.IRemoteSystemSessionInfo
 {
 extern(Windows):
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionInfo)this.asInterface(uuid("ff4df648-8b0a-4e9a-9905-69e4b841c588"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ControllerDisplayName()
+	final wstring ControllerDisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionInfo)this.asInterface(uuid("ff4df648-8b0a-4e9a-9905-69e4b841c588"))).get_ControllerDisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystemSessionJoinResult) JoinAsync()
 	{
@@ -984,19 +984,19 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel)this.asInterface(uuid("9524d12a-73d9-4c10-b751-c26784437127"))).remove_ValueSetReceived(token));
 	}
-	static Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel New(Windows.System.RemoteSystems.RemoteSystemSession session, HSTRING channelName)
+	static Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel New(Windows.System.RemoteSystems.RemoteSystemSession session, wstring channelName)
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory);
 		Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel _ret;
-		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory)factory.asInterface(uuid("295e1c4a-bd16-4298-b7ce-415482b0e11d"))).abi_Create(session, channelName, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory)factory.asInterface(uuid("295e1c4a-bd16-4298-b7ce-415482b0e11d"))).abi_Create(session, hstring(channelName).handle, &_ret));
 		return _ret;
 	}
 	alias Create = New;
-	static Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel New(Windows.System.RemoteSystems.RemoteSystemSession session, HSTRING channelName, Windows.System.RemoteSystems.RemoteSystemSessionMessageChannelReliability reliability)
+	static Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel New(Windows.System.RemoteSystems.RemoteSystemSession session, wstring channelName, Windows.System.RemoteSystems.RemoteSystemSessionMessageChannelReliability reliability)
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory);
 		Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel _ret;
-		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory)factory.asInterface(uuid("295e1c4a-bd16-4298-b7ce-415482b0e11d"))).abi_CreateWithReliability(session, channelName, reliability, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory)factory.asInterface(uuid("295e1c4a-bd16-4298-b7ce-415482b0e11d"))).abi_CreateWithReliability(session, hstring(channelName).handle, reliability, &_ret));
 		return _ret;
 	}
 	alias Create = New;

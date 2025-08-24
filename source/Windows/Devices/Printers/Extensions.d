@@ -101,11 +101,11 @@ extern(Windows):
 interface Print3DWorkflow : Windows.Devices.Printers.Extensions.IPrint3DWorkflow, Windows.Devices.Printers.Extensions.IPrint3DWorkflow2
 {
 extern(Windows):
-	final HSTRING DeviceID()
+	final wstring DeviceID()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrint3DWorkflow)this.asInterface(uuid("c56f74bd-3669-4a66-ab42-c8151930cd34"))).get_DeviceID(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final IInspectable GetPrintModelPackage()
 	{
@@ -171,11 +171,11 @@ extern(Windows):
 interface Print3DWorkflowPrinterChangedEventArgs : Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrinterChangedEventArgs
 {
 extern(Windows):
-	final HSTRING NewDeviceId()
+	final wstring NewDeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrinterChangedEventArgs)this.asInterface(uuid("45226402-95fc-4847-93b3-134dbf5c60f7"))).get_NewDeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -187,10 +187,10 @@ interface PrintExtensionContext
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Printers.Extensions.IPrintExtensionContextStatic);
 		return _staticInstance;
 	}
-	static IInspectable FromDeviceId(HSTRING deviceId)
+	static IInspectable FromDeviceId(wstring deviceId)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.abi_FromDeviceId(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromDeviceId(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 }
@@ -198,21 +198,21 @@ interface PrintExtensionContext
 interface PrintNotificationEventDetails : Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails
 {
 extern(Windows):
-	final HSTRING PrinterName()
+	final wstring PrinterName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails)this.asInterface(uuid("e00e4c8a-4828-4da1-8bb8-8672df8515e7"))).get_PrinterName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING EventData()
+	final wstring EventData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails)this.asInterface(uuid("e00e4c8a-4828-4da1-8bb8-8672df8515e7"))).get_EventData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void EventData(HSTRING value)
+	final void EventData(wstring value)
 	{
-		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails)this.asInterface(uuid("e00e4c8a-4828-4da1-8bb8-8672df8515e7"))).set_EventData(value));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails)this.asInterface(uuid("e00e4c8a-4828-4da1-8bb8-8672df8515e7"))).set_EventData(hstring(value).handle));
 	}
 }
 

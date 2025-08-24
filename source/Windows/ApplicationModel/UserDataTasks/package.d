@@ -186,27 +186,27 @@ extern(Windows):
 interface UserDataTask : Windows.ApplicationModel.UserDataTasks.IUserDataTask
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ListId()
+	final wstring ListId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_ListId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING RemoteId()
+	final wstring RemoteId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_RemoteId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void RemoteId(HSTRING value)
+	final void RemoteId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_RemoteId(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_RemoteId(hstring(value).handle));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) CompletedDate()
 	{
@@ -218,15 +218,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_CompletedDate(value));
 	}
-	final HSTRING Details()
+	final wstring Details()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_Details(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Details(HSTRING value)
+	final void Details(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_Details(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_Details(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskDetailsKind DetailsKind()
 	{
@@ -304,15 +304,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_Sensitivity(value));
 	}
-	final HSTRING Subject()
+	final wstring Subject()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_Subject(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Subject(HSTRING value)
+	final void Subject(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_Subject(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_Subject(hstring(value).handle));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) StartDate()
 	{
@@ -346,33 +346,33 @@ extern(Windows):
 interface UserDataTaskList : Windows.ApplicationModel.UserDataTasks.IUserDataTaskList
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING UserDataAccountId()
+	final wstring UserDataAccountId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).get_UserDataAccountId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DisplayName(HSTRING value)
+	final void DisplayName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).set_DisplayName(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).set_DisplayName(hstring(value).handle));
 	}
-	final HSTRING SourceDisplayName()
+	final wstring SourceDisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).get_SourceDisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskListOtherAppReadAccess OtherAppReadAccess()
 	{
@@ -425,10 +425,10 @@ extern(Windows):
 		return _ret;
 	}
 	alias GetTaskReader = GetTaskReaderWithOptions;
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTask) GetTaskAsync(HSTRING userDataTask)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTask) GetTaskAsync(wstring userDataTask)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTask) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_GetTaskAsync(userDataTask, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_GetTaskAsync(hstring(userDataTask).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SaveTaskAsync(Windows.ApplicationModel.UserDataTasks.UserDataTask userDataTask)
@@ -437,10 +437,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_SaveTaskAsync(userDataTask, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction DeleteTaskAsync(HSTRING userDataTaskId)
+	final Windows.Foundation.IAsyncAction DeleteTaskAsync(wstring userDataTaskId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_DeleteTaskAsync(userDataTaskId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_DeleteTaskAsync(hstring(userDataTaskId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction DeleteAsync()
@@ -460,10 +460,10 @@ extern(Windows):
 interface UserDataTaskListLimitedWriteOperations : Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations
 {
 extern(Windows):
-	final Windows.Foundation.IAsyncOperation!(HSTRING) TryCompleteTaskAsync(HSTRING userDataTaskId)
+	final Windows.Foundation.IAsyncOperation!(HSTRING) TryCompleteTaskAsync(wstring userDataTaskId)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations)this.asInterface(uuid("7aa267f2-6078-4183-919e-4f29f19cfae9"))).abi_TryCompleteTaskAsync(userDataTaskId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations)this.asInterface(uuid("7aa267f2-6078-4183-919e-4f29f19cfae9"))).abi_TryCompleteTaskAsync(hstring(userDataTaskId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryCreateOrUpdateTaskAsync(Windows.ApplicationModel.UserDataTasks.UserDataTask userDataTask)
@@ -472,16 +472,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations)this.asInterface(uuid("7aa267f2-6078-4183-919e-4f29f19cfae9"))).abi_TryCreateOrUpdateTaskAsync(userDataTask, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) TryDeleteTaskAsync(HSTRING userDataTaskId)
+	final Windows.Foundation.IAsyncOperation!(bool) TryDeleteTaskAsync(wstring userDataTaskId)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations)this.asInterface(uuid("7aa267f2-6078-4183-919e-4f29f19cfae9"))).abi_TryDeleteTaskAsync(userDataTaskId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations)this.asInterface(uuid("7aa267f2-6078-4183-919e-4f29f19cfae9"))).abi_TryDeleteTaskAsync(hstring(userDataTaskId).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) TrySkipOccurrenceAsync(HSTRING userDataTaskId)
+	final Windows.Foundation.IAsyncOperation!(bool) TrySkipOccurrenceAsync(wstring userDataTaskId)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations)this.asInterface(uuid("7aa267f2-6078-4183-919e-4f29f19cfae9"))).abi_TrySkipOccurrenceAsync(userDataTaskId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations)this.asInterface(uuid("7aa267f2-6078-4183-919e-4f29f19cfae9"))).abi_TrySkipOccurrenceAsync(hstring(userDataTaskId).handle, &_ret));
 		return _ret;
 	}
 }
@@ -760,16 +760,16 @@ extern(Windows):
 interface UserDataTaskStore : Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore
 {
 extern(Windows):
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) CreateListAsync(HSTRING name)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) CreateListAsync(wstring name)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore)this.asInterface(uuid("f06a9cb0-f1db-45ba-8a62-086004c0213d"))).abi_CreateListAsync(name, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore)this.asInterface(uuid("f06a9cb0-f1db-45ba-8a62-086004c0213d"))).abi_CreateListAsync(hstring(name).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) CreateListInAccountAsync(HSTRING name, HSTRING userDataAccountId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) CreateListInAccountAsync(wstring name, wstring userDataAccountId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore)this.asInterface(uuid("f06a9cb0-f1db-45ba-8a62-086004c0213d"))).abi_CreateListInAccountAsync(name, userDataAccountId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore)this.asInterface(uuid("f06a9cb0-f1db-45ba-8a62-086004c0213d"))).abi_CreateListInAccountAsync(hstring(name).handle, hstring(userDataAccountId).handle, &_ret));
 		return _ret;
 	}
 	alias CreateListAsync = CreateListInAccountAsync;
@@ -779,10 +779,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore)this.asInterface(uuid("f06a9cb0-f1db-45ba-8a62-086004c0213d"))).abi_FindListsAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) GetListAsync(HSTRING taskListId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) GetListAsync(wstring taskListId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore)this.asInterface(uuid("f06a9cb0-f1db-45ba-8a62-086004c0213d"))).abi_GetListAsync(taskListId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore)this.asInterface(uuid("f06a9cb0-f1db-45ba-8a62-086004c0213d"))).abi_GetListAsync(hstring(taskListId).handle, &_ret));
 		return _ret;
 	}
 }

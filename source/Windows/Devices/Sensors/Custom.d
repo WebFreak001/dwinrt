@@ -67,11 +67,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Sensors.Custom.ICustomSensor)this.asInterface(uuid("a136f9ad-4034-4b4d-99dd-531aac649c09"))).get_ReportInterval(&_ret));
 		return _ret;
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Sensors.Custom.ICustomSensor)this.asInterface(uuid("a136f9ad-4034-4b4d-99dd-531aac649c09"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Custom.CustomSensor, Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs) fn)
 	{
@@ -90,16 +90,16 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.Custom.ICustomSensorStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetDeviceSelector(GUID interfaceId)
+	static wstring GetDeviceSelector(GUID interfaceId)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(interfaceId, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Custom.CustomSensor) FromIdAsync(HSTRING sensorId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Custom.CustomSensor) FromIdAsync(wstring sensorId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Custom.CustomSensor) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(sensorId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(sensorId).handle, &_ret));
 		return _ret;
 	}
 }

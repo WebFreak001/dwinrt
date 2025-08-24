@@ -27,66 +27,66 @@ interface ApiInformation
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Foundation.Metadata.IApiInformationStatics);
 		return _staticInstance;
 	}
-	static bool IsTypePresent(HSTRING typeName)
+	static bool IsTypePresent(wstring typeName)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsTypePresent(typeName, &_ret));
+		Debug.OK(staticInstance.abi_IsTypePresent(hstring(typeName).handle, &_ret));
 		return _ret;
 	}
-	static bool IsMethodPresent(HSTRING typeName, HSTRING methodName)
+	static bool IsMethodPresent(wstring typeName, wstring methodName)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsMethodPresent(typeName, methodName, &_ret));
+		Debug.OK(staticInstance.abi_IsMethodPresent(hstring(typeName).handle, hstring(methodName).handle, &_ret));
 		return _ret;
 	}
-	static bool IsMethodPresentWithArity(HSTRING typeName, HSTRING methodName, UINT32 inputParameterCount)
+	static bool IsMethodPresentWithArity(wstring typeName, wstring methodName, UINT32 inputParameterCount)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsMethodPresentWithArity(typeName, methodName, inputParameterCount, &_ret));
+		Debug.OK(staticInstance.abi_IsMethodPresentWithArity(hstring(typeName).handle, hstring(methodName).handle, inputParameterCount, &_ret));
 		return _ret;
 	}
 	alias IsMethodPresent = IsMethodPresentWithArity;
-	static bool IsEventPresent(HSTRING typeName, HSTRING eventName)
+	static bool IsEventPresent(wstring typeName, wstring eventName)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsEventPresent(typeName, eventName, &_ret));
+		Debug.OK(staticInstance.abi_IsEventPresent(hstring(typeName).handle, hstring(eventName).handle, &_ret));
 		return _ret;
 	}
-	static bool IsPropertyPresent(HSTRING typeName, HSTRING propertyName)
+	static bool IsPropertyPresent(wstring typeName, wstring propertyName)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsPropertyPresent(typeName, propertyName, &_ret));
+		Debug.OK(staticInstance.abi_IsPropertyPresent(hstring(typeName).handle, hstring(propertyName).handle, &_ret));
 		return _ret;
 	}
-	static bool IsReadOnlyPropertyPresent(HSTRING typeName, HSTRING propertyName)
+	static bool IsReadOnlyPropertyPresent(wstring typeName, wstring propertyName)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsReadOnlyPropertyPresent(typeName, propertyName, &_ret));
+		Debug.OK(staticInstance.abi_IsReadOnlyPropertyPresent(hstring(typeName).handle, hstring(propertyName).handle, &_ret));
 		return _ret;
 	}
-	static bool IsWriteablePropertyPresent(HSTRING typeName, HSTRING propertyName)
+	static bool IsWriteablePropertyPresent(wstring typeName, wstring propertyName)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsWriteablePropertyPresent(typeName, propertyName, &_ret));
+		Debug.OK(staticInstance.abi_IsWriteablePropertyPresent(hstring(typeName).handle, hstring(propertyName).handle, &_ret));
 		return _ret;
 	}
-	static bool IsEnumNamedValuePresent(HSTRING enumTypeName, HSTRING valueName)
+	static bool IsEnumNamedValuePresent(wstring enumTypeName, wstring valueName)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsEnumNamedValuePresent(enumTypeName, valueName, &_ret));
+		Debug.OK(staticInstance.abi_IsEnumNamedValuePresent(hstring(enumTypeName).handle, hstring(valueName).handle, &_ret));
 		return _ret;
 	}
-	static bool IsApiContractPresentByMajor(HSTRING contractName, UINT16 majorVersion)
+	static bool IsApiContractPresentByMajor(wstring contractName, UINT16 majorVersion)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsApiContractPresentByMajor(contractName, majorVersion, &_ret));
+		Debug.OK(staticInstance.abi_IsApiContractPresentByMajor(hstring(contractName).handle, majorVersion, &_ret));
 		return _ret;
 	}
 	alias IsApiContractPresent = IsApiContractPresentByMajor;
-	static bool IsApiContractPresentByMajorAndMinor(HSTRING contractName, UINT16 majorVersion, UINT16 minorVersion)
+	static bool IsApiContractPresentByMajorAndMinor(wstring contractName, UINT16 majorVersion, UINT16 minorVersion)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsApiContractPresentByMajorAndMinor(contractName, majorVersion, minorVersion, &_ret));
+		Debug.OK(staticInstance.abi_IsApiContractPresentByMajorAndMinor(hstring(contractName).handle, majorVersion, minorVersion, &_ret));
 		return _ret;
 	}
 	alias IsApiContractPresent = IsApiContractPresentByMajorAndMinor;

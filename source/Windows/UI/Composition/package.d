@@ -958,59 +958,59 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_ClearAllParameters());
 	}
-	final void ClearParameter(HSTRING key)
+	final void ClearParameter(wstring key)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_ClearParameter(key));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_ClearParameter(hstring(key).handle));
 	}
-	final void SetColorParameter(HSTRING key, Windows.UI.Color value)
+	final void SetColorParameter(wstring key, Windows.UI.Color value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetColorParameter(key, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetColorParameter(hstring(key).handle, value));
 	}
-	final void SetMatrix3x2Parameter(HSTRING key, Windows.Foundation.Numerics.Matrix3x2 value)
+	final void SetMatrix3x2Parameter(wstring key, Windows.Foundation.Numerics.Matrix3x2 value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetMatrix3x2Parameter(key, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetMatrix3x2Parameter(hstring(key).handle, value));
 	}
-	final void SetMatrix4x4Parameter(HSTRING key, Windows.Foundation.Numerics.Matrix4x4 value)
+	final void SetMatrix4x4Parameter(wstring key, Windows.Foundation.Numerics.Matrix4x4 value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetMatrix4x4Parameter(key, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetMatrix4x4Parameter(hstring(key).handle, value));
 	}
-	final void SetQuaternionParameter(HSTRING key, Windows.Foundation.Numerics.Quaternion value)
+	final void SetQuaternionParameter(wstring key, Windows.Foundation.Numerics.Quaternion value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetQuaternionParameter(key, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetQuaternionParameter(hstring(key).handle, value));
 	}
-	final void SetReferenceParameter(HSTRING key, Windows.UI.Composition.CompositionObject compositionObject)
+	final void SetReferenceParameter(wstring key, Windows.UI.Composition.CompositionObject compositionObject)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetReferenceParameter(key, compositionObject));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetReferenceParameter(hstring(key).handle, compositionObject));
 	}
-	final void SetScalarParameter(HSTRING key, float value)
+	final void SetScalarParameter(wstring key, float value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetScalarParameter(key, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetScalarParameter(hstring(key).handle, value));
 	}
-	final void SetVector2Parameter(HSTRING key, Windows.Foundation.Numerics.Vector2 value)
+	final void SetVector2Parameter(wstring key, Windows.Foundation.Numerics.Vector2 value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetVector2Parameter(key, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetVector2Parameter(hstring(key).handle, value));
 	}
-	final void SetVector3Parameter(HSTRING key, Windows.Foundation.Numerics.Vector3 value)
+	final void SetVector3Parameter(wstring key, Windows.Foundation.Numerics.Vector3 value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetVector3Parameter(key, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetVector3Parameter(hstring(key).handle, value));
 	}
-	final void SetVector4Parameter(HSTRING key, Windows.Foundation.Numerics.Vector4 value)
+	final void SetVector4Parameter(wstring key, Windows.Foundation.Numerics.Vector4 value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetVector4Parameter(key, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation)this.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetVector4Parameter(hstring(key).handle, value));
 	}
-	final void SetBooleanParameter(HSTRING key, bool value)
+	final void SetBooleanParameter(wstring key, bool value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation2)this.asInterface(uuid("369b603e-a80f-4948-93e3-ed23fb38c6cb"))).abi_SetBooleanParameter(key, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation2)this.asInterface(uuid("369b603e-a80f-4948-93e3-ed23fb38c6cb"))).abi_SetBooleanParameter(hstring(key).handle, value));
 	}
-	final HSTRING Target()
+	final wstring Target()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation2)this.asInterface(uuid("369b603e-a80f-4948-93e3-ed23fb38c6cb"))).get_Target(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Target(HSTRING value)
+	final void Target(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation2)this.asInterface(uuid("369b603e-a80f-4948-93e3-ed23fb38c6cb"))).set_Target(value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionAnimation2)this.asInterface(uuid("369b603e-a80f-4948-93e3-ed23fb38c6cb"))).set_Target(hstring(value).handle));
 	}
 }
 @makable!(CompositionAnimation, CompositionAnimation, Windows.UI.Composition.ICompositionAnimationFactory)
@@ -1450,15 +1450,15 @@ class CompositionEasingFunctionT(Base) : AgileObject!Base, CompositionEasingFunc
 interface CompositionEffectBrush : Windows.UI.Composition.CompositionBrush, Windows.UI.Composition.ICompositionEffectBrush
 {
 extern(Windows):
-	final Windows.UI.Composition.CompositionBrush GetSourceParameter(HSTRING name)
+	final Windows.UI.Composition.CompositionBrush GetSourceParameter(wstring name)
 	{
 		Windows.UI.Composition.CompositionBrush _ret;
-		Debug.OK((cast(Windows.UI.Composition.ICompositionEffectBrush)this.asInterface(uuid("bf7f795e-83cc-44bf-a447-3e3c071789ec"))).abi_GetSourceParameter(name, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionEffectBrush)this.asInterface(uuid("bf7f795e-83cc-44bf-a447-3e3c071789ec"))).abi_GetSourceParameter(hstring(name).handle, &_ret));
 		return _ret;
 	}
-	final void SetSourceParameter(HSTRING name, Windows.UI.Composition.CompositionBrush source)
+	final void SetSourceParameter(wstring name, Windows.UI.Composition.CompositionBrush source)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionEffectBrush)this.asInterface(uuid("bf7f795e-83cc-44bf-a447-3e3c071789ec"))).abi_SetSourceParameter(name, source));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionEffectBrush)this.asInterface(uuid("bf7f795e-83cc-44bf-a447-3e3c071789ec"))).abi_SetSourceParameter(hstring(name).handle, source));
 	}
 }
 
@@ -1488,17 +1488,17 @@ extern(Windows):
 interface CompositionEffectSourceParameter : Windows.UI.Composition.ICompositionEffectSourceParameter, Windows.Graphics.Effects.IGraphicsEffectSource
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Composition.ICompositionEffectSourceParameter)this.asInterface(uuid("858ab13a-3292-4e4e-b3bb-2b6c6544a6ee"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.UI.Composition.CompositionEffectSourceParameter New(HSTRING name)
+	static Windows.UI.Composition.CompositionEffectSourceParameter New(wstring name)
 	{
 		auto factory = factory!(Windows.UI.Composition.ICompositionEffectSourceParameterFactory);
 		Windows.UI.Composition.CompositionEffectSourceParameter _ret;
-		Debug.OK((cast(Windows.UI.Composition.ICompositionEffectSourceParameterFactory)factory.asInterface(uuid("b3d9f276-aba3-4724-acf3-d0397464db1c"))).abi_Create(name, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionEffectSourceParameterFactory)factory.asInterface(uuid("b3d9f276-aba3-4724-acf3-d0397464db1c"))).abi_Create(hstring(name).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1746,27 +1746,27 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Composition.ICompositionObject)this.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Properties(&_ret));
 		return _ret;
 	}
-	final void StartAnimation(HSTRING propertyName, Windows.UI.Composition.CompositionAnimation animation)
+	final void StartAnimation(wstring propertyName, Windows.UI.Composition.CompositionAnimation animation)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionObject)this.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StartAnimation(propertyName, animation));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionObject)this.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StartAnimation(hstring(propertyName).handle, animation));
 	}
-	final void StopAnimation(HSTRING propertyName)
+	final void StopAnimation(wstring propertyName)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionObject)this.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StopAnimation(propertyName));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionObject)this.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StopAnimation(hstring(propertyName).handle));
 	}
 	final void Close()
 	{
 		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
-	final HSTRING Comment()
+	final wstring Comment()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Composition.ICompositionObject2)this.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_Comment(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Comment(HSTRING value)
+	final void Comment(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionObject2)this.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_Comment(value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionObject2)this.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_Comment(hstring(value).handle));
 	}
 	final Windows.UI.Composition.ImplicitAnimationCollection ImplicitAnimations()
 	{
@@ -1819,94 +1819,94 @@ class CompositionObjectT(Base) : AgileObject!Base, CompositionObject
 interface CompositionPropertySet : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionPropertySet, Windows.UI.Composition.ICompositionPropertySet2
 {
 extern(Windows):
-	final void InsertColor(HSTRING propertyName, Windows.UI.Color value)
+	final void InsertColor(wstring propertyName, Windows.UI.Color value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertColor(propertyName, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertColor(hstring(propertyName).handle, value));
 	}
-	final void InsertMatrix3x2(HSTRING propertyName, Windows.Foundation.Numerics.Matrix3x2 value)
+	final void InsertMatrix3x2(wstring propertyName, Windows.Foundation.Numerics.Matrix3x2 value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertMatrix3x2(propertyName, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertMatrix3x2(hstring(propertyName).handle, value));
 	}
-	final void InsertMatrix4x4(HSTRING propertyName, Windows.Foundation.Numerics.Matrix4x4 value)
+	final void InsertMatrix4x4(wstring propertyName, Windows.Foundation.Numerics.Matrix4x4 value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertMatrix4x4(propertyName, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertMatrix4x4(hstring(propertyName).handle, value));
 	}
-	final void InsertQuaternion(HSTRING propertyName, Windows.Foundation.Numerics.Quaternion value)
+	final void InsertQuaternion(wstring propertyName, Windows.Foundation.Numerics.Quaternion value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertQuaternion(propertyName, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertQuaternion(hstring(propertyName).handle, value));
 	}
-	final void InsertScalar(HSTRING propertyName, float value)
+	final void InsertScalar(wstring propertyName, float value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertScalar(propertyName, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertScalar(hstring(propertyName).handle, value));
 	}
-	final void InsertVector2(HSTRING propertyName, Windows.Foundation.Numerics.Vector2 value)
+	final void InsertVector2(wstring propertyName, Windows.Foundation.Numerics.Vector2 value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertVector2(propertyName, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertVector2(hstring(propertyName).handle, value));
 	}
-	final void InsertVector3(HSTRING propertyName, Windows.Foundation.Numerics.Vector3 value)
+	final void InsertVector3(wstring propertyName, Windows.Foundation.Numerics.Vector3 value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertVector3(propertyName, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertVector3(hstring(propertyName).handle, value));
 	}
-	final void InsertVector4(HSTRING propertyName, Windows.Foundation.Numerics.Vector4 value)
+	final void InsertVector4(wstring propertyName, Windows.Foundation.Numerics.Vector4 value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertVector4(propertyName, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_InsertVector4(hstring(propertyName).handle, value));
 	}
-	final Windows.UI.Composition.CompositionGetValueStatus TryGetColor(HSTRING propertyName, Windows.UI.Color* out_value)
+	final Windows.UI.Composition.CompositionGetValueStatus TryGetColor(wstring propertyName, Windows.UI.Color* out_value)
 	{
 		Windows.UI.Composition.CompositionGetValueStatus _ret;
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetColor(propertyName, out_value, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetColor(hstring(propertyName).handle, out_value, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Composition.CompositionGetValueStatus TryGetMatrix3x2(HSTRING propertyName, Windows.Foundation.Numerics.Matrix3x2* out_value)
+	final Windows.UI.Composition.CompositionGetValueStatus TryGetMatrix3x2(wstring propertyName, Windows.Foundation.Numerics.Matrix3x2* out_value)
 	{
 		Windows.UI.Composition.CompositionGetValueStatus _ret;
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetMatrix3x2(propertyName, out_value, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetMatrix3x2(hstring(propertyName).handle, out_value, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Composition.CompositionGetValueStatus TryGetMatrix4x4(HSTRING propertyName, Windows.Foundation.Numerics.Matrix4x4* out_value)
+	final Windows.UI.Composition.CompositionGetValueStatus TryGetMatrix4x4(wstring propertyName, Windows.Foundation.Numerics.Matrix4x4* out_value)
 	{
 		Windows.UI.Composition.CompositionGetValueStatus _ret;
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetMatrix4x4(propertyName, out_value, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetMatrix4x4(hstring(propertyName).handle, out_value, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Composition.CompositionGetValueStatus TryGetQuaternion(HSTRING propertyName, Windows.Foundation.Numerics.Quaternion* out_value)
+	final Windows.UI.Composition.CompositionGetValueStatus TryGetQuaternion(wstring propertyName, Windows.Foundation.Numerics.Quaternion* out_value)
 	{
 		Windows.UI.Composition.CompositionGetValueStatus _ret;
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetQuaternion(propertyName, out_value, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetQuaternion(hstring(propertyName).handle, out_value, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Composition.CompositionGetValueStatus TryGetScalar(HSTRING propertyName, float* out_value)
+	final Windows.UI.Composition.CompositionGetValueStatus TryGetScalar(wstring propertyName, float* out_value)
 	{
 		Windows.UI.Composition.CompositionGetValueStatus _ret;
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetScalar(propertyName, out_value, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetScalar(hstring(propertyName).handle, out_value, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Composition.CompositionGetValueStatus TryGetVector2(HSTRING propertyName, Windows.Foundation.Numerics.Vector2* out_value)
+	final Windows.UI.Composition.CompositionGetValueStatus TryGetVector2(wstring propertyName, Windows.Foundation.Numerics.Vector2* out_value)
 	{
 		Windows.UI.Composition.CompositionGetValueStatus _ret;
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetVector2(propertyName, out_value, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetVector2(hstring(propertyName).handle, out_value, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Composition.CompositionGetValueStatus TryGetVector3(HSTRING propertyName, Windows.Foundation.Numerics.Vector3* out_value)
+	final Windows.UI.Composition.CompositionGetValueStatus TryGetVector3(wstring propertyName, Windows.Foundation.Numerics.Vector3* out_value)
 	{
 		Windows.UI.Composition.CompositionGetValueStatus _ret;
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetVector3(propertyName, out_value, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetVector3(hstring(propertyName).handle, out_value, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Composition.CompositionGetValueStatus TryGetVector4(HSTRING propertyName, Windows.Foundation.Numerics.Vector4* out_value)
+	final Windows.UI.Composition.CompositionGetValueStatus TryGetVector4(wstring propertyName, Windows.Foundation.Numerics.Vector4* out_value)
 	{
 		Windows.UI.Composition.CompositionGetValueStatus _ret;
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetVector4(propertyName, out_value, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet)this.asInterface(uuid("c9d6d202-5f67-4453-9117-9eadd430d3c2"))).abi_TryGetVector4(hstring(propertyName).handle, out_value, &_ret));
 		return _ret;
 	}
-	final void InsertBoolean(HSTRING propertyName, bool value)
+	final void InsertBoolean(wstring propertyName, bool value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet2)this.asInterface(uuid("de80731e-a211-4455-8880-7d0f3f6a44fd"))).abi_InsertBoolean(propertyName, value));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet2)this.asInterface(uuid("de80731e-a211-4455-8880-7d0f3f6a44fd"))).abi_InsertBoolean(hstring(propertyName).handle, value));
 	}
-	final Windows.UI.Composition.CompositionGetValueStatus TryGetBoolean(HSTRING propertyName, bool* out_value)
+	final Windows.UI.Composition.CompositionGetValueStatus TryGetBoolean(wstring propertyName, bool* out_value)
 	{
 		Windows.UI.Composition.CompositionGetValueStatus _ret;
-		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet2)this.asInterface(uuid("de80731e-a211-4455-8880-7d0f3f6a44fd"))).abi_TryGetBoolean(propertyName, out_value, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.ICompositionPropertySet2)this.asInterface(uuid("de80731e-a211-4455-8880-7d0f3f6a44fd"))).abi_TryGetBoolean(hstring(propertyName).handle, out_value, &_ret));
 		return _ret;
 	}
 }
@@ -2225,10 +2225,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Composition.ICompositor)this.asInterface(uuid("b403ca50-7f8c-4e83-985f-cc45060036d8"))).abi_CreateExpressionAnimation(&_ret));
 		return _ret;
 	}
-	final Windows.UI.Composition.ExpressionAnimation CreateExpressionAnimationWithExpression(HSTRING expression)
+	final Windows.UI.Composition.ExpressionAnimation CreateExpressionAnimationWithExpression(wstring expression)
 	{
 		Windows.UI.Composition.ExpressionAnimation _ret;
-		Debug.OK((cast(Windows.UI.Composition.ICompositor)this.asInterface(uuid("b403ca50-7f8c-4e83-985f-cc45060036d8"))).abi_CreateExpressionAnimationWithExpression(expression, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.ICompositor)this.asInterface(uuid("b403ca50-7f8c-4e83-985f-cc45060036d8"))).abi_CreateExpressionAnimationWithExpression(hstring(expression).handle, &_ret));
 		return _ret;
 	}
 	alias CreateExpressionAnimation = CreateExpressionAnimationWithExpression;
@@ -2613,15 +2613,15 @@ extern(Windows):
 interface ExpressionAnimation : Windows.UI.Composition.CompositionAnimation, Windows.UI.Composition.IExpressionAnimation
 {
 extern(Windows):
-	final HSTRING Expression()
+	final wstring Expression()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Composition.IExpressionAnimation)this.asInterface(uuid("6acc5431-7d3d-4bf3-abb6-f44bdc4888c1"))).get_Expression(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Expression(HSTRING value)
+	final void Expression(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.IExpressionAnimation)this.asInterface(uuid("6acc5431-7d3d-4bf3-abb6-f44bdc4888c1"))).set_Expression(value));
+		Debug.OK((cast(Windows.UI.Composition.IExpressionAnimation)this.asInterface(uuid("6acc5431-7d3d-4bf3-abb6-f44bdc4888c1"))).set_Expression(hstring(value).handle));
 	}
 }
 
@@ -2632,10 +2632,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase)))this).abi_First(out_first));
 	}
-	final  Windows.UI.Composition.ICompositionAnimationBase Lookup(HSTRING key)
+	final  Windows.UI.Composition.ICompositionAnimationBase Lookup(wstring key)
 	{
 		 Windows.UI.Composition.ICompositionAnimationBase _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase))this).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase))this).abi_Lookup(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final uint Size()
@@ -2644,10 +2644,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase))this).get_Size(&_ret));
 		return _ret;
 	}
-	final bool HasKey(HSTRING key)
+	final bool HasKey(wstring key)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase))this).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase))this).abi_HasKey(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING,	 Windows.UI.Composition.ICompositionAnimationBase) GetView()
@@ -2656,15 +2656,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase))this).abi_GetView(&_ret));
 		return _ret;
 	}
-	final bool Insert(HSTRING key,	Windows.UI.Composition.ICompositionAnimationBase value)
+	final bool Insert(wstring key,	Windows.UI.Composition.ICompositionAnimationBase value)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase))this).abi_Insert(key, value, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase))this).abi_Insert(hstring(key).handle, value, &_ret));
 		return _ret;
 	}
-	final void Remove(HSTRING key)
+	final void Remove(wstring key)
 	{
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase))this).abi_Remove(key));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.UI.Composition.ICompositionAnimationBase))this).abi_Remove(hstring(key).handle));
 	}
 	final void Clear()
 	{
@@ -2776,13 +2776,13 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Composition.IKeyFrameAnimation)this.asInterface(uuid("126e7f22-3ae9-4540-9a8a-deae8a4a4a84"))).set_StopBehavior(value));
 	}
-	final void InsertExpressionKeyFrame(float normalizedProgressKey, HSTRING value)
+	final void InsertExpressionKeyFrame(float normalizedProgressKey, wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Composition.IKeyFrameAnimation)this.asInterface(uuid("126e7f22-3ae9-4540-9a8a-deae8a4a4a84"))).abi_InsertExpressionKeyFrame(normalizedProgressKey, value));
+		Debug.OK((cast(Windows.UI.Composition.IKeyFrameAnimation)this.asInterface(uuid("126e7f22-3ae9-4540-9a8a-deae8a4a4a84"))).abi_InsertExpressionKeyFrame(normalizedProgressKey, hstring(value).handle));
 	}
-	final void InsertExpressionKeyFrameWithEasingFunction(float normalizedProgressKey, HSTRING value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
+	final void InsertExpressionKeyFrameWithEasingFunction(float normalizedProgressKey, wstring value, Windows.UI.Composition.CompositionEasingFunction easingFunction)
 	{
-		Debug.OK((cast(Windows.UI.Composition.IKeyFrameAnimation)this.asInterface(uuid("126e7f22-3ae9-4540-9a8a-deae8a4a4a84"))).abi_InsertExpressionKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction));
+		Debug.OK((cast(Windows.UI.Composition.IKeyFrameAnimation)this.asInterface(uuid("126e7f22-3ae9-4540-9a8a-deae8a4a4a84"))).abi_InsertExpressionKeyFrameWithEasingFunction(normalizedProgressKey, hstring(value).handle, easingFunction));
 	}
 	alias InsertExpressionKeyFrame = InsertExpressionKeyFrameWithEasingFunction;
 	final Windows.UI.Composition.AnimationDirection Direction()

@@ -19,16 +19,16 @@ interface GameControllerProviderInfo
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Gaming.Input.Preview.IGameControllerProviderInfoStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetParentProviderId(Windows.Gaming.Input.Custom.IGameControllerProvider provider)
+	static wstring GetParentProviderId(Windows.Gaming.Input.Custom.IGameControllerProvider provider)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetParentProviderId(provider, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GetProviderId(Windows.Gaming.Input.Custom.IGameControllerProvider provider)
+	static wstring GetProviderId(Windows.Gaming.Input.Custom.IGameControllerProvider provider)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetProviderId(provider, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }

@@ -83,16 +83,16 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Custom.ICustomDeviceStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetDeviceSelector(GUID classGuid)
+	static wstring GetDeviceSelector(GUID classGuid)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(classGuid, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Custom.CustomDevice) FromIdAsync(HSTRING deviceId, Windows.Devices.Custom.DeviceAccessMode desiredAccess, Windows.Devices.Custom.DeviceSharingMode sharingMode)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Custom.CustomDevice) FromIdAsync(wstring deviceId, Windows.Devices.Custom.DeviceAccessMode desiredAccess, Windows.Devices.Custom.DeviceSharingMode sharingMode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Custom.CustomDevice) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, desiredAccess, sharingMode, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, desiredAccess, sharingMode, &_ret));
 		return _ret;
 	}
 }

@@ -107,17 +107,17 @@ extern(Windows):
 interface ContactListServerSearchReadBatchRequest : Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest
 {
 extern(Windows):
-	final HSTRING SessionId()
+	final wstring SessionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest)this.asInterface(uuid("ba776a97-4030-4925-9fb4-143b295e653b"))).get_SessionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ContactListId()
+	final wstring ContactListId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest)this.asInterface(uuid("ba776a97-4030-4925-9fb4-143b295e653b"))).get_ContactListId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Contacts.ContactQueryOptions Options()
 	{
@@ -171,11 +171,11 @@ extern(Windows):
 interface ContactListSyncManagerSyncRequest : Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequest
 {
 extern(Windows):
-	final HSTRING ContactListId()
+	final wstring ContactListId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequest)this.asInterface(uuid("3c0e57a4-c4e7-4970-9a8f-9a66a2bb6c1a"))).get_ContactListId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{

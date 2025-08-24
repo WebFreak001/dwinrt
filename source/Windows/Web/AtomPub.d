@@ -89,22 +89,22 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.AtomPub.IAtomPubClient)this.asInterface(uuid("35392c38-cded-4d4c-9637-05f15c1c9406"))).abi_RetrieveResourceAsync(uri, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationItem, Windows.Web.Syndication.TransferProgress) CreateResourceAsync(Windows.Foundation.Uri uri, HSTRING description, Windows.Web.Syndication.SyndicationItem item)
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationItem, Windows.Web.Syndication.TransferProgress) CreateResourceAsync(Windows.Foundation.Uri uri, wstring description, Windows.Web.Syndication.SyndicationItem item)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationItem, Windows.Web.Syndication.TransferProgress) _ret;
-		Debug.OK((cast(Windows.Web.AtomPub.IAtomPubClient)this.asInterface(uuid("35392c38-cded-4d4c-9637-05f15c1c9406"))).abi_CreateResourceAsync(uri, description, item, &_ret));
+		Debug.OK((cast(Windows.Web.AtomPub.IAtomPubClient)this.asInterface(uuid("35392c38-cded-4d4c-9637-05f15c1c9406"))).abi_CreateResourceAsync(uri, hstring(description).handle, item, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationItem, Windows.Web.Syndication.TransferProgress) CreateMediaResourceAsync(Windows.Foundation.Uri uri, HSTRING mediaType, HSTRING description, Windows.Storage.Streams.IInputStream mediaStream)
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationItem, Windows.Web.Syndication.TransferProgress) CreateMediaResourceAsync(Windows.Foundation.Uri uri, wstring mediaType, wstring description, Windows.Storage.Streams.IInputStream mediaStream)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationItem, Windows.Web.Syndication.TransferProgress) _ret;
-		Debug.OK((cast(Windows.Web.AtomPub.IAtomPubClient)this.asInterface(uuid("35392c38-cded-4d4c-9637-05f15c1c9406"))).abi_CreateMediaResourceAsync(uri, mediaType, description, mediaStream, &_ret));
+		Debug.OK((cast(Windows.Web.AtomPub.IAtomPubClient)this.asInterface(uuid("35392c38-cded-4d4c-9637-05f15c1c9406"))).abi_CreateMediaResourceAsync(uri, hstring(mediaType).handle, hstring(description).handle, mediaStream, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncActionWithProgress!(Windows.Web.Syndication.TransferProgress) UpdateMediaResourceAsync(Windows.Foundation.Uri uri, HSTRING mediaType, Windows.Storage.Streams.IInputStream mediaStream)
+	final Windows.Foundation.IAsyncActionWithProgress!(Windows.Web.Syndication.TransferProgress) UpdateMediaResourceAsync(Windows.Foundation.Uri uri, wstring mediaType, Windows.Storage.Streams.IInputStream mediaStream)
 	{
 		Windows.Foundation.IAsyncActionWithProgress!(Windows.Web.Syndication.TransferProgress) _ret;
-		Debug.OK((cast(Windows.Web.AtomPub.IAtomPubClient)this.asInterface(uuid("35392c38-cded-4d4c-9637-05f15c1c9406"))).abi_UpdateMediaResourceAsync(uri, mediaType, mediaStream, &_ret));
+		Debug.OK((cast(Windows.Web.AtomPub.IAtomPubClient)this.asInterface(uuid("35392c38-cded-4d4c-9637-05f15c1c9406"))).abi_UpdateMediaResourceAsync(uri, hstring(mediaType).handle, mediaStream, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncActionWithProgress!(Windows.Web.Syndication.TransferProgress) UpdateResourceAsync(Windows.Foundation.Uri uri, Windows.Web.Syndication.SyndicationItem item)
@@ -185,9 +185,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationClient)this.asInterface(uuid("9e18a9b7-7249-4b45-b229-7df895a5a1f5"))).set_BypassCacheOnRetrieve(value));
 	}
-	final void SetRequestHeader(HSTRING name, HSTRING value)
+	final void SetRequestHeader(wstring name, wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationClient)this.asInterface(uuid("9e18a9b7-7249-4b45-b229-7df895a5a1f5"))).abi_SetRequestHeader(name, value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationClient)this.asInterface(uuid("9e18a9b7-7249-4b45-b229-7df895a5a1f5"))).abi_SetRequestHeader(hstring(name).handle, hstring(value).handle));
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationFeed, Windows.Web.Syndication.RetrievalProgress) RetrieveFeedAsync(Windows.Foundation.Uri uri)
 	{
@@ -237,45 +237,45 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.AtomPub.IResourceCollection)this.asInterface(uuid("7f5fd609-bc88-41d4-88fa-3de6704d428e"))).get_Accepts(&_ret));
 		return _ret;
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeName(HSTRING value)
+	final void NodeName(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(hstring(value).handle));
 	}
-	final HSTRING NodeNamespace()
+	final wstring NodeNamespace()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeNamespace(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeNamespace(HSTRING value)
+	final void NodeNamespace(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(hstring(value).handle));
 	}
-	final HSTRING NodeValue()
+	final wstring NodeValue()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeValue(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeValue(HSTRING value)
+	final void NodeValue(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(hstring(value).handle));
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri BaseUri()
 	{
@@ -316,45 +316,45 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.AtomPub.IServiceDocument)this.asInterface(uuid("8b7ec771-2ab3-4dbe-8bcc-778f92b75e51"))).get_Workspaces(&_ret));
 		return _ret;
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeName(HSTRING value)
+	final void NodeName(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(hstring(value).handle));
 	}
-	final HSTRING NodeNamespace()
+	final wstring NodeNamespace()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeNamespace(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeNamespace(HSTRING value)
+	final void NodeNamespace(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(hstring(value).handle));
 	}
-	final HSTRING NodeValue()
+	final wstring NodeValue()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeValue(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeValue(HSTRING value)
+	final void NodeValue(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(hstring(value).handle));
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri BaseUri()
 	{
@@ -401,45 +401,45 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.AtomPub.IWorkspace)this.asInterface(uuid("b41da63b-a4b8-4036-89c5-83c31266ba49"))).get_Collections(&_ret));
 		return _ret;
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeName(HSTRING value)
+	final void NodeName(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(hstring(value).handle));
 	}
-	final HSTRING NodeNamespace()
+	final wstring NodeNamespace()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeNamespace(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeNamespace(HSTRING value)
+	final void NodeNamespace(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(hstring(value).handle));
 	}
-	final HSTRING NodeValue()
+	final wstring NodeValue()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeValue(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeValue(HSTRING value)
+	final void NodeValue(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(hstring(value).handle));
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri BaseUri()
 	{

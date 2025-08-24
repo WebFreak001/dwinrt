@@ -29,11 +29,11 @@ extern(Windows):
 interface XsltProcessor : Windows.Data.Xml.Xsl.IXsltProcessor, Windows.Data.Xml.Xsl.IXsltProcessor2
 {
 extern(Windows):
-	final HSTRING TransformToString(Windows.Data.Xml.Dom.IXmlNode inputNode)
+	final wstring TransformToString(Windows.Data.Xml.Dom.IXmlNode inputNode)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Xsl.IXsltProcessor)this.asInterface(uuid("7b64703f-550c-48c6-a90f-93a5b964518f"))).abi_TransformToString(inputNode, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Data.Xml.Dom.XmlDocument TransformToDocument(Windows.Data.Xml.Dom.IXmlNode inputNode)
 	{

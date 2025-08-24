@@ -216,10 +216,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.WiFiDirect.Services.IWiFiDirectService)this.asInterface(uuid("50aabbb8-5f71-45ec-84f1-a1e4fc7879a3"))).abi_ConnectAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) ConnectAsyncWithPin(HSTRING pin)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) ConnectAsyncWithPin(wstring pin)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) _ret;
-		Debug.OK((cast(Windows.Devices.WiFiDirect.Services.IWiFiDirectService)this.asInterface(uuid("50aabbb8-5f71-45ec-84f1-a1e4fc7879a3"))).abi_ConnectAsyncWithPin(pin, &_ret));
+		Debug.OK((cast(Windows.Devices.WiFiDirect.Services.IWiFiDirectService)this.asInterface(uuid("50aabbb8-5f71-45ec-84f1-a1e4fc7879a3"))).abi_ConnectAsyncWithPin(hstring(pin).handle, &_ret));
 		return _ret;
 	}
 	alias ConnectAsync = ConnectAsyncWithPin;
@@ -230,23 +230,23 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetSelector(HSTRING serviceName)
+	static wstring GetSelector(wstring serviceName)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetSelector(serviceName, &_ret));
-		return _ret;
+		Debug.OK(staticInstance.abi_GetSelector(hstring(serviceName).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GetSelectorWithFilter(HSTRING serviceName, Windows.Storage.Streams.IBuffer serviceInfoFilter)
+	static wstring GetSelectorWithFilter(wstring serviceName, Windows.Storage.Streams.IBuffer serviceInfoFilter)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetSelectorWithFilter(serviceName, serviceInfoFilter, &_ret));
-		return _ret;
+		Debug.OK(staticInstance.abi_GetSelectorWithFilter(hstring(serviceName).handle, serviceInfoFilter, &_ret));
+		return hstring(_ret).d_str;
 	}
 	alias GetSelector = GetSelectorWithFilter;
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectService) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectService) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectService) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 }
@@ -254,11 +254,11 @@ extern(Windows):
 interface WiFiDirectServiceAdvertiser : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser
 {
 extern(Windows):
-	final HSTRING ServiceName()
+	final wstring ServiceName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser)this.asInterface(uuid("a4aa1ee1-9d8f-4f4f-93ee-7ddea2e37f46"))).get_ServiceName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) ServiceNamePrefixes()
 	{
@@ -380,10 +380,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser)this.asInterface(uuid("a4aa1ee1-9d8f-4f4f-93ee-7ddea2e37f46"))).abi_ConnectAsync(deviceInfo, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) ConnectAsyncWithPin(Windows.Devices.Enumeration.DeviceInformation deviceInfo, HSTRING pin)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) ConnectAsyncWithPin(Windows.Devices.Enumeration.DeviceInformation deviceInfo, wstring pin)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) _ret;
-		Debug.OK((cast(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser)this.asInterface(uuid("a4aa1ee1-9d8f-4f4f-93ee-7ddea2e37f46"))).abi_ConnectAsyncWithPin(deviceInfo, pin, &_ret));
+		Debug.OK((cast(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser)this.asInterface(uuid("a4aa1ee1-9d8f-4f4f-93ee-7ddea2e37f46"))).abi_ConnectAsyncWithPin(deviceInfo, hstring(pin).handle, &_ret));
 		return _ret;
 	}
 	alias ConnectAsync = ConnectAsyncWithPin;
@@ -395,11 +395,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser)this.asInterface(uuid("a4aa1ee1-9d8f-4f4f-93ee-7ddea2e37f46"))).abi_Stop());
 	}
-	static Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser New(HSTRING serviceName)
+	static Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser New(wstring serviceName)
 	{
 		auto factory = factory!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiserFactory);
 		Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser _ret;
-		Debug.OK((cast(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiserFactory)factory.asInterface(uuid("3106ac0d-b446-4f13-9f9a-8ae925feba2b"))).abi_CreateWiFiDirectServiceAdvertiser(serviceName, &_ret));
+		Debug.OK((cast(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiserFactory)factory.asInterface(uuid("3106ac0d-b446-4f13-9f9a-8ae925feba2b"))).abi_CreateWiFiDirectServiceAdvertiser(hstring(serviceName).handle, &_ret));
 		return _ret;
 	}
 }
@@ -458,11 +458,11 @@ extern(Windows):
 interface WiFiDirectServiceSession : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession, Windows.Foundation.IClosable
 {
 extern(Windows):
-	final HSTRING ServiceName()
+	final wstring ServiceName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession)this.asInterface(uuid("81142163-e426-47cb-8640-e1b3588bf26f"))).get_ServiceName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionStatus Status()
 	{
@@ -488,17 +488,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession)this.asInterface(uuid("81142163-e426-47cb-8640-e1b3588bf26f"))).get_AdvertisementId(&_ret));
 		return _ret;
 	}
-	final HSTRING ServiceAddress()
+	final wstring ServiceAddress()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession)this.asInterface(uuid("81142163-e426-47cb-8640-e1b3588bf26f"))).get_ServiceAddress(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SessionAddress()
+	final wstring SessionAddress()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession)this.asInterface(uuid("81142163-e426-47cb-8640-e1b3588bf26f"))).get_SessionAddress(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair) GetConnectionEndpointPairs()
 	{

@@ -53,15 +53,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession)this.asInterface(uuid("af908a2d-118b-48f1-9308-0c4fc41e200f"))).set_Reason(value));
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession)this.asInterface(uuid("af908a2d-118b-48f1-9308-0c4fc41e200f"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Description(HSTRING value)
+	final void Description(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession)this.asInterface(uuid("af908a2d-118b-48f1-9308-0c4fc41e200f"))).set_Description(value));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession)this.asInterface(uuid("af908a2d-118b-48f1-9308-0c4fc41e200f"))).set_Description(hstring(value).handle));
 	}
 	final UINT32 PercentProgress()
 	{

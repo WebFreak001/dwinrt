@@ -225,15 +225,15 @@ interface PeerFinder
 	{
 		Debug.OK(staticInstance.set_AllowWiFiDirect(value));
 	}
-	static HSTRING DisplayName()
+	static wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static void DisplayName(HSTRING value)
+	static void DisplayName(wstring value)
 	{
-		Debug.OK(staticInstance.set_DisplayName(value));
+		Debug.OK(staticInstance.set_DisplayName(hstring(value).handle));
 	}
 	static Windows.Networking.Proximity.PeerDiscoveryTypes SupportedDiscoveryTypes()
 	{
@@ -251,9 +251,9 @@ interface PeerFinder
 	{
 		Debug.OK(staticInstance.abi_Start());
 	}
-	static void StartWithMessage(HSTRING peerMessage)
+	static void StartWithMessage(wstring peerMessage)
 	{
-		Debug.OK(staticInstance.abi_StartWithMessage(peerMessage));
+		Debug.OK(staticInstance.abi_StartWithMessage(hstring(peerMessage).handle));
 	}
 	alias Start = StartWithMessage;
 	static void Stop()
@@ -297,17 +297,17 @@ interface PeerFinder
 interface PeerInformation : Windows.Networking.Proximity.IPeerInformation, Windows.Networking.Proximity.IPeerInformation3, Windows.Networking.Proximity.IPeerInformationWithHostAndService
 {
 extern(Windows):
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Proximity.IPeerInformation)this.asInterface(uuid("20024f08-9fff-45f4-b6e9-408b2ebef373"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Proximity.IPeerInformation3)this.asInterface(uuid("b20f612a-dbd0-40f8-95bd-2d4209c7836f"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Storage.Streams.IBuffer DiscoveryData()
 	{
@@ -321,11 +321,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.Proximity.IPeerInformationWithHostAndService)this.asInterface(uuid("ecc7ccad-1b70-4e8b-92db-bbe781419308"))).get_HostName(&_ret));
 		return _ret;
 	}
-	final HSTRING ServiceName()
+	final wstring ServiceName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Proximity.IPeerInformationWithHostAndService)this.asInterface(uuid("ecc7ccad-1b70-4e8b-92db-bbe781419308"))).get_ServiceName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -401,35 +401,35 @@ extern(Windows):
 interface ProximityDevice : Windows.Networking.Proximity.IProximityDevice
 {
 extern(Windows):
-	final INT64 SubscribeForMessage(HSTRING messageType, Windows.Networking.Proximity.MessageReceivedHandler messageReceivedHandler)
+	final INT64 SubscribeForMessage(wstring messageType, Windows.Networking.Proximity.MessageReceivedHandler messageReceivedHandler)
 	{
 		INT64 _ret;
-		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_SubscribeForMessage(messageType, messageReceivedHandler, &_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_SubscribeForMessage(hstring(messageType).handle, messageReceivedHandler, &_ret));
 		return _ret;
 	}
-	final INT64 PublishMessage(HSTRING messageType, HSTRING message)
+	final INT64 PublishMessage(wstring messageType, wstring message)
 	{
 		INT64 _ret;
-		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishMessage(messageType, message, &_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishMessage(hstring(messageType).handle, hstring(message).handle, &_ret));
 		return _ret;
 	}
-	final INT64 PublishMessageWithCallback(HSTRING messageType, HSTRING message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
+	final INT64 PublishMessageWithCallback(wstring messageType, wstring message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
 	{
 		INT64 _ret;
-		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishMessageWithCallback(messageType, message, messageTransmittedHandler, &_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishMessageWithCallback(hstring(messageType).handle, hstring(message).handle, messageTransmittedHandler, &_ret));
 		return _ret;
 	}
 	alias PublishMessage = PublishMessageWithCallback;
-	final INT64 PublishBinaryMessage(HSTRING messageType, Windows.Storage.Streams.IBuffer message)
+	final INT64 PublishBinaryMessage(wstring messageType, Windows.Storage.Streams.IBuffer message)
 	{
 		INT64 _ret;
-		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishBinaryMessage(messageType, message, &_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishBinaryMessage(hstring(messageType).handle, message, &_ret));
 		return _ret;
 	}
-	final INT64 PublishBinaryMessageWithCallback(HSTRING messageType, Windows.Storage.Streams.IBuffer message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
+	final INT64 PublishBinaryMessageWithCallback(wstring messageType, Windows.Storage.Streams.IBuffer message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
 	{
 		INT64 _ret;
-		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishBinaryMessageWithCallback(messageType, message, messageTransmittedHandler, &_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishBinaryMessageWithCallback(hstring(messageType).handle, message, messageTransmittedHandler, &_ret));
 		return _ret;
 	}
 	alias PublishBinaryMessage = PublishBinaryMessageWithCallback;
@@ -486,11 +486,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).get_BitsPerSecond(&_ret));
 		return _ret;
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 
 	private static Windows.Networking.Proximity.IProximityDeviceStatics _staticInstance;
@@ -499,11 +499,11 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.Proximity.IProximityDeviceStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static Windows.Networking.Proximity.ProximityDevice GetDefault()
 	{
@@ -511,10 +511,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDefault(&_ret));
 		return _ret;
 	}
-	static Windows.Networking.Proximity.ProximityDevice FromId(HSTRING deviceId)
+	static Windows.Networking.Proximity.ProximityDevice FromId(wstring deviceId)
 	{
 		Windows.Networking.Proximity.ProximityDevice _ret;
-		Debug.OK(staticInstance.abi_FromId(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromId(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 }
@@ -522,11 +522,11 @@ extern(Windows):
 interface ProximityMessage : Windows.Networking.Proximity.IProximityMessage
 {
 extern(Windows):
-	final HSTRING MessageType()
+	final wstring MessageType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Proximity.IProximityMessage)this.asInterface(uuid("efab0782-f6e1-4675-a045-d8e320c24808"))).get_MessageType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT64 SubscriptionId()
 	{
@@ -540,11 +540,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.Proximity.IProximityMessage)this.asInterface(uuid("efab0782-f6e1-4675-a045-d8e320c24808"))).get_Data(&_ret));
 		return _ret;
 	}
-	final HSTRING DataAsString()
+	final wstring DataAsString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.Proximity.IProximityMessage)this.asInterface(uuid("efab0782-f6e1-4675-a045-d8e320c24808"))).get_DataAsString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

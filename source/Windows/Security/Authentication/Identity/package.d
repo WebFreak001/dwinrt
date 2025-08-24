@@ -33,35 +33,35 @@ extern(Windows):
 interface EnterpriseKeyCredentialRegistrationInfo : Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationInfo
 {
 extern(Windows):
-	final HSTRING TenantId()
+	final wstring TenantId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationInfo)this.asInterface(uuid("38321acc-672b-4823-b603-6b3c753daf97"))).get_TenantId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING TenantName()
+	final wstring TenantName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationInfo)this.asInterface(uuid("38321acc-672b-4823-b603-6b3c753daf97"))).get_TenantName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Subject()
+	final wstring Subject()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationInfo)this.asInterface(uuid("38321acc-672b-4823-b603-6b3c753daf97"))).get_Subject(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING KeyId()
+	final wstring KeyId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationInfo)this.asInterface(uuid("38321acc-672b-4823-b603-6b3c753daf97"))).get_KeyId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING KeyName()
+	final wstring KeyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationInfo)this.asInterface(uuid("38321acc-672b-4823-b603-6b3c753daf97"))).get_KeyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

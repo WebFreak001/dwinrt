@@ -64,11 +64,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Enumeration.Pnp.IPnpObject)this.asInterface(uuid("95c66258-733b-4a8f-93a3-db078ac870c1"))).get_Type(&_ret));
 		return _ret;
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Enumeration.Pnp.IPnpObject)this.asInterface(uuid("95c66258-733b-4a8f-93a3-db078ac870c1"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
 	{
@@ -87,10 +87,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Enumeration.Pnp.IPnpObjectStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObject) CreateFromIdAsync(Windows.Devices.Enumeration.Pnp.PnpObjectType type, HSTRING id, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObject) CreateFromIdAsync(Windows.Devices.Enumeration.Pnp.PnpObjectType type, wstring id, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObject) _ret;
-		Debug.OK(staticInstance.abi_CreateFromIdAsync(type, id, requestedProperties, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromIdAsync(type, hstring(id).handle, requestedProperties, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObjectCollection) FindAllAsync(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties)
@@ -99,10 +99,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_FindAllAsync(type, requestedProperties, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObjectCollection) FindAllAsyncAqsFilter(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, HSTRING aqsFilter)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObjectCollection) FindAllAsyncAqsFilter(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, wstring aqsFilter)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObjectCollection) _ret;
-		Debug.OK(staticInstance.abi_FindAllAsyncAqsFilter(type, requestedProperties, aqsFilter, &_ret));
+		Debug.OK(staticInstance.abi_FindAllAsyncAqsFilter(type, requestedProperties, hstring(aqsFilter).handle, &_ret));
 		return _ret;
 	}
 	alias FindAllAsync = FindAllAsyncAqsFilter;
@@ -112,10 +112,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateWatcher(type, requestedProperties, &_ret));
 		return _ret;
 	}
-	static Windows.Devices.Enumeration.Pnp.PnpObjectWatcher CreateWatcherAqsFilter(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, HSTRING aqsFilter)
+	static Windows.Devices.Enumeration.Pnp.PnpObjectWatcher CreateWatcherAqsFilter(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, wstring aqsFilter)
 	{
 		Windows.Devices.Enumeration.Pnp.PnpObjectWatcher _ret;
-		Debug.OK(staticInstance.abi_CreateWatcherAqsFilter(type, requestedProperties, aqsFilter, &_ret));
+		Debug.OK(staticInstance.abi_CreateWatcherAqsFilter(type, requestedProperties, hstring(aqsFilter).handle, &_ret));
 		return _ret;
 	}
 	alias CreateWatcher = CreateWatcherAqsFilter;
@@ -159,11 +159,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Enumeration.Pnp.IPnpObjectUpdate)this.asInterface(uuid("6f59e812-001e-4844-bcc6-432886856a17"))).get_Type(&_ret));
 		return _ret;
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Enumeration.Pnp.IPnpObjectUpdate)this.asInterface(uuid("6f59e812-001e-4844-bcc6-432886856a17"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
 	{

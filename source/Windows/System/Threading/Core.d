@@ -97,29 +97,29 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.System.Threading.Core.ISignalNotifierStatics);
 		return _staticInstance;
 	}
-	static Windows.System.Threading.Core.SignalNotifier AttachToEvent(HSTRING name, Windows.System.Threading.Core.SignalHandler handler)
+	static Windows.System.Threading.Core.SignalNotifier AttachToEvent(wstring name, Windows.System.Threading.Core.SignalHandler handler)
 	{
 		Windows.System.Threading.Core.SignalNotifier _ret;
-		Debug.OK(staticInstance.abi_AttachToEvent(name, handler, &_ret));
+		Debug.OK(staticInstance.abi_AttachToEvent(hstring(name).handle, handler, &_ret));
 		return _ret;
 	}
-	static Windows.System.Threading.Core.SignalNotifier AttachToEventWithTimeout(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout)
+	static Windows.System.Threading.Core.SignalNotifier AttachToEventWithTimeout(wstring name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout)
 	{
 		Windows.System.Threading.Core.SignalNotifier _ret;
-		Debug.OK(staticInstance.abi_AttachToEventWithTimeout(name, handler, timeout, &_ret));
+		Debug.OK(staticInstance.abi_AttachToEventWithTimeout(hstring(name).handle, handler, timeout, &_ret));
 		return _ret;
 	}
 	alias AttachToEvent = AttachToEventWithTimeout;
-	static Windows.System.Threading.Core.SignalNotifier AttachToSemaphore(HSTRING name, Windows.System.Threading.Core.SignalHandler handler)
+	static Windows.System.Threading.Core.SignalNotifier AttachToSemaphore(wstring name, Windows.System.Threading.Core.SignalHandler handler)
 	{
 		Windows.System.Threading.Core.SignalNotifier _ret;
-		Debug.OK(staticInstance.abi_AttachToSemaphore(name, handler, &_ret));
+		Debug.OK(staticInstance.abi_AttachToSemaphore(hstring(name).handle, handler, &_ret));
 		return _ret;
 	}
-	static Windows.System.Threading.Core.SignalNotifier AttachToSemaphoreWithTimeout(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout)
+	static Windows.System.Threading.Core.SignalNotifier AttachToSemaphoreWithTimeout(wstring name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout)
 	{
 		Windows.System.Threading.Core.SignalNotifier _ret;
-		Debug.OK(staticInstance.abi_AttachToSemaphoreWithTimeout(name, handler, timeout, &_ret));
+		Debug.OK(staticInstance.abi_AttachToSemaphoreWithTimeout(hstring(name).handle, handler, timeout, &_ret));
 		return _ret;
 	}
 	alias AttachToSemaphore = AttachToSemaphoreWithTimeout;

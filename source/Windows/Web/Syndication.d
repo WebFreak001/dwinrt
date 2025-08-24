@@ -339,35 +339,35 @@ extern(Windows):
 interface SyndicationAttribute : Windows.Web.Syndication.ISyndicationAttribute
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationAttribute)this.asInterface(uuid("71e8f969-526e-4001-9a91-e84f83161ab1"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Name(HSTRING value)
+	final void Name(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationAttribute)this.asInterface(uuid("71e8f969-526e-4001-9a91-e84f83161ab1"))).set_Name(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationAttribute)this.asInterface(uuid("71e8f969-526e-4001-9a91-e84f83161ab1"))).set_Name(hstring(value).handle));
 	}
-	final HSTRING Namespace()
+	final wstring Namespace()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationAttribute)this.asInterface(uuid("71e8f969-526e-4001-9a91-e84f83161ab1"))).get_Namespace(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Namespace(HSTRING value)
+	final void Namespace(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationAttribute)this.asInterface(uuid("71e8f969-526e-4001-9a91-e84f83161ab1"))).set_Namespace(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationAttribute)this.asInterface(uuid("71e8f969-526e-4001-9a91-e84f83161ab1"))).set_Namespace(hstring(value).handle));
 	}
-	final HSTRING Value()
+	final wstring Value()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationAttribute)this.asInterface(uuid("71e8f969-526e-4001-9a91-e84f83161ab1"))).get_Value(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Value(HSTRING value)
+	final void Value(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationAttribute)this.asInterface(uuid("71e8f969-526e-4001-9a91-e84f83161ab1"))).set_Value(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationAttribute)this.asInterface(uuid("71e8f969-526e-4001-9a91-e84f83161ab1"))).set_Value(hstring(value).handle));
 	}
 	static SyndicationAttribute New()
 	{
@@ -375,11 +375,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(SyndicationAttribute).abi_ActivateInstance(&ret));
 		return cast(SyndicationAttribute) ret;
 	}
-	static Windows.Web.Syndication.SyndicationAttribute New(HSTRING attributeName, HSTRING attributeNamespace, HSTRING attributeValue)
+	static Windows.Web.Syndication.SyndicationAttribute New(wstring attributeName, wstring attributeNamespace, wstring attributeValue)
 	{
 		auto factory = factory!(Windows.Web.Syndication.ISyndicationAttributeFactory);
 		Windows.Web.Syndication.SyndicationAttribute _ret;
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationAttributeFactory)factory.asInterface(uuid("624f1599-ed3e-420f-be86-640414886e4b"))).abi_CreateSyndicationAttribute(attributeName, attributeNamespace, attributeValue, &_ret));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationAttributeFactory)factory.asInterface(uuid("624f1599-ed3e-420f-be86-640414886e4b"))).abi_CreateSyndicationAttribute(hstring(attributeName).handle, hstring(attributeNamespace).handle, hstring(attributeValue).handle, &_ret));
 		return _ret;
 	}
 }
@@ -387,75 +387,75 @@ extern(Windows):
 interface SyndicationCategory : Windows.Web.Syndication.ISyndicationCategory, Windows.Web.Syndication.ISyndicationNode
 {
 extern(Windows):
-	final HSTRING Label()
+	final wstring Label()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationCategory)this.asInterface(uuid("8715626f-0cba-4a7f-89ff-ecb5281423b6"))).get_Label(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Label(HSTRING value)
+	final void Label(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationCategory)this.asInterface(uuid("8715626f-0cba-4a7f-89ff-ecb5281423b6"))).set_Label(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationCategory)this.asInterface(uuid("8715626f-0cba-4a7f-89ff-ecb5281423b6"))).set_Label(hstring(value).handle));
 	}
-	final HSTRING Scheme()
+	final wstring Scheme()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationCategory)this.asInterface(uuid("8715626f-0cba-4a7f-89ff-ecb5281423b6"))).get_Scheme(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Scheme(HSTRING value)
+	final void Scheme(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationCategory)this.asInterface(uuid("8715626f-0cba-4a7f-89ff-ecb5281423b6"))).set_Scheme(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationCategory)this.asInterface(uuid("8715626f-0cba-4a7f-89ff-ecb5281423b6"))).set_Scheme(hstring(value).handle));
 	}
-	final HSTRING Term()
+	final wstring Term()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationCategory)this.asInterface(uuid("8715626f-0cba-4a7f-89ff-ecb5281423b6"))).get_Term(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Term(HSTRING value)
+	final void Term(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationCategory)this.asInterface(uuid("8715626f-0cba-4a7f-89ff-ecb5281423b6"))).set_Term(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationCategory)this.asInterface(uuid("8715626f-0cba-4a7f-89ff-ecb5281423b6"))).set_Term(hstring(value).handle));
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeName(HSTRING value)
+	final void NodeName(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(hstring(value).handle));
 	}
-	final HSTRING NodeNamespace()
+	final wstring NodeNamespace()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeNamespace(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeNamespace(HSTRING value)
+	final void NodeNamespace(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(hstring(value).handle));
 	}
-	final HSTRING NodeValue()
+	final wstring NodeValue()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeValue(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeValue(HSTRING value)
+	final void NodeValue(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(hstring(value).handle));
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri BaseUri()
 	{
@@ -491,18 +491,18 @@ extern(Windows):
 		Debug.OK(activationFactory!(SyndicationCategory).abi_ActivateInstance(&ret));
 		return cast(SyndicationCategory) ret;
 	}
-	static Windows.Web.Syndication.SyndicationCategory New(HSTRING term)
+	static Windows.Web.Syndication.SyndicationCategory New(wstring term)
 	{
 		auto factory = factory!(Windows.Web.Syndication.ISyndicationCategoryFactory);
 		Windows.Web.Syndication.SyndicationCategory _ret;
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationCategoryFactory)factory.asInterface(uuid("ab42802f-49e0-4525-8ab2-ab45c02528ff"))).abi_CreateSyndicationCategory(term, &_ret));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationCategoryFactory)factory.asInterface(uuid("ab42802f-49e0-4525-8ab2-ab45c02528ff"))).abi_CreateSyndicationCategory(hstring(term).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Web.Syndication.SyndicationCategory New(HSTRING term, HSTRING scheme, HSTRING label)
+	static Windows.Web.Syndication.SyndicationCategory New(wstring term, wstring scheme, wstring label)
 	{
 		auto factory = factory!(Windows.Web.Syndication.ISyndicationCategoryFactory);
 		Windows.Web.Syndication.SyndicationCategory _ret;
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationCategoryFactory)factory.asInterface(uuid("ab42802f-49e0-4525-8ab2-ab45c02528ff"))).abi_CreateSyndicationCategoryEx(term, scheme, label, &_ret));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationCategoryFactory)factory.asInterface(uuid("ab42802f-49e0-4525-8ab2-ab45c02528ff"))).abi_CreateSyndicationCategoryEx(hstring(term).handle, hstring(scheme).handle, hstring(label).handle, &_ret));
 		return _ret;
 	}
 }
@@ -560,9 +560,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationClient)this.asInterface(uuid("9e18a9b7-7249-4b45-b229-7df895a5a1f5"))).set_BypassCacheOnRetrieve(value));
 	}
-	final void SetRequestHeader(HSTRING name, HSTRING value)
+	final void SetRequestHeader(wstring name, wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationClient)this.asInterface(uuid("9e18a9b7-7249-4b45-b229-7df895a5a1f5"))).abi_SetRequestHeader(name, value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationClient)this.asInterface(uuid("9e18a9b7-7249-4b45-b229-7df895a5a1f5"))).abi_SetRequestHeader(hstring(name).handle, hstring(value).handle));
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationFeed, Windows.Web.Syndication.RetrievalProgress) RetrieveFeedAsync(Windows.Foundation.Uri uri)
 	{
@@ -588,25 +588,25 @@ extern(Windows):
 interface SyndicationContent : Windows.Web.Syndication.ISyndicationText, Windows.Web.Syndication.ISyndicationNode, Windows.Web.Syndication.ISyndicationContent
 {
 extern(Windows):
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationText)this.asInterface(uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Text(HSTRING value)
+	final void Text(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationText)this.asInterface(uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9"))).set_Text(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationText)this.asInterface(uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9"))).set_Text(hstring(value).handle));
 	}
-	final HSTRING Type()
+	final wstring Type()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationText)this.asInterface(uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9"))).get_Type(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Type(HSTRING value)
+	final void Type(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationText)this.asInterface(uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9"))).set_Type(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationText)this.asInterface(uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9"))).set_Type(hstring(value).handle));
 	}
 	final Windows.Data.Xml.Dom.XmlDocument Xml()
 	{
@@ -618,45 +618,45 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationText)this.asInterface(uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9"))).set_Xml(value));
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeName(HSTRING value)
+	final void NodeName(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(hstring(value).handle));
 	}
-	final HSTRING NodeNamespace()
+	final wstring NodeNamespace()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeNamespace(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeNamespace(HSTRING value)
+	final void NodeNamespace(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(hstring(value).handle));
 	}
-	final HSTRING NodeValue()
+	final wstring NodeValue()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeValue(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeValue(HSTRING value)
+	final void NodeValue(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(hstring(value).handle));
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri BaseUri()
 	{
@@ -702,11 +702,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(SyndicationContent).abi_ActivateInstance(&ret));
 		return cast(SyndicationContent) ret;
 	}
-	static Windows.Web.Syndication.SyndicationContent New(HSTRING text, Windows.Web.Syndication.SyndicationTextType type)
+	static Windows.Web.Syndication.SyndicationContent New(wstring text, Windows.Web.Syndication.SyndicationTextType type)
 	{
 		auto factory = factory!(Windows.Web.Syndication.ISyndicationContentFactory);
 		Windows.Web.Syndication.SyndicationContent _ret;
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationContentFactory)factory.asInterface(uuid("3d2fbb93-9520-4173-9388-7e2df324a8a0"))).abi_CreateSyndicationContent(text, type, &_ret));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationContentFactory)factory.asInterface(uuid("3d2fbb93-9520-4173-9388-7e2df324a8a0"))).abi_CreateSyndicationContent(hstring(text).handle, type, &_ret));
 		return _ret;
 	}
 	static Windows.Web.Syndication.SyndicationContent New(Windows.Foundation.Uri sourceUri)
@@ -775,15 +775,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationFeed)this.asInterface(uuid("7ffe3cd2-5b66-4d62-8403-1bc10d910d6b"))).set_IconUri(value));
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationFeed)this.asInterface(uuid("7ffe3cd2-5b66-4d62-8403-1bc10d910d6b"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Id(HSTRING value)
+	final void Id(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationFeed)this.asInterface(uuid("7ffe3cd2-5b66-4d62-8403-1bc10d910d6b"))).set_Id(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationFeed)this.asInterface(uuid("7ffe3cd2-5b66-4d62-8403-1bc10d910d6b"))).set_Id(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Web.Syndication.SyndicationItem) Items()
 	{
@@ -877,53 +877,53 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationFeed)this.asInterface(uuid("7ffe3cd2-5b66-4d62-8403-1bc10d910d6b"))).get_SourceFormat(&_ret));
 		return _ret;
 	}
-	final void Load(HSTRING feed)
+	final void Load(wstring feed)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationFeed)this.asInterface(uuid("7ffe3cd2-5b66-4d62-8403-1bc10d910d6b"))).abi_Load(feed));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationFeed)this.asInterface(uuid("7ffe3cd2-5b66-4d62-8403-1bc10d910d6b"))).abi_Load(hstring(feed).handle));
 	}
 	final void LoadFromXml(Windows.Data.Xml.Dom.XmlDocument feedDocument)
 	{
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationFeed)this.asInterface(uuid("7ffe3cd2-5b66-4d62-8403-1bc10d910d6b"))).abi_LoadFromXml(feedDocument));
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeName(HSTRING value)
+	final void NodeName(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(hstring(value).handle));
 	}
-	final HSTRING NodeNamespace()
+	final wstring NodeNamespace()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeNamespace(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeNamespace(HSTRING value)
+	final void NodeNamespace(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(hstring(value).handle));
 	}
-	final HSTRING NodeValue()
+	final wstring NodeValue()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeValue(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeValue(HSTRING value)
+	final void NodeValue(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(hstring(value).handle));
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri BaseUri()
 	{
@@ -959,11 +959,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(SyndicationFeed).abi_ActivateInstance(&ret));
 		return cast(SyndicationFeed) ret;
 	}
-	static Windows.Web.Syndication.SyndicationFeed New(HSTRING title, HSTRING subtitle, Windows.Foundation.Uri uri)
+	static Windows.Web.Syndication.SyndicationFeed New(wstring title, wstring subtitle, Windows.Foundation.Uri uri)
 	{
 		auto factory = factory!(Windows.Web.Syndication.ISyndicationFeedFactory);
 		Windows.Web.Syndication.SyndicationFeed _ret;
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationFeedFactory)factory.asInterface(uuid("23472232-8be9-48b7-8934-6205131d9357"))).abi_CreateSyndicationFeed(title, subtitle, uri, &_ret));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationFeedFactory)factory.asInterface(uuid("23472232-8be9-48b7-8934-6205131d9357"))).abi_CreateSyndicationFeed(hstring(title).handle, hstring(subtitle).handle, uri, &_ret));
 		return _ret;
 	}
 }
@@ -971,15 +971,15 @@ extern(Windows):
 interface SyndicationGenerator : Windows.Web.Syndication.ISyndicationGenerator, Windows.Web.Syndication.ISyndicationNode
 {
 extern(Windows):
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationGenerator)this.asInterface(uuid("9768b379-fb2b-4f6d-b41c-088a5868825c"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Text(HSTRING value)
+	final void Text(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationGenerator)this.asInterface(uuid("9768b379-fb2b-4f6d-b41c-088a5868825c"))).set_Text(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationGenerator)this.asInterface(uuid("9768b379-fb2b-4f6d-b41c-088a5868825c"))).set_Text(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri Uri()
 	{
@@ -991,55 +991,55 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationGenerator)this.asInterface(uuid("9768b379-fb2b-4f6d-b41c-088a5868825c"))).set_Uri(value));
 	}
-	final HSTRING Version()
+	final wstring Version()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationGenerator)this.asInterface(uuid("9768b379-fb2b-4f6d-b41c-088a5868825c"))).get_Version(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Version(HSTRING value)
+	final void Version(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationGenerator)this.asInterface(uuid("9768b379-fb2b-4f6d-b41c-088a5868825c"))).set_Version(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationGenerator)this.asInterface(uuid("9768b379-fb2b-4f6d-b41c-088a5868825c"))).set_Version(hstring(value).handle));
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeName(HSTRING value)
+	final void NodeName(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(hstring(value).handle));
 	}
-	final HSTRING NodeNamespace()
+	final wstring NodeNamespace()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeNamespace(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeNamespace(HSTRING value)
+	final void NodeNamespace(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(hstring(value).handle));
 	}
-	final HSTRING NodeValue()
+	final wstring NodeValue()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeValue(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeValue(HSTRING value)
+	final void NodeValue(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(hstring(value).handle));
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri BaseUri()
 	{
@@ -1075,11 +1075,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(SyndicationGenerator).abi_ActivateInstance(&ret));
 		return cast(SyndicationGenerator) ret;
 	}
-	static Windows.Web.Syndication.SyndicationGenerator New(HSTRING text)
+	static Windows.Web.Syndication.SyndicationGenerator New(wstring text)
 	{
 		auto factory = factory!(Windows.Web.Syndication.ISyndicationGeneratorFactory);
 		Windows.Web.Syndication.SyndicationGenerator _ret;
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationGeneratorFactory)factory.asInterface(uuid("a34083e3-1e26-4dbc-ba9d-1ab84beff97b"))).abi_CreateSyndicationGenerator(text, &_ret));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationGeneratorFactory)factory.asInterface(uuid("a34083e3-1e26-4dbc-ba9d-1ab84beff97b"))).abi_CreateSyndicationGenerator(hstring(text).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1115,15 +1115,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationItem)this.asInterface(uuid("548db883-c384-45c1-8ae8-a378c4ec486c"))).set_Content(value));
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationItem)this.asInterface(uuid("548db883-c384-45c1-8ae8-a378c4ec486c"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Id(HSTRING value)
+	final void Id(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationItem)this.asInterface(uuid("548db883-c384-45c1-8ae8-a378c4ec486c"))).set_Id(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationItem)this.asInterface(uuid("548db883-c384-45c1-8ae8-a378c4ec486c"))).set_Id(hstring(value).handle));
 	}
 	final Windows.Foundation.DateTime LastUpdatedTime()
 	{
@@ -1213,11 +1213,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationItem)this.asInterface(uuid("548db883-c384-45c1-8ae8-a378c4ec486c"))).get_EditMediaUri(&_ret));
 		return _ret;
 	}
-	final HSTRING ETag()
+	final wstring ETag()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationItem)this.asInterface(uuid("548db883-c384-45c1-8ae8-a378c4ec486c"))).get_ETag(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Uri ItemUri()
 	{
@@ -1225,53 +1225,53 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationItem)this.asInterface(uuid("548db883-c384-45c1-8ae8-a378c4ec486c"))).get_ItemUri(&_ret));
 		return _ret;
 	}
-	final void Load(HSTRING item)
+	final void Load(wstring item)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationItem)this.asInterface(uuid("548db883-c384-45c1-8ae8-a378c4ec486c"))).abi_Load(item));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationItem)this.asInterface(uuid("548db883-c384-45c1-8ae8-a378c4ec486c"))).abi_Load(hstring(item).handle));
 	}
 	final void LoadFromXml(Windows.Data.Xml.Dom.XmlDocument itemDocument)
 	{
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationItem)this.asInterface(uuid("548db883-c384-45c1-8ae8-a378c4ec486c"))).abi_LoadFromXml(itemDocument));
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeName(HSTRING value)
+	final void NodeName(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(hstring(value).handle));
 	}
-	final HSTRING NodeNamespace()
+	final wstring NodeNamespace()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeNamespace(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeNamespace(HSTRING value)
+	final void NodeNamespace(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(hstring(value).handle));
 	}
-	final HSTRING NodeValue()
+	final wstring NodeValue()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeValue(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeValue(HSTRING value)
+	final void NodeValue(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(hstring(value).handle));
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri BaseUri()
 	{
@@ -1307,11 +1307,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(SyndicationItem).abi_ActivateInstance(&ret));
 		return cast(SyndicationItem) ret;
 	}
-	static Windows.Web.Syndication.SyndicationItem New(HSTRING title, Windows.Web.Syndication.SyndicationContent content, Windows.Foundation.Uri uri)
+	static Windows.Web.Syndication.SyndicationItem New(wstring title, Windows.Web.Syndication.SyndicationContent content, Windows.Foundation.Uri uri)
 	{
 		auto factory = factory!(Windows.Web.Syndication.ISyndicationItemFactory);
 		Windows.Web.Syndication.SyndicationItem _ret;
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationItemFactory)factory.asInterface(uuid("251d434f-7db8-487a-85e4-10d191e66ebb"))).abi_CreateSyndicationItem(title, content, uri, &_ret));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationItemFactory)factory.asInterface(uuid("251d434f-7db8-487a-85e4-10d191e66ebb"))).abi_CreateSyndicationItem(hstring(title).handle, content, uri, &_ret));
 		return _ret;
 	}
 }
@@ -1329,35 +1329,35 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLink)this.asInterface(uuid("27553abd-a10e-41b5-86bd-9759086eb0c5"))).set_Length(value));
 	}
-	final HSTRING MediaType()
+	final wstring MediaType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLink)this.asInterface(uuid("27553abd-a10e-41b5-86bd-9759086eb0c5"))).get_MediaType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void MediaType(HSTRING value)
+	final void MediaType(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLink)this.asInterface(uuid("27553abd-a10e-41b5-86bd-9759086eb0c5"))).set_MediaType(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLink)this.asInterface(uuid("27553abd-a10e-41b5-86bd-9759086eb0c5"))).set_MediaType(hstring(value).handle));
 	}
-	final HSTRING Relationship()
+	final wstring Relationship()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLink)this.asInterface(uuid("27553abd-a10e-41b5-86bd-9759086eb0c5"))).get_Relationship(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Relationship(HSTRING value)
+	final void Relationship(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLink)this.asInterface(uuid("27553abd-a10e-41b5-86bd-9759086eb0c5"))).set_Relationship(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLink)this.asInterface(uuid("27553abd-a10e-41b5-86bd-9759086eb0c5"))).set_Relationship(hstring(value).handle));
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLink)this.asInterface(uuid("27553abd-a10e-41b5-86bd-9759086eb0c5"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLink)this.asInterface(uuid("27553abd-a10e-41b5-86bd-9759086eb0c5"))).set_Title(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLink)this.asInterface(uuid("27553abd-a10e-41b5-86bd-9759086eb0c5"))).set_Title(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri Uri()
 	{
@@ -1369,55 +1369,55 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLink)this.asInterface(uuid("27553abd-a10e-41b5-86bd-9759086eb0c5"))).set_Uri(value));
 	}
-	final HSTRING ResourceLanguage()
+	final wstring ResourceLanguage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLink)this.asInterface(uuid("27553abd-a10e-41b5-86bd-9759086eb0c5"))).get_ResourceLanguage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ResourceLanguage(HSTRING value)
+	final void ResourceLanguage(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLink)this.asInterface(uuid("27553abd-a10e-41b5-86bd-9759086eb0c5"))).set_ResourceLanguage(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLink)this.asInterface(uuid("27553abd-a10e-41b5-86bd-9759086eb0c5"))).set_ResourceLanguage(hstring(value).handle));
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeName(HSTRING value)
+	final void NodeName(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(hstring(value).handle));
 	}
-	final HSTRING NodeNamespace()
+	final wstring NodeNamespace()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeNamespace(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeNamespace(HSTRING value)
+	final void NodeNamespace(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(hstring(value).handle));
 	}
-	final HSTRING NodeValue()
+	final wstring NodeValue()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeValue(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeValue(HSTRING value)
+	final void NodeValue(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(hstring(value).handle));
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri BaseUri()
 	{
@@ -1460,11 +1460,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLinkFactory)factory.asInterface(uuid("5ed863d4-5535-48ac-98d4-c190995080b3"))).abi_CreateSyndicationLink(uri, &_ret));
 		return _ret;
 	}
-	static Windows.Web.Syndication.SyndicationLink New(Windows.Foundation.Uri uri, HSTRING relationship, HSTRING title, HSTRING mediaType, UINT32 length)
+	static Windows.Web.Syndication.SyndicationLink New(Windows.Foundation.Uri uri, wstring relationship, wstring title, wstring mediaType, UINT32 length)
 	{
 		auto factory = factory!(Windows.Web.Syndication.ISyndicationLinkFactory);
 		Windows.Web.Syndication.SyndicationLink _ret;
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLinkFactory)factory.asInterface(uuid("5ed863d4-5535-48ac-98d4-c190995080b3"))).abi_CreateSyndicationLinkEx(uri, relationship, title, mediaType, length, &_ret));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationLinkFactory)factory.asInterface(uuid("5ed863d4-5535-48ac-98d4-c190995080b3"))).abi_CreateSyndicationLinkEx(uri, hstring(relationship).handle, hstring(title).handle, hstring(mediaType).handle, length, &_ret));
 		return _ret;
 	}
 }
@@ -1472,45 +1472,45 @@ extern(Windows):
 interface SyndicationNode : Windows.Web.Syndication.ISyndicationNode
 {
 extern(Windows):
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeName(HSTRING value)
+	final void NodeName(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(hstring(value).handle));
 	}
-	final HSTRING NodeNamespace()
+	final wstring NodeNamespace()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeNamespace(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeNamespace(HSTRING value)
+	final void NodeNamespace(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(hstring(value).handle));
 	}
-	final HSTRING NodeValue()
+	final wstring NodeValue()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeValue(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeValue(HSTRING value)
+	final void NodeValue(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(hstring(value).handle));
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri BaseUri()
 	{
@@ -1546,11 +1546,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(SyndicationNode).abi_ActivateInstance(&ret));
 		return cast(SyndicationNode) ret;
 	}
-	static Windows.Web.Syndication.SyndicationNode New(HSTRING nodeName, HSTRING nodeNamespace, HSTRING nodeValue)
+	static Windows.Web.Syndication.SyndicationNode New(wstring nodeName, wstring nodeNamespace, wstring nodeValue)
 	{
 		auto factory = factory!(Windows.Web.Syndication.ISyndicationNodeFactory);
 		Windows.Web.Syndication.SyndicationNode _ret;
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNodeFactory)factory.asInterface(uuid("12902188-4acb-49a8-b777-a5eb92e18a79"))).abi_CreateSyndicationNode(nodeName, nodeNamespace, nodeValue, &_ret));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNodeFactory)factory.asInterface(uuid("12902188-4acb-49a8-b777-a5eb92e18a79"))).abi_CreateSyndicationNode(hstring(nodeName).handle, hstring(nodeNamespace).handle, hstring(nodeValue).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1558,25 +1558,25 @@ extern(Windows):
 interface SyndicationPerson : Windows.Web.Syndication.ISyndicationPerson, Windows.Web.Syndication.ISyndicationNode
 {
 extern(Windows):
-	final HSTRING Email()
+	final wstring Email()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationPerson)this.asInterface(uuid("fa1ee5da-a7c6-4517-a096-0143faf29327"))).get_Email(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Email(HSTRING value)
+	final void Email(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationPerson)this.asInterface(uuid("fa1ee5da-a7c6-4517-a096-0143faf29327"))).set_Email(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationPerson)this.asInterface(uuid("fa1ee5da-a7c6-4517-a096-0143faf29327"))).set_Email(hstring(value).handle));
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationPerson)this.asInterface(uuid("fa1ee5da-a7c6-4517-a096-0143faf29327"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Name(HSTRING value)
+	final void Name(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationPerson)this.asInterface(uuid("fa1ee5da-a7c6-4517-a096-0143faf29327"))).set_Name(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationPerson)this.asInterface(uuid("fa1ee5da-a7c6-4517-a096-0143faf29327"))).set_Name(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri Uri()
 	{
@@ -1588,45 +1588,45 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationPerson)this.asInterface(uuid("fa1ee5da-a7c6-4517-a096-0143faf29327"))).set_Uri(value));
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeName(HSTRING value)
+	final void NodeName(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(hstring(value).handle));
 	}
-	final HSTRING NodeNamespace()
+	final wstring NodeNamespace()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeNamespace(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeNamespace(HSTRING value)
+	final void NodeNamespace(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(hstring(value).handle));
 	}
-	final HSTRING NodeValue()
+	final wstring NodeValue()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeValue(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeValue(HSTRING value)
+	final void NodeValue(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(hstring(value).handle));
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri BaseUri()
 	{
@@ -1662,18 +1662,18 @@ extern(Windows):
 		Debug.OK(activationFactory!(SyndicationPerson).abi_ActivateInstance(&ret));
 		return cast(SyndicationPerson) ret;
 	}
-	static Windows.Web.Syndication.SyndicationPerson New(HSTRING name)
+	static Windows.Web.Syndication.SyndicationPerson New(wstring name)
 	{
 		auto factory = factory!(Windows.Web.Syndication.ISyndicationPersonFactory);
 		Windows.Web.Syndication.SyndicationPerson _ret;
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationPersonFactory)factory.asInterface(uuid("dcf4886d-229d-4b58-a49b-f3d2f0f5c99f"))).abi_CreateSyndicationPerson(name, &_ret));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationPersonFactory)factory.asInterface(uuid("dcf4886d-229d-4b58-a49b-f3d2f0f5c99f"))).abi_CreateSyndicationPerson(hstring(name).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Web.Syndication.SyndicationPerson New(HSTRING name, HSTRING email, Windows.Foundation.Uri uri)
+	static Windows.Web.Syndication.SyndicationPerson New(wstring name, wstring email, Windows.Foundation.Uri uri)
 	{
 		auto factory = factory!(Windows.Web.Syndication.ISyndicationPersonFactory);
 		Windows.Web.Syndication.SyndicationPerson _ret;
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationPersonFactory)factory.asInterface(uuid("dcf4886d-229d-4b58-a49b-f3d2f0f5c99f"))).abi_CreateSyndicationPersonEx(name, email, uri, &_ret));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationPersonFactory)factory.asInterface(uuid("dcf4886d-229d-4b58-a49b-f3d2f0f5c99f"))).abi_CreateSyndicationPersonEx(hstring(name).handle, hstring(email).handle, uri, &_ret));
 		return _ret;
 	}
 }
@@ -1681,25 +1681,25 @@ extern(Windows):
 interface SyndicationText : Windows.Web.Syndication.ISyndicationText, Windows.Web.Syndication.ISyndicationNode
 {
 extern(Windows):
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationText)this.asInterface(uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Text(HSTRING value)
+	final void Text(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationText)this.asInterface(uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9"))).set_Text(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationText)this.asInterface(uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9"))).set_Text(hstring(value).handle));
 	}
-	final HSTRING Type()
+	final wstring Type()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationText)this.asInterface(uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9"))).get_Type(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Type(HSTRING value)
+	final void Type(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationText)this.asInterface(uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9"))).set_Type(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationText)this.asInterface(uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9"))).set_Type(hstring(value).handle));
 	}
 	final Windows.Data.Xml.Dom.XmlDocument Xml()
 	{
@@ -1711,45 +1711,45 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationText)this.asInterface(uuid("b9cc5e80-313a-4091-a2a6-243e0ee923f9"))).set_Xml(value));
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeName(HSTRING value)
+	final void NodeName(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeName(hstring(value).handle));
 	}
-	final HSTRING NodeNamespace()
+	final wstring NodeNamespace()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeNamespace(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeNamespace(HSTRING value)
+	final void NodeNamespace(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeNamespace(hstring(value).handle));
 	}
-	final HSTRING NodeValue()
+	final wstring NodeValue()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_NodeValue(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void NodeValue(HSTRING value)
+	final void NodeValue(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_NodeValue(hstring(value).handle));
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(value));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationNode)this.asInterface(uuid("753cef78-51f8-45c0-a9f5-f1719dec3fb2"))).set_Language(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri BaseUri()
 	{
@@ -1785,18 +1785,18 @@ extern(Windows):
 		Debug.OK(activationFactory!(SyndicationText).abi_ActivateInstance(&ret));
 		return cast(SyndicationText) ret;
 	}
-	static Windows.Web.Syndication.SyndicationText New(HSTRING text)
+	static Windows.Web.Syndication.SyndicationText New(wstring text)
 	{
 		auto factory = factory!(Windows.Web.Syndication.ISyndicationTextFactory);
 		Windows.Web.Syndication.SyndicationText _ret;
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationTextFactory)factory.asInterface(uuid("ee7342f7-11c6-4b25-ab62-e596bd162946"))).abi_CreateSyndicationText(text, &_ret));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationTextFactory)factory.asInterface(uuid("ee7342f7-11c6-4b25-ab62-e596bd162946"))).abi_CreateSyndicationText(hstring(text).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Web.Syndication.SyndicationText New(HSTRING text, Windows.Web.Syndication.SyndicationTextType type)
+	static Windows.Web.Syndication.SyndicationText New(wstring text, Windows.Web.Syndication.SyndicationTextType type)
 	{
 		auto factory = factory!(Windows.Web.Syndication.ISyndicationTextFactory);
 		Windows.Web.Syndication.SyndicationText _ret;
-		Debug.OK((cast(Windows.Web.Syndication.ISyndicationTextFactory)factory.asInterface(uuid("ee7342f7-11c6-4b25-ab62-e596bd162946"))).abi_CreateSyndicationTextEx(text, type, &_ret));
+		Debug.OK((cast(Windows.Web.Syndication.ISyndicationTextFactory)factory.asInterface(uuid("ee7342f7-11c6-4b25-ab62-e596bd162946"))).abi_CreateSyndicationTextEx(hstring(text).handle, type, &_ret));
 		return _ret;
 	}
 }

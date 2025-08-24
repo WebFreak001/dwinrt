@@ -143,22 +143,22 @@ interface AdvertisingManager
 		if (_staticInstance is null) _staticInstance = factory!(Windows.System.UserProfile.IAdvertisingManagerStatics);
 		return _staticInstance;
 	}
-	static HSTRING AdvertisingId()
+	static wstring AdvertisingId()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AdvertisingId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface AdvertisingManagerForUser : Windows.System.UserProfile.IAdvertisingManagerForUser
 {
 extern(Windows):
-	final HSTRING AdvertisingId()
+	final wstring AdvertisingId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.UserProfile.IAdvertisingManagerForUser)this.asInterface(uuid("928bf3d0-cf7c-4ab0-a7dc-6dc5bcd44252"))).get_AdvertisingId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.System.User User()
 	{
@@ -207,10 +207,10 @@ extern(Windows):
 interface FirstSignInSettings : Windows.System.UserProfile.IFirstSignInSettings, Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
 {
 extern(Windows):
-	final  IInspectable Lookup(HSTRING key)
+	final  IInspectable Lookup(wstring key)
 	{
 		 IInspectable _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))this).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))this).abi_Lookup(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final uint Size()
@@ -219,10 +219,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))this).get_Size(&_ret));
 		return _ret;
 	}
-	final bool HasKey(HSTRING key)
+	final bool HasKey(wstring key)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))this).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))this).abi_HasKey(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final void Split(Windows.Foundation.Collections.IMapView!(HSTRING,	IInspectable) out_firstPartition, Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) out_secondPartition)
@@ -280,11 +280,11 @@ interface GlobalizationPreferences
 		Debug.OK(staticInstance.get_Languages(&_ret));
 		return _ret;
 	}
-	static HSTRING HomeGeographicRegion()
+	static wstring HomeGeographicRegion()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HomeGeographicRegion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static Windows.Globalization.DayOfWeek WeekStartsOn()
 	{

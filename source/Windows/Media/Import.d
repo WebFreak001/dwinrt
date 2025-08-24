@@ -632,11 +632,11 @@ extern(Windows):
 interface PhotoImportItem : Windows.Media.Import.IPhotoImportItem
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Import.IPhotoImportItem)this.asInterface(uuid("a9d07e76-9bfc-43b8-b356-633b6a988c9e"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final ulong ItemKey()
 	{
@@ -840,15 +840,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession)this.asInterface(uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb"))).get_SubfolderCreationMode(&_ret));
 		return _ret;
 	}
-	final void DestinationFileNamePrefix(HSTRING value)
+	final void DestinationFileNamePrefix(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession)this.asInterface(uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb"))).set_DestinationFileNamePrefix(value));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession)this.asInterface(uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb"))).set_DestinationFileNamePrefix(hstring(value).handle));
 	}
-	final HSTRING DestinationFileNamePrefix()
+	final wstring DestinationFileNamePrefix()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession)this.asInterface(uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb"))).get_DestinationFileNamePrefix(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportFindItemsResult, UINT32) FindItemsAsync(Windows.Media.Import.PhotoImportContentTypeFilter contentTypeFilter, Windows.Media.Import.PhotoImportItemSelectionMode itemSelectionMode)
 	{
@@ -885,11 +885,11 @@ extern(Windows):
 interface PhotoImportSidecar : Windows.Media.Import.IPhotoImportSidecar
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Import.IPhotoImportSidecar)this.asInterface(uuid("46d7d757-f802-44c7-9c98-7a71f4bc1486"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final ulong SizeInBytes()
 	{
@@ -908,47 +908,47 @@ extern(Windows):
 interface PhotoImportSource : Windows.Media.Import.IPhotoImportSource
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Manufacturer()
+	final wstring Manufacturer()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_Manufacturer(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Model()
+	final wstring Model()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_Model(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SerialNumber()
+	final wstring SerialNumber()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_SerialNumber(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ConnectionProtocol()
+	final wstring ConnectionProtocol()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_ConnectionProtocol(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Media.Import.PhotoImportConnectionTransport ConnectionTransport()
 	{
@@ -1017,10 +1017,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Import.IPhotoImportSourceStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Media.Import.PhotoImportSource) FromIdAsync(HSTRING sourceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Import.PhotoImportSource) FromIdAsync(wstring sourceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Import.PhotoImportSource) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(sourceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(sourceId).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Import.PhotoImportSource) FromFolderAsync(Windows.Storage.IStorageFolder sourceRootFolder)
@@ -1034,23 +1034,23 @@ extern(Windows):
 interface PhotoImportStorageMedium : Windows.Media.Import.IPhotoImportStorageMedium
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Import.IPhotoImportStorageMedium)this.asInterface(uuid("f2b9b093-fc85-487f-87c2-58d675d05b07"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Import.IPhotoImportStorageMedium)this.asInterface(uuid("f2b9b093-fc85-487f-87c2-58d675d05b07"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SerialNumber()
+	final wstring SerialNumber()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Import.IPhotoImportStorageMedium)this.asInterface(uuid("f2b9b093-fc85-487f-87c2-58d675d05b07"))).get_SerialNumber(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Media.Import.PhotoImportStorageMediumType StorageMediumType()
 	{
@@ -1085,11 +1085,11 @@ extern(Windows):
 interface PhotoImportVideoSegment : Windows.Media.Import.IPhotoImportVideoSegment
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Import.IPhotoImportVideoSegment)this.asInterface(uuid("623c0289-321a-41d8-9166-8c62a333276c"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final ulong SizeInBytes()
 	{

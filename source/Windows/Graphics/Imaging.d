@@ -303,11 +303,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Imaging.IBitmapCodecInformation)this.asInterface(uuid("400caaf2-c4b0-4392-a3b0-6f6f9ba95cb4"))).get_FileExtensions(&_ret));
 		return _ret;
 	}
-	final HSTRING FriendlyName()
+	final wstring FriendlyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Imaging.IBitmapCodecInformation)this.asInterface(uuid("400caaf2-c4b0-4392-a3b0-6f6f9ba95cb4"))).get_FriendlyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) MimeTypes()
 	{
@@ -802,10 +802,10 @@ extern(Windows):
 interface BitmapPropertySet : Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))
 {
 extern(Windows):
-	final  Windows.Graphics.Imaging.BitmapTypedValue Lookup(HSTRING key)
+	final  Windows.Graphics.Imaging.BitmapTypedValue Lookup(wstring key)
 	{
 		 Windows.Graphics.Imaging.BitmapTypedValue _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))this).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))this).abi_Lookup(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final uint Size()
@@ -814,10 +814,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))this).get_Size(&_ret));
 		return _ret;
 	}
-	final bool HasKey(HSTRING key)
+	final bool HasKey(wstring key)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))this).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))this).abi_HasKey(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING,	 Windows.Graphics.Imaging.BitmapTypedValue) GetView()
@@ -826,15 +826,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))this).abi_GetView(&_ret));
 		return _ret;
 	}
-	final bool Insert(HSTRING key,	Windows.Graphics.Imaging.BitmapTypedValue value)
+	final bool Insert(wstring key,	Windows.Graphics.Imaging.BitmapTypedValue value)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))this).abi_Insert(key, value, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))this).abi_Insert(hstring(key).handle, value, &_ret));
 		return _ret;
 	}
-	final void Remove(HSTRING key)
+	final void Remove(wstring key)
 	{
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))this).abi_Remove(key));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))this).abi_Remove(hstring(key).handle));
 	}
 	final void Clear()
 	{
@@ -950,11 +950,11 @@ extern(Windows):
 interface ImageStream : Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IContentTypeProvider, Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
 {
 extern(Windows):
-	final HSTRING ContentType()
+	final wstring ContentType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Streams.IContentTypeProvider)this.asInterface(uuid("97d098a5-3b99-4de9-88a5-e11d2f50c795"))).get_ContentType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final ulong Size()
 	{

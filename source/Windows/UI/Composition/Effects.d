@@ -72,15 +72,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Composition.Effects.ISceneLightingEffect)this.asInterface(uuid("91bb5e52-95d1-4f8b-9a5a-6408b24b8c6a"))).set_SpecularShine(value));
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Effects.IGraphicsEffect)this.asInterface(uuid("cb51c0ce-8fe6-4636-b202-861faa07d8f3"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Name(HSTRING name)
+	final void Name(wstring name)
 	{
-		Debug.OK((cast(Windows.Graphics.Effects.IGraphicsEffect)this.asInterface(uuid("cb51c0ce-8fe6-4636-b202-861faa07d8f3"))).set_Name(name));
+		Debug.OK((cast(Windows.Graphics.Effects.IGraphicsEffect)this.asInterface(uuid("cb51c0ce-8fe6-4636-b202-861faa07d8f3"))).set_Name(hstring(name).handle));
 	}
 	static SceneLightingEffect New()
 	{

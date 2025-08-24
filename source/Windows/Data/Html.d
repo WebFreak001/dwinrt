@@ -18,10 +18,10 @@ interface HtmlUtilities
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Data.Html.IHtmlUtilities);
 		return _staticInstance;
 	}
-	static HSTRING ConvertToText(HSTRING html)
+	static wstring ConvertToText(wstring html)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_ConvertToText(html, &_ret));
-		return _ret;
+		Debug.OK(staticInstance.abi_ConvertToText(hstring(html).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
 }

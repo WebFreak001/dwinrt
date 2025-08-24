@@ -200,22 +200,22 @@ extern(Windows):
 interface UserDataTaskListCompleteTaskRequest : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListCompleteTaskRequest
 {
 extern(Windows):
-	final HSTRING TaskListId()
+	final wstring TaskListId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListCompleteTaskRequest)this.asInterface(uuid("f65e14a3-1a42-49da-8552-2873e52c55eb"))).get_TaskListId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING TaskId()
+	final wstring TaskId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListCompleteTaskRequest)this.asInterface(uuid("f65e14a3-1a42-49da-8552-2873e52c55eb"))).get_TaskId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final Windows.Foundation.IAsyncAction ReportCompletedAsync(HSTRING completedTaskId)
+	final Windows.Foundation.IAsyncAction ReportCompletedAsync(wstring completedTaskId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListCompleteTaskRequest)this.asInterface(uuid("f65e14a3-1a42-49da-8552-2873e52c55eb"))).abi_ReportCompletedAsync(completedTaskId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListCompleteTaskRequest)this.asInterface(uuid("f65e14a3-1a42-49da-8552-2873e52c55eb"))).abi_ReportCompletedAsync(hstring(completedTaskId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportFailedAsync()
@@ -246,11 +246,11 @@ extern(Windows):
 interface UserDataTaskListCreateOrUpdateTaskRequest : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListCreateOrUpdateTaskRequest
 {
 extern(Windows):
-	final HSTRING TaskListId()
+	final wstring TaskListId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListCreateOrUpdateTaskRequest)this.asInterface(uuid("2133772c-55c2-4300-8279-04326e07cce4"))).get_TaskListId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTask Task()
 	{
@@ -292,17 +292,17 @@ extern(Windows):
 interface UserDataTaskListDeleteTaskRequest : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListDeleteTaskRequest
 {
 extern(Windows):
-	final HSTRING TaskListId()
+	final wstring TaskListId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListDeleteTaskRequest)this.asInterface(uuid("4b863c68-7657-4f3d-b074-d47ec8df07e7"))).get_TaskListId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING TaskId()
+	final wstring TaskId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListDeleteTaskRequest)this.asInterface(uuid("4b863c68-7657-4f3d-b074-d47ec8df07e7"))).get_TaskId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
@@ -338,17 +338,17 @@ extern(Windows):
 interface UserDataTaskListSkipOccurrenceRequest : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListSkipOccurrenceRequest
 {
 extern(Windows):
-	final HSTRING TaskListId()
+	final wstring TaskListId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListSkipOccurrenceRequest)this.asInterface(uuid("ab87e34d-1cd3-431c-9f58-089aa4338d85"))).get_TaskListId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING TaskId()
+	final wstring TaskId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListSkipOccurrenceRequest)this.asInterface(uuid("ab87e34d-1cd3-431c-9f58-089aa4338d85"))).get_TaskId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
@@ -384,11 +384,11 @@ extern(Windows):
 interface UserDataTaskListSyncManagerSyncRequest : Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListSyncManagerSyncRequest
 {
 extern(Windows):
-	final HSTRING TaskListId()
+	final wstring TaskListId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.DataProvider.IUserDataTaskListSyncManagerSyncRequest)this.asInterface(uuid("40a73807-7590-4149-ae19-b211431a9f48"))).get_TaskListId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{

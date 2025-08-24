@@ -132,11 +132,11 @@ interface IFolderPicker2 : IFolderPicker2_Base, Windows.Storage.Pickers.IFolderP
 interface FileExtensionVector : Windows.Foundation.Collections.IVector!(HSTRING), Windows.Foundation.Collections.IIterable!(HSTRING)
 {
 extern(Windows):
-	final HSTRING GetAt(uint index)
+	final wstring GetAt(uint index)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.Collections.IVector!(HSTRING))this).get_GetAt(index, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final uint Size()
 	{
@@ -148,27 +148,27 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.Collections.IVector!(HSTRING))this).abi_GetView(out_view));
 	}
-	final uint IndexOf(HSTRING value, bool* out_found)
+	final uint IndexOf(wstring value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IVector!(HSTRING))this).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(HSTRING))this).get_IndexOf(hstring(value).handle, &_ret, out_found));
 		return _ret;
 	}
-	final void SetAt(uint index, HSTRING item)
+	final void SetAt(uint index, wstring item)
 	{
-		Debug.OK((cast(Windows.Foundation.Collections.IVector!(HSTRING))this).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(HSTRING))this).abi_SetAt(index, hstring(item).handle));
 	}
-	final void InsertAt(uint index, HSTRING item)
+	final void InsertAt(uint index, wstring item)
 	{
-		Debug.OK((cast(Windows.Foundation.Collections.IVector!(HSTRING))this).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(HSTRING))this).abi_InsertAt(index, hstring(item).handle));
 	}
 	final void RemoveAt(uint index)
 	{
 		Debug.OK((cast(Windows.Foundation.Collections.IVector!(HSTRING))this).abi_RemoveAt(index));
 	}
-	final void Append(HSTRING item)
+	final void Append(wstring item)
 	{
-		Debug.OK((cast(Windows.Foundation.Collections.IVector!(HSTRING))this).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(HSTRING))this).abi_Append(hstring(item).handle));
 	}
 	final void RemoveAtEnd()
 	{
@@ -205,15 +205,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Storage.Pickers.IFileOpenPicker)this.asInterface(uuid("2ca8278a-12c5-4c5f-8977-94547793c241"))).set_ViewMode(value));
 	}
-	final HSTRING SettingsIdentifier()
+	final wstring SettingsIdentifier()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Pickers.IFileOpenPicker)this.asInterface(uuid("2ca8278a-12c5-4c5f-8977-94547793c241"))).get_SettingsIdentifier(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SettingsIdentifier(HSTRING value)
+	final void SettingsIdentifier(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Pickers.IFileOpenPicker)this.asInterface(uuid("2ca8278a-12c5-4c5f-8977-94547793c241"))).set_SettingsIdentifier(value));
+		Debug.OK((cast(Windows.Storage.Pickers.IFileOpenPicker)this.asInterface(uuid("2ca8278a-12c5-4c5f-8977-94547793c241"))).set_SettingsIdentifier(hstring(value).handle));
 	}
 	final Windows.Storage.Pickers.PickerLocationId SuggestedStartLocation()
 	{
@@ -225,15 +225,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Storage.Pickers.IFileOpenPicker)this.asInterface(uuid("2ca8278a-12c5-4c5f-8977-94547793c241"))).set_SuggestedStartLocation(value));
 	}
-	final HSTRING CommitButtonText()
+	final wstring CommitButtonText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Pickers.IFileOpenPicker)this.asInterface(uuid("2ca8278a-12c5-4c5f-8977-94547793c241"))).get_CommitButtonText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CommitButtonText(HSTRING value)
+	final void CommitButtonText(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Pickers.IFileOpenPicker)this.asInterface(uuid("2ca8278a-12c5-4c5f-8977-94547793c241"))).set_CommitButtonText(value));
+		Debug.OK((cast(Windows.Storage.Pickers.IFileOpenPicker)this.asInterface(uuid("2ca8278a-12c5-4c5f-8977-94547793c241"))).set_CommitButtonText(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) FileTypeFilter()
 	{
@@ -253,10 +253,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.Pickers.IFileOpenPicker)this.asInterface(uuid("2ca8278a-12c5-4c5f-8977-94547793c241"))).abi_PickMultipleFilesAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) PickSingleFileAsync(HSTRING pickerOperationId)
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) PickSingleFileAsync(wstring pickerOperationId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
-		Debug.OK((cast(Windows.Storage.Pickers.IFileOpenPickerWithOperationId)this.asInterface(uuid("3f57b569-2522-4ca5-aa73-a15509f1fcbf"))).abi_PickSingleFileAsync(pickerOperationId, &_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.IFileOpenPickerWithOperationId)this.asInterface(uuid("3f57b569-2522-4ca5-aa73-a15509f1fcbf"))).abi_PickSingleFileAsync(hstring(pickerOperationId).handle, &_ret));
 		return _ret;
 	}
 	deprecated("Instead, use PickSingleFileAsync/PickMultipleFilesAsync")
@@ -301,10 +301,10 @@ extern(Windows):
 interface FilePickerFileTypesOrderedMap : Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))
 {
 extern(Windows):
-	final  Windows.Foundation.Collections.IVector!(HSTRING) Lookup(HSTRING key)
+	final  Windows.Foundation.Collections.IVector!(HSTRING) Lookup(wstring key)
 	{
 		 Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))this).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))this).abi_Lookup(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final uint Size()
@@ -313,10 +313,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))this).get_Size(&_ret));
 		return _ret;
 	}
-	final bool HasKey(HSTRING key)
+	final bool HasKey(wstring key)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))this).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))this).abi_HasKey(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING,	 Windows.Foundation.Collections.IVector!(HSTRING)) GetView()
@@ -325,15 +325,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))this).abi_GetView(&_ret));
 		return _ret;
 	}
-	final bool Insert(HSTRING key,	Windows.Foundation.Collections.IVector!(HSTRING) value)
+	final bool Insert(wstring key,	Windows.Foundation.Collections.IVector!(HSTRING) value)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))this).abi_Insert(key, value, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))this).abi_Insert(hstring(key).handle, value, &_ret));
 		return _ret;
 	}
-	final void Remove(HSTRING key)
+	final void Remove(wstring key)
 	{
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))this).abi_Remove(key));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))this).abi_Remove(hstring(key).handle));
 	}
 	final void Clear()
 	{
@@ -377,15 +377,15 @@ extern(Windows):
 interface FileSavePicker : Windows.Storage.Pickers.IFileSavePicker, Windows.Storage.Pickers.IFileSavePicker2, Windows.Storage.Pickers.IFileSavePicker3
 {
 extern(Windows):
-	final HSTRING SettingsIdentifier()
+	final wstring SettingsIdentifier()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker)this.asInterface(uuid("3286ffcb-617f-4cc5-af6a-b3fdf29ad145"))).get_SettingsIdentifier(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SettingsIdentifier(HSTRING value)
+	final void SettingsIdentifier(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker)this.asInterface(uuid("3286ffcb-617f-4cc5-af6a-b3fdf29ad145"))).set_SettingsIdentifier(value));
+		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker)this.asInterface(uuid("3286ffcb-617f-4cc5-af6a-b3fdf29ad145"))).set_SettingsIdentifier(hstring(value).handle));
 	}
 	final Windows.Storage.Pickers.PickerLocationId SuggestedStartLocation()
 	{
@@ -397,15 +397,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker)this.asInterface(uuid("3286ffcb-617f-4cc5-af6a-b3fdf29ad145"))).set_SuggestedStartLocation(value));
 	}
-	final HSTRING CommitButtonText()
+	final wstring CommitButtonText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker)this.asInterface(uuid("3286ffcb-617f-4cc5-af6a-b3fdf29ad145"))).get_CommitButtonText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CommitButtonText(HSTRING value)
+	final void CommitButtonText(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker)this.asInterface(uuid("3286ffcb-617f-4cc5-af6a-b3fdf29ad145"))).set_CommitButtonText(value));
+		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker)this.asInterface(uuid("3286ffcb-617f-4cc5-af6a-b3fdf29ad145"))).set_CommitButtonText(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)) FileTypeChoices()
 	{
@@ -413,15 +413,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker)this.asInterface(uuid("3286ffcb-617f-4cc5-af6a-b3fdf29ad145"))).get_FileTypeChoices(&_ret));
 		return _ret;
 	}
-	final HSTRING DefaultFileExtension()
+	final wstring DefaultFileExtension()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker)this.asInterface(uuid("3286ffcb-617f-4cc5-af6a-b3fdf29ad145"))).get_DefaultFileExtension(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DefaultFileExtension(HSTRING value)
+	final void DefaultFileExtension(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker)this.asInterface(uuid("3286ffcb-617f-4cc5-af6a-b3fdf29ad145"))).set_DefaultFileExtension(value));
+		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker)this.asInterface(uuid("3286ffcb-617f-4cc5-af6a-b3fdf29ad145"))).set_DefaultFileExtension(hstring(value).handle));
 	}
 	final Windows.Storage.StorageFile SuggestedSaveFile()
 	{
@@ -433,15 +433,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker)this.asInterface(uuid("3286ffcb-617f-4cc5-af6a-b3fdf29ad145"))).set_SuggestedSaveFile(value));
 	}
-	final HSTRING SuggestedFileName()
+	final wstring SuggestedFileName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker)this.asInterface(uuid("3286ffcb-617f-4cc5-af6a-b3fdf29ad145"))).get_SuggestedFileName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SuggestedFileName(HSTRING value)
+	final void SuggestedFileName(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker)this.asInterface(uuid("3286ffcb-617f-4cc5-af6a-b3fdf29ad145"))).set_SuggestedFileName(value));
+		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker)this.asInterface(uuid("3286ffcb-617f-4cc5-af6a-b3fdf29ad145"))).set_SuggestedFileName(hstring(value).handle));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) PickSaveFileAsync()
 	{
@@ -460,15 +460,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker2)this.asInterface(uuid("0ec313a2-d24b-449a-8197-e89104fd42cc"))).abi_PickSaveFileAndContinue());
 	}
-	final HSTRING EnterpriseId()
+	final wstring EnterpriseId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker3)this.asInterface(uuid("698aec69-ba3c-4e51-bd90-4abcbbf4cfaf"))).get_EnterpriseId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void EnterpriseId(HSTRING value)
+	final void EnterpriseId(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker3)this.asInterface(uuid("698aec69-ba3c-4e51-bd90-4abcbbf4cfaf"))).set_EnterpriseId(value));
+		Debug.OK((cast(Windows.Storage.Pickers.IFileSavePicker3)this.asInterface(uuid("698aec69-ba3c-4e51-bd90-4abcbbf4cfaf"))).set_EnterpriseId(hstring(value).handle));
 	}
 	static FileSavePicker New()
 	{
@@ -491,15 +491,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Storage.Pickers.IFolderPicker)this.asInterface(uuid("084f7799-f3fb-400a-99b1-7b4a772fd60d"))).set_ViewMode(value));
 	}
-	final HSTRING SettingsIdentifier()
+	final wstring SettingsIdentifier()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Pickers.IFolderPicker)this.asInterface(uuid("084f7799-f3fb-400a-99b1-7b4a772fd60d"))).get_SettingsIdentifier(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SettingsIdentifier(HSTRING value)
+	final void SettingsIdentifier(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Pickers.IFolderPicker)this.asInterface(uuid("084f7799-f3fb-400a-99b1-7b4a772fd60d"))).set_SettingsIdentifier(value));
+		Debug.OK((cast(Windows.Storage.Pickers.IFolderPicker)this.asInterface(uuid("084f7799-f3fb-400a-99b1-7b4a772fd60d"))).set_SettingsIdentifier(hstring(value).handle));
 	}
 	final Windows.Storage.Pickers.PickerLocationId SuggestedStartLocation()
 	{
@@ -511,15 +511,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Storage.Pickers.IFolderPicker)this.asInterface(uuid("084f7799-f3fb-400a-99b1-7b4a772fd60d"))).set_SuggestedStartLocation(value));
 	}
-	final HSTRING CommitButtonText()
+	final wstring CommitButtonText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Pickers.IFolderPicker)this.asInterface(uuid("084f7799-f3fb-400a-99b1-7b4a772fd60d"))).get_CommitButtonText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CommitButtonText(HSTRING value)
+	final void CommitButtonText(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.Pickers.IFolderPicker)this.asInterface(uuid("084f7799-f3fb-400a-99b1-7b4a772fd60d"))).set_CommitButtonText(value));
+		Debug.OK((cast(Windows.Storage.Pickers.IFolderPicker)this.asInterface(uuid("084f7799-f3fb-400a-99b1-7b4a772fd60d"))).set_CommitButtonText(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) FileTypeFilter()
 	{

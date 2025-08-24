@@ -59,11 +59,11 @@ interface IUserDataAccountProviderSettingsOperation : IUserDataAccountProviderSe
 interface UserDataAccountPartnerAccountInfo : Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountPartnerAccountInfo
 {
 extern(Windows):
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountPartnerAccountInfo)this.asInterface(uuid("5f200037-f6ef-4ec3-8630-012c59c1149f"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final UINT32 Priority()
 	{
@@ -94,9 +94,9 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderAddAccountOperation)this.asInterface(uuid("b9c72530-3f84-4b5d-8eaa-45e97aa842ed"))).get_PartnerAccountInfos(&_ret));
 		return _ret;
 	}
-	final void ReportCompleted(HSTRING userDataAccountId)
+	final void ReportCompleted(wstring userDataAccountId)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderAddAccountOperation)this.asInterface(uuid("b9c72530-3f84-4b5d-8eaa-45e97aa842ed"))).abi_ReportCompleted(userDataAccountId));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderAddAccountOperation)this.asInterface(uuid("b9c72530-3f84-4b5d-8eaa-45e97aa842ed"))).abi_ReportCompleted(hstring(userDataAccountId).handle));
 	}
 	final Windows.ApplicationModel.UserDataAccounts.Provider.UserDataAccountProviderOperationKind Kind()
 	{
@@ -109,11 +109,11 @@ extern(Windows):
 interface UserDataAccountProviderResolveErrorsOperation : Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderResolveErrorsOperation, Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation
 {
 extern(Windows):
-	final HSTRING UserDataAccountId()
+	final wstring UserDataAccountId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderResolveErrorsOperation)this.asInterface(uuid("6235dc15-bfcb-41e1-9957-9759a28846cc"))).get_UserDataAccountId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void ReportCompleted()
 	{
@@ -130,11 +130,11 @@ extern(Windows):
 interface UserDataAccountProviderSettingsOperation : Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderSettingsOperation, Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation
 {
 extern(Windows):
-	final HSTRING UserDataAccountId()
+	final wstring UserDataAccountId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderSettingsOperation)this.asInterface(uuid("92034db7-8648-4f30-acfa-3002658ca80d"))).get_UserDataAccountId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void ReportCompleted()
 	{

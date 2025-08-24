@@ -24,10 +24,10 @@ interface ApplicationDataManager : Windows.Management.Core.IApplicationDataManag
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Management.Core.IApplicationDataManagerStatics);
 		return _staticInstance;
 	}
-	static Windows.Storage.ApplicationData CreateForPackageFamily(HSTRING packageFamilyName)
+	static Windows.Storage.ApplicationData CreateForPackageFamily(wstring packageFamilyName)
 	{
 		Windows.Storage.ApplicationData _ret;
-		Debug.OK(staticInstance.abi_CreateForPackageFamily(packageFamilyName, &_ret));
+		Debug.OK(staticInstance.abi_CreateForPackageFamily(hstring(packageFamilyName).handle, &_ret));
 		return _ret;
 	}
 }

@@ -7827,15 +7827,15 @@ class AppBarT(Base) : AgileObject!Base, AppBar
 interface AppBarButton : Windows.UI.Xaml.Controls.Button, Windows.UI.Xaml.Controls.IAppBarButton, Windows.UI.Xaml.Controls.ICommandBarElement, Windows.UI.Xaml.Controls.IAppBarButton3, Windows.UI.Xaml.Controls.ICommandBarElement2
 {
 extern(Windows):
-	final HSTRING Label()
+	final wstring Label()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IAppBarButton)this.asInterface(uuid("4459a451-69e8-440c-9896-4bb4f5f642d1"))).get_Label(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Label(HSTRING value)
+	final void Label(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IAppBarButton)this.asInterface(uuid("4459a451-69e8-440c-9896-4bb4f5f642d1"))).set_Label(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IAppBarButton)this.asInterface(uuid("4459a451-69e8-440c-9896-4bb4f5f642d1"))).set_Label(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Controls.IconElement Icon()
 	{
@@ -8829,15 +8829,15 @@ class AppBarSeparatorT(Base) : AgileObject!Base, AppBarSeparator
 interface AppBarToggleButton : Windows.UI.Xaml.Controls.Primitives.ToggleButton, Windows.UI.Xaml.Controls.IAppBarToggleButton, Windows.UI.Xaml.Controls.ICommandBarElement, Windows.UI.Xaml.Controls.IAppBarToggleButton3, Windows.UI.Xaml.Controls.ICommandBarElement2
 {
 extern(Windows):
-	final HSTRING Label()
+	final wstring Label()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IAppBarToggleButton)this.asInterface(uuid("2e914438-fd53-4b8d-858b-3644269f8e4d"))).get_Label(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Label(HSTRING value)
+	final void Label(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IAppBarToggleButton)this.asInterface(uuid("2e914438-fd53-4b8d-858b-3644269f8e4d"))).set_Label(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IAppBarToggleButton)this.asInterface(uuid("2e914438-fd53-4b8d-858b-3644269f8e4d"))).set_Label(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Controls.IconElement Icon()
 	{
@@ -9402,25 +9402,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IAutoSuggestBox)this.asInterface(uuid("103e9b13-3400-4a16-90b9-6912bf06974f"))).set_IsSuggestionListOpen(value));
 	}
-	final HSTRING TextMemberPath()
+	final wstring TextMemberPath()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IAutoSuggestBox)this.asInterface(uuid("103e9b13-3400-4a16-90b9-6912bf06974f"))).get_TextMemberPath(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TextMemberPath(HSTRING value)
+	final void TextMemberPath(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IAutoSuggestBox)this.asInterface(uuid("103e9b13-3400-4a16-90b9-6912bf06974f"))).set_TextMemberPath(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IAutoSuggestBox)this.asInterface(uuid("103e9b13-3400-4a16-90b9-6912bf06974f"))).set_TextMemberPath(hstring(value).handle));
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IAutoSuggestBox)this.asInterface(uuid("103e9b13-3400-4a16-90b9-6912bf06974f"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Text(HSTRING value)
+	final void Text(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IAutoSuggestBox)this.asInterface(uuid("103e9b13-3400-4a16-90b9-6912bf06974f"))).set_Text(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IAutoSuggestBox)this.asInterface(uuid("103e9b13-3400-4a16-90b9-6912bf06974f"))).set_Text(hstring(value).handle));
 	}
 	final bool UpdateTextOnSelect()
 	{
@@ -9432,15 +9432,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IAutoSuggestBox)this.asInterface(uuid("103e9b13-3400-4a16-90b9-6912bf06974f"))).set_UpdateTextOnSelect(value));
 	}
-	final HSTRING PlaceholderText()
+	final wstring PlaceholderText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IAutoSuggestBox)this.asInterface(uuid("103e9b13-3400-4a16-90b9-6912bf06974f"))).get_PlaceholderText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PlaceholderText(HSTRING value)
+	final void PlaceholderText(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IAutoSuggestBox)this.asInterface(uuid("103e9b13-3400-4a16-90b9-6912bf06974f"))).set_PlaceholderText(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IAutoSuggestBox)this.asInterface(uuid("103e9b13-3400-4a16-90b9-6912bf06974f"))).set_PlaceholderText(hstring(value).handle));
 	}
 	final IInspectable Header()
 	{
@@ -9594,11 +9594,11 @@ extern(Windows):
 interface AutoSuggestBoxQuerySubmittedEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IAutoSuggestBoxQuerySubmittedEventArgs
 {
 extern(Windows):
-	final HSTRING QueryText()
+	final wstring QueryText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IAutoSuggestBoxQuerySubmittedEventArgs)this.asInterface(uuid("78dcb116-818a-4cb5-bca7-382ce6ddc90d"))).get_QueryText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final IInspectable ChosenSuggestion()
 	{
@@ -10636,25 +10636,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarDatePicker)this.asInterface(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29"))).set_IsCalendarOpen(value));
 	}
-	final HSTRING DateFormat()
+	final wstring DateFormat()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarDatePicker)this.asInterface(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29"))).get_DateFormat(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DateFormat(HSTRING value)
+	final void DateFormat(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarDatePicker)this.asInterface(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29"))).set_DateFormat(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarDatePicker)this.asInterface(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29"))).set_DateFormat(hstring(value).handle));
 	}
-	final HSTRING PlaceholderText()
+	final wstring PlaceholderText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarDatePicker)this.asInterface(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29"))).get_PlaceholderText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PlaceholderText(HSTRING value)
+	final void PlaceholderText(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarDatePicker)this.asInterface(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29"))).set_PlaceholderText(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarDatePicker)this.asInterface(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29"))).set_PlaceholderText(hstring(value).handle));
 	}
 	final IInspectable Header()
 	{
@@ -10736,25 +10736,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarDatePicker)this.asInterface(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29"))).set_FirstDayOfWeek(value));
 	}
-	final HSTRING DayOfWeekFormat()
+	final wstring DayOfWeekFormat()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarDatePicker)this.asInterface(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29"))).get_DayOfWeekFormat(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DayOfWeekFormat(HSTRING value)
+	final void DayOfWeekFormat(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarDatePicker)this.asInterface(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29"))).set_DayOfWeekFormat(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarDatePicker)this.asInterface(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29"))).set_DayOfWeekFormat(hstring(value).handle));
 	}
-	final HSTRING CalendarIdentifier()
+	final wstring CalendarIdentifier()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarDatePicker)this.asInterface(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29"))).get_CalendarIdentifier(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CalendarIdentifier(HSTRING value)
+	final void CalendarIdentifier(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarDatePicker)this.asInterface(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29"))).set_CalendarIdentifier(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarDatePicker)this.asInterface(uuid("63c9c16f-668c-4491-9444-d45d8bf4fa29"))).set_CalendarIdentifier(hstring(value).handle));
 	}
 	final bool IsOutOfScopeEnabled()
 	{
@@ -11414,25 +11414,25 @@ extern(Windows):
 interface CalendarView : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ICalendarView
 {
 extern(Windows):
-	final HSTRING CalendarIdentifier()
+	final wstring CalendarIdentifier()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarView)this.asInterface(uuid("cd639203-dfb5-4312-ac07-c0391824607b"))).get_CalendarIdentifier(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CalendarIdentifier(HSTRING value)
+	final void CalendarIdentifier(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarView)this.asInterface(uuid("cd639203-dfb5-4312-ac07-c0391824607b"))).set_CalendarIdentifier(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarView)this.asInterface(uuid("cd639203-dfb5-4312-ac07-c0391824607b"))).set_CalendarIdentifier(hstring(value).handle));
 	}
-	final HSTRING DayOfWeekFormat()
+	final wstring DayOfWeekFormat()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarView)this.asInterface(uuid("cd639203-dfb5-4312-ac07-c0391824607b"))).get_DayOfWeekFormat(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DayOfWeekFormat(HSTRING value)
+	final void DayOfWeekFormat(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarView)this.asInterface(uuid("cd639203-dfb5-4312-ac07-c0391824607b"))).set_DayOfWeekFormat(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ICalendarView)this.asInterface(uuid("cd639203-dfb5-4312-ac07-c0391824607b"))).set_DayOfWeekFormat(hstring(value).handle));
 	}
 	final bool IsGroupLabelVisible()
 	{
@@ -14476,15 +14476,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IComboBox2)this.asInterface(uuid("ea0cbf91-ca36-4fad-972a-2e53a6718b9f"))).set_HeaderTemplate(value));
 	}
-	final HSTRING PlaceholderText()
+	final wstring PlaceholderText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IComboBox2)this.asInterface(uuid("ea0cbf91-ca36-4fad-972a-2e53a6718b9f"))).get_PlaceholderText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PlaceholderText(HSTRING value)
+	final void PlaceholderText(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IComboBox2)this.asInterface(uuid("ea0cbf91-ca36-4fad-972a-2e53a6718b9f"))).set_PlaceholderText(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IComboBox2)this.asInterface(uuid("ea0cbf91-ca36-4fad-972a-2e53a6718b9f"))).set_PlaceholderText(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
 	{
@@ -17114,25 +17114,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IContentDialog)this.asInterface(uuid("38dc4404-d24e-40d8-9415-349464c1afdc"))).set_FullSizeDesired(value));
 	}
-	final HSTRING PrimaryButtonText()
+	final wstring PrimaryButtonText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IContentDialog)this.asInterface(uuid("38dc4404-d24e-40d8-9415-349464c1afdc"))).get_PrimaryButtonText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PrimaryButtonText(HSTRING value)
+	final void PrimaryButtonText(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IContentDialog)this.asInterface(uuid("38dc4404-d24e-40d8-9415-349464c1afdc"))).set_PrimaryButtonText(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IContentDialog)this.asInterface(uuid("38dc4404-d24e-40d8-9415-349464c1afdc"))).set_PrimaryButtonText(hstring(value).handle));
 	}
-	final HSTRING SecondaryButtonText()
+	final wstring SecondaryButtonText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IContentDialog)this.asInterface(uuid("38dc4404-d24e-40d8-9415-349464c1afdc"))).get_SecondaryButtonText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SecondaryButtonText(HSTRING value)
+	final void SecondaryButtonText(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IContentDialog)this.asInterface(uuid("38dc4404-d24e-40d8-9415-349464c1afdc"))).set_SecondaryButtonText(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IContentDialog)this.asInterface(uuid("38dc4404-d24e-40d8-9415-349464c1afdc"))).set_SecondaryButtonText(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Input.ICommand PrimaryButtonCommand()
 	{
@@ -17254,15 +17254,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IContentDialog)this.asInterface(uuid("38dc4404-d24e-40d8-9415-349464c1afdc"))).abi_ShowAsync(&_ret));
 		return _ret;
 	}
-	final HSTRING CloseButtonText()
+	final wstring CloseButtonText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IContentDialog2)this.asInterface(uuid("2f93eb45-ee43-4303-9b38-3fe1a111ecbf"))).get_CloseButtonText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CloseButtonText(HSTRING value)
+	final void CloseButtonText(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IContentDialog2)this.asInterface(uuid("2f93eb45-ee43-4303-9b38-3fe1a111ecbf"))).set_CloseButtonText(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IContentDialog2)this.asInterface(uuid("2f93eb45-ee43-4303-9b38-3fe1a111ecbf"))).set_CloseButtonText(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Input.ICommand CloseButtonCommand()
 	{
@@ -18885,10 +18885,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IControlProtected)this.asInterface(uuid("1791587a-2a7c-4981-a2d8-ab99fffc65b9"))).set_DefaultStyleKey(value));
 	}
-	final Windows.UI.Xaml.DependencyObject GetTemplateChild(HSTRING childName)
+	final Windows.UI.Xaml.DependencyObject GetTemplateChild(wstring childName)
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IControlProtected)this.asInterface(uuid("1791587a-2a7c-4981-a2d8-ab99fffc65b9"))).abi_GetTemplateChild(childName, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IControlProtected)this.asInterface(uuid("1791587a-2a7c-4981-a2d8-ab99fffc65b9"))).abi_GetTemplateChild(hstring(childName).handle, &_ret));
 		return _ret;
 	}
 	final bool IsTextScaleFactorEnabled()
@@ -19678,15 +19678,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePicker)this.asInterface(uuid("06da3946-08b8-4103-8b8a-093efd6a7657"))).set_HeaderTemplate(value));
 	}
-	final HSTRING CalendarIdentifier()
+	final wstring CalendarIdentifier()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePicker)this.asInterface(uuid("06da3946-08b8-4103-8b8a-093efd6a7657"))).get_CalendarIdentifier(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CalendarIdentifier(HSTRING value)
+	final void CalendarIdentifier(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePicker)this.asInterface(uuid("06da3946-08b8-4103-8b8a-093efd6a7657"))).set_CalendarIdentifier(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePicker)this.asInterface(uuid("06da3946-08b8-4103-8b8a-093efd6a7657"))).set_CalendarIdentifier(hstring(value).handle));
 	}
 	final Windows.Foundation.DateTime Date()
 	{
@@ -19728,35 +19728,35 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePicker)this.asInterface(uuid("06da3946-08b8-4103-8b8a-093efd6a7657"))).set_YearVisible(value));
 	}
-	final HSTRING DayFormat()
+	final wstring DayFormat()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePicker)this.asInterface(uuid("06da3946-08b8-4103-8b8a-093efd6a7657"))).get_DayFormat(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DayFormat(HSTRING value)
+	final void DayFormat(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePicker)this.asInterface(uuid("06da3946-08b8-4103-8b8a-093efd6a7657"))).set_DayFormat(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePicker)this.asInterface(uuid("06da3946-08b8-4103-8b8a-093efd6a7657"))).set_DayFormat(hstring(value).handle));
 	}
-	final HSTRING MonthFormat()
+	final wstring MonthFormat()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePicker)this.asInterface(uuid("06da3946-08b8-4103-8b8a-093efd6a7657"))).get_MonthFormat(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void MonthFormat(HSTRING value)
+	final void MonthFormat(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePicker)this.asInterface(uuid("06da3946-08b8-4103-8b8a-093efd6a7657"))).set_MonthFormat(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePicker)this.asInterface(uuid("06da3946-08b8-4103-8b8a-093efd6a7657"))).set_MonthFormat(hstring(value).handle));
 	}
-	final HSTRING YearFormat()
+	final wstring YearFormat()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePicker)this.asInterface(uuid("06da3946-08b8-4103-8b8a-093efd6a7657"))).get_YearFormat(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void YearFormat(HSTRING value)
+	final void YearFormat(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePicker)this.asInterface(uuid("06da3946-08b8-4103-8b8a-093efd6a7657"))).set_YearFormat(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePicker)this.asInterface(uuid("06da3946-08b8-4103-8b8a-093efd6a7657"))).set_YearFormat(hstring(value).handle));
 	}
 	final Windows.Foundation.DateTime MinYear()
 	{
@@ -20339,15 +20339,15 @@ class DatePickerT(Base) : AgileObject!Base, DatePicker
 interface DatePickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase, Windows.UI.Xaml.Controls.IDatePickerFlyout, Windows.UI.Xaml.Controls.IDatePickerFlyout2
 {
 extern(Windows):
-	final HSTRING CalendarIdentifier()
+	final wstring CalendarIdentifier()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyout)this.asInterface(uuid("fbf33b1a-a3a4-4df8-9228-23a5ac27df4e"))).get_CalendarIdentifier(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CalendarIdentifier(HSTRING value)
+	final void CalendarIdentifier(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyout)this.asInterface(uuid("fbf33b1a-a3a4-4df8-9228-23a5ac27df4e"))).set_CalendarIdentifier(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyout)this.asInterface(uuid("fbf33b1a-a3a4-4df8-9228-23a5ac27df4e"))).set_CalendarIdentifier(hstring(value).handle));
 	}
 	final Windows.Foundation.DateTime Date()
 	{
@@ -20425,35 +20425,35 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyout)this.asInterface(uuid("fbf33b1a-a3a4-4df8-9228-23a5ac27df4e"))).abi_ShowAtAsync(target, &_ret));
 		return _ret;
 	}
-	final HSTRING DayFormat()
+	final wstring DayFormat()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyout2)this.asInterface(uuid("cfb18dbb-9931-4119-8bda-54a86fdfac84"))).get_DayFormat(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DayFormat(HSTRING value)
+	final void DayFormat(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyout2)this.asInterface(uuid("cfb18dbb-9931-4119-8bda-54a86fdfac84"))).set_DayFormat(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyout2)this.asInterface(uuid("cfb18dbb-9931-4119-8bda-54a86fdfac84"))).set_DayFormat(hstring(value).handle));
 	}
-	final HSTRING MonthFormat()
+	final wstring MonthFormat()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyout2)this.asInterface(uuid("cfb18dbb-9931-4119-8bda-54a86fdfac84"))).get_MonthFormat(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void MonthFormat(HSTRING value)
+	final void MonthFormat(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyout2)this.asInterface(uuid("cfb18dbb-9931-4119-8bda-54a86fdfac84"))).set_MonthFormat(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyout2)this.asInterface(uuid("cfb18dbb-9931-4119-8bda-54a86fdfac84"))).set_MonthFormat(hstring(value).handle));
 	}
-	final HSTRING YearFormat()
+	final wstring YearFormat()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyout2)this.asInterface(uuid("cfb18dbb-9931-4119-8bda-54a86fdfac84"))).get_YearFormat(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void YearFormat(HSTRING value)
+	final void YearFormat(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyout2)this.asInterface(uuid("cfb18dbb-9931-4119-8bda-54a86fdfac84"))).set_YearFormat(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyout2)this.asInterface(uuid("cfb18dbb-9931-4119-8bda-54a86fdfac84"))).set_YearFormat(hstring(value).handle));
 	}
 
 	private static Windows.UI.Xaml.Controls.IDatePickerFlyoutStatics _staticInstance;
@@ -20515,43 +20515,43 @@ extern(Windows):
 interface DatePickerFlyoutItem : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.IDatePickerFlyoutItem, Windows.UI.Xaml.Data.ICustomPropertyProvider
 {
 extern(Windows):
-	final HSTRING PrimaryText()
+	final wstring PrimaryText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyoutItem)this.asInterface(uuid("9d9bc289-00d2-4aac-9c85-d74f06367887"))).get_PrimaryText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PrimaryText(HSTRING value)
+	final void PrimaryText(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyoutItem)this.asInterface(uuid("9d9bc289-00d2-4aac-9c85-d74f06367887"))).set_PrimaryText(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyoutItem)this.asInterface(uuid("9d9bc289-00d2-4aac-9c85-d74f06367887"))).set_PrimaryText(hstring(value).handle));
 	}
-	final HSTRING SecondaryText()
+	final wstring SecondaryText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyoutItem)this.asInterface(uuid("9d9bc289-00d2-4aac-9c85-d74f06367887"))).get_SecondaryText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SecondaryText(HSTRING value)
+	final void SecondaryText(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyoutItem)this.asInterface(uuid("9d9bc289-00d2-4aac-9c85-d74f06367887"))).set_SecondaryText(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IDatePickerFlyoutItem)this.asInterface(uuid("9d9bc289-00d2-4aac-9c85-d74f06367887"))).set_SecondaryText(hstring(value).handle));
 	}
-	final Windows.UI.Xaml.Data.ICustomProperty GetCustomProperty(HSTRING name)
-	{
-		Windows.UI.Xaml.Data.ICustomProperty _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Data.ICustomPropertyProvider)this.asInterface(uuid("7c925755-3e48-42b4-8677-76372267033f"))).abi_GetCustomProperty(name, &_ret));
-		return _ret;
-	}
-	final Windows.UI.Xaml.Data.ICustomProperty GetIndexedProperty(HSTRING name, Windows.UI.Xaml.Interop.TypeName type)
+	final Windows.UI.Xaml.Data.ICustomProperty GetCustomProperty(wstring name)
 	{
 		Windows.UI.Xaml.Data.ICustomProperty _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Data.ICustomPropertyProvider)this.asInterface(uuid("7c925755-3e48-42b4-8677-76372267033f"))).abi_GetIndexedProperty(name, type, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Data.ICustomPropertyProvider)this.asInterface(uuid("7c925755-3e48-42b4-8677-76372267033f"))).abi_GetCustomProperty(hstring(name).handle, &_ret));
 		return _ret;
 	}
-	final HSTRING GetStringRepresentation()
+	final Windows.UI.Xaml.Data.ICustomProperty GetIndexedProperty(wstring name, Windows.UI.Xaml.Interop.TypeName type)
+	{
+		Windows.UI.Xaml.Data.ICustomProperty _ret;
+		Debug.OK((cast(Windows.UI.Xaml.Data.ICustomPropertyProvider)this.asInterface(uuid("7c925755-3e48-42b4-8677-76372267033f"))).abi_GetIndexedProperty(hstring(name).handle, type, &_ret));
+		return _ret;
+	}
+	final wstring GetStringRepresentation()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Data.ICustomPropertyProvider)this.asInterface(uuid("7c925755-3e48-42b4-8677-76372267033f"))).abi_GetStringRepresentation(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.UI.Xaml.Interop.TypeName Type()
 	{
@@ -22169,15 +22169,15 @@ extern(Windows):
 interface FontIcon : Windows.UI.Xaml.Controls.IconElement, Windows.UI.Xaml.Controls.IFontIcon, Windows.UI.Xaml.Controls.IFontIcon2, Windows.UI.Xaml.Controls.IFontIcon3
 {
 extern(Windows):
-	final HSTRING Glyph()
+	final wstring Glyph()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IFontIcon)this.asInterface(uuid("d4d61391-39ac-4950-9166-3606c264418b"))).get_Glyph(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Glyph(HSTRING value)
+	final void Glyph(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IFontIcon)this.asInterface(uuid("d4d61391-39ac-4950-9166-3606c264418b"))).set_Glyph(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IFontIcon)this.asInterface(uuid("d4d61391-39ac-4950-9166-3606c264418b"))).set_Glyph(hstring(value).handle));
 	}
 	final double FontSize()
 	{
@@ -22680,15 +22680,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IFrame)this.asInterface(uuid("68ea500b-3fe9-4735-b6a0-e7601933b089"))).abi_Navigate(sourcePageType, parameter, &_ret));
 		return _ret;
 	}
-	final HSTRING GetNavigationState()
+	final wstring GetNavigationState()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IFrame)this.asInterface(uuid("68ea500b-3fe9-4735-b6a0-e7601933b089"))).abi_GetNavigationState(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SetNavigationState(HSTRING navigationState)
+	final void SetNavigationState(wstring navigationState)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IFrame)this.asInterface(uuid("68ea500b-3fe9-4735-b6a0-e7601933b089"))).abi_SetNavigationState(navigationState));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IFrame)this.asInterface(uuid("68ea500b-3fe9-4735-b6a0-e7601933b089"))).abi_SetNavigationState(hstring(navigationState).handle));
 	}
 	final bool Navigate(Windows.UI.Xaml.Interop.TypeName sourcePageType)
 	{
@@ -22718,9 +22718,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IFrame3)this.asInterface(uuid("648a2b4d-53ca-4b5a-aa8e-3cc7440f4a67"))).abi_GoBack(transitionInfoOverride));
 	}
-	final void SetNavigationStateWithNavigationControl(HSTRING navigationState, bool suppressNavigate)
+	final void SetNavigationStateWithNavigationControl(wstring navigationState, bool suppressNavigate)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IFrame4)this.asInterface(uuid("9b17c21a-bd2b-4a00-99eb-946be9618084"))).abi_SetNavigationStateWithNavigationControl(navigationState, suppressNavigate));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IFrame4)this.asInterface(uuid("9b17c21a-bd2b-4a00-99eb-946be9618084"))).abi_SetNavigationStateWithNavigationControl(hstring(navigationState).handle, suppressNavigate));
 	}
 	alias SetNavigationState = SetNavigationStateWithNavigationControl;
 
@@ -36359,15 +36359,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IItemsControl)this.asInterface(uuid("f4a91dd8-d979-4381-8652-bda0342a765e"))).set_ItemsPanel(value));
 	}
-	final HSTRING DisplayMemberPath()
+	final wstring DisplayMemberPath()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IItemsControl)this.asInterface(uuid("f4a91dd8-d979-4381-8652-bda0342a765e"))).get_DisplayMemberPath(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DisplayMemberPath(HSTRING value)
+	final void DisplayMemberPath(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IItemsControl)this.asInterface(uuid("f4a91dd8-d979-4381-8652-bda0342a765e"))).set_DisplayMemberPath(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IItemsControl)this.asInterface(uuid("f4a91dd8-d979-4381-8652-bda0342a765e"))).set_DisplayMemberPath(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Style ItemContainerStyle()
 	{
@@ -38490,15 +38490,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IListPickerFlyout)this.asInterface(uuid("0f0cb9d7-e5f3-45e6-9063-ff7bbb193c47"))).set_ItemTemplate(value));
 	}
-	final HSTRING DisplayMemberPath()
+	final wstring DisplayMemberPath()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IListPickerFlyout)this.asInterface(uuid("0f0cb9d7-e5f3-45e6-9063-ff7bbb193c47"))).get_DisplayMemberPath(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DisplayMemberPath(HSTRING value)
+	final void DisplayMemberPath(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IListPickerFlyout)this.asInterface(uuid("0f0cb9d7-e5f3-45e6-9063-ff7bbb193c47"))).set_DisplayMemberPath(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IListPickerFlyout)this.asInterface(uuid("0f0cb9d7-e5f3-45e6-9063-ff7bbb193c47"))).set_DisplayMemberPath(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Controls.ListPickerFlyoutSelectionMode SelectionMode()
 	{
@@ -38540,15 +38540,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IListPickerFlyout)this.asInterface(uuid("0f0cb9d7-e5f3-45e6-9063-ff7bbb193c47"))).set_SelectedValue(value));
 	}
-	final HSTRING SelectedValuePath()
+	final wstring SelectedValuePath()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IListPickerFlyout)this.asInterface(uuid("0f0cb9d7-e5f3-45e6-9063-ff7bbb193c47"))).get_SelectedValuePath(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SelectedValuePath(HSTRING value)
+	final void SelectedValuePath(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IListPickerFlyout)this.asInterface(uuid("0f0cb9d7-e5f3-45e6-9063-ff7bbb193c47"))).set_SelectedValuePath(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IListPickerFlyout)this.asInterface(uuid("0f0cb9d7-e5f3-45e6-9063-ff7bbb193c47"))).set_SelectedValuePath(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(IInspectable) SelectedItems()
 	{
@@ -39548,16 +39548,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IListViewBase5)this.asInterface(uuid("1a9c6e99-1719-4b80-b335-628331a07019"))).abi_IsDragSource(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) TryStartConnectedAnimationAsync(Windows.UI.Xaml.Media.Animation.ConnectedAnimation animation, IInspectable item, HSTRING elementName)
+	final Windows.Foundation.IAsyncOperation!(bool) TryStartConnectedAnimationAsync(Windows.UI.Xaml.Media.Animation.ConnectedAnimation animation, IInspectable item, wstring elementName)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IListViewBase6)this.asInterface(uuid("f8a42637-965b-483b-94e5-e5c9fef0e352"))).abi_TryStartConnectedAnimationAsync(animation, item, elementName, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IListViewBase6)this.asInterface(uuid("f8a42637-965b-483b-94e5-e5c9fef0e352"))).abi_TryStartConnectedAnimationAsync(animation, item, hstring(elementName).handle, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Xaml.Media.Animation.ConnectedAnimation PrepareConnectedAnimation(HSTRING key, IInspectable item, HSTRING elementName)
+	final Windows.UI.Xaml.Media.Animation.ConnectedAnimation PrepareConnectedAnimation(wstring key, IInspectable item, wstring elementName)
 	{
 		Windows.UI.Xaml.Media.Animation.ConnectedAnimation _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IListViewBase6)this.asInterface(uuid("f8a42637-965b-483b-94e5-e5c9fef0e352"))).abi_PrepareConnectedAnimation(key, item, elementName, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IListViewBase6)this.asInterface(uuid("f8a42637-965b-483b-94e5-e5c9fef0e352"))).abi_PrepareConnectedAnimation(hstring(key).handle, item, hstring(elementName).handle, &_ret));
 		return _ret;
 	}
 
@@ -41514,16 +41514,16 @@ interface ListViewPersistenceHelper : Windows.UI.Xaml.Controls.IListViewPersiste
 		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.IListViewPersistenceHelperStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetRelativeScrollPosition(Windows.UI.Xaml.Controls.ListViewBase listViewBase, Windows.UI.Xaml.Controls.ListViewItemToKeyHandler itemToKeyHandler)
+	static wstring GetRelativeScrollPosition(Windows.UI.Xaml.Controls.ListViewBase listViewBase, Windows.UI.Xaml.Controls.ListViewItemToKeyHandler itemToKeyHandler)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetRelativeScrollPosition(listViewBase, itemToKeyHandler, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Foundation.IAsyncAction SetRelativeScrollPositionAsync(Windows.UI.Xaml.Controls.ListViewBase listViewBase, HSTRING relativeScrollPosition, Windows.UI.Xaml.Controls.ListViewKeyToItemHandler keyToItemHandler)
+	static Windows.Foundation.IAsyncAction SetRelativeScrollPositionAsync(Windows.UI.Xaml.Controls.ListViewBase listViewBase, wstring relativeScrollPosition, Windows.UI.Xaml.Controls.ListViewKeyToItemHandler keyToItemHandler)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.abi_SetRelativeScrollPositionAsync(listViewBase, relativeScrollPosition, keyToItemHandler, &_ret));
+		Debug.OK(staticInstance.abi_SetRelativeScrollPositionAsync(listViewBase, hstring(relativeScrollPosition).handle, keyToItemHandler, &_ret));
 		return _ret;
 	}
 }
@@ -41910,29 +41910,29 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IMediaElement)this.asInterface(uuid("a38ed2cf-13de-4299-ade2-ae18f74ed353"))).abi_Pause());
 	}
-	final Windows.UI.Xaml.Media.MediaCanPlayResponse CanPlayType(HSTRING type)
+	final Windows.UI.Xaml.Media.MediaCanPlayResponse CanPlayType(wstring type)
 	{
 		Windows.UI.Xaml.Media.MediaCanPlayResponse _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IMediaElement)this.asInterface(uuid("a38ed2cf-13de-4299-ade2-ae18f74ed353"))).abi_CanPlayType(type, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IMediaElement)this.asInterface(uuid("a38ed2cf-13de-4299-ade2-ae18f74ed353"))).abi_CanPlayType(hstring(type).handle, &_ret));
 		return _ret;
 	}
-	final void SetSource(Windows.Storage.Streams.IRandomAccessStream stream, HSTRING mimeType)
+	final void SetSource(Windows.Storage.Streams.IRandomAccessStream stream, wstring mimeType)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IMediaElement)this.asInterface(uuid("a38ed2cf-13de-4299-ade2-ae18f74ed353"))).abi_SetSource(stream, mimeType));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IMediaElement)this.asInterface(uuid("a38ed2cf-13de-4299-ade2-ae18f74ed353"))).abi_SetSource(stream, hstring(mimeType).handle));
 	}
-	final HSTRING GetAudioStreamLanguage(Windows.Foundation.IReference!(INT32) index)
+	final wstring GetAudioStreamLanguage(Windows.Foundation.IReference!(INT32) index)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IMediaElement)this.asInterface(uuid("a38ed2cf-13de-4299-ade2-ae18f74ed353"))).abi_GetAudioStreamLanguage(index, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AddAudioEffect(HSTRING effectID, bool effectOptional, Windows.Foundation.Collections.IPropertySet effectConfiguration)
+	final void AddAudioEffect(wstring effectID, bool effectOptional, Windows.Foundation.Collections.IPropertySet effectConfiguration)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IMediaElement)this.asInterface(uuid("a38ed2cf-13de-4299-ade2-ae18f74ed353"))).abi_AddAudioEffect(effectID, effectOptional, effectConfiguration));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IMediaElement)this.asInterface(uuid("a38ed2cf-13de-4299-ade2-ae18f74ed353"))).abi_AddAudioEffect(hstring(effectID).handle, effectOptional, effectConfiguration));
 	}
-	final void AddVideoEffect(HSTRING effectID, bool effectOptional, Windows.Foundation.Collections.IPropertySet effectConfiguration)
+	final void AddVideoEffect(wstring effectID, bool effectOptional, Windows.Foundation.Collections.IPropertySet effectConfiguration)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IMediaElement)this.asInterface(uuid("a38ed2cf-13de-4299-ade2-ae18f74ed353"))).abi_AddVideoEffect(effectID, effectOptional, effectConfiguration));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IMediaElement)this.asInterface(uuid("a38ed2cf-13de-4299-ade2-ae18f74ed353"))).abi_AddVideoEffect(hstring(effectID).handle, effectOptional, effectConfiguration));
 	}
 	final void RemoveAllEffects()
 	{
@@ -44099,15 +44099,15 @@ class MenuFlyoutT(Base) : AgileObject!Base, MenuFlyout
 interface MenuFlyoutItem : Windows.UI.Xaml.Controls.MenuFlyoutItemBase, Windows.UI.Xaml.Controls.IMenuFlyoutItem, Windows.UI.Xaml.Controls.IMenuFlyoutItem2
 {
 extern(Windows):
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IMenuFlyoutItem)this.asInterface(uuid("160775cf-b598-44af-a488-c3ce2af6d3f0"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Text(HSTRING value)
+	final void Text(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IMenuFlyoutItem)this.asInterface(uuid("160775cf-b598-44af-a488-c3ce2af6d3f0"))).set_Text(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IMenuFlyoutItem)this.asInterface(uuid("160775cf-b598-44af-a488-c3ce2af6d3f0"))).set_Text(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Input.ICommand Command()
 	{
@@ -45900,15 +45900,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IMenuFlyoutSubItem)this.asInterface(uuid("e5386550-fe2c-43e2-a73f-62168f619973"))).get_Items(&_ret));
 		return _ret;
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IMenuFlyoutSubItem)this.asInterface(uuid("e5386550-fe2c-43e2-a73f-62168f619973"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Text(HSTRING value)
+	final void Text(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IMenuFlyoutSubItem)this.asInterface(uuid("e5386550-fe2c-43e2-a73f-62168f619973"))).set_Text(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IMenuFlyoutSubItem)this.asInterface(uuid("e5386550-fe2c-43e2-a73f-62168f619973"))).set_Text(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Controls.IconElement Icon()
 	{
@@ -45944,11 +45944,11 @@ extern(Windows):
 interface NotifyEventArgs : Windows.UI.Xaml.Controls.INotifyEventArgs, Windows.UI.Xaml.Controls.INotifyEventArgs2
 {
 extern(Windows):
-	final HSTRING Value()
+	final wstring Value()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.INotifyEventArgs)this.asInterface(uuid("af0e05f7-c4b7-44c5-b09d-5cb7052b3a97"))).get_Value(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Uri CallingUri()
 	{
@@ -46804,25 +46804,25 @@ class PanelT(Base) : AgileObject!Base, Panel
 interface PasswordBox : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.IPasswordBox, Windows.UI.Xaml.Controls.IPasswordBox2, Windows.UI.Xaml.Controls.IPasswordBox3
 {
 extern(Windows):
-	final HSTRING Password()
+	final wstring Password()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IPasswordBox)this.asInterface(uuid("02b9aa11-0b47-4e7d-ad91-3a4168ed230d"))).get_Password(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Password(HSTRING value)
+	final void Password(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IPasswordBox)this.asInterface(uuid("02b9aa11-0b47-4e7d-ad91-3a4168ed230d"))).set_Password(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IPasswordBox)this.asInterface(uuid("02b9aa11-0b47-4e7d-ad91-3a4168ed230d"))).set_Password(hstring(value).handle));
 	}
-	final HSTRING PasswordChar()
+	final wstring PasswordChar()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IPasswordBox)this.asInterface(uuid("02b9aa11-0b47-4e7d-ad91-3a4168ed230d"))).get_PasswordChar(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PasswordChar(HSTRING value)
+	final void PasswordChar(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IPasswordBox)this.asInterface(uuid("02b9aa11-0b47-4e7d-ad91-3a4168ed230d"))).set_PasswordChar(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IPasswordBox)this.asInterface(uuid("02b9aa11-0b47-4e7d-ad91-3a4168ed230d"))).set_PasswordChar(hstring(value).handle));
 	}
 	deprecated("IsPasswordRevealButtonEnabledProperty may be altered or unavailable for releases after Windows 10.0. Instead, use PasswordRevealModeProperty.")
 	final bool IsPasswordRevealButtonEnabled()
@@ -46890,15 +46890,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IPasswordBox2)this.asInterface(uuid("5ed738df-212f-4aeb-b5b8-2c219aec3c0c"))).set_HeaderTemplate(value));
 	}
-	final HSTRING PlaceholderText()
+	final wstring PlaceholderText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IPasswordBox2)this.asInterface(uuid("5ed738df-212f-4aeb-b5b8-2c219aec3c0c"))).get_PlaceholderText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PlaceholderText(HSTRING value)
+	final void PlaceholderText(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IPasswordBox2)this.asInterface(uuid("5ed738df-212f-4aeb-b5b8-2c219aec3c0c"))).set_PlaceholderText(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IPasswordBox2)this.asInterface(uuid("5ed738df-212f-4aeb-b5b8-2c219aec3c0c"))).set_PlaceholderText(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Media.SolidColorBrush SelectionHighlightColor()
 	{
@@ -49153,15 +49153,15 @@ extern(Windows):
 interface RadioButton : Windows.UI.Xaml.Controls.Primitives.ToggleButton, Windows.UI.Xaml.Controls.IRadioButton
 {
 extern(Windows):
-	final HSTRING GroupName()
+	final wstring GroupName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IRadioButton)this.asInterface(uuid("325c44e0-9a03-4bf3-abd6-6fbb46c9a486"))).get_GroupName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void GroupName(HSTRING value)
+	final void GroupName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IRadioButton)this.asInterface(uuid("325c44e0-9a03-4bf3-abd6-6fbb46c9a486"))).set_GroupName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IRadioButton)this.asInterface(uuid("325c44e0-9a03-4bf3-abd6-6fbb46c9a486"))).set_GroupName(hstring(value).handle));
 	}
 
 	private static Windows.UI.Xaml.Controls.IRadioButtonStatics _staticInstance;
@@ -50391,15 +50391,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IRichEditBox2)this.asInterface(uuid("bbea6ead-e805-47a4-bbe7-47e59b8f74a7"))).set_HeaderTemplate(value));
 	}
-	final HSTRING PlaceholderText()
+	final wstring PlaceholderText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IRichEditBox2)this.asInterface(uuid("bbea6ead-e805-47a4-bbe7-47e59b8f74a7"))).get_PlaceholderText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PlaceholderText(HSTRING value)
+	final void PlaceholderText(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IRichEditBox2)this.asInterface(uuid("bbea6ead-e805-47a4-bbe7-47e59b8f74a7"))).set_PlaceholderText(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IRichEditBox2)this.asInterface(uuid("bbea6ead-e805-47a4-bbe7-47e59b8f74a7"))).set_PlaceholderText(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Media.SolidColorBrush SelectionHighlightColor()
 	{
@@ -51244,11 +51244,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IRichTextBlock)this.asInterface(uuid("e5fff9e2-b968-49e7-97d4-8cca2ac3ae7c"))).get_HasOverflowContent(&_ret));
 		return _ret;
 	}
-	final HSTRING SelectedText()
+	final wstring SelectedText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IRichTextBlock)this.asInterface(uuid("e5fff9e2-b968-49e7-97d4-8cca2ac3ae7c"))).get_SelectedText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.UI.Xaml.Documents.TextPointer ContentStart()
 	{
@@ -52731,35 +52731,35 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBox)this.asInterface(uuid("f89ecc5a-99ba-4bd4-966c-f11fa443d13c"))).set_SearchHistoryEnabled(value));
 	}
-	final HSTRING SearchHistoryContext()
+	final wstring SearchHistoryContext()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBox)this.asInterface(uuid("f89ecc5a-99ba-4bd4-966c-f11fa443d13c"))).get_SearchHistoryContext(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SearchHistoryContext(HSTRING value)
+	final void SearchHistoryContext(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBox)this.asInterface(uuid("f89ecc5a-99ba-4bd4-966c-f11fa443d13c"))).set_SearchHistoryContext(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBox)this.asInterface(uuid("f89ecc5a-99ba-4bd4-966c-f11fa443d13c"))).set_SearchHistoryContext(hstring(value).handle));
 	}
-	final HSTRING PlaceholderText()
+	final wstring PlaceholderText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBox)this.asInterface(uuid("f89ecc5a-99ba-4bd4-966c-f11fa443d13c"))).get_PlaceholderText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PlaceholderText(HSTRING value)
+	final void PlaceholderText(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBox)this.asInterface(uuid("f89ecc5a-99ba-4bd4-966c-f11fa443d13c"))).set_PlaceholderText(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBox)this.asInterface(uuid("f89ecc5a-99ba-4bd4-966c-f11fa443d13c"))).set_PlaceholderText(hstring(value).handle));
 	}
-	final HSTRING QueryText()
+	final wstring QueryText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBox)this.asInterface(uuid("f89ecc5a-99ba-4bd4-966c-f11fa443d13c"))).get_QueryText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void QueryText(HSTRING value)
+	final void QueryText(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBox)this.asInterface(uuid("f89ecc5a-99ba-4bd4-966c-f11fa443d13c"))).set_QueryText(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBox)this.asInterface(uuid("f89ecc5a-99ba-4bd4-966c-f11fa443d13c"))).set_QueryText(hstring(value).handle));
 	}
 	final bool FocusOnKeyboardInput()
 	{
@@ -53316,17 +53316,17 @@ class SearchBoxT(Base) : AgileObject!Base, SearchBox
 interface SearchBoxQueryChangedEventArgs : Windows.UI.Xaml.Controls.ISearchBoxQueryChangedEventArgs
 {
 extern(Windows):
-	final HSTRING QueryText()
+	final wstring QueryText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBoxQueryChangedEventArgs)this.asInterface(uuid("a9a70f8f-0cb0-4bd2-9998-2fb57ad5e731"))).get_QueryText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBoxQueryChangedEventArgs)this.asInterface(uuid("a9a70f8f-0cb0-4bd2-9998-2fb57ad5e731"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Search.SearchQueryLinguisticDetails LinguisticDetails()
 	{
@@ -53339,17 +53339,17 @@ extern(Windows):
 interface SearchBoxQuerySubmittedEventArgs : Windows.UI.Xaml.Controls.ISearchBoxQuerySubmittedEventArgs
 {
 extern(Windows):
-	final HSTRING QueryText()
+	final wstring QueryText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBoxQuerySubmittedEventArgs)this.asInterface(uuid("126e90fd-3c4e-4ccb-9aef-4705d19fe548"))).get_QueryText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBoxQuerySubmittedEventArgs)this.asInterface(uuid("126e90fd-3c4e-4ccb-9aef-4705d19fe548"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Search.SearchQueryLinguisticDetails LinguisticDetails()
 	{
@@ -53368,11 +53368,11 @@ extern(Windows):
 interface SearchBoxResultSuggestionChosenEventArgs : Windows.UI.Xaml.Controls.ISearchBoxResultSuggestionChosenEventArgs
 {
 extern(Windows):
-	final HSTRING Tag()
+	final wstring Tag()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBoxResultSuggestionChosenEventArgs)this.asInterface(uuid("18918c23-e4c3-4662-a03b-d054ffd0f905"))).get_Tag(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.System.VirtualKeyModifiers KeyModifiers()
 	{
@@ -53391,17 +53391,17 @@ extern(Windows):
 interface SearchBoxSuggestionsRequestedEventArgs : Windows.UI.Xaml.Controls.ISearchBoxSuggestionsRequestedEventArgs
 {
 extern(Windows):
-	final HSTRING QueryText()
+	final wstring QueryText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBoxSuggestionsRequestedEventArgs)this.asInterface(uuid("da15170e-e566-48cb-bd11-fe4b0f30a44d"))).get_QueryText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ISearchBoxSuggestionsRequestedEventArgs)this.asInterface(uuid("da15170e-e566-48cb-bd11-fe4b0f30a44d"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Search.SearchQueryLinguisticDetails LinguisticDetails()
 	{
@@ -53682,15 +53682,15 @@ extern(Windows):
 interface SettingsFlyout : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.ISettingsFlyout
 {
 extern(Windows):
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ISettingsFlyout)this.asInterface(uuid("830ba82b-c55b-4e32-a51c-5791e024c8af"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ISettingsFlyout)this.asInterface(uuid("830ba82b-c55b-4e32-a51c-5791e024c8af"))).set_Title(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ISettingsFlyout)this.asInterface(uuid("830ba82b-c55b-4e32-a51c-5791e024c8af"))).set_Title(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Media.Brush HeaderBackground()
 	{
@@ -56781,15 +56781,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBlock)this.asInterface(uuid("ae2d9271-3b4a-45fc-8468-f7949548f4d5"))).set_TextAlignment(value));
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBlock)this.asInterface(uuid("ae2d9271-3b4a-45fc-8468-f7949548f4d5"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Text(HSTRING value)
+	final void Text(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBlock)this.asInterface(uuid("ae2d9271-3b4a-45fc-8468-f7949548f4d5"))).set_Text(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBlock)this.asInterface(uuid("ae2d9271-3b4a-45fc-8468-f7949548f4d5"))).set_Text(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Documents.InlineCollection Inlines()
 	{
@@ -56837,11 +56837,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBlock)this.asInterface(uuid("ae2d9271-3b4a-45fc-8468-f7949548f4d5"))).set_IsTextSelectionEnabled(value));
 	}
-	final HSTRING SelectedText()
+	final wstring SelectedText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBlock)this.asInterface(uuid("ae2d9271-3b4a-45fc-8468-f7949548f4d5"))).get_SelectedText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.UI.Xaml.Documents.TextPointer ContentStart()
 	{
@@ -57107,25 +57107,25 @@ extern(Windows):
 interface TextBox : Windows.UI.Xaml.Controls.Control, Windows.UI.Xaml.Controls.ITextBox, Windows.UI.Xaml.Controls.ITextBox2, Windows.UI.Xaml.Controls.ITextBox3, Windows.UI.Xaml.Controls.ITextBox4, Windows.UI.Xaml.Controls.ITextBox5
 {
 extern(Windows):
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBox)this.asInterface(uuid("e48f5a8b-1dff-4352-a1f4-e516514ec882"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Text(HSTRING value)
+	final void Text(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBox)this.asInterface(uuid("e48f5a8b-1dff-4352-a1f4-e516514ec882"))).set_Text(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBox)this.asInterface(uuid("e48f5a8b-1dff-4352-a1f4-e516514ec882"))).set_Text(hstring(value).handle));
 	}
-	final HSTRING SelectedText()
+	final wstring SelectedText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBox)this.asInterface(uuid("e48f5a8b-1dff-4352-a1f4-e516514ec882"))).get_SelectedText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SelectedText(HSTRING value)
+	final void SelectedText(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBox)this.asInterface(uuid("e48f5a8b-1dff-4352-a1f4-e516514ec882"))).set_SelectedText(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBox)this.asInterface(uuid("e48f5a8b-1dff-4352-a1f4-e516514ec882"))).set_SelectedText(hstring(value).handle));
 	}
 	final INT32 SelectionLength()
 	{
@@ -57291,15 +57291,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBox2)this.asInterface(uuid("f7168c00-1432-462a-9405-38f385bfc37c"))).set_HeaderTemplate(value));
 	}
-	final HSTRING PlaceholderText()
+	final wstring PlaceholderText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBox2)this.asInterface(uuid("f7168c00-1432-462a-9405-38f385bfc37c"))).get_PlaceholderText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PlaceholderText(HSTRING value)
+	final void PlaceholderText(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBox2)this.asInterface(uuid("f7168c00-1432-462a-9405-38f385bfc37c"))).set_PlaceholderText(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ITextBox2)this.asInterface(uuid("f7168c00-1432-462a-9405-38f385bfc37c"))).set_PlaceholderText(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Media.SolidColorBrush SelectionHighlightColor()
 	{
@@ -58095,15 +58095,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ITimePicker)this.asInterface(uuid("e39099f2-3aff-4792-909e-2d9941ec0357"))).set_HeaderTemplate(value));
 	}
-	final HSTRING ClockIdentifier()
+	final wstring ClockIdentifier()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ITimePicker)this.asInterface(uuid("e39099f2-3aff-4792-909e-2d9941ec0357"))).get_ClockIdentifier(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ClockIdentifier(HSTRING value)
+	final void ClockIdentifier(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ITimePicker)this.asInterface(uuid("e39099f2-3aff-4792-909e-2d9941ec0357"))).set_ClockIdentifier(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ITimePicker)this.asInterface(uuid("e39099f2-3aff-4792-909e-2d9941ec0357"))).set_ClockIdentifier(hstring(value).handle));
 	}
 	final INT32 MinuteIncrement()
 	{
@@ -58612,15 +58612,15 @@ class TimePickerT(Base) : AgileObject!Base, TimePicker
 interface TimePickerFlyout : Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase, Windows.UI.Xaml.Controls.ITimePickerFlyout
 {
 extern(Windows):
-	final HSTRING ClockIdentifier()
+	final wstring ClockIdentifier()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.ITimePickerFlyout)this.asInterface(uuid("bb739d75-e836-439e-86d5-506d2d18e404"))).get_ClockIdentifier(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ClockIdentifier(HSTRING value)
+	final void ClockIdentifier(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.ITimePickerFlyout)this.asInterface(uuid("bb739d75-e836-439e-86d5-506d2d18e404"))).set_ClockIdentifier(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.ITimePickerFlyout)this.asInterface(uuid("bb739d75-e836-439e-86d5-506d2d18e404"))).set_ClockIdentifier(hstring(value).handle));
 	}
 	final Windows.Foundation.TimeSpan Time()
 	{
@@ -61114,19 +61114,19 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView)this.asInterface(uuid("5862cc46-1f7d-479b-92a6-de7858fe8d54"))).remove_NavigationFailed(token));
 	}
 	deprecated("Use InvokeScriptAsync instead of InvokeScript. For more info, see MSDN.")
-	final HSTRING InvokeScript(HSTRING scriptName, UINT32 __argumentsSize, HSTRING* arguments)
+	final wstring InvokeScript(wstring scriptName, UINT32 __argumentsSize, HSTRING* arguments)
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView)this.asInterface(uuid("5862cc46-1f7d-479b-92a6-de7858fe8d54"))).abi_InvokeScript(scriptName, __argumentsSize, arguments, &_ret));
-		return _ret;
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView)this.asInterface(uuid("5862cc46-1f7d-479b-92a6-de7858fe8d54"))).abi_InvokeScript(hstring(scriptName).handle, __argumentsSize, arguments, &_ret));
+		return hstring(_ret).d_str;
 	}
 	final void Navigate(Windows.Foundation.Uri source)
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView)this.asInterface(uuid("5862cc46-1f7d-479b-92a6-de7858fe8d54"))).abi_Navigate(source));
 	}
-	final void NavigateToString(HSTRING text)
+	final void NavigateToString(wstring text)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView)this.asInterface(uuid("5862cc46-1f7d-479b-92a6-de7858fe8d54"))).abi_NavigateToString(text));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView)this.asInterface(uuid("5862cc46-1f7d-479b-92a6-de7858fe8d54"))).abi_NavigateToString(hstring(text).handle));
 	}
 	final bool CanGoBack()
 	{
@@ -61140,11 +61140,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView2)this.asInterface(uuid("d481759e-3eff-4462-823d-fd52f9ba4cc8"))).get_CanGoForward(&_ret));
 		return _ret;
 	}
-	final HSTRING DocumentTitle()
+	final wstring DocumentTitle()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView2)this.asInterface(uuid("d481759e-3eff-4462-823d-fd52f9ba4cc8"))).get_DocumentTitle(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final EventRegistrationToken OnNavigationStarting(void delegate(Windows.UI.Xaml.Controls.WebView, Windows.UI.Xaml.Controls.WebViewNavigationStartingEventArgs) fn)
 	{
@@ -61198,10 +61198,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView2)this.asInterface(uuid("d481759e-3eff-4462-823d-fd52f9ba4cc8"))).abi_CapturePreviewToStreamAsync(stream, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(HSTRING) InvokeScriptAsync(HSTRING scriptName, Windows.Foundation.Collections.IIterable!(HSTRING) arguments)
+	final Windows.Foundation.IAsyncOperation!(HSTRING) InvokeScriptAsync(wstring scriptName, Windows.Foundation.Collections.IIterable!(HSTRING) arguments)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView2)this.asInterface(uuid("d481759e-3eff-4462-823d-fd52f9ba4cc8"))).abi_InvokeScriptAsync(scriptName, arguments, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView2)this.asInterface(uuid("d481759e-3eff-4462-823d-fd52f9ba4cc8"))).abi_InvokeScriptAsync(hstring(scriptName).handle, arguments, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackage) CaptureSelectedContentToDataPackageAsync()
@@ -61214,10 +61214,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView2)this.asInterface(uuid("d481759e-3eff-4462-823d-fd52f9ba4cc8"))).abi_NavigateToLocalStreamUri(source, streamResolver));
 	}
-	final Windows.Foundation.Uri BuildLocalStreamUri(HSTRING contentIdentifier, HSTRING relativePath)
+	final Windows.Foundation.Uri BuildLocalStreamUri(wstring contentIdentifier, wstring relativePath)
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView2)this.asInterface(uuid("d481759e-3eff-4462-823d-fd52f9ba4cc8"))).abi_BuildLocalStreamUri(contentIdentifier, relativePath, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView2)this.asInterface(uuid("d481759e-3eff-4462-823d-fd52f9ba4cc8"))).abi_BuildLocalStreamUri(hstring(contentIdentifier).handle, hstring(relativePath).handle, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Color DefaultBackgroundColor()
@@ -61384,9 +61384,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView4)this.asInterface(uuid("e28243bc-67f3-462a-b4e0-3bbf6c3dab0b"))).remove_PermissionRequested(token));
 	}
-	final void AddWebAllowedObject(HSTRING name, IInspectable pObject)
+	final void AddWebAllowedObject(wstring name, IInspectable pObject)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView4)this.asInterface(uuid("e28243bc-67f3-462a-b4e0-3bbf6c3dab0b"))).abi_AddWebAllowedObject(name, pObject));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebView4)this.asInterface(uuid("e28243bc-67f3-462a-b4e0-3bbf6c3dab0b"))).abi_AddWebAllowedObject(hstring(name).handle, pObject));
 	}
 	final Windows.UI.Xaml.Controls.WebViewDeferredPermissionRequest DeferredPermissionRequestById(UINT32 id)
 	{
@@ -61486,15 +61486,15 @@ extern(Windows):
 interface WebViewBrush : Windows.UI.Xaml.Media.TileBrush, Windows.UI.Xaml.Controls.IWebViewBrush
 {
 extern(Windows):
-	final HSTRING SourceName()
+	final wstring SourceName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebViewBrush)this.asInterface(uuid("40e86f75-0cf4-4b72-a4d6-cf5d15780116"))).get_SourceName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SourceName(HSTRING value)
+	final void SourceName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebViewBrush)this.asInterface(uuid("40e86f75-0cf4-4b72-a4d6-cf5d15780116"))).set_SourceName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebViewBrush)this.asInterface(uuid("40e86f75-0cf4-4b72-a4d6-cf5d15780116"))).set_SourceName(hstring(value).handle));
 	}
 	final void Redraw()
 	{
@@ -61800,11 +61800,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebViewUnviewableContentIdentifiedEventArgs)this.asInterface(uuid("37bc16e1-6062-4678-b20b-6c36ac9c59ac"))).get_Referrer(&_ret));
 		return _ret;
 	}
-	final HSTRING MediaType()
+	final wstring MediaType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.IWebViewUnviewableContentIdentifiedEventArgs2)this.asInterface(uuid("9abe1154-36f0-4268-8d88-121eedf45e6a"))).get_MediaType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

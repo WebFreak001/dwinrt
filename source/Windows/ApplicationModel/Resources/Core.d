@@ -221,11 +221,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceCandidate)this.asInterface(uuid("af5207d9-c433-4764-b3fd-8fa6bfbcbadc"))).get_IsDefault(&_ret));
 		return _ret;
 	}
-	final HSTRING ValueAsString()
+	final wstring ValueAsString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceCandidate)this.asInterface(uuid("af5207d9-c433-4764-b3fd-8fa6bfbcbadc"))).get_ValueAsString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) GetValueAsFileAsync()
 	{
@@ -233,11 +233,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceCandidate)this.asInterface(uuid("af5207d9-c433-4764-b3fd-8fa6bfbcbadc"))).abi_GetValueAsFileAsync(&_ret));
 		return _ret;
 	}
-	final HSTRING GetQualifierValue(HSTRING qualifierName)
+	final wstring GetQualifierValue(wstring qualifierName)
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceCandidate)this.asInterface(uuid("af5207d9-c433-4764-b3fd-8fa6bfbcbadc"))).abi_GetQualifierValue(qualifierName, &_ret));
-		return _ret;
+		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceCandidate)this.asInterface(uuid("af5207d9-c433-4764-b3fd-8fa6bfbcbadc"))).abi_GetQualifierValue(hstring(qualifierName).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) GetValueAsStreamAsync()
 	{
@@ -349,10 +349,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(HSTRING))this).get_Size(&_ret));
 		return _ret;
 	}
-	final uint IndexOf(HSTRING value, bool* out_found)
+	final uint IndexOf(wstring value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(HSTRING))this).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(HSTRING))this).get_IndexOf(hstring(value).handle, &_ret, out_found));
 		return _ret;
 	}
 	final void GetMany(uint startIndex, uint capacity, HSTRING* out_value, uint* out_actual)
@@ -395,16 +395,16 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceManager)this.asInterface(uuid("f744d97b-9988-44fb-abd6-5378844cfa8b"))).abi_UnloadPriFiles(files));
 	}
-	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.NamedResource) GetAllNamedResourcesForPackage(HSTRING packageName, Windows.ApplicationModel.Resources.Core.ResourceLayoutInfo resourceLayoutInfo)
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.NamedResource) GetAllNamedResourcesForPackage(wstring packageName, Windows.ApplicationModel.Resources.Core.ResourceLayoutInfo resourceLayoutInfo)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.NamedResource) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceManager2)this.asInterface(uuid("9d66fe6c-a4d7-4c23-9e85-675f304c252d"))).abi_GetAllNamedResourcesForPackage(packageName, resourceLayoutInfo, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceManager2)this.asInterface(uuid("9d66fe6c-a4d7-4c23-9e85-675f304c252d"))).abi_GetAllNamedResourcesForPackage(hstring(packageName).handle, resourceLayoutInfo, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceMap) GetAllSubtreesForPackage(HSTRING packageName, Windows.ApplicationModel.Resources.Core.ResourceLayoutInfo resourceLayoutInfo)
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceMap) GetAllSubtreesForPackage(wstring packageName, Windows.ApplicationModel.Resources.Core.ResourceLayoutInfo resourceLayoutInfo)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceMap) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceManager2)this.asInterface(uuid("9d66fe6c-a4d7-4c23-9e85-675f304c252d"))).abi_GetAllSubtreesForPackage(packageName, resourceLayoutInfo, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceManager2)this.asInterface(uuid("9d66fe6c-a4d7-4c23-9e85-675f304c252d"))).abi_GetAllSubtreesForPackage(hstring(packageName).handle, resourceLayoutInfo, &_ret));
 		return _ret;
 	}
 
@@ -420,10 +420,10 @@ extern(Windows):
 		Debug.OK(staticInstance.get_Current(&_ret));
 		return _ret;
 	}
-	static bool IsResourceReference(HSTRING resourceReference)
+	static bool IsResourceReference(wstring resourceReference)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsResourceReference(resourceReference, &_ret));
+		Debug.OK(staticInstance.abi_IsResourceReference(hstring(resourceReference).handle, &_ret));
 		return _ret;
 	}
 }
@@ -438,29 +438,29 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("GetValue(string) may be altered or unavailable for releases after Windows 8.1. Instead, use GetValue(string, ResourceContext).")
-	final Windows.ApplicationModel.Resources.Core.ResourceCandidate GetValue(HSTRING resource)
+	final Windows.ApplicationModel.Resources.Core.ResourceCandidate GetValue(wstring resource)
 	{
 		Windows.ApplicationModel.Resources.Core.ResourceCandidate _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceMap)this.asInterface(uuid("72284824-db8c-42f8-b08c-53ff357dad82"))).abi_GetValue(resource, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceMap)this.asInterface(uuid("72284824-db8c-42f8-b08c-53ff357dad82"))).abi_GetValue(hstring(resource).handle, &_ret));
 		return _ret;
 	}
-	final Windows.ApplicationModel.Resources.Core.ResourceCandidate GetValueForContext(HSTRING resource, Windows.ApplicationModel.Resources.Core.ResourceContext context)
+	final Windows.ApplicationModel.Resources.Core.ResourceCandidate GetValueForContext(wstring resource, Windows.ApplicationModel.Resources.Core.ResourceContext context)
 	{
 		Windows.ApplicationModel.Resources.Core.ResourceCandidate _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceMap)this.asInterface(uuid("72284824-db8c-42f8-b08c-53ff357dad82"))).abi_GetValueForContext(resource, context, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceMap)this.asInterface(uuid("72284824-db8c-42f8-b08c-53ff357dad82"))).abi_GetValueForContext(hstring(resource).handle, context, &_ret));
 		return _ret;
 	}
 	alias GetValue = GetValueForContext;
-	final Windows.ApplicationModel.Resources.Core.ResourceMap GetSubtree(HSTRING reference)
+	final Windows.ApplicationModel.Resources.Core.ResourceMap GetSubtree(wstring reference)
 	{
 		Windows.ApplicationModel.Resources.Core.ResourceMap _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceMap)this.asInterface(uuid("72284824-db8c-42f8-b08c-53ff357dad82"))).abi_GetSubtree(reference, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceMap)this.asInterface(uuid("72284824-db8c-42f8-b08c-53ff357dad82"))).abi_GetSubtree(hstring(reference).handle, &_ret));
 		return _ret;
 	}
-	final  Windows.ApplicationModel.Resources.Core.NamedResource Lookup(HSTRING key)
+	final  Windows.ApplicationModel.Resources.Core.NamedResource Lookup(wstring key)
 	{
 		 Windows.ApplicationModel.Resources.Core.NamedResource _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource))this).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource))this).abi_Lookup(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final uint Size()
@@ -469,10 +469,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource))this).get_Size(&_ret));
 		return _ret;
 	}
-	final bool HasKey(HSTRING key)
+	final bool HasKey(wstring key)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource))this).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.NamedResource))this).abi_HasKey(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final void Split(Windows.Foundation.Collections.IMapView!(HSTRING,	Windows.ApplicationModel.Resources.Core.NamedResource) out_firstPartition, Windows.Foundation.Collections.IMapView!(HSTRING,  Windows.ApplicationModel.Resources.Core.NamedResource) out_secondPartition)
@@ -513,10 +513,10 @@ extern(Windows):
 interface ResourceMapMapView : Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap))
 {
 extern(Windows):
-	final  Windows.ApplicationModel.Resources.Core.ResourceMap Lookup(HSTRING key)
+	final  Windows.ApplicationModel.Resources.Core.ResourceMap Lookup(wstring key)
 	{
 		 Windows.ApplicationModel.Resources.Core.ResourceMap _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap))this).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap))this).abi_Lookup(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final uint Size()
@@ -525,10 +525,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap))this).get_Size(&_ret));
 		return _ret;
 	}
-	final bool HasKey(HSTRING key)
+	final bool HasKey(wstring key)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap))this).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Resources.Core.ResourceMap))this).abi_HasKey(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final void Split(Windows.Foundation.Collections.IMapView!(HSTRING,	Windows.ApplicationModel.Resources.Core.ResourceMap) out_firstPartition, Windows.Foundation.Collections.IMapView!(HSTRING,	Windows.ApplicationModel.Resources.Core.ResourceMap) out_secondPartition)
@@ -569,17 +569,17 @@ extern(Windows):
 interface ResourceQualifier : Windows.ApplicationModel.Resources.Core.IResourceQualifier
 {
 extern(Windows):
-	final HSTRING QualifierName()
+	final wstring QualifierName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceQualifier)this.asInterface(uuid("785da5b2-4afd-4376-a888-c5f9a6b7a05c"))).get_QualifierName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING QualifierValue()
+	final wstring QualifierValue()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceQualifier)this.asInterface(uuid("785da5b2-4afd-4376-a888-c5f9a6b7a05c"))).get_QualifierValue(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsDefault()
 	{
@@ -604,10 +604,10 @@ extern(Windows):
 interface ResourceQualifierMapView : Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))
 {
 extern(Windows):
-	final  HSTRING Lookup(HSTRING key)
+	final  HSTRING Lookup(wstring key)
 	{
 		 HSTRING _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING))this).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING))this).abi_Lookup(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final uint Size()
@@ -616,10 +616,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING))this).get_Size(&_ret));
 		return _ret;
 	}
-	final bool HasKey(HSTRING key)
+	final bool HasKey(wstring key)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING))this).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING))this).abi_HasKey(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final void Split(Windows.Foundation.Collections.IMapView!(HSTRING,	HSTRING) out_firstPartition, Windows.Foundation.Collections.IMapView!(HSTRING,	HSTRING) out_secondPartition)
@@ -639,10 +639,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.Collections.IObservableMap!(HSTRING, HSTRING))this).remove_MapChanged(token));
 	}
-	final  HSTRING Lookup(HSTRING key)
+	final  HSTRING Lookup(wstring key)
 	{
 		 HSTRING _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).abi_Lookup(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final uint Size()
@@ -651,10 +651,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).get_Size(&_ret));
 		return _ret;
 	}
-	final bool HasKey(HSTRING key)
+	final bool HasKey(wstring key)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).abi_HasKey(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING,	 HSTRING) GetView()
@@ -663,15 +663,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).abi_GetView(&_ret));
 		return _ret;
 	}
-	final bool Insert(HSTRING key,	HSTRING value)
+	final bool Insert(wstring key,	HSTRING value)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).abi_Insert(key, value, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).abi_Insert(hstring(key).handle, value, &_ret));
 		return _ret;
 	}
-	final void Remove(HSTRING key)
+	final void Remove(wstring key)
 	{
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).abi_Remove(key));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).abi_Remove(hstring(key).handle));
 	}
 	final void Clear()
 	{

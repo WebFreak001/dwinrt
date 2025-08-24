@@ -143,28 +143,28 @@ interface AnalyticsInfo
 		Debug.OK(staticInstance.get_VersionInfo(&_ret));
 		return _ret;
 	}
-	static HSTRING DeviceForm()
+	static wstring DeviceForm()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DeviceForm(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface AnalyticsVersionInfo : Windows.System.Profile.IAnalyticsVersionInfo
 {
 extern(Windows):
-	final HSTRING DeviceFamily()
+	final wstring DeviceFamily()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.Profile.IAnalyticsVersionInfo)this.asInterface(uuid("926130b8-9955-4c74-bdc1-7cd0decf9b03"))).get_DeviceFamily(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DeviceFamilyVersion()
+	final wstring DeviceFamilyVersion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.Profile.IAnalyticsVersionInfo)this.asInterface(uuid("926130b8-9955-4c74-bdc1-7cd0decf9b03"))).get_DeviceFamilyVersion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -231,137 +231,137 @@ interface KnownRetailInfoProperties
 		if (_staticInstance is null) _staticInstance = factory!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics);
 		return _staticInstance;
 	}
-	static HSTRING RetailAccessCode()
+	static wstring RetailAccessCode()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RetailAccessCode(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ManufacturerName()
+	static wstring ManufacturerName()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ManufacturerName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ModelName()
+	static wstring ModelName()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ModelName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING DisplayModelName()
+	static wstring DisplayModelName()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DisplayModelName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Price()
+	static wstring Price()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Price(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING IsFeatured()
+	static wstring IsFeatured()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_IsFeatured(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING FormFactor()
+	static wstring FormFactor()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_FormFactor(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ScreenSize()
+	static wstring ScreenSize()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ScreenSize(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Weight()
+	static wstring Weight()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Weight(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING DisplayDescription()
+	static wstring DisplayDescription()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DisplayDescription(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BatteryLifeDescription()
+	static wstring BatteryLifeDescription()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BatteryLifeDescription(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ProcessorDescription()
+	static wstring ProcessorDescription()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ProcessorDescription(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Memory()
+	static wstring Memory()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Memory(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING StorageDescription()
+	static wstring StorageDescription()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_StorageDescription(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GraphicsDescription()
+	static wstring GraphicsDescription()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_GraphicsDescription(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING FrontCameraDescription()
+	static wstring FrontCameraDescription()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_FrontCameraDescription(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RearCameraDescription()
+	static wstring RearCameraDescription()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RearCameraDescription(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HasNfc()
+	static wstring HasNfc()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HasNfc(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HasSdSlot()
+	static wstring HasSdSlot()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HasSdSlot(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HasOpticalDrive()
+	static wstring HasOpticalDrive()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HasOpticalDrive(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING IsOfficeInstalled()
+	static wstring IsOfficeInstalled()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_IsOfficeInstalled(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING WindowsEdition()
+	static wstring WindowsEdition()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_WindowsEdition(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

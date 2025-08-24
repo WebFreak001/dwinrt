@@ -126,25 +126,25 @@ extern(Windows):
 interface DeviceAccountConfiguration : Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration, Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2
 {
 extern(Windows):
-	final HSTRING AccountName()
+	final wstring AccountName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).get_AccountName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AccountName(HSTRING value)
+	final void AccountName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_AccountName(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_AccountName(hstring(value).handle));
 	}
-	final HSTRING DeviceAccountTypeId()
+	final wstring DeviceAccountTypeId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).get_DeviceAccountTypeId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DeviceAccountTypeId(HSTRING value)
+	final void DeviceAccountTypeId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_DeviceAccountTypeId(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_DeviceAccountTypeId(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountServerType ServerType()
 	{
@@ -156,25 +156,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_ServerType(value));
 	}
-	final HSTRING EmailAddress()
+	final wstring EmailAddress()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).get_EmailAddress(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void EmailAddress(HSTRING value)
+	final void EmailAddress(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_EmailAddress(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_EmailAddress(hstring(value).handle));
 	}
-	final HSTRING Domain()
+	final wstring Domain()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).get_Domain(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Domain(HSTRING value)
+	final void Domain(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_Domain(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_Domain(hstring(value).handle));
 	}
 	final bool EmailSyncEnabled()
 	{
@@ -206,15 +206,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_CalendarSyncEnabled(value));
 	}
-	final HSTRING IncomingServerAddress()
+	final wstring IncomingServerAddress()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).get_IncomingServerAddress(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void IncomingServerAddress(HSTRING value)
+	final void IncomingServerAddress(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_IncomingServerAddress(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_IncomingServerAddress(hstring(value).handle));
 	}
 	final INT32 IncomingServerPort()
 	{
@@ -236,25 +236,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_IncomingServerRequiresSsl(value));
 	}
-	final HSTRING IncomingServerUsername()
+	final wstring IncomingServerUsername()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).get_IncomingServerUsername(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void IncomingServerUsername(HSTRING value)
+	final void IncomingServerUsername(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_IncomingServerUsername(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_IncomingServerUsername(hstring(value).handle));
 	}
-	final HSTRING OutgoingServerAddress()
+	final wstring OutgoingServerAddress()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).get_OutgoingServerAddress(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void OutgoingServerAddress(HSTRING value)
+	final void OutgoingServerAddress(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_OutgoingServerAddress(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_OutgoingServerAddress(hstring(value).handle));
 	}
 	final INT32 OutgoingServerPort()
 	{
@@ -276,15 +276,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_OutgoingServerRequiresSsl(value));
 	}
-	final HSTRING OutgoingServerUsername()
+	final wstring OutgoingServerUsername()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).get_OutgoingServerUsername(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void OutgoingServerUsername(HSTRING value)
+	final void OutgoingServerUsername(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_OutgoingServerUsername(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration)this.asInterface(uuid("ad0123a3-fbdc-4d1b-be43-5a27ea4a1b63"))).set_OutgoingServerUsername(hstring(value).handle));
 	}
 	final Windows.Security.Credentials.PasswordCredential IncomingServerCredential()
 	{
@@ -306,15 +306,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).set_OutgoingServerCredential(value));
 	}
-	final HSTRING OAuthRefreshToken()
+	final wstring OAuthRefreshToken()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).get_OAuthRefreshToken(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void OAuthRefreshToken(HSTRING value)
+	final void OAuthRefreshToken(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).set_OAuthRefreshToken(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).set_OAuthRefreshToken(hstring(value).handle));
 	}
 	final bool IsExternallyManaged()
 	{
@@ -352,15 +352,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).get_IsSsoAuthenticationSupported(&_ret));
 		return _ret;
 	}
-	final HSTRING SsoAccountId()
+	final wstring SsoAccountId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).get_SsoAccountId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SsoAccountId(HSTRING value)
+	final void SsoAccountId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).set_SsoAccountId(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).set_SsoAccountId(hstring(value).handle));
 	}
 	final bool AlwaysDownloadFullMessage()
 	{
@@ -418,15 +418,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).set_AutoSelectAuthenticationCertificate(value));
 	}
-	final HSTRING AuthenticationCertificateId()
+	final wstring AuthenticationCertificateId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).get_AuthenticationCertificateId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AuthenticationCertificateId(HSTRING value)
+	final void AuthenticationCertificateId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).set_AuthenticationCertificateId(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).set_AuthenticationCertificateId(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountSyncScheduleKind CardDavSyncScheduleKind()
 	{
@@ -508,15 +508,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).set_WasIncomingServerCertificateHashConfirmed(value));
 	}
-	final HSTRING IncomingServerCertificateHash()
+	final wstring IncomingServerCertificateHash()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).get_IncomingServerCertificateHash(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void IncomingServerCertificateHash(HSTRING value)
+	final void IncomingServerCertificateHash(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).set_IncomingServerCertificateHash(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).set_IncomingServerCertificateHash(hstring(value).handle));
 	}
 	final bool IsOutgoingServerAuthenticationRequired()
 	{
@@ -548,15 +548,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).set_WasOutgoingServerCertificateHashConfirmed(value));
 	}
-	final HSTRING OutgoingServerCertificateHash()
+	final wstring OutgoingServerCertificateHash()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).get_OutgoingServerCertificateHash(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void OutgoingServerCertificateHash(HSTRING value)
+	final void OutgoingServerCertificateHash(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).set_OutgoingServerCertificateHash(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2)this.asInterface(uuid("f2b2e5a6-728d-4a4a-8945-2bf8580136de"))).set_OutgoingServerCertificateHash(hstring(value).handle));
 	}
 	final bool IsSyncScheduleManagedBySystem()
 	{

@@ -103,10 +103,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_LoadFromFileAsync(file, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) LoadFromFileWithPasswordAsync(Windows.Storage.IStorageFile file, HSTRING password)
+	static Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) LoadFromFileWithPasswordAsync(Windows.Storage.IStorageFile file, wstring password)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) _ret;
-		Debug.OK(staticInstance.abi_LoadFromFileWithPasswordAsync(file, password, &_ret));
+		Debug.OK(staticInstance.abi_LoadFromFileWithPasswordAsync(file, hstring(password).handle, &_ret));
 		return _ret;
 	}
 	alias LoadFromFileAsync = LoadFromFileWithPasswordAsync;
@@ -116,10 +116,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_LoadFromStreamAsync(inputStream, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) LoadFromStreamWithPasswordAsync(Windows.Storage.Streams.IRandomAccessStream inputStream, HSTRING password)
+	static Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) LoadFromStreamWithPasswordAsync(Windows.Storage.Streams.IRandomAccessStream inputStream, wstring password)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) _ret;
-		Debug.OK(staticInstance.abi_LoadFromStreamWithPasswordAsync(inputStream, password, &_ret));
+		Debug.OK(staticInstance.abi_LoadFromStreamWithPasswordAsync(inputStream, hstring(password).handle, &_ret));
 		return _ret;
 	}
 	alias LoadFromStreamAsync = LoadFromStreamWithPasswordAsync;

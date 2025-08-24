@@ -413,11 +413,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.ViewManagement.IAccessibilitySettings)this.asInterface(uuid("fe0e8147-c4c0-4562-b962-1327b52ad5b9"))).get_HighContrast(&_ret));
 		return _ret;
 	}
-	final HSTRING HighContrastScheme()
+	final wstring HighContrastScheme()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.ViewManagement.IAccessibilitySettings)this.asInterface(uuid("fe0e8147-c4c0-4562-b962-1327b52ad5b9"))).get_HighContrastScheme(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final EventRegistrationToken OnHighContrastChanged(void delegate(Windows.UI.ViewManagement.AccessibilitySettings, IInspectable) fn)
 	{
@@ -505,15 +505,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).set_IsScreenCaptureEnabled(value));
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).set_Title(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).set_Title(hstring(value).handle));
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 Id()
 	{
@@ -908,11 +908,11 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.ViewManagement.IApplicationViewTransferContextStatics);
 		return _staticInstance;
 	}
-	static HSTRING DataPackageFormatId()
+	static wstring DataPackageFormatId()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DataPackageFormatId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static ApplicationViewTransferContext New()
 	{

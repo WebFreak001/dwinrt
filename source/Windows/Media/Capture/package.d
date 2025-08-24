@@ -1366,17 +1366,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).get_StreamInfo(&_ret));
 		return _ret;
 	}
-	final HSTRING AppId()
+	final wstring AppId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).get_AppId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING BroadcastTitle()
+	final wstring BroadcastTitle()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).get_BroadcastTitle(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void ViewerCount(UINT32 value)
 	{
@@ -1402,11 +1402,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).remove_HeartbeatRequested(token));
 	}
-	final HSTRING TitleId()
+	final wstring TitleId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).get_TitleId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1445,15 +1445,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo)this.asInterface(uuid("5e735275-88c8-4eca-89ba-4825985db880"))).get_AuthenticationResult(&_ret));
 		return _ret;
 	}
-	final void UserName(HSTRING value)
+	final void UserName(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo)this.asInterface(uuid("5e735275-88c8-4eca-89ba-4825985db880"))).set_UserName(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo)this.asInterface(uuid("5e735275-88c8-4eca-89ba-4825985db880"))).set_UserName(hstring(value).handle));
 	}
-	final HSTRING UserName()
+	final wstring UserName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo)this.asInterface(uuid("5e735275-88c8-4eca-89ba-4825985db880"))).get_UserName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final EventRegistrationToken OnSignInStateChanged(void delegate(Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo, Windows.Media.Capture.AppBroadcastSignInStateChangedEventArgs) fn)
 	{
@@ -1496,15 +1496,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).get_BandwidthTestBitrate(&_ret));
 		return _ret;
 	}
-	final void AudioCodec(HSTRING value)
+	final void AudioCodec(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).set_AudioCodec(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).set_AudioCodec(hstring(value).handle));
 	}
-	final HSTRING AudioCodec()
+	final wstring AudioCodec()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).get_AudioCodec(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Media.Capture.AppBroadcastStreamReader BroadcastStreamReader()
 	{
@@ -1648,15 +1648,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_IsCameraCaptureEnabledByDefault(&_ret));
 		return _ret;
 	}
-	final void SelectedCameraId(HSTRING value)
+	final void SelectedCameraId(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).set_SelectedCameraId(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).set_SelectedCameraId(hstring(value).handle));
 	}
-	final HSTRING SelectedCameraId()
+	final wstring SelectedCameraId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_SelectedCameraId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void CameraOverlayLocation(Windows.Media.Capture.AppBroadcastCameraOverlayLocation value)
 	{
@@ -1755,11 +1755,11 @@ extern(Windows):
 interface AppBroadcastPlugIn : Windows.Media.Capture.IAppBroadcastPlugIn
 {
 extern(Windows):
-	final HSTRING AppId()
+	final wstring AppId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPlugIn)this.asInterface(uuid("520c1e66-6513-4574-ac54-23b79729615b"))).get_AppId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Media.Capture.AppBroadcastProviderSettings ProviderSettings()
 	{
@@ -1773,11 +1773,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPlugIn)this.asInterface(uuid("520c1e66-6513-4574-ac54-23b79729615b"))).get_Logo(&_ret));
 		return _ret;
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPlugIn)this.asInterface(uuid("520c1e66-6513-4574-ac54-23b79729615b"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1992,15 +1992,15 @@ extern(Windows):
 interface AppBroadcastProviderSettings : Windows.Media.Capture.IAppBroadcastProviderSettings
 {
 extern(Windows):
-	final void DefaultBroadcastTitle(HSTRING value)
+	final void DefaultBroadcastTitle(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).set_DefaultBroadcastTitle(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).set_DefaultBroadcastTitle(hstring(value).handle));
 	}
-	final HSTRING DefaultBroadcastTitle()
+	final wstring DefaultBroadcastTitle()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).get_DefaultBroadcastTitle(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void AudioEncodingBitrate(UINT32 value)
 	{
@@ -2077,31 +2077,31 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).set_CaptureTargetType(value));
 	}
-	final HSTRING BroadcastTitle()
+	final wstring BroadcastTitle()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).get_BroadcastTitle(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void BroadcastTitle(HSTRING value)
+	final void BroadcastTitle(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).set_BroadcastTitle(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).set_BroadcastTitle(hstring(value).handle));
 	}
-	final HSTRING BroadcastLanguage()
+	final wstring BroadcastLanguage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).get_BroadcastLanguage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void BroadcastLanguage(HSTRING value)
+	final void BroadcastLanguage(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).set_BroadcastLanguage(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).set_BroadcastLanguage(hstring(value).handle));
 	}
-	final HSTRING UserName()
+	final wstring UserName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).get_UserName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool CanCapture()
 	{
@@ -3446,11 +3446,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.ICapturedFrame)this.asInterface(uuid("1dd2de1f-571b-44d8-8e80-a08a1578766e"))).get_Height(&_ret));
 		return _ret;
 	}
-	final HSTRING ContentType()
+	final wstring ContentType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Streams.IContentTypeProvider)this.asInterface(uuid("97d098a5-3b99-4de9-88a5-e11d2f50c795"))).get_ContentType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final ulong Size()
 	{
@@ -3661,11 +3661,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IGameBarServices)this.asInterface(uuid("2dbead57-50a6-499e-8c6c-d330a7311796"))).get_TargetInfo(&_ret));
 		return _ret;
 	}
-	final HSTRING SessionId()
+	final wstring SessionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IGameBarServices)this.asInterface(uuid("2dbead57-50a6-499e-8c6c-d330a7311796"))).get_SessionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Media.Capture.AppBroadcastServices AppBroadcastServices()
 	{
@@ -3750,23 +3750,23 @@ extern(Windows):
 interface GameBarServicesTargetInfo : Windows.Media.Capture.IGameBarServicesTargetInfo
 {
 extern(Windows):
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IGameBarServicesTargetInfo)this.asInterface(uuid("b4202f92-1611-4e05-b6ef-dfd737ae33b0"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING AppId()
+	final wstring AppId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IGameBarServicesTargetInfo)this.asInterface(uuid("b4202f92-1611-4e05-b6ef-dfd737ae33b0"))).get_AppId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING TitleId()
+	final wstring TitleId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IGameBarServicesTargetInfo)this.asInterface(uuid("b4202f92-1611-4e05-b6ef-dfd737ae33b0"))).get_TitleId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Media.Capture.GameBarServicesDisplayMode DisplayMode()
 	{
@@ -3907,10 +3907,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_StartRecordToCustomSinkAsync(encodingProfile, customMediaSink, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction StartRecordToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
+	final Windows.Foundation.IAsyncAction StartRecordToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, wstring customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_StartRecordToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_StartRecordToCustomSinkIdAsync(encodingProfile, hstring(customSinkActivationId).handle, customSinkSettings, &_ret));
 		return _ret;
 	}
 	alias StartRecordToCustomSinkAsync = StartRecordToCustomSinkIdAsync;
@@ -3933,10 +3933,10 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("AddEffectAsync might not be available in future versions of Windows. Starting with Windows Threshold, use AddAudioEffectAsync and AddVideoEffectAsync instead")
-	final Windows.Foundation.IAsyncAction AddEffectAsync(Windows.Media.Capture.MediaStreamType mediaStreamType, HSTRING effectActivationID, Windows.Foundation.Collections.IPropertySet effectSettings)
+	final Windows.Foundation.IAsyncAction AddEffectAsync(Windows.Media.Capture.MediaStreamType mediaStreamType, wstring effectActivationID, Windows.Foundation.Collections.IPropertySet effectSettings)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_AddEffectAsync(mediaStreamType, effectActivationID, effectSettings, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_AddEffectAsync(mediaStreamType, hstring(effectActivationID).handle, effectSettings, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ClearEffectsAsync(Windows.Media.Capture.MediaStreamType mediaStreamType)
@@ -4035,10 +4035,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoPreview)this.asInterface(uuid("27727073-549e-447f-a20a-4f03c479d8c0"))).abi_StartPreviewToCustomSinkAsync(encodingProfile, customMediaSink, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction StartPreviewToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
+	final Windows.Foundation.IAsyncAction StartPreviewToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, wstring customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoPreview)this.asInterface(uuid("27727073-549e-447f-a20a-4f03c479d8c0"))).abi_StartPreviewToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoPreview)this.asInterface(uuid("27727073-549e-447f-a20a-4f03c479d8c0"))).abi_StartPreviewToCustomSinkIdAsync(encodingProfile, hstring(customSinkActivationId).handle, customSinkSettings, &_ret));
 		return _ret;
 	}
 	alias StartPreviewToCustomSinkAsync = StartPreviewToCustomSinkIdAsync;
@@ -4066,10 +4066,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCapture2)this.asInterface(uuid("9cc68260-7da1-4043-b652-21b8878daff9"))).abi_PrepareLowLagRecordToCustomSinkAsync(encodingProfile, customMediaSink, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) PrepareLowLagRecordToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) PrepareLowLagRecordToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, wstring customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) _ret;
-		Debug.OK((cast(Windows.Media.Capture.IMediaCapture2)this.asInterface(uuid("9cc68260-7da1-4043-b652-21b8878daff9"))).abi_PrepareLowLagRecordToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture2)this.asInterface(uuid("9cc68260-7da1-4043-b652-21b8878daff9"))).abi_PrepareLowLagRecordToCustomSinkIdAsync(encodingProfile, hstring(customSinkActivationId).handle, customSinkSettings, &_ret));
 		return _ret;
 	}
 	alias PrepareLowLagRecordToCustomSinkAsync = PrepareLowLagRecordToCustomSinkIdAsync;
@@ -4226,17 +4226,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_CreateFrameReaderAsync(inputSource, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) CreateFrameReaderWithSubtypeAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) CreateFrameReaderWithSubtypeAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, wstring outputSubtype)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) _ret;
-		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_CreateFrameReaderWithSubtypeAsync(inputSource, outputSubtype, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_CreateFrameReaderWithSubtypeAsync(inputSource, hstring(outputSubtype).handle, &_ret));
 		return _ret;
 	}
 	alias CreateFrameReaderAsync = CreateFrameReaderWithSubtypeAsync;
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) CreateFrameReaderWithSubtypeAndSizeAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) CreateFrameReaderWithSubtypeAndSizeAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, wstring outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) _ret;
-		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_CreateFrameReaderWithSubtypeAndSizeAsync(inputSource, outputSubtype, outputSize, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_CreateFrameReaderWithSubtypeAndSizeAsync(inputSource, hstring(outputSubtype).handle, outputSize, &_ret));
 		return _ret;
 	}
 	alias CreateFrameReaderAsync = CreateFrameReaderWithSubtypeAndSizeAsync;
@@ -4263,28 +4263,28 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Capture.IMediaCaptureStatics);
 		return _staticInstance;
 	}
-	static bool IsVideoProfileSupported(HSTRING videoDeviceId)
+	static bool IsVideoProfileSupported(wstring videoDeviceId)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsVideoProfileSupported(videoDeviceId, &_ret));
+		Debug.OK(staticInstance.abi_IsVideoProfileSupported(hstring(videoDeviceId).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) FindAllVideoProfiles(HSTRING videoDeviceId)
+	static Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) FindAllVideoProfiles(wstring videoDeviceId)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) _ret;
-		Debug.OK(staticInstance.abi_FindAllVideoProfiles(videoDeviceId, &_ret));
+		Debug.OK(staticInstance.abi_FindAllVideoProfiles(hstring(videoDeviceId).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) FindConcurrentProfiles(HSTRING videoDeviceId)
+	static Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) FindConcurrentProfiles(wstring videoDeviceId)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) _ret;
-		Debug.OK(staticInstance.abi_FindConcurrentProfiles(videoDeviceId, &_ret));
+		Debug.OK(staticInstance.abi_FindConcurrentProfiles(hstring(videoDeviceId).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) FindKnownVideoProfiles(HSTRING videoDeviceId, Windows.Media.Capture.KnownVideoProfile name)
+	static Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) FindKnownVideoProfiles(wstring videoDeviceId, Windows.Media.Capture.KnownVideoProfile name)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) _ret;
-		Debug.OK(staticInstance.abi_FindKnownVideoProfiles(videoDeviceId, name, &_ret));
+		Debug.OK(staticInstance.abi_FindKnownVideoProfiles(hstring(videoDeviceId).handle, name, &_ret));
 		return _ret;
 	}
 	static MediaCapture New()
@@ -4298,11 +4298,11 @@ extern(Windows):
 interface MediaCaptureDeviceExclusiveControlStatusChangedEventArgs : Windows.Media.Capture.IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs)this.asInterface(uuid("9d2f920d-a588-43c6-89d6-5ad322af006a"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatus Status()
 	{
@@ -4315,11 +4315,11 @@ extern(Windows):
 interface MediaCaptureFailedEventArgs : Windows.Media.Capture.IMediaCaptureFailedEventArgs
 {
 extern(Windows):
-	final HSTRING Message()
+	final wstring Message()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureFailedEventArgs)this.asInterface(uuid("80fde3f4-54c4-42c0-8d19-cea1a87ca18b"))).get_Message(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final UINT32 Code()
 	{
@@ -4343,25 +4343,25 @@ extern(Windows):
 interface MediaCaptureInitializationSettings : Windows.Media.Capture.IMediaCaptureInitializationSettings, Windows.Media.Capture.IMediaCaptureInitializationSettings2, Windows.Media.Capture.IMediaCaptureInitializationSettings3, Windows.Media.Capture.IMediaCaptureInitializationSettings4, Windows.Media.Capture.IMediaCaptureInitializationSettings5, Windows.Media.Capture.IMediaCaptureInitializationSettings6
 {
 extern(Windows):
-	final void AudioDeviceId(HSTRING value)
+	final void AudioDeviceId(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings)this.asInterface(uuid("9782ba70-ea65-4900-9356-8ca887726884"))).set_AudioDeviceId(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings)this.asInterface(uuid("9782ba70-ea65-4900-9356-8ca887726884"))).set_AudioDeviceId(hstring(value).handle));
 	}
-	final HSTRING AudioDeviceId()
+	final wstring AudioDeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings)this.asInterface(uuid("9782ba70-ea65-4900-9356-8ca887726884"))).get_AudioDeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void VideoDeviceId(HSTRING value)
+	final void VideoDeviceId(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings)this.asInterface(uuid("9782ba70-ea65-4900-9356-8ca887726884"))).set_VideoDeviceId(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings)this.asInterface(uuid("9782ba70-ea65-4900-9356-8ca887726884"))).set_VideoDeviceId(hstring(value).handle));
 	}
-	final HSTRING VideoDeviceId()
+	final wstring VideoDeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings)this.asInterface(uuid("9782ba70-ea65-4900-9356-8ca887726884"))).get_VideoDeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void StreamingCaptureMode(Windows.Media.Capture.StreamingCaptureMode value)
 	{
@@ -4535,17 +4535,17 @@ extern(Windows):
 interface MediaCaptureSettings : Windows.Media.Capture.IMediaCaptureSettings, Windows.Media.Capture.IMediaCaptureSettings2
 {
 extern(Windows):
-	final HSTRING AudioDeviceId()
+	final wstring AudioDeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureSettings)this.asInterface(uuid("1d83aafe-6d45-4477-8dc4-ac5bc01c4091"))).get_AudioDeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING VideoDeviceId()
+	final wstring VideoDeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureSettings)this.asInterface(uuid("1d83aafe-6d45-4477-8dc4-ac5bc01c4091"))).get_VideoDeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Media.Capture.StreamingCaptureMode StreamingCaptureMode()
 	{
@@ -4639,17 +4639,17 @@ extern(Windows):
 interface MediaCaptureVideoProfile : Windows.Media.Capture.IMediaCaptureVideoProfile
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoProfile)this.asInterface(uuid("21a073bf-a3ee-4ecf-9ef6-50b0bc4e1305"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING VideoDeviceId()
+	final wstring VideoDeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoProfile)this.asInterface(uuid("21a073bf-a3ee-4ecf-9ef6-50b0bc4e1305"))).get_VideoDeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription) SupportedPreviewMediaDescription()
 	{

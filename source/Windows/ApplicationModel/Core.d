@@ -218,11 +218,11 @@ interface CoreApplication
 		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Core.ICoreApplication);
 		return _staticInstance;
 	}
-	static HSTRING Id()
+	static wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static EventRegistrationToken OnSuspending(void delegate(IInspectable, Windows.ApplicationModel.SuspendingEventArgs) fn)
 	{

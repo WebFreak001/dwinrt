@@ -79,11 +79,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdRegistrationResult)this.asInterface(uuid("3d786ad2-e606-5350-73ea-7e97f066162f"))).get_HasInstanceNameChanged(&_ret));
 		return _ret;
 	}
-	final HSTRING ToString()
+	final wstring ToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static DnssdRegistrationResult New()
 	{
@@ -96,15 +96,15 @@ extern(Windows):
 interface DnssdServiceInstance : Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance, Windows.Foundation.IStringable
 {
 extern(Windows):
-	final HSTRING DnssdServiceInstanceName()
+	final wstring DnssdServiceInstanceName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).get_DnssdServiceInstanceName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DnssdServiceInstanceName(HSTRING value)
+	final void DnssdServiceInstanceName(wstring value)
 	{
-		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).set_DnssdServiceInstanceName(value));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).set_DnssdServiceInstanceName(hstring(value).handle));
 	}
 	final Windows.Networking.HostName HostName()
 	{
@@ -180,17 +180,17 @@ extern(Windows):
 		return _ret;
 	}
 	alias RegisterDatagramSocketAsync = RegisterDatagramSocketAsync2;
-	final HSTRING ToString()
+	final wstring ToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance New(HSTRING dnssdServiceInstanceName, Windows.Networking.HostName hostName, UINT16 port)
+	static Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance New(wstring dnssdServiceInstanceName, Windows.Networking.HostName hostName, UINT16 port)
 	{
 		auto factory = factory!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstanceFactory);
 		Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance _ret;
-		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstanceFactory)factory.asInterface(uuid("6cb061a1-c478-4331-9684-4af2186c0a2b"))).abi_Create(dnssdServiceInstanceName, hostName, port, &_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstanceFactory)factory.asInterface(uuid("6cb061a1-c478-4331-9684-4af2186c0a2b"))).abi_Create(hstring(dnssdServiceInstanceName).handle, hostName, port, &_ret));
 		return _ret;
 	}
 }

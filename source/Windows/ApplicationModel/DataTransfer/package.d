@@ -495,26 +495,26 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).remove_Destroyed(eventCookie));
 	}
-	final void SetData(HSTRING formatId, IInspectable value)
+	final void SetData(wstring formatId, IInspectable value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetData(formatId, value));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetData(hstring(formatId).handle, value));
 	}
-	final void SetDataProvider(HSTRING formatId, Windows.ApplicationModel.DataTransfer.DataProviderHandler delayRenderer)
+	final void SetDataProvider(wstring formatId, Windows.ApplicationModel.DataTransfer.DataProviderHandler delayRenderer)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetDataProvider(formatId, delayRenderer));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetDataProvider(hstring(formatId).handle, delayRenderer));
 	}
-	final void SetText(HSTRING value)
+	final void SetText(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetText(value));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetText(hstring(value).handle));
 	}
 	deprecated("SetUri may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use SetWebLink or SetApplicationLink.")
 	final void SetUri(Windows.Foundation.Uri value)
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetUri(value));
 	}
-	final void SetHtmlFormat(HSTRING value)
+	final void SetHtmlFormat(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetHtmlFormat(value));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetHtmlFormat(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, Windows.Storage.Streams.RandomAccessStreamReference) ResourceMap()
 	{
@@ -522,9 +522,9 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).get_ResourceMap(&_ret));
 		return _ret;
 	}
-	final void SetRtf(HSTRING value)
+	final void SetRtf(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetRtf(value));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetRtf(hstring(value).handle));
 	}
 	final void SetBitmap(Windows.Storage.Streams.RandomAccessStreamReference value)
 	{
@@ -568,25 +568,25 @@ extern(Windows):
 interface DataPackagePropertySet : Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet, Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)), Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2, Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet3
 {
 extern(Windows):
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet)this.asInterface(uuid("cd1c93eb-4c4c-443a-a8d3-f5c241e91689"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet)this.asInterface(uuid("cd1c93eb-4c4c-443a-a8d3-f5c241e91689"))).set_Title(value));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet)this.asInterface(uuid("cd1c93eb-4c4c-443a-a8d3-f5c241e91689"))).set_Title(hstring(value).handle));
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet)this.asInterface(uuid("cd1c93eb-4c4c-443a-a8d3-f5c241e91689"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Description(HSTRING value)
+	final void Description(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet)this.asInterface(uuid("cd1c93eb-4c4c-443a-a8d3-f5c241e91689"))).set_Description(value));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet)this.asInterface(uuid("cd1c93eb-4c4c-443a-a8d3-f5c241e91689"))).set_Description(hstring(value).handle));
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamReference Thumbnail()
 	{
@@ -604,15 +604,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet)this.asInterface(uuid("cd1c93eb-4c4c-443a-a8d3-f5c241e91689"))).get_FileTypes(&_ret));
 		return _ret;
 	}
-	final HSTRING ApplicationName()
+	final wstring ApplicationName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet)this.asInterface(uuid("cd1c93eb-4c4c-443a-a8d3-f5c241e91689"))).get_ApplicationName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ApplicationName(HSTRING value)
+	final void ApplicationName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet)this.asInterface(uuid("cd1c93eb-4c4c-443a-a8d3-f5c241e91689"))).set_ApplicationName(value));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet)this.asInterface(uuid("cd1c93eb-4c4c-443a-a8d3-f5c241e91689"))).set_ApplicationName(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri ApplicationListingUri()
 	{
@@ -624,10 +624,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet)this.asInterface(uuid("cd1c93eb-4c4c-443a-a8d3-f5c241e91689"))).set_ApplicationListingUri(value));
 	}
-	final  IInspectable Lookup(HSTRING key)
+	final  IInspectable Lookup(wstring key)
 	{
 		 IInspectable _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Lookup(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final uint Size()
@@ -636,10 +636,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).get_Size(&_ret));
 		return _ret;
 	}
-	final bool HasKey(HSTRING key)
+	final bool HasKey(wstring key)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_HasKey(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
@@ -648,15 +648,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_GetView(&_ret));
 		return _ret;
 	}
-	final bool Insert(HSTRING key,	IInspectable value)
+	final bool Insert(wstring key,	IInspectable value)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Insert(key, value, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Insert(hstring(key).handle, value, &_ret));
 		return _ret;
 	}
-	final void Remove(HSTRING key)
+	final void Remove(wstring key)
 	{
-		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Remove(key));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Remove(hstring(key).handle));
 	}
 	final void Clear()
 	{
@@ -686,15 +686,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2)this.asInterface(uuid("eb505d4a-9800-46aa-b181-7b6f0f2b919a"))).set_ContentSourceApplicationLink(value));
 	}
-	final HSTRING PackageFamilyName()
+	final wstring PackageFamilyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2)this.asInterface(uuid("eb505d4a-9800-46aa-b181-7b6f0f2b919a"))).get_PackageFamilyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PackageFamilyName(HSTRING value)
+	final void PackageFamilyName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2)this.asInterface(uuid("eb505d4a-9800-46aa-b181-7b6f0f2b919a"))).set_PackageFamilyName(value));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2)this.asInterface(uuid("eb505d4a-9800-46aa-b181-7b6f0f2b919a"))).set_PackageFamilyName(hstring(value).handle));
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamReference Square30x30Logo()
 	{
@@ -716,32 +716,32 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2)this.asInterface(uuid("eb505d4a-9800-46aa-b181-7b6f0f2b919a"))).set_LogoBackgroundColor(value));
 	}
-	final HSTRING EnterpriseId()
+	final wstring EnterpriseId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet3)this.asInterface(uuid("9e87fd9b-5205-401b-874a-455653bd39e8"))).get_EnterpriseId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void EnterpriseId(HSTRING value)
+	final void EnterpriseId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet3)this.asInterface(uuid("9e87fd9b-5205-401b-874a-455653bd39e8"))).set_EnterpriseId(value));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet3)this.asInterface(uuid("9e87fd9b-5205-401b-874a-455653bd39e8"))).set_EnterpriseId(hstring(value).handle));
 	}
 }
 
 interface DataPackagePropertySetView : Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView, Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)), Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView2, Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView3
 {
 extern(Windows):
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView)this.asInterface(uuid("b94cec01-0c1a-4c57-be55-75d01289735d"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView)this.asInterface(uuid("b94cec01-0c1a-4c57-be55-75d01289735d"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Storage.Streams.RandomAccessStreamReference Thumbnail()
 	{
@@ -755,11 +755,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView)this.asInterface(uuid("b94cec01-0c1a-4c57-be55-75d01289735d"))).get_FileTypes(&_ret));
 		return _ret;
 	}
-	final HSTRING ApplicationName()
+	final wstring ApplicationName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView)this.asInterface(uuid("b94cec01-0c1a-4c57-be55-75d01289735d"))).get_ApplicationName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Uri ApplicationListingUri()
 	{
@@ -767,10 +767,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView)this.asInterface(uuid("b94cec01-0c1a-4c57-be55-75d01289735d"))).get_ApplicationListingUri(&_ret));
 		return _ret;
 	}
-	final  IInspectable Lookup(HSTRING key)
+	final  IInspectable Lookup(wstring key)
 	{
 		 IInspectable _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))this).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))this).abi_Lookup(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final uint Size()
@@ -779,10 +779,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))this).get_Size(&_ret));
 		return _ret;
 	}
-	final bool HasKey(HSTRING key)
+	final bool HasKey(wstring key)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))this).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))this).abi_HasKey(hstring(key).handle, &_ret));
 		return _ret;
 	}
 	final void Split(Windows.Foundation.Collections.IMapView!(HSTRING,	IInspectable) out_firstPartition, Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) out_secondPartition)
@@ -793,11 +793,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)))this).abi_First(out_first));
 	}
-	final HSTRING PackageFamilyName()
+	final wstring PackageFamilyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView2)this.asInterface(uuid("6054509b-8ebe-4feb-9c1e-75e69de54b84"))).get_PackageFamilyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Uri ContentSourceWebLink()
 	{
@@ -823,11 +823,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView2)this.asInterface(uuid("6054509b-8ebe-4feb-9c1e-75e69de54b84"))).get_LogoBackgroundColor(&_ret));
 		return _ret;
 	}
-	final HSTRING EnterpriseId()
+	final wstring EnterpriseId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackagePropertySetView3)this.asInterface(uuid("db764ce5-d174-495c-84fc-1a51f6ab45d7"))).get_EnterpriseId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -856,16 +856,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView)this.asInterface(uuid("7b840471-5900-4d85-a90b-10cb85fe3552"))).get_AvailableFormats(&_ret));
 		return _ret;
 	}
-	final bool Contains(HSTRING formatId)
+	final bool Contains(wstring formatId)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView)this.asInterface(uuid("7b840471-5900-4d85-a90b-10cb85fe3552"))).abi_Contains(formatId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView)this.asInterface(uuid("7b840471-5900-4d85-a90b-10cb85fe3552"))).abi_Contains(hstring(formatId).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(IInspectable) GetDataAsync(HSTRING formatId)
+	final Windows.Foundation.IAsyncOperation!(IInspectable) GetDataAsync(wstring formatId)
 	{
 		Windows.Foundation.IAsyncOperation!(IInspectable) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView)this.asInterface(uuid("7b840471-5900-4d85-a90b-10cb85fe3552"))).abi_GetDataAsync(formatId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView)this.asInterface(uuid("7b840471-5900-4d85-a90b-10cb85fe3552"))).abi_GetDataAsync(hstring(formatId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(HSTRING) GetTextAsync()
@@ -874,10 +874,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView)this.asInterface(uuid("7b840471-5900-4d85-a90b-10cb85fe3552"))).abi_GetTextAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(HSTRING) GetCustomTextAsync(HSTRING formatId)
+	final Windows.Foundation.IAsyncOperation!(HSTRING) GetCustomTextAsync(wstring formatId)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView)this.asInterface(uuid("7b840471-5900-4d85-a90b-10cb85fe3552"))).abi_GetCustomTextAsync(formatId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView)this.asInterface(uuid("7b840471-5900-4d85-a90b-10cb85fe3552"))).abi_GetCustomTextAsync(hstring(formatId).handle, &_ret));
 		return _ret;
 	}
 	alias GetTextAsync = GetCustomTextAsync;
@@ -936,10 +936,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView3)this.asInterface(uuid("d37771a8-ddad-4288-8428-d1cae394128b"))).abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult) RequestAccessWithEnterpriseIdAsync(HSTRING enterpriseId)
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult) RequestAccessWithEnterpriseIdAsync(wstring enterpriseId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView3)this.asInterface(uuid("d37771a8-ddad-4288-8428-d1cae394128b"))).abi_RequestAccessWithEnterpriseIdAsync(enterpriseId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView3)this.asInterface(uuid("d37771a8-ddad-4288-8428-d1cae394128b"))).abi_RequestAccessWithEnterpriseIdAsync(hstring(enterpriseId).handle, &_ret));
 		return _ret;
 	}
 	alias RequestAccessAsync = RequestAccessWithEnterpriseIdAsync;
@@ -949,9 +949,9 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView3)this.asInterface(uuid("d37771a8-ddad-4288-8428-d1cae394128b"))).abi_UnlockAndAssumeEnterpriseIdentity(&_ret));
 		return _ret;
 	}
-	final void SetAcceptedFormatId(HSTRING formatId)
+	final void SetAcceptedFormatId(wstring formatId)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView4)this.asInterface(uuid("dfe96f1f-e042-4433-a09f-26d6ffda8b85"))).abi_SetAcceptedFormatId(formatId));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView4)this.asInterface(uuid("dfe96f1f-e042-4433-a09f-26d6ffda8b85"))).abi_SetAcceptedFormatId(hstring(formatId).handle));
 	}
 }
 
@@ -967,11 +967,11 @@ extern(Windows):
 interface DataProviderRequest : Windows.ApplicationModel.DataTransfer.IDataProviderRequest
 {
 extern(Windows):
-	final HSTRING FormatId()
+	final wstring FormatId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataProviderRequest)this.asInterface(uuid("ebbc7157-d3c8-47da-acde-f82388d5f716"))).get_FormatId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.DateTime Deadline()
 	{
@@ -1010,9 +1010,9 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataRequest)this.asInterface(uuid("4341ae3b-fc12-4e53-8c02-ac714c415a27"))).get_Deadline(&_ret));
 		return _ret;
 	}
-	final void FailWithDisplayText(HSTRING value)
+	final void FailWithDisplayText(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataRequest)this.asInterface(uuid("4341ae3b-fc12-4e53-8c02-ac714c415a27"))).abi_FailWithDisplayText(value));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataRequest)this.asInterface(uuid("4341ae3b-fc12-4e53-8c02-ac714c415a27"))).abi_FailWithDisplayText(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.DataTransfer.DataRequestDeferral GetDeferral()
 	{
@@ -1102,17 +1102,17 @@ interface HtmlFormatHelper
 		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.DataTransfer.IHtmlFormatHelperStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetStaticFragment(HSTRING htmlFormat)
+	static wstring GetStaticFragment(wstring htmlFormat)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetStaticFragment(htmlFormat, &_ret));
-		return _ret;
+		Debug.OK(staticInstance.abi_GetStaticFragment(hstring(htmlFormat).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
-	static HSTRING CreateHtmlFormat(HSTRING htmlFragment)
+	static wstring CreateHtmlFormat(wstring htmlFragment)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_CreateHtmlFormat(htmlFragment, &_ret));
-		return _ret;
+		Debug.OK(staticInstance.abi_CreateHtmlFormat(hstring(htmlFragment).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1125,11 +1125,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IOperationCompletedEventArgs)this.asInterface(uuid("e7af329d-051d-4fab-b1a9-47fd77f70a41"))).get_Operation(&_ret));
 		return _ret;
 	}
-	final HSTRING AcceptedFormatId()
+	final wstring AcceptedFormatId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IOperationCompletedEventArgs2)this.asInterface(uuid("858fa073-1e19-4105-b2f7-c8478808d562"))).get_AcceptedFormatId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1147,11 +1147,11 @@ extern(Windows):
 interface ShareProvider : Windows.ApplicationModel.DataTransfer.IShareProvider
 {
 extern(Windows):
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IShareProvider)this.asInterface(uuid("2fabe026-443e-4cda-af25-8d81070efd80"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Storage.Streams.RandomAccessStreamReference DisplayIcon()
 	{
@@ -1175,11 +1175,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IShareProvider)this.asInterface(uuid("2fabe026-443e-4cda-af25-8d81070efd80"))).set_Tag(value));
 	}
-	static Windows.ApplicationModel.DataTransfer.ShareProvider New(HSTRING title, Windows.Storage.Streams.RandomAccessStreamReference displayIcon, Windows.UI.Color backgroundColor, Windows.ApplicationModel.DataTransfer.ShareProviderHandler handler)
+	static Windows.ApplicationModel.DataTransfer.ShareProvider New(wstring title, Windows.Storage.Streams.RandomAccessStreamReference displayIcon, Windows.UI.Color backgroundColor, Windows.ApplicationModel.DataTransfer.ShareProviderHandler handler)
 	{
 		auto factory = factory!(Windows.ApplicationModel.DataTransfer.IShareProviderFactory);
 		Windows.ApplicationModel.DataTransfer.ShareProvider _ret;
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IShareProviderFactory)factory.asInterface(uuid("172a174c-e79e-4f6d-b07d-128f469e0296"))).abi_Create(title, displayIcon, backgroundColor, handler, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IShareProviderFactory)factory.asInterface(uuid("172a174c-e79e-4f6d-b07d-128f469e0296"))).abi_Create(hstring(title).handle, displayIcon, backgroundColor, handler, &_ret));
 		return _ret;
 	}
 }
@@ -1231,11 +1231,11 @@ extern(Windows):
 interface ShareTargetInfo : Windows.ApplicationModel.DataTransfer.IShareTargetInfo
 {
 extern(Windows):
-	final HSTRING AppUserModelId()
+	final wstring AppUserModelId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IShareTargetInfo)this.asInterface(uuid("385be607-c6e8-4114-b294-28f3bb6f9904"))).get_AppUserModelId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.DataTransfer.ShareProvider ShareProvider()
 	{
@@ -1253,21 +1253,21 @@ interface SharedStorageAccessManager
 		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.DataTransfer.ISharedStorageAccessManagerStatics);
 		return _staticInstance;
 	}
-	static HSTRING AddFile(Windows.Storage.IStorageFile file)
+	static wstring AddFile(Windows.Storage.IStorageFile file)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_AddFile(file, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) RedeemTokenForFileAsync(HSTRING token)
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) RedeemTokenForFileAsync(wstring token)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
-		Debug.OK(staticInstance.abi_RedeemTokenForFileAsync(token, &_ret));
+		Debug.OK(staticInstance.abi_RedeemTokenForFileAsync(hstring(token).handle, &_ret));
 		return _ret;
 	}
-	static void RemoveFile(HSTRING token)
+	static void RemoveFile(wstring token)
 	{
-		Debug.OK(staticInstance.abi_RemoveFile(token));
+		Debug.OK(staticInstance.abi_RemoveFile(hstring(token).handle));
 	}
 }
 
@@ -1279,53 +1279,53 @@ interface StandardDataFormats
 		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics);
 		return _staticInstance;
 	}
-	static HSTRING Text()
+	static wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("Uri may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use WebLink or ApplicationLink.")
-	static HSTRING Uri()
+	static wstring Uri()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Uri(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Html()
+	static wstring Html()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Html(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Rtf()
+	static wstring Rtf()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Rtf(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Bitmap()
+	static wstring Bitmap()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Bitmap(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING StorageItems()
+	static wstring StorageItems()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_StorageItems(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface TargetApplicationChosenEventArgs : Windows.ApplicationModel.DataTransfer.ITargetApplicationChosenEventArgs
 {
 extern(Windows):
-	final HSTRING ApplicationName()
+	final wstring ApplicationName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ITargetApplicationChosenEventArgs)this.asInterface(uuid("ca6fb8ac-2987-4ee3-9c54-d8afbcb86c1d"))).get_ApplicationName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

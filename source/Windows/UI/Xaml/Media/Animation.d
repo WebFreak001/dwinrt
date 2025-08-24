@@ -1946,16 +1946,16 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService)this.asInterface(uuid("1c6875c9-19bb-4d47-b9aa-66c802dcb9ff"))).set_DefaultEasingFunction(value));
 	}
-	final Windows.UI.Xaml.Media.Animation.ConnectedAnimation PrepareToAnimate(HSTRING key, Windows.UI.Xaml.UIElement source)
+	final Windows.UI.Xaml.Media.Animation.ConnectedAnimation PrepareToAnimate(wstring key, Windows.UI.Xaml.UIElement source)
 	{
 		Windows.UI.Xaml.Media.Animation.ConnectedAnimation _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService)this.asInterface(uuid("1c6875c9-19bb-4d47-b9aa-66c802dcb9ff"))).abi_PrepareToAnimate(key, source, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService)this.asInterface(uuid("1c6875c9-19bb-4d47-b9aa-66c802dcb9ff"))).abi_PrepareToAnimate(hstring(key).handle, source, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Xaml.Media.Animation.ConnectedAnimation GetAnimation(HSTRING key)
+	final Windows.UI.Xaml.Media.Animation.ConnectedAnimation GetAnimation(wstring key)
 	{
 		Windows.UI.Xaml.Media.Animation.ConnectedAnimation _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService)this.asInterface(uuid("1c6875c9-19bb-4d47-b9aa-66c802dcb9ff"))).abi_GetAnimation(key, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService)this.asInterface(uuid("1c6875c9-19bb-4d47-b9aa-66c802dcb9ff"))).abi_GetAnimation(hstring(key).handle, &_ret));
 		return _ret;
 	}
 
@@ -2444,15 +2444,15 @@ extern(Windows):
 interface DragItemThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimation
 {
 extern(Windows):
-	final HSTRING TargetName()
+	final wstring TargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimation)this.asInterface(uuid("0c7d5db5-7ed6-4949-b4e6-a78c9f4f978d"))).get_TargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TargetName(HSTRING value)
+	final void TargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimation)this.asInterface(uuid("0c7d5db5-7ed6-4949-b4e6-a78c9f4f978d"))).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimation)this.asInterface(uuid("0c7d5db5-7ed6-4949-b4e6-a78c9f4f978d"))).set_TargetName(hstring(value).handle));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimationStatics _staticInstance;
@@ -2478,15 +2478,15 @@ extern(Windows):
 interface DragOverThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation
 {
 extern(Windows):
-	final HSTRING TargetName()
+	final wstring TargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation)this.asInterface(uuid("72f762f7-7e51-4a6b-b937-dc4b4c1c5458"))).get_TargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TargetName(HSTRING value)
+	final void TargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation)this.asInterface(uuid("72f762f7-7e51-4a6b-b937-dc4b4c1c5458"))).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation)this.asInterface(uuid("72f762f7-7e51-4a6b-b937-dc4b4c1c5458"))).set_TargetName(hstring(value).handle));
 	}
 	final double ToOffset()
 	{
@@ -2554,15 +2554,15 @@ interface DrillInNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.Navi
 interface DrillInThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation
 {
 extern(Windows):
-	final HSTRING EntranceTargetName()
+	final wstring EntranceTargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation)this.asInterface(uuid("b090b824-f1d2-41b8-87ba-78034126594c"))).get_EntranceTargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void EntranceTargetName(HSTRING value)
+	final void EntranceTargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation)this.asInterface(uuid("b090b824-f1d2-41b8-87ba-78034126594c"))).set_EntranceTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation)this.asInterface(uuid("b090b824-f1d2-41b8-87ba-78034126594c"))).set_EntranceTargetName(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.DependencyObject EntranceTarget()
 	{
@@ -2574,15 +2574,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation)this.asInterface(uuid("b090b824-f1d2-41b8-87ba-78034126594c"))).set_EntranceTarget(value));
 	}
-	final HSTRING ExitTargetName()
+	final wstring ExitTargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation)this.asInterface(uuid("b090b824-f1d2-41b8-87ba-78034126594c"))).get_ExitTargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ExitTargetName(HSTRING value)
+	final void ExitTargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation)this.asInterface(uuid("b090b824-f1d2-41b8-87ba-78034126594c"))).set_ExitTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation)this.asInterface(uuid("b090b824-f1d2-41b8-87ba-78034126594c"))).set_ExitTargetName(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.DependencyObject ExitTarget()
 	{
@@ -2636,15 +2636,15 @@ extern(Windows):
 interface DrillOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation
 {
 extern(Windows):
-	final HSTRING EntranceTargetName()
+	final wstring EntranceTargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation)this.asInterface(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139"))).get_EntranceTargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void EntranceTargetName(HSTRING value)
+	final void EntranceTargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation)this.asInterface(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139"))).set_EntranceTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation)this.asInterface(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139"))).set_EntranceTargetName(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.DependencyObject EntranceTarget()
 	{
@@ -2656,15 +2656,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation)this.asInterface(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139"))).set_EntranceTarget(value));
 	}
-	final HSTRING ExitTargetName()
+	final wstring ExitTargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation)this.asInterface(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139"))).get_ExitTargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ExitTargetName(HSTRING value)
+	final void ExitTargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation)this.asInterface(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139"))).set_ExitTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation)this.asInterface(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139"))).set_ExitTargetName(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.DependencyObject ExitTarget()
 	{
@@ -2718,15 +2718,15 @@ extern(Windows):
 interface DropTargetItemThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimation
 {
 extern(Windows):
-	final HSTRING TargetName()
+	final wstring TargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimation)this.asInterface(uuid("1881c968-1824-462b-87e8-c357212b977b"))).get_TargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TargetName(HSTRING value)
+	final void TargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimation)this.asInterface(uuid("1881c968-1824-462b-87e8-c357212b977b"))).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimation)this.asInterface(uuid("1881c968-1824-462b-87e8-c357212b977b"))).set_TargetName(hstring(value).handle));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimationStatics _staticInstance;
@@ -3131,15 +3131,15 @@ extern(Windows):
 interface FadeInThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimation
 {
 extern(Windows):
-	final HSTRING TargetName()
+	final wstring TargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimation)this.asInterface(uuid("6d4bc8f5-a918-4477-8078-554c68812ab8"))).get_TargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TargetName(HSTRING value)
+	final void TargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimation)this.asInterface(uuid("6d4bc8f5-a918-4477-8078-554c68812ab8"))).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimation)this.asInterface(uuid("6d4bc8f5-a918-4477-8078-554c68812ab8"))).set_TargetName(hstring(value).handle));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimationStatics _staticInstance;
@@ -3165,15 +3165,15 @@ extern(Windows):
 interface FadeOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimation
 {
 extern(Windows):
-	final HSTRING TargetName()
+	final wstring TargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimation)this.asInterface(uuid("89276ba9-ffd4-45b6-9b9a-ced48951e712"))).get_TargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TargetName(HSTRING value)
+	final void TargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimation)this.asInterface(uuid("89276ba9-ffd4-45b6-9b9a-ced48951e712"))).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimation)this.asInterface(uuid("89276ba9-ffd4-45b6-9b9a-ced48951e712"))).set_TargetName(hstring(value).handle));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimationStatics _staticInstance;
@@ -3857,15 +3857,15 @@ extern(Windows):
 interface PointerDownThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimation
 {
 extern(Windows):
-	final HSTRING TargetName()
+	final wstring TargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimation)this.asInterface(uuid("b58e714e-c49d-4788-a233-0ae85d99dd5a"))).get_TargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TargetName(HSTRING value)
+	final void TargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimation)this.asInterface(uuid("b58e714e-c49d-4788-a233-0ae85d99dd5a"))).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimation)this.asInterface(uuid("b58e714e-c49d-4788-a233-0ae85d99dd5a"))).set_TargetName(hstring(value).handle));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimationStatics _staticInstance;
@@ -3891,15 +3891,15 @@ extern(Windows):
 interface PointerUpThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimation
 {
 extern(Windows):
-	final HSTRING TargetName()
+	final wstring TargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimation)this.asInterface(uuid("e9e9d07d-6340-4828-ad12-690694b9910b"))).get_TargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TargetName(HSTRING value)
+	final void TargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimation)this.asInterface(uuid("e9e9d07d-6340-4828-ad12-690694b9910b"))).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimation)this.asInterface(uuid("e9e9d07d-6340-4828-ad12-690694b9910b"))).set_TargetName(hstring(value).handle));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimationStatics _staticInstance;
@@ -3925,15 +3925,15 @@ extern(Windows):
 interface PopInThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation
 {
 extern(Windows):
-	final HSTRING TargetName()
+	final wstring TargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation)this.asInterface(uuid("196938c1-1c07-4c28-8847-f9f055b32855"))).get_TargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TargetName(HSTRING value)
+	final void TargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation)this.asInterface(uuid("196938c1-1c07-4c28-8847-f9f055b32855"))).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation)this.asInterface(uuid("196938c1-1c07-4c28-8847-f9f055b32855"))).set_TargetName(hstring(value).handle));
 	}
 	final double FromHorizontalOffset()
 	{
@@ -3991,15 +3991,15 @@ extern(Windows):
 interface PopOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimation
 {
 extern(Windows):
-	final HSTRING TargetName()
+	final wstring TargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimation)this.asInterface(uuid("4786ab49-0e48-4e81-a2e5-cc5aa19e48d3"))).get_TargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TargetName(HSTRING value)
+	final void TargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimation)this.asInterface(uuid("4786ab49-0e48-4e81-a2e5-cc5aa19e48d3"))).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimation)this.asInterface(uuid("4786ab49-0e48-4e81-a2e5-cc5aa19e48d3"))).set_TargetName(hstring(value).handle));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimationStatics _staticInstance;
@@ -4195,15 +4195,15 @@ interface RepeatBehaviorHelper : Windows.UI.Xaml.Media.Animation.IRepeatBehavior
 interface RepositionThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation
 {
 extern(Windows):
-	final HSTRING TargetName()
+	final wstring TargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation)this.asInterface(uuid("ecda24e8-8945-4949-a1bf-62109965a7e9"))).get_TargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TargetName(HSTRING value)
+	final void TargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation)this.asInterface(uuid("ecda24e8-8945-4949-a1bf-62109965a7e9"))).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation)this.asInterface(uuid("ecda24e8-8945-4949-a1bf-62109965a7e9"))).set_TargetName(hstring(value).handle));
 	}
 	final double FromHorizontalOffset()
 	{
@@ -4417,15 +4417,15 @@ extern(Windows):
 interface SplitCloseThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation
 {
 extern(Windows):
-	final HSTRING OpenedTargetName()
+	final wstring OpenedTargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).get_OpenedTargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void OpenedTargetName(HSTRING value)
+	final void OpenedTargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_OpenedTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_OpenedTargetName(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.DependencyObject OpenedTarget()
 	{
@@ -4437,15 +4437,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_OpenedTarget(value));
 	}
-	final HSTRING ClosedTargetName()
+	final wstring ClosedTargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).get_ClosedTargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ClosedTargetName(HSTRING value)
+	final void ClosedTargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_ClosedTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_ClosedTargetName(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.DependencyObject ClosedTarget()
 	{
@@ -4457,15 +4457,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_ClosedTarget(value));
 	}
-	final HSTRING ContentTargetName()
+	final wstring ContentTargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).get_ContentTargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ContentTargetName(HSTRING value)
+	final void ContentTargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_ContentTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_ContentTargetName(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.DependencyObject ContentTarget()
 	{
@@ -4611,15 +4611,15 @@ extern(Windows):
 interface SplitOpenThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation
 {
 extern(Windows):
-	final HSTRING OpenedTargetName()
+	final wstring OpenedTargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).get_OpenedTargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void OpenedTargetName(HSTRING value)
+	final void OpenedTargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_OpenedTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_OpenedTargetName(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.DependencyObject OpenedTarget()
 	{
@@ -4631,15 +4631,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_OpenedTarget(value));
 	}
-	final HSTRING ClosedTargetName()
+	final wstring ClosedTargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).get_ClosedTargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ClosedTargetName(HSTRING value)
+	final void ClosedTargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_ClosedTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_ClosedTargetName(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.DependencyObject ClosedTarget()
 	{
@@ -4651,15 +4651,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_ClosedTarget(value));
 	}
-	final HSTRING ContentTargetName()
+	final wstring ContentTargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).get_ContentTargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ContentTargetName(HSTRING value)
+	final void ContentTargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_ContentTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_ContentTargetName(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.DependencyObject ContentTarget()
 	{
@@ -4864,15 +4864,15 @@ extern(Windows):
 		Debug.OK(staticInstance.get_TargetPropertyProperty(&_ret));
 		return _ret;
 	}
-	static HSTRING GetTargetProperty(Windows.UI.Xaml.Media.Animation.Timeline element)
+	static wstring GetTargetProperty(Windows.UI.Xaml.Media.Animation.Timeline element)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetTargetProperty(element, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static void SetTargetProperty(Windows.UI.Xaml.Media.Animation.Timeline element, HSTRING path)
+	static void SetTargetProperty(Windows.UI.Xaml.Media.Animation.Timeline element, wstring path)
 	{
-		Debug.OK(staticInstance.abi_SetTargetProperty(element, path));
+		Debug.OK(staticInstance.abi_SetTargetProperty(element, hstring(path).handle));
 	}
 	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
 	{
@@ -4880,15 +4880,15 @@ extern(Windows):
 		Debug.OK(staticInstance.get_TargetNameProperty(&_ret));
 		return _ret;
 	}
-	static HSTRING GetTargetName(Windows.UI.Xaml.Media.Animation.Timeline element)
+	static wstring GetTargetName(Windows.UI.Xaml.Media.Animation.Timeline element)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetTargetName(element, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static void SetTargetName(Windows.UI.Xaml.Media.Animation.Timeline element, HSTRING name)
+	static void SetTargetName(Windows.UI.Xaml.Media.Animation.Timeline element, wstring name)
 	{
-		Debug.OK(staticInstance.abi_SetTargetName(element, name));
+		Debug.OK(staticInstance.abi_SetTargetName(element, hstring(name).handle));
 	}
 	static void SetTarget(Windows.UI.Xaml.Media.Animation.Timeline timeline, Windows.UI.Xaml.DependencyObject target)
 	{
@@ -4915,15 +4915,15 @@ interface SuppressNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.Nav
 interface SwipeBackThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation
 {
 extern(Windows):
-	final HSTRING TargetName()
+	final wstring TargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation)this.asInterface(uuid("a38a4214-0bca-4d2d-95f7-ceba57fbaf60"))).get_TargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TargetName(HSTRING value)
+	final void TargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation)this.asInterface(uuid("a38a4214-0bca-4d2d-95f7-ceba57fbaf60"))).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation)this.asInterface(uuid("a38a4214-0bca-4d2d-95f7-ceba57fbaf60"))).set_TargetName(hstring(value).handle));
 	}
 	final double FromHorizontalOffset()
 	{
@@ -4981,15 +4981,15 @@ extern(Windows):
 interface SwipeHintThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation
 {
 extern(Windows):
-	final HSTRING TargetName()
+	final wstring TargetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation)this.asInterface(uuid("cdd067c0-580e-4e40-be98-f202d3d84365"))).get_TargetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TargetName(HSTRING value)
+	final void TargetName(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation)this.asInterface(uuid("cdd067c0-580e-4e40-be98-f202d3d84365"))).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation)this.asInterface(uuid("cdd067c0-580e-4e40-be98-f202d3d84365"))).set_TargetName(hstring(value).handle));
 	}
 	final double ToHorizontalOffset()
 	{

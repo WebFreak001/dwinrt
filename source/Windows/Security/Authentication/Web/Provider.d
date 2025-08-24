@@ -253,11 +253,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountClientView)this.asInterface(uuid("e7bd66ba-0bc7-4c66-bfd4-65d3082cbca8"))).get_Type(&_ret));
 		return _ret;
 	}
-	final HSTRING AccountPairwiseId()
+	final wstring AccountPairwiseId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountClientView)this.asInterface(uuid("e7bd66ba-0bc7-4c66-bfd4-65d3082cbca8"))).get_AccountPairwiseId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static Windows.Security.Authentication.Web.Provider.WebAccountClientView New(Windows.Security.Authentication.Web.Provider.WebAccountClientViewType viewType, Windows.Foundation.Uri applicationCallbackUri)
 	{
@@ -266,11 +266,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountClientViewFactory)factory.asInterface(uuid("616d16a4-de22-4855-a326-06cebf2a3f23"))).abi_Create(viewType, applicationCallbackUri, &_ret));
 		return _ret;
 	}
-	static Windows.Security.Authentication.Web.Provider.WebAccountClientView New(Windows.Security.Authentication.Web.Provider.WebAccountClientViewType viewType, Windows.Foundation.Uri applicationCallbackUri, HSTRING accountPairwiseId)
+	static Windows.Security.Authentication.Web.Provider.WebAccountClientView New(Windows.Security.Authentication.Web.Provider.WebAccountClientViewType viewType, Windows.Foundation.Uri applicationCallbackUri, wstring accountPairwiseId)
 	{
 		auto factory = factory!(Windows.Security.Authentication.Web.Provider.IWebAccountClientViewFactory);
 		Windows.Security.Authentication.Web.Provider.WebAccountClientView _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountClientViewFactory)factory.asInterface(uuid("616d16a4-de22-4855-a326-06cebf2a3f23"))).abi_CreateWithPairwiseId(viewType, applicationCallbackUri, accountPairwiseId, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountClientViewFactory)factory.asInterface(uuid("616d16a4-de22-4855-a326-06cebf2a3f23"))).abi_CreateWithPairwiseId(viewType, applicationCallbackUri, hstring(accountPairwiseId).handle, &_ret));
 		return _ret;
 	}
 }
@@ -283,16 +283,16 @@ interface WebAccountManager
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncAction UpdateWebAccountPropertiesAsync(Windows.Security.Credentials.WebAccount webAccount, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) additionalProperties)
+	static Windows.Foundation.IAsyncAction UpdateWebAccountPropertiesAsync(Windows.Security.Credentials.WebAccount webAccount, wstring webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) additionalProperties)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.abi_UpdateWebAccountPropertiesAsync(webAccount, webAccountUserName, additionalProperties, &_ret));
+		Debug.OK(staticInstance.abi_UpdateWebAccountPropertiesAsync(webAccount, hstring(webAccountUserName).handle, additionalProperties, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount) AddWebAccountAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount) AddWebAccountAsync(wstring webAccountId, wstring webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount) _ret;
-		Debug.OK(staticInstance.abi_AddWebAccountAsync(webAccountId, webAccountUserName, props, &_ret));
+		Debug.OK(staticInstance.abi_AddWebAccountAsync(hstring(webAccountId).handle, hstring(webAccountUserName).handle, props, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction DeleteWebAccountAsync(Windows.Security.Credentials.WebAccount webAccount)
@@ -563,11 +563,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSignOutAccountOperation)this.asInterface(uuid("b890e21d-0c55-47bc-8c72-04a6fc7cac07"))).get_ApplicationCallbackUri(&_ret));
 		return _ret;
 	}
-	final HSTRING ClientId()
+	final wstring ClientId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSignOutAccountOperation)this.asInterface(uuid("b890e21d-0c55-47bc-8c72-04a6fc7cac07"))).get_ClientId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind Kind()
 	{

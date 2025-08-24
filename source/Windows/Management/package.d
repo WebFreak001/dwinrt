@@ -51,15 +51,15 @@ extern(Windows):
 interface MdmAlert : Windows.Management.IMdmAlert
 {
 extern(Windows):
-	final HSTRING Data()
+	final wstring Data()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).get_Data(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Data(HSTRING value)
+	final void Data(wstring value)
 	{
-		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).set_Data(value));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).set_Data(hstring(value).handle));
 	}
 	final Windows.Management.MdmAlertDataType Format()
 	{
@@ -81,15 +81,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).set_Mark(value));
 	}
-	final HSTRING Source()
+	final wstring Source()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).get_Source(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Source(HSTRING value)
+	final void Source(wstring value)
 	{
-		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).set_Source(value));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).set_Source(hstring(value).handle));
 	}
 	final UINT32 Status()
 	{
@@ -97,25 +97,25 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).get_Status(&_ret));
 		return _ret;
 	}
-	final HSTRING Target()
+	final wstring Target()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).get_Target(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Target(HSTRING value)
+	final void Target(wstring value)
 	{
-		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).set_Target(value));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).set_Target(hstring(value).handle));
 	}
-	final HSTRING Type()
+	final wstring Type()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).get_Type(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Type(HSTRING value)
+	final void Type(wstring value)
 	{
-		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).set_Type(value));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).set_Type(hstring(value).handle));
 	}
 	static MdmAlert New()
 	{
@@ -140,11 +140,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.IMdmSession)this.asInterface(uuid("fe89314c-8f64-4797-a9d7-9d88f86ae166"))).get_ExtendedError(&_ret));
 		return _ret;
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Management.IMdmSession)this.asInterface(uuid("fe89314c-8f64-4797-a9d7-9d88f86ae166"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Management.MdmSessionState State()
 	{
@@ -197,14 +197,14 @@ interface MdmSessionManager
 		Debug.OK(staticInstance.abi_TryCreateSession(&_ret));
 		return _ret;
 	}
-	static void DeleteSessionById(HSTRING sessionId)
+	static void DeleteSessionById(wstring sessionId)
 	{
-		Debug.OK(staticInstance.abi_DeleteSessionById(sessionId));
+		Debug.OK(staticInstance.abi_DeleteSessionById(hstring(sessionId).handle));
 	}
-	static Windows.Management.MdmSession GetSessionById(HSTRING sessionId)
+	static Windows.Management.MdmSession GetSessionById(wstring sessionId)
 	{
 		Windows.Management.MdmSession _ret;
-		Debug.OK(staticInstance.abi_GetSessionById(sessionId, &_ret));
+		Debug.OK(staticInstance.abi_GetSessionById(hstring(sessionId).handle, &_ret));
 		return _ret;
 	}
 }

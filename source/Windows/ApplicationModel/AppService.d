@@ -109,10 +109,10 @@ interface AppServiceCatalog
 		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.AppService.IAppServiceCatalogStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppInfo)) FindAppServiceProvidersAsync(HSTRING appServiceName)
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppInfo)) FindAppServiceProvidersAsync(wstring appServiceName)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppInfo)) _ret;
-		Debug.OK(staticInstance.abi_FindAppServiceProvidersAsync(appServiceName, &_ret));
+		Debug.OK(staticInstance.abi_FindAppServiceProvidersAsync(hstring(appServiceName).handle, &_ret));
 		return _ret;
 	}
 }
@@ -131,25 +131,25 @@ extern(Windows):
 interface AppServiceConnection : Windows.ApplicationModel.AppService.IAppServiceConnection, Windows.Foundation.IClosable, Windows.ApplicationModel.AppService.IAppServiceConnection2
 {
 extern(Windows):
-	final HSTRING AppServiceName()
+	final wstring AppServiceName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).get_AppServiceName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AppServiceName(HSTRING value)
+	final void AppServiceName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).set_AppServiceName(value));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).set_AppServiceName(hstring(value).handle));
 	}
-	final HSTRING PackageFamilyName()
+	final wstring PackageFamilyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).get_PackageFamilyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PackageFamilyName(HSTRING value)
+	final void PackageFamilyName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).set_PackageFamilyName(value));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).set_PackageFamilyName(hstring(value).handle));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceConnectionStatus) OpenAsync()
 	{
@@ -274,17 +274,17 @@ extern(Windows):
 interface AppServiceTriggerDetails : Windows.ApplicationModel.AppService.IAppServiceTriggerDetails, Windows.ApplicationModel.AppService.IAppServiceTriggerDetails2
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceTriggerDetails)this.asInterface(uuid("88a2dcac-ad28-41b8-80bb-bdf1b2169e19"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING CallerPackageFamilyName()
+	final wstring CallerPackageFamilyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceTriggerDetails)this.asInterface(uuid("88a2dcac-ad28-41b8-80bb-bdf1b2169e19"))).get_CallerPackageFamilyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.AppService.AppServiceConnection AppServiceConnection()
 	{

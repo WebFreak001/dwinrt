@@ -86,53 +86,53 @@ interface LocalCategories
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics);
 		return _staticInstance;
 	}
-	static HSTRING BankAndCreditUnions()
+	static wstring BankAndCreditUnions()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BankAndCreditUnions(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING EatDrink()
+	static wstring EatDrink()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_EatDrink(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Hospitals()
+	static wstring Hospitals()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Hospitals(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HotelsAndMotels()
+	static wstring HotelsAndMotels()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HotelsAndMotels(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING All()
+	static wstring All()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_All(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Parking()
+	static wstring Parking()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Parking(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SeeDo()
+	static wstring SeeDo()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SeeDo(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Shop()
+	static wstring Shop()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Shop(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -145,23 +145,23 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation)this.asInterface(uuid("bb0fe9ab-4502-4f2c-94a9-0d60de0e2163"))).get_Address(&_ret));
 		return _ret;
 	}
-	final HSTRING Identifier()
+	final wstring Identifier()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation)this.asInterface(uuid("bb0fe9ab-4502-4f2c-94a9-0d60de0e2163"))).get_Identifier(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation)this.asInterface(uuid("bb0fe9ab-4502-4f2c-94a9-0d60de0e2163"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation)this.asInterface(uuid("bb0fe9ab-4502-4f2c-94a9-0d60de0e2163"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.Geolocation.Geopoint Point()
 	{
@@ -169,23 +169,23 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation)this.asInterface(uuid("bb0fe9ab-4502-4f2c-94a9-0d60de0e2163"))).get_Point(&_ret));
 		return _ret;
 	}
-	final HSTRING PhoneNumber()
+	final wstring PhoneNumber()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation)this.asInterface(uuid("bb0fe9ab-4502-4f2c-94a9-0d60de0e2163"))).get_PhoneNumber(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DataAttribution()
+	final wstring DataAttribution()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation)this.asInterface(uuid("bb0fe9ab-4502-4f2c-94a9-0d60de0e2163"))).get_DataAttribution(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Category()
+	final wstring Category()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation2)this.asInterface(uuid("6e9e307c-ecb5-4ffc-bb8c-ba50ba8c2dc6"))).get_Category(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Services.Maps.LocalSearch.LocalLocationRatingInfo RatingInfo()
 	{
@@ -209,10 +209,10 @@ interface LocalLocationFinder
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.Maps.LocalSearch.ILocalLocationFinderStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.LocalSearch.LocalLocationFinderResult) FindLocalLocationsAsync(HSTRING searchTerm, Windows.Devices.Geolocation.Geocircle searchArea, HSTRING localCategory, UINT32 maxResults)
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.LocalSearch.LocalLocationFinderResult) FindLocalLocationsAsync(wstring searchTerm, Windows.Devices.Geolocation.Geocircle searchArea, wstring localCategory, UINT32 maxResults)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.LocalSearch.LocalLocationFinderResult) _ret;
-		Debug.OK(staticInstance.abi_FindLocalLocationsAsync(searchTerm, searchArea, localCategory, maxResults, &_ret));
+		Debug.OK(staticInstance.abi_FindLocalLocationsAsync(hstring(searchTerm).handle, searchArea, hstring(localCategory).handle, maxResults, &_ret));
 		return _ret;
 	}
 }
@@ -272,11 +272,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocationRatingInfo)this.asInterface(uuid("cb1dab56-3354-4311-8bc0-a2d4d5eb806e"))).get_RatingCount(&_ret));
 		return _ret;
 	}
-	final HSTRING ProviderIdentifier()
+	final wstring ProviderIdentifier()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocationRatingInfo)this.asInterface(uuid("cb1dab56-3354-4311-8bc0-a2d4d5eb806e"))).get_ProviderIdentifier(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

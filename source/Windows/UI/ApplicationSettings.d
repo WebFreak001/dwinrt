@@ -253,15 +253,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs)this.asInterface(uuid("3b68c099-db19-45d0-9abf-95d3773c9330"))).get_Commands(&_ret));
 		return _ret;
 	}
-	final HSTRING HeaderText()
+	final wstring HeaderText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs)this.asInterface(uuid("3b68c099-db19-45d0-9abf-95d3773c9330"))).get_HeaderText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void HeaderText(HSTRING value)
+	final void HeaderText(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs)this.asInterface(uuid("3b68c099-db19-45d0-9abf-95d3773c9330"))).set_HeaderText(value));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs)this.asInterface(uuid("3b68c099-db19-45d0-9abf-95d3773c9330"))).set_HeaderText(hstring(value).handle));
 	}
 	final Windows.UI.ApplicationSettings.AccountsSettingsPaneEventDeferral GetDeferral()
 	{
@@ -314,15 +314,15 @@ extern(Windows):
 interface SettingsCommand : Windows.UI.Popups.IUICommand
 {
 extern(Windows):
-	final HSTRING Label()
+	final wstring Label()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).get_Label(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Label(HSTRING value)
+	final void Label(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).set_Label(value));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).set_Label(hstring(value).handle));
 	}
 	final Windows.UI.Popups.UICommandInvokedHandler Invoked()
 	{
@@ -357,11 +357,11 @@ extern(Windows):
 		Debug.OK(staticInstance.get_AccountsCommand(&_ret));
 		return _ret;
 	}
-	static Windows.UI.ApplicationSettings.SettingsCommand New(IInspectable settingsCommandId, HSTRING label, Windows.UI.Popups.UICommandInvokedHandler handler)
+	static Windows.UI.ApplicationSettings.SettingsCommand New(IInspectable settingsCommandId, wstring label, Windows.UI.Popups.UICommandInvokedHandler handler)
 	{
 		auto factory = factory!(Windows.UI.ApplicationSettings.ISettingsCommandFactory);
 		Windows.UI.ApplicationSettings.SettingsCommand _ret;
-		Debug.OK((cast(Windows.UI.ApplicationSettings.ISettingsCommandFactory)factory.asInterface(uuid("68e15b33-1c83-433a-aa5a-ceeea5bd4764"))).abi_CreateSettingsCommand(settingsCommandId, label, handler, &_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.ISettingsCommandFactory)factory.asInterface(uuid("68e15b33-1c83-433a-aa5a-ceeea5bd4764"))).abi_CreateSettingsCommand(settingsCommandId, hstring(label).handle, handler, &_ret));
 		return _ret;
 	}
 }

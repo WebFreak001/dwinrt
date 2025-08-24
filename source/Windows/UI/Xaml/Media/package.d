@@ -1827,11 +1827,11 @@ extern(Windows):
 interface FontFamily : Windows.UI.Xaml.Media.IFontFamily
 {
 extern(Windows):
-	final HSTRING Source()
+	final wstring Source()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.IFontFamily)this.asInterface(uuid("92467e64-d66a-4cf4-9322-3d23b3c0c361"))).get_Source(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 
 	private static Windows.UI.Xaml.Media.IFontFamilyStatics2 _staticInstance;
@@ -4027,25 +4027,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Media.ITimelineMarker)this.asInterface(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5"))).set_Time(value));
 	}
-	final HSTRING Type()
+	final wstring Type()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.ITimelineMarker)this.asInterface(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5"))).get_Type(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Type(HSTRING value)
+	final void Type(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.ITimelineMarker)this.asInterface(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5"))).set_Type(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITimelineMarker)this.asInterface(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5"))).set_Type(hstring(value).handle));
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Media.ITimelineMarker)this.asInterface(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Text(HSTRING value)
+	final void Text(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Media.ITimelineMarker)this.asInterface(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5"))).set_Text(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITimelineMarker)this.asInterface(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5"))).set_Text(hstring(value).handle));
 	}
 
 	private static Windows.UI.Xaml.Media.ITimelineMarkerStatics _staticInstance;
@@ -4534,21 +4534,21 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IXamlLightStatics);
 		return _staticInstance;
 	}
-	static void AddTargetElement(HSTRING lightId, Windows.UI.Xaml.UIElement element)
+	static void AddTargetElement(wstring lightId, Windows.UI.Xaml.UIElement element)
 	{
-		Debug.OK(staticInstance.abi_AddTargetElement(lightId, element));
+		Debug.OK(staticInstance.abi_AddTargetElement(hstring(lightId).handle, element));
 	}
-	static void RemoveTargetElement(HSTRING lightId, Windows.UI.Xaml.UIElement element)
+	static void RemoveTargetElement(wstring lightId, Windows.UI.Xaml.UIElement element)
 	{
-		Debug.OK(staticInstance.abi_RemoveTargetElement(lightId, element));
+		Debug.OK(staticInstance.abi_RemoveTargetElement(hstring(lightId).handle, element));
 	}
-	static void AddTargetBrush(HSTRING lightId, Windows.UI.Xaml.Media.Brush brush)
+	static void AddTargetBrush(wstring lightId, Windows.UI.Xaml.Media.Brush brush)
 	{
-		Debug.OK(staticInstance.abi_AddTargetBrush(lightId, brush));
+		Debug.OK(staticInstance.abi_AddTargetBrush(hstring(lightId).handle, brush));
 	}
-	static void RemoveTargetBrush(HSTRING lightId, Windows.UI.Xaml.Media.Brush brush)
+	static void RemoveTargetBrush(wstring lightId, Windows.UI.Xaml.Media.Brush brush)
 	{
-		Debug.OK(staticInstance.abi_RemoveTargetBrush(lightId, brush));
+		Debug.OK(staticInstance.abi_RemoveTargetBrush(hstring(lightId).handle, brush));
 	}
 	static XamlLight New()
 	{

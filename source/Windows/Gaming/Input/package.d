@@ -643,17 +643,17 @@ extern(Windows):
 interface Headset : Windows.Gaming.Input.IHeadset, Windows.Gaming.Input.IGameControllerBatteryInfo
 {
 extern(Windows):
-	final HSTRING CaptureDeviceId()
+	final wstring CaptureDeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Gaming.Input.IHeadset)this.asInterface(uuid("3fd156ef-6925-3fa8-9181-029c5223ae3b"))).get_CaptureDeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING RenderDeviceId()
+	final wstring RenderDeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Gaming.Input.IHeadset)this.asInterface(uuid("3fd156ef-6925-3fa8-9181-029c5223ae3b"))).get_RenderDeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.Power.BatteryReport TryGetBatteryReport()
 	{

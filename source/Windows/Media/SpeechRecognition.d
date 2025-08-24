@@ -393,15 +393,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_IsEnabled(value));
 	}
-	final HSTRING Tag()
+	final wstring Tag()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Tag(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Tag(HSTRING value)
+	final void Tag(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Tag(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Tag(hstring(value).handle));
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType Type()
 	{
@@ -426,11 +426,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraintFactory)factory.asInterface(uuid("3da770eb-c479-4c27-9f19-89974ef392d1"))).abi_Create(file, &_ret));
 		return _ret;
 	}
-	static auto New(Windows.Storage.StorageFile file, HSTRING tag)
+	static auto New(Windows.Storage.StorageFile file, wstring tag)
 	{
 		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraintFactory);
 		const Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint _ret;
-		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraintFactory)factory.asInterface(uuid("3da770eb-c479-4c27-9f19-89974ef392d1"))).abi_CreateWithTag(file, tag, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraintFactory)factory.asInterface(uuid("3da770eb-c479-4c27-9f19-89974ef392d1"))).abi_CreateWithTag(file, hstring(tag).handle, &_ret));
 		return _ret;
 	}
 }
@@ -438,11 +438,11 @@ extern(Windows):
 interface SpeechRecognitionHypothesis : Windows.Media.SpeechRecognition.ISpeechRecognitionHypothesis
 {
 extern(Windows):
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionHypothesis)this.asInterface(uuid("7a7b25b0-99c5-4f7d-bf84-10aa1302b634"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -476,15 +476,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_IsEnabled(value));
 	}
-	final HSTRING Tag()
+	final wstring Tag()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Tag(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Tag(HSTRING value)
+	final void Tag(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Tag(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Tag(hstring(value).handle));
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType Type()
 	{
@@ -509,11 +509,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraintFactory)factory.asInterface(uuid("40f3cdc7-562a-426a-9f3b-3b4e282be1d5"))).abi_Create(commands, &_ret));
 		return _ret;
 	}
-	static auto New(Windows.Foundation.Collections.IIterable!(HSTRING) commands, HSTRING tag)
+	static auto New(Windows.Foundation.Collections.IIterable!(HSTRING) commands, wstring tag)
 	{
 		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraintFactory);
 		const Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint _ret;
-		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraintFactory)factory.asInterface(uuid("40f3cdc7-562a-426a-9f3b-3b4e282be1d5"))).abi_CreateWithTag(commands, tag, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraintFactory)factory.asInterface(uuid("40f3cdc7-562a-426a-9f3b-3b4e282be1d5"))).abi_CreateWithTag(commands, hstring(tag).handle, &_ret));
 		return _ret;
 	}
 }
@@ -538,11 +538,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionResult)this.asInterface(uuid("4e303157-034e-4652-857e-d0454cc4beec"))).get_Status(&_ret));
 		return _ret;
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionResult)this.asInterface(uuid("4e303157-034e-4652-857e-d0454cc4beec"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognitionConfidence Confidence()
 	{
@@ -614,11 +614,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraint)this.asInterface(uuid("bf6fdf19-825d-4e69-a681-36e48cf1c93e"))).get_Scenario(&_ret));
 		return _ret;
 	}
-	final HSTRING TopicHint()
+	final wstring TopicHint()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraint)this.asInterface(uuid("bf6fdf19-825d-4e69-a681-36e48cf1c93e"))).get_TopicHint(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsEnabled()
 	{
@@ -630,15 +630,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_IsEnabled(value));
 	}
-	final HSTRING Tag()
+	final wstring Tag()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Tag(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Tag(HSTRING value)
+	final void Tag(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Tag(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Tag(hstring(value).handle));
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType Type()
 	{
@@ -656,18 +656,18 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Probability(value));
 	}
-	static auto New(Windows.Media.SpeechRecognition.SpeechRecognitionScenario scenario, HSTRING topicHint)
+	static auto New(Windows.Media.SpeechRecognition.SpeechRecognitionScenario scenario, wstring topicHint)
 	{
 		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory);
 		const Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint _ret;
-		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory)factory.asInterface(uuid("6e6863df-ec05-47d7-a5df-56a3431e58d2"))).abi_Create(scenario, topicHint, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory)factory.asInterface(uuid("6e6863df-ec05-47d7-a5df-56a3431e58d2"))).abi_Create(scenario, hstring(topicHint).handle, &_ret));
 		return _ret;
 	}
-	static auto New(Windows.Media.SpeechRecognition.SpeechRecognitionScenario scenario, HSTRING topicHint, HSTRING tag)
+	static auto New(Windows.Media.SpeechRecognition.SpeechRecognitionScenario scenario, wstring topicHint, wstring tag)
 	{
 		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory);
 		const Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint _ret;
-		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory)factory.asInterface(uuid("6e6863df-ec05-47d7-a5df-56a3431e58d2"))).abi_CreateWithTag(scenario, topicHint, tag, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory)factory.asInterface(uuid("6e6863df-ec05-47d7-a5df-56a3431e58d2"))).abi_CreateWithTag(scenario, hstring(topicHint).handle, hstring(tag).handle, &_ret));
 		return _ret;
 	}
 }
@@ -685,15 +685,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_IsEnabled(value));
 	}
-	final HSTRING Tag()
+	final wstring Tag()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Tag(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Tag(HSTRING value)
+	final void Tag(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Tag(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Tag(hstring(value).handle));
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType Type()
 	{
@@ -899,25 +899,25 @@ extern(Windows):
 interface SpeechRecognizerUIOptions : Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions
 {
 extern(Windows):
-	final HSTRING ExampleText()
+	final wstring ExampleText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions)this.asInterface(uuid("7888d641-b92b-44ba-a25f-d1864630641f"))).get_ExampleText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ExampleText(HSTRING value)
+	final void ExampleText(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions)this.asInterface(uuid("7888d641-b92b-44ba-a25f-d1864630641f"))).set_ExampleText(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions)this.asInterface(uuid("7888d641-b92b-44ba-a25f-d1864630641f"))).set_ExampleText(hstring(value).handle));
 	}
-	final HSTRING AudiblePrompt()
+	final wstring AudiblePrompt()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions)this.asInterface(uuid("7888d641-b92b-44ba-a25f-d1864630641f"))).get_AudiblePrompt(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AudiblePrompt(HSTRING value)
+	final void AudiblePrompt(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions)this.asInterface(uuid("7888d641-b92b-44ba-a25f-d1864630641f"))).set_AudiblePrompt(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions)this.asInterface(uuid("7888d641-b92b-44ba-a25f-d1864630641f"))).set_AudiblePrompt(hstring(value).handle));
 	}
 	final bool IsReadBackEnabled()
 	{

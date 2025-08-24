@@ -93,23 +93,23 @@ extern(Windows):
 interface AppExtension : Windows.ApplicationModel.AppExtensions.IAppExtension
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtension)this.asInterface(uuid("8450902c-15ed-4faf-93ea-2237bbf8cbd6"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtension)this.asInterface(uuid("8450902c-15ed-4faf-93ea-2237bbf8cbd6"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtension)this.asInterface(uuid("8450902c-15ed-4faf-93ea-2237bbf8cbd6"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
@@ -146,10 +146,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog)this.asInterface(uuid("97872032-8426-4ad1-9084-92e88c2da200"))).abi_FindAllAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) RequestRemovePackageAsync(HSTRING packageFullName)
+	final Windows.Foundation.IAsyncOperation!(bool) RequestRemovePackageAsync(wstring packageFullName)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog)this.asInterface(uuid("97872032-8426-4ad1-9084-92e88c2da200"))).abi_RequestRemovePackageAsync(packageFullName, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog)this.asInterface(uuid("97872032-8426-4ad1-9084-92e88c2da200"))).abi_RequestRemovePackageAsync(hstring(packageFullName).handle, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnPackageInstalled(void delegate(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs) fn)
@@ -209,10 +209,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalogStatics);
 		return _staticInstance;
 	}
-	static Windows.ApplicationModel.AppExtensions.AppExtensionCatalog Open(HSTRING appExtensionName)
+	static Windows.ApplicationModel.AppExtensions.AppExtensionCatalog Open(wstring appExtensionName)
 	{
 		Windows.ApplicationModel.AppExtensions.AppExtensionCatalog _ret;
-		Debug.OK(staticInstance.abi_Open(appExtensionName, &_ret));
+		Debug.OK(staticInstance.abi_Open(hstring(appExtensionName).handle, &_ret));
 		return _ret;
 	}
 }
@@ -220,11 +220,11 @@ extern(Windows):
 interface AppExtensionPackageInstalledEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageInstalledEventArgs
 {
 extern(Windows):
-	final HSTRING AppExtensionName()
+	final wstring AppExtensionName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageInstalledEventArgs)this.asInterface(uuid("39e59234-3351-4a8d-9745-e7d3dd45bc48"))).get_AppExtensionName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
@@ -243,11 +243,11 @@ extern(Windows):
 interface AppExtensionPackageStatusChangedEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageStatusChangedEventArgs
 {
 extern(Windows):
-	final HSTRING AppExtensionName()
+	final wstring AppExtensionName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageStatusChangedEventArgs)this.asInterface(uuid("1ce17433-1153-44fd-87b1-8ae1050303df"))).get_AppExtensionName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
@@ -260,11 +260,11 @@ extern(Windows):
 interface AppExtensionPackageUninstallingEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUninstallingEventArgs
 {
 extern(Windows):
-	final HSTRING AppExtensionName()
+	final wstring AppExtensionName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUninstallingEventArgs)this.asInterface(uuid("60f160c5-171e-40ff-ae98-ab2c20dd4d75"))).get_AppExtensionName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
@@ -277,11 +277,11 @@ extern(Windows):
 interface AppExtensionPackageUpdatedEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatedEventArgs
 {
 extern(Windows):
-	final HSTRING AppExtensionName()
+	final wstring AppExtensionName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatedEventArgs)this.asInterface(uuid("3a83c43f-797e-44b5-ba24-a4c8b5a543d7"))).get_AppExtensionName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
@@ -300,11 +300,11 @@ extern(Windows):
 interface AppExtensionPackageUpdatingEventArgs : Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatingEventArgs
 {
 extern(Windows):
-	final HSTRING AppExtensionName()
+	final wstring AppExtensionName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatingEventArgs)this.asInterface(uuid("7ed59329-1a65-4800-a700-b321009e306a"))).get_AppExtensionName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
