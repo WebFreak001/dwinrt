@@ -287,6 +287,8 @@ struct hstring
 
 	ref hstring opAssign(ref hstring value)
 	{
+		if (m_handle)
+			delete_string(m_handle);
 		m_handle = duplicate_string(value.m_handle);
 		return this;
 	}
