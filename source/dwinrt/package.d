@@ -295,8 +295,11 @@ struct hstring
 
 	void clear()
 	{
-		auto result = WindowsDeleteString(handle);
-		Debug.OK(result);
+		if (m_handle)
+		{
+			delete_string(m_handle);
+			m_handle = null;
+		}
 	}
 
 	T opCast(T : string_type)() const
